@@ -1,0 +1,169 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: 18vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    
+    background-color: black;
+    border-bottom: solid 5px rgb(255, 0, 0);
+}
+
+header .logo{
+    width: 15%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+header .logo img{
+    width: 17vh;
+    height: 17vh;
+    margin-left: 9vh;
+}
+
+header .title{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 4vh;
+    color: white;
+}
+
+header .redes-sociais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 25%;
+    gap: 11vh;
+}
+
+header .redes-sociais img{
+    width: 7vh;
+    height: 7vh;
+    transition: .4s;
+}
+header .redes-sociais .youtube{
+    width: 8.5vh;
+    height: 8.5vh;
+}
+
+header .redes-sociais img:hover{
+    filter: drop-shadow(.2vh .25vh 0vh white);
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+header .login-acess{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 10%;
+}
+
+header .login-acess img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 8.5vh;
+    height: 8.5vh;
+    padding: 1.5vh;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+header .login-acess img:hover{
+    transition: .2s;
+    background-color: #ffffff38;
+}
+
+
+nav{
+    width: 100%;
+    height: 15vh;
+    margin-top: 2vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6vh;
+}
+
+nav button{
+    width: 30vh;
+    height: 6vh;
+    cursor: pointer;
+
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    background-color: rgba(213, 213, 213, 0.659);
+    border: solid 2px black;
+    border-radius: 15px;
+    font-size: 2.5vh;
+    font-weight: 600;
+    transition: .4s;
+}
+
+nav button:hover{
+    background-color: rgba(224, 224, 224, 0.315);
+    transition: .2s;
+}
+
+nav button img{
+    width: 3vh;
+    height: 3vh;
+    transition: .5s;
+}
+
+nav button:hover img{
+    transform: rotate(15deg);
+    transition: .5s;
+}
+
+.btn1{
+    font-size: 2.7vh;
+}
+
+.btn1 img{
+    width: 3.2vh;
+    height: 3.2vh;
+}
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    width: 70%;
+    height: 600px;
+    margin-top: 100px;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: solid 1px black;
+}
+
+.content span{
+    font-size: 35px;
+    font-weight: bold;
+}
