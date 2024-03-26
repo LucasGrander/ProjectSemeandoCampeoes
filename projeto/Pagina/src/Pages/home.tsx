@@ -38,8 +38,11 @@ const Home = () => {
                     </div>
                     <div className="info-button">
                         <button>Instrutores</button>
-                        <button>CT's</button>
+                        <button>Centros de treinamento</button>
                         <button>Histórico</button>
+                    </div>
+                    <div className="infos">
+                        
                     </div>
                 </div>
             </div>
