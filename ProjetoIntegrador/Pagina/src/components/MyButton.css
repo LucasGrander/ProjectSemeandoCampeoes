@@ -1,7 +1,12 @@
 .active{
-    background-color: #fbc5c577;
+    color: white;
+    opacity: 1;
+    transition: .5;
+    transform: scale(1);
 }
 .inative{
     color: black;
-    background-color: transparent;  
+    opacity: 0.6;
+    transition: .5;
+    transform: scale(.9);
 }

@@ -1,11 +1,15 @@
 import './CentrosDeTreinamento.css'
 import AnyIMG from '../assets/react.svg'
 
-const CentrosDeTreinamento = () => {
+interface Props{
+    id?: string;
+}
+
+const CentrosDeTreinamento = ({id}: Props) => {
 
     return(
         <>
-        <div className="content-ct">
+        <div id={id} className="content-ct">
             <div className="boxes">
                 <div className="imag-ct">
                     <img src={AnyIMG} alt='imagem do ct'></img>
