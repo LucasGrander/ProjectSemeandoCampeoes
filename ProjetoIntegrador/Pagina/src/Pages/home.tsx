@@ -1,5 +1,4 @@
 import './home.css'
-import { Link } from "react-router-dom";
 import LogoSemeandoCampeoes from "../assets/LogoSemeandoCampeoes.png"
 import LogoInstagram from "../assets/facebook.svg"
 import LogoFacebook from "../assets/instagram.svg"
@@ -9,17 +8,9 @@ import Camera from "../assets/camPHOTO.svg"
 import HandShake from "../assets/handShake.svg"
 import { useState } from 'react'
 import MyButton from '../components/MyButton'
+import Instrutores from '../components/Instrutores'
 
 //exemplos de componentes a serem criados
-function Instrutores() {
-    return (
-      <div>
-        <h2>Instrutores</h2>
-        <p>Conteúdo do componente Instrutores...</p>
-      </div>
-    );
-  }
-
   function CentrosDeTreino() {
     return (
       <div>
@@ -45,31 +36,31 @@ const Home = () => {
     const handleOnClickFotos = () => {
         setTimeout(()=> {
             window.location.href = `/fotos`
-        }, 1500)
+        }, 500)
     }
 
     const handleOnClickParticipe = () => {
         setTimeout(()=> {
             window.location.href = `/participe`
-        }, 1500)
+        }, 500)
     }
 
     return(
         <>
             <header>
                 <div className="logo">
-                    <a href='#'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
+                    <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
                 </div>
                 <div className="title">
                     <h1>Semeando Campeões</h1>
                 </div>
                 <div className="redes-sociais">
-                    <a href="#"><img src={LogoInstagram} alt="logo do instagram"></img></a>
-                    <a href="#"><img src={LogoFacebook} alt="logo do facebook"></img></a>
-                    <a href="#"><img className='youtube' src={LogoYoutube} alt="logo do youtube"></img></a>
+                    <a href="https://www.instagram.com/semeando.campeoes/" target="_blank" ><img src={LogoInstagram} alt="logo do instagram"></img></a>
+                    <a href="https://www.facebook.com/semeandocampeoes/" target="_blank" ><img src={LogoFacebook} alt="logo do facebook"></img></a>
+                    <a href="https://www.youtube.com/@semeandocampeoes7001" target="_blank" ><img className='youtube' src={LogoYoutube} alt="logo do youtube"></img></a>
                 </div>
                 <div className="login-acess">
-                    <a href="#"><img src={UserLogin} alt="user login"></img></a>
+                    <a href="/login"><img src={UserLogin} alt="user login"></img></a>
                 </div>
             </header>
             <nav>
