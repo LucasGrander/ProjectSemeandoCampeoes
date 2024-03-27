@@ -112,11 +112,11 @@ const Home = () => {
                     fontWeight= "bold"
                     border= "none"
                     background-color= "transparent"
-                    borderBottom= ".5vh rgb(255, 0, 0) solid"
+                    borderBottom= ".5vh black solid"
                     transition= ".4s"
                     children="Instrutores"
-                    enter={content == "instrutores" ? "#fbc5c577" : "#fbc5c577"}
-                    leave={content == "instrutores" ? "#fbc5c577" : "transparent"}
+                    enter={content == "instrutores" ? "rgba(85, 85, 85, 0.3)" : "rgba(85, 85, 85, 0.3)"}
+                    leave={content == "instrutores" ? "rgba(85, 85, 85, 0.3)" : "transparent"}
                 />
 
 
@@ -130,11 +130,11 @@ const Home = () => {
                     fontWeight= "bold"
                     border= "none"
                     background-color= "transparent"
-                    borderBottom= ".5vh rgb(255, 0, 0) solid"
+                    borderBottom= ".5vh black solid"
                     transition= ".4s"
                     children="Centros de treinamento"
-                    enter={content == "cts" ? "#fbc5c577" : "#fbc5c577"}
-                    leave={content == "cts" ? "#fbc5c577" : "transparent"}
+                    enter={content == "cts" ? "rgba(85, 85, 85, 0.3)" : "rgba(85, 85, 85, 0.3)"}
+                    leave={content == "cts" ? "rgba(85, 85, 85, 0.3)" : "transparent"}
                 />
 
 
@@ -148,11 +148,11 @@ const Home = () => {
                     fontWeight= "bold"
                     border= "none"
                     background-color= "transparent"
-                    borderBottom= ".5vh rgb(255, 0, 0) solid"
+                    borderBottom= ".5vh black solid"
                     transition= ".4s"
                     children="Histórico"
-                    enter={content == "histórico" ? "#fbc5c577" : "#fbc5c577"}
-                    leave={content == "histórico" ? "#fbc5c577" : "transparent"}
+                    enter={content == "histórico" ? "rgba(85, 85, 85, 0.3)" : "rgba(85, 85, 85, 0.3)"}
+                    leave={content == "histórico" ? "rgba(85, 85, 85, 0.3)" : "transparent"}
                 />
 
                 </div>

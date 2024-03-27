@@ -44,7 +44,7 @@ header .title{
     display: flex;
     align-items: center;
     justify-content: start;
-    font-size: 4vh;
+    font-size: 3.5vh;
     color: white;
 }
 
@@ -197,7 +197,7 @@ footer .content-footer img{
 }
 
 .active{
-    background-color: #fbc5c577;
+    background-color: rgba(85, 85, 85, 0.6);
 }
 .inative{
     background-color: transparent;  

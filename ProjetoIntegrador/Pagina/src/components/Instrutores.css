@@ -14,10 +14,10 @@
 }
 
 .content .box span{
-    font-size: 7vh;
+    font-size: 6vh;
     letter-spacing: .8vh;
-    text-shadow: .18vh .18vh .1vh black;
-    color: rgb(255, 60, 60)
+    text-shadow: .18vh .18vh .1vh rgba(0, 0, 0, 0.5);
+    color: black
 }
 
 .box{
@@ -48,10 +48,10 @@
 }
 
 .ricardo{
-    border: solid 5px black;
+    border: solid .8vh black;
 }
 .dionata{
-    border: solid 5px rgb(93, 49, 15);
+    border: solid .8vh rgb(93, 49, 15);
 }
 
 .box-info{
