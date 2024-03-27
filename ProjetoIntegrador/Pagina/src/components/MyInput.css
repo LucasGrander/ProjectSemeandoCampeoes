@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.imagem .us input{
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 200px;
+  margin: 40px;
+  padding: 5px;
+  font-size: large;
+  cursor: pointer;
+  position:relative; 
+  text-align: center;
+}
+input:hover{
+    color: blue;
+    text-size-adjust: 10px;
+}
