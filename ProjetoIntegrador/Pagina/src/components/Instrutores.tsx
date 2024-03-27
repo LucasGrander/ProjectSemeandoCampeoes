@@ -7,7 +7,7 @@ const Instrutores = () => {
     <div className="content">
         <div className="box">
             <div className="box-img">
-                <img src={DionatanIMG} alt='foto tal'></img>
+                <img className='dionata' src={DionatanIMG} alt='foto tal'></img>
             </div>
             <div className="box-info">
                 <span>Dionata da Silva Benedito</span>
@@ -16,7 +16,7 @@ const Instrutores = () => {
         </div>
         <div className="box">
             <div className="box-img">
-                <img src={RicardoIMG} alt='foto tal'></img>
+                <img className='ricardo' src={RicardoIMG} alt='foto tal'></img>
             </div>
             <div className="box-info">
                 <span>Ricardo Maciel Batista</span>

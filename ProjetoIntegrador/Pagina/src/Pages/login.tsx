@@ -1,9 +1,9 @@
 import { ChangeEvent, useState } from "react";
 // import { useNavigate } from "react-router-dom";
-import "./login.css"
 import MyButton from "../components/MyButton";
 import MyInput from "../components/MyInput";
 import Logo from "../assets/LogoSemeandoCampeoes.png";
+import './login.css'
 
 function Login (){
     const [user, setUser] = useState("");

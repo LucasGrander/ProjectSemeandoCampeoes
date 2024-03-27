@@ -5,6 +5,7 @@ import './MyButton.css'
 interface Props{
     onClick: () => void;
 
+    className?: string;
     enter?: string;
     leave?: string;
     children?: React.ReactNode;
@@ -19,13 +20,14 @@ interface Props{
     
     backgroundColor?: string;
     border?: string;
+    borderBottom?: string;
     borderRadius?: string;
     fontSize?: string;
     fontWeight?: string;
     transition?: string;
 }
 
-const MyButton = ({enter, leave, onClick, children, width, height, cursor, display, justifyContent, alignItems, border, borderRadius, fontSize, fontWeight, transition, }: Props) => {
+const MyButton = ({className, enter, leave, onClick, children, width, height, cursor, display, justifyContent, alignItems, border, borderBottom, borderRadius, fontSize, fontWeight, transition, }: Props) => {
 
     const [hover, setHover] = useState(false)
         const handleMouseEnter = () => {
@@ -36,10 +38,11 @@ const MyButton = ({enter, leave, onClick, children, width, height, cursor, displ
             setHover(false)
         }
 
-    const estiloBotao: React.CSSProperties = {width, height, cursor, display, justifyContent, alignItems, backgroundColor: hover ? enter : leave, border, borderRadius, fontSize, fontWeight, transition,}
+
+    const estiloBotao: React.CSSProperties = {width, height, cursor, display, justifyContent, alignItems, backgroundColor: hover ? enter : leave, border, borderBottom, borderRadius, fontSize, fontWeight, transition,}
 
   return (
-    <button style={estiloBotao} onClick={onClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <button className={className} style={estiloBotao} onClick={onClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {children}
     </button>
   )

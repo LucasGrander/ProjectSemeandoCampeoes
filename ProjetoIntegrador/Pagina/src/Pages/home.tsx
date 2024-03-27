@@ -9,16 +9,9 @@ import HandShake from "../assets/handShake.svg"
 import { useState } from 'react'
 import MyButton from '../components/MyButton'
 import Instrutores from '../components/Instrutores'
+import CentrosDeTreinamento from '../components/CentrosDeTreinamento'
 
 //exemplos de componentes a serem criados
-  function CentrosDeTreino() {
-    return (
-      <div>
-        <h2>CT's</h2>
-        <p>Conteúdo do componente CT's...</p>
-      </div>
-    );
-  }
   
   function Histórico() {
     return (
@@ -31,7 +24,7 @@ import Instrutores from '../components/Instrutores'
 
 const Home = () => {
 
-    const [content, setContent] = useState('instrutores')
+    const [content, setContent] = useState('cts')
 
     const handleOnClickFotos = () => {
         setTimeout(()=> {
@@ -46,7 +39,8 @@ const Home = () => {
     }
 
     return(
-        <>
+    <>
+        <div className="page-home">
             <header>
                 <div className="logo">
                     <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
@@ -101,27 +95,90 @@ const Home = () => {
                 >
                     Participe!<img src={HandShake} alt='aperto de mãos' />
             </MyButton>
-                
             </nav>
-            <div className="container">
-                <div className="content">
-                    <div className="title-container">
-                        <span>Sobre nós</span>
-                    </div>
-                    <div className="info-button">
-                        <button onClick={() => setContent('instrutores')} >Instrutores</button>
-                        <button onClick={() => setContent('cts')}>Centros de treinamento</button>
-                        <button onClick={() => setContent('histórico')}>Histórico</button>
-                    </div>
-                    <div className="infos">
-                    {content === 'instrutores' && <Instrutores />}
-                    {content === 'cts' && <CentrosDeTreino />}
-                    {content === 'histórico' && <Histórico />}
-                    </div>
+
+            <div className="content">
+                <div className="title-container">
+                    <span>Sobre nós</span>
+                </div>
+                <div className="info-button">
+                <MyButton
+                    onClick={() => setContent("instrutores")}
+                    className={ content == "instrutores" ? "active" : "inative" }
+                    width= "25%"
+                    height= "5.5vh"
+                    cursor= "pointer"
+                    fontSize= "2.75vh"
+                    fontWeight= "bold"
+                    border= "none"
+                    background-color= "transparent"
+                    borderBottom= ".5vh rgb(255, 0, 0) solid"
+                    transition= ".4s"
+                    children="Instrutores"
+                    enter={content == "instrutores" ? "#fbc5c577" : "#fbc5c577"}
+                    leave={content == "instrutores" ? "#fbc5c577" : "transparent"}
+                />
+
+
+                <MyButton
+                    onClick={() => setContent("cts")}
+                    className={ content == "cts" ? "active" : "inative" }
+                    width= "25%"
+                    height= "5.5vh"
+                    cursor= "pointer"
+                    fontSize= "2.75vh"
+                    fontWeight= "bold"
+                    border= "none"
+                    background-color= "transparent"
+                    borderBottom= ".5vh rgb(255, 0, 0) solid"
+                    transition= ".4s"
+                    children="Centros de treinamento"
+                    enter={content == "cts" ? "#fbc5c577" : "#fbc5c577"}
+                    leave={content == "cts" ? "#fbc5c577" : "transparent"}
+                />
+
+
+                <MyButton
+                    onClick={() => setContent("histórico")}
+                    className={ content == "histórico" ? "active" : "inative" }
+                    width= "25%"
+                    height= "5.5vh"
+                    cursor= "pointer"
+                    fontSize= "2.75vh"
+                    fontWeight= "bold"
+                    border= "none"
+                    background-color= "transparent"
+                    borderBottom= ".5vh rgb(255, 0, 0) solid"
+                    transition= ".4s"
+                    children="Histórico"
+                    enter={content == "histórico" ? "#fbc5c577" : "#fbc5c577"}
+                    leave={content == "histórico" ? "#fbc5c577" : "transparent"}
+                />
+
+                </div>
+                <div className="infos">
+                {content === 'instrutores' && <Instrutores />}
+                {content === 'cts' && <CentrosDeTreinamento />}
+                {content === 'histórico' && <Histórico />}
                 </div>
             </div>
-        </>
-        
+            <footer>
+                <div className='content-footer'>
+                    <div className="icon">
+                        <img src={LogoSemeandoCampeoes} alt='logo Semeando Campeões'></img>
+                    </div>
+                   <div className="text">
+                    <div>
+                        <span>Semeando Campeões</span>
+                    </div>
+                    <div className='copy'>
+                    Copyright © 2024 Lucas Grander & Ricardo M. Batista.
+                    </div>
+                   </div>
+                </div>
+            </footer>
+        </div>
+    </>
     )
 }
 
