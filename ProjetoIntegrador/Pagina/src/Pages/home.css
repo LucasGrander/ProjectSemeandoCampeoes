@@ -46,6 +46,7 @@ header .title{
     justify-content: start;
     font-size: 3.5vh;
     color: white;
+    text-shadow: 0.2vh 0.2vh .2vh rgba(255, 255, 255, 0.272);
 }
 
 header .redes-sociais{
@@ -101,13 +102,13 @@ header .login-acess img:hover{
 
 nav{
     width: 100%;
-    height: 15vh;
+    height: 10vh;
     margin-top: 2vh;
     
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6vh;
+    gap: 15vh;
 }
 
 nav button img{
