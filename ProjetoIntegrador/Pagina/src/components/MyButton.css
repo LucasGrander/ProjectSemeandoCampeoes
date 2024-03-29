@@ -1,12 +1,12 @@
 .active{
     color: white;
     opacity: 1;
-    transition: .5;
+    transition: .4;
     transform: scale(1);
 }
 .inative{
     color: black;
-    opacity: 0.6;
-    transition: .5;
+    opacity: 0.5;
+    transition: .2;
     transform: scale(.9);
 }

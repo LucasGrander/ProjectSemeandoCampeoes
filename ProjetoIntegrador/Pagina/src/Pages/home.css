@@ -112,13 +112,13 @@ nav{
 }
 
 nav button img{
-    width: 3vh;
-    height: 3vh;
+    width: 3.3vh;
+    height: 3.3vh;
     transition: .5s;
 }
 
 nav button:hover img{
-    transform: rotate(15deg);
+    animation: Vibration .5s ease infinite alternate;
     transition: .5s;
 }
 
@@ -202,7 +202,6 @@ footer .content-footer img{
     animation: changeAbout 1s normal forwards;
 }
 #inative{
-    transform: scale(0.4);
     transition: .3s;
 }
 
@@ -212,5 +211,19 @@ footer .content-footer img{
     }
     to{
         opacity: 1;
+    }
+}
+
+@keyframes Vibration {
+    0%{
+        transform: rotate(0);
+    }
+
+    50%{
+        transform: rotate(-10deg);
+    }
+
+    100%{
+        transform: rotate(10deg);
     }
 }
