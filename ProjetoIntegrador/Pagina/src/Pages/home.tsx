@@ -157,9 +157,9 @@ const Home = () => {
 
                 </div>
                 <div className="infos">
-                {content === 'instrutores' && <Instrutores id={content == "instrutores" ? "active" : "inative"} />}
-                {content === 'cts' && <CentrosDeTreinamento id={content == "cts" ? "active" : "inative"} />}
-                {content === 'histórico' && <Histórico />}
+                    {content === 'instrutores' && <Instrutores id={content == "instrutores" ? "active" : "inative"} />}
+                    {content === 'cts' && <CentrosDeTreinamento id={content == "cts" ? "active" : "inative"} />}
+                    {content === 'histórico' && <Histórico />}
                 </div>
             </div>
             <footer>

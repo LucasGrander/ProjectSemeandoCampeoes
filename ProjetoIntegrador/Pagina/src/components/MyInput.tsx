@@ -1,22 +1,56 @@
-import { ChangeEvent } from 'react';
+import { useState } from 'react';
 import'./MyInput.css'
 
 interface Props{
-    type: string;
+    onClick?: () => void;
+    onChange?: () => void;
+    type?: string;
     value?: string;
-    placeHolder?: string;
-    bgColor?: string;
-    onChange?: (e : ChangeEvent<HTMLInputElement>) => void;
+
+    className?: string;
+    enter?: string;
+    leave?: string;
+
+    width?: string;
+    height?: string;
+
+    cursor?: string;
+    display?: string;
+    justifyContent?: string;
+    alignItems?: string;
+    
+    backgroundColor?: string;
+    border?: string;
+    borderBottom?: string;
+    borderRadius?: string;
+    padding?: string;
+    fontSize?: string;
+    fontWeight?: string;
+    transition?: string;
 }
-function MyInput(props: Props){
+
+const MyInput = ({className, enter, leave, onClick, onChange, type, value, width, height, cursor, display, justifyContent, alignItems, border, borderBottom, borderRadius, padding, fontSize, fontWeight, transition, }: Props) => {
+
+    const [hover, setHover] = useState(false)
+        const handleMouseEnter = () => {
+            setHover(true)
+        }
+
+        const handleMouseLeave = () => {
+            setHover(false)
+        }
+
+    const estiloInput: React.CSSProperties = {width, height, cursor, display, justifyContent, alignItems, backgroundColor: hover ? enter : leave, border, borderBottom, borderRadius, padding, fontSize, fontWeight, transition,}
+
     return(
-        <input 
-        type={props.type} 
-        placeholder={props.placeHolder}
-        style={{backgroundColor:`${props.bgColor}`}}
-        onChange={(props.onChange)}
-        value={props.value}/>
-        
+        <input
+        value={value}
+        className={className}
+        style={estiloInput}
+        type={type}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        />
     );
 }
 export default MyInput;

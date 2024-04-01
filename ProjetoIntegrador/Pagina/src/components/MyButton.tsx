@@ -23,11 +23,12 @@ interface Props{
     borderBottom?: string;
     borderRadius?: string;
     fontSize?: string;
+    padding?: string;
     fontWeight?: string;
     transition?: string;
 }
 
-const MyButton = ({className, enter, leave, onClick, children, width, height, cursor, display, justifyContent, alignItems, border, borderBottom, borderRadius, fontSize, fontWeight, transition, }: Props) => {
+const MyButton = ({className, enter, leave, onClick, children, width, height, cursor, display, justifyContent, alignItems, border, borderBottom, borderRadius, padding, fontSize, fontWeight, transition, }: Props) => {
 
     const [hover, setHover] = useState(false)
         const handleMouseEnter = () => {
@@ -39,7 +40,7 @@ const MyButton = ({className, enter, leave, onClick, children, width, height, cu
         }
 
 
-    const estiloBotao: React.CSSProperties = {width, height, cursor, display, justifyContent, alignItems, backgroundColor: hover ? enter : leave, border, borderBottom, borderRadius, fontSize, fontWeight, transition,}
+    const estiloBotao: React.CSSProperties = {width, height, cursor, display, justifyContent, alignItems, backgroundColor: hover ? enter : leave, border, borderBottom, borderRadius, padding, fontSize, fontWeight, transition,}
 
   return (
     <button className={className} style={estiloBotao} onClick={onClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
