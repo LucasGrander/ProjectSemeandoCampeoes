@@ -158,7 +158,7 @@
 }
 
 .box-photo-ct:hover .photo-btn{
-    animation: Btn-Photo 1s ease 0.1s normal forwards, Btn-Vibre .4s ease .9s infinite alternate;
+    animation: Btn-Photo .5s ease 0.1s normal forwards, Btn-Vibre .4s ease .5s infinite alternate;
 }
 
 .box-photo-ct button{
