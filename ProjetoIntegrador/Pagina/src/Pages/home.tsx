@@ -10,17 +10,11 @@ import { useState } from 'react'
 import MyButton from '../components/MyButton'
 import Instrutores from '../components/Instrutores'
 import CentrosDeTreinamento from '../components/CentrosDeTreinamento'
+import Historico from '../components/Historico'
 
 //exemplos de componentes a serem criados
   
-  function Histórico() {
-    return (
-      <div>
-        <h2>Histórico</h2>
-        <p>Conteúdo do componente Histórico...</p>
-      </div>
-    );
-  }
+  
 
 const Home = () => {
 
@@ -159,7 +153,7 @@ const Home = () => {
                 <div className="infos">
                 {content === 'instrutores' && <Instrutores id={content == "instrutores" ? "active" : "inative"} />}
                 {content === 'cts' && <CentrosDeTreinamento id={content == "cts" ? "active" : "inative"} />}
-                {content === 'histórico' && <Histórico />}
+                {content === 'histórico' && <Historico />}
                 </div>
             </div>
             <footer>

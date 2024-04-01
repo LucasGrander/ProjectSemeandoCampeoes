@@ -167,6 +167,7 @@ nav button:hover img{
     height: 97vh;
 
     background-color: #cccccc3f;
+    overflow: auto;
 }
 
 footer{
