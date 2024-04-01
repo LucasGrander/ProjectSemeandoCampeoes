@@ -153,7 +153,7 @@ const Home = () => {
                 <div className="infos">
                 {content === 'instrutores' && <Instrutores id={content == "instrutores" ? "active" : "inative"} />}
                 {content === 'cts' && <CentrosDeTreinamento id={content == "cts" ? "active" : "inative"} />}
-                {content === 'histórico' && <Historico />}
+                {content === 'histórico' && <Historico id={content == "histórico" ? "active" : "inative"} />}
                 </div>
             </div>
             <footer>

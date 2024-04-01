@@ -16,7 +16,6 @@ const Cadaster = () => {
             <div className="container-cadaster">
                 <div className="content-cadaster">
                     <span>Faça parte</span>
-
                     <div className="button-label-container">
                         <label htmlFor='nome' >Nome</label>
                         <MyInput
