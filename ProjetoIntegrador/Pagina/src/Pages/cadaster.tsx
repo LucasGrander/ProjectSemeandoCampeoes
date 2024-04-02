@@ -1,8 +1,65 @@
+import { useState } from 'react'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import MyInput from '../components/MyInput'
 import './cadaster.css'
+import Mancha from '../assets/mancha-background-cadaster.png'
+import jiu1 from '../assets/jiu1-dePe.png'
+import jiu2 from '../assets/jiu2-pernaAberta.png'
+import jiu3 from '../assets/jiu3-kimono.png'
+import jiu4 from '../assets/jiu5-luta.png'
+
 const Cadaster = () => {
 
+//nome focus
+    const [focusNome, setFocusNome] = useState(false)
+
+    const handleFocusedNome = () => {
+        setFocusNome(true)
+    }
+    const handleNotFocusedNome = () => {
+        if(valueNome.trim() == ""){
+            setFocusNome(false)
+        }
+        else{
+            setFocusNome(true)
+        }
+    }
+
+    const [valueNome, setValueNome] = useState("")
+
+//nome do resp focus
+    const [focusNomeResp, setFocusNomeResp] = useState(false)
+
+    const handleFocusedNomeResp = () => {
+        setFocusNomeResp(true)
+    }
+    const handleNotFocusedNomeResp = () => {
+        if(valueNomeResp.trim() == ""){
+            setFocusNomeResp(false)
+        }
+        else{
+            setFocusNomeResp(true)
+        }
+    }
+
+    const [valueNomeResp, setValueNomeResp] = useState("")
+//telefone focus
+    const [focusTelefone, setFocusTelefone] = useState(false)
+
+    const handleFocusedTelefone = () => {
+        setFocusTelefone(true)
+        
+    }
+    const handleNotFocusedTelefone = () => {
+        if(valueTelefone.trim() == ""){
+            setFocusTelefone(false)
+        }
+        else{
+            setFocusTelefone(true)
+        }
+    }
+    
+    const [valueTelefone, setValueTelefone] = useState("")
     return(
         <div className="page-cadaster">
             <header>
@@ -13,77 +70,114 @@ const Cadaster = () => {
                     <h1>Semeando Campeões</h1>
                 </div>
             </header>
-            <div className="container-cadaster">
-                <div className="content-cadaster">
-                    <span>Faça parte</span>
-                    <div className="button-label-container">
-                        <label htmlFor='nome' >Nome</label>
-                        <MyInput
-                            type='text'
-                            width= "80%"
-                            height= "100%"
-                            padding="2vh"
-                            fontSize= "1.9vh"
-                            border= "solid 1px black"
-                            borderRadius='.9vh'
-                            background-color= "transparent"
-                            transition= ".4s"
-                            enter= "#f0f0f0"
-                            leave= "transparent"
-                        />
+            <div className="container-banner-form">
+                <img className='jiu1' src={jiu1}></img>
+                <img className='jiu2' src={jiu2}></img>
+                <img className='jiu3' src={jiu3}></img>
+                <img className='jiu4' src={jiu4}></img>
+                <div className="container-banner">
+                    <div className="content-banner">
+                        <img src={Mancha} alt='mancha de fundo'></img>
+                        <span>FAÇA PARTE!</span>
+                        <div className="box-name">
+                            <span>Semeando</span>   
+                            <span>Campeões</span>
+                        </div>
                     </div>
-
-                    <div className="button-label-container">
-                    <MyInput
-                            type='date'
-                            width= "80%"
-                            height= "100%"
-                            padding="2vh"
-                            fontSize= "1.9vh"
-                            border= "solid 1px black"
-                            borderRadius='.9vh'
-                            background-color= "transparent"
-                            transition= ".4s"
-                            enter= "#f0f0f0"
-                            leave= "transparent"
-                        />
-                    </div>
-
-                    <div className="button-label-container">
-                        <label htmlFor='nomeResp' >Nome do responsável</label>
-                        <MyInput
-                            type='text'
-                            width= "80%"
-                            height= "100%"
-                            padding="2vh"
-                            fontSize= "1.9vh"
-                            border= "solid 1px black"
-                            borderRadius='.9vh'
-                            background-color= "transparent"
-                            transition= ".4s"
-                            enter= "#f0f0f0"
-                            leave= "transparent"
-                        />
-                    </div>
-
-                    <div className="button-label-container">
-                    <label htmlFor='nomeResp'>Telefone</label>
-                        <MyInput
-                            type='tel'
-                            width= "80%"
-                            height= "100%"
-                            padding="2vh"
-                            fontSize= "1.9vh"
-                            border= "solid 1px black"
-                            borderRadius='.9vh'
-                            background-color= "transparent"
-                            transition= ".4s"
-                            enter= "#f0f0f0"
-                            leave= "transparent"
+                </div>
+                <div className="container-cadaster">
+                    <div className="content-cadaster">
+                        <span>Cadastro</span>
+                        <div className="button-label-container">
+                            <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Nome</label>
+                            <MyInput
+                                id="nome"
+                                onChange={(e) => setValueNome(e.target.value)}
+                                onFocus={handleFocusedNome}
+                                onBlur={handleNotFocusedNome}
+                                className={focusNome ? "focusedNome" : "notFocusedNome"}
+                                type='text'
+                                width= "90%"
+                                height= "100%"
+                                padding="2vh"
+                                fontSize= "2.4vh"
+                                border= "solid .3vh black"
+                                borderBottom="solid .3vh black"
+                                borderRadius='.9vh'
+                                backgroundColor="transparent"
+                                transition= ".4s"
+                                enter= "transparent"
+                                leave= "transparent"
                             />
-                    </div>
+                        </div>
 
-                    <button>Registrar</button>
+                        <div className="button-label-container">
+                            <label className="labelFocusedDate" htmlFor='date'>Data de nascimento</label>
+                            <MyInput
+                                id='date'
+                                type='date'
+                                width= "90%"
+                                height= "100%"
+                                padding="2vh"
+                                fontSize= "2.4vh"
+                                border= "solid .3vh black"
+                                borderBottom="solid .3vh black"
+                                borderRadius='.9vh'
+                                background-color= "transparent"
+                                transition= ".4s"
+                                enter= "transparent"
+                                leave= "transparent"
+                                />
+                        </div>
+
+                        <div className="button-label-container">
+                            <label className={focusNomeResp ? "labelFocusedNomeResp" : "labelNotFocusedNomeResp"} htmlFor='nomeResp'>Nome do responsável</label>
+                            <MyInput
+                                id="nomeResp"
+                                onChange={(e) => setValueNomeResp(e.target.value)}
+                                onFocus={handleFocusedNomeResp}
+                                onBlur={handleNotFocusedNomeResp}
+                                className={focusNomeResp ? "focused" : "notFocused"}
+                                type='text'
+                                width= "90%"
+                                height= "100%"
+                                padding="2vh"
+                                fontSize= "2.4vh"
+                                border= "solid .3vh black"
+                                borderBottom="solid .3vh black"
+                                borderRadius='.9vh'
+                                background-color= "transparent"
+                                transition= ".4s"
+                                enter= "transparent"
+                                leave= "transparent"
+                            />
+                        </div>
+
+                        <div className="button-label-container">
+                        <label className={focusTelefone ? "labelFocusedTelefone" : "labelNotFocusedTelefone"} htmlFor='telefone'>Telefone</label>
+                            <MyInput
+                                id="telefone"
+                                onChange={(e) => setValueTelefone(e.target.value)}
+                                onFocus={handleFocusedTelefone}
+                                onBlur={handleNotFocusedTelefone}
+                                className={focusTelefone ? "focusedTelefone" : "notFocusedTelefone"}
+                                type='tel'
+                                width= "90%"
+                                height= "100%"
+                                padding="2vh"
+                                fontSize= "2.4vh"
+                                border= "solid .3vh black"
+                                borderBottom="solid .3vh black"
+                                borderRadius='.9vh'
+                                background-color= "transparent"
+                                transition= ".4s"
+                                enter= "transparent"
+                                leave= "transparent"
+                                />
+                        </div>
+
+                        <button>Registrar</button>
+                    </div>
                 </div>
             </div>
         </div>

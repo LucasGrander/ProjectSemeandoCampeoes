@@ -2,10 +2,13 @@ import { useState } from 'react';
 import'./MyInput.css'
 
 interface Props{
+    onFocus?: () => void;
     onClick?: () => void;
-    onChange?: () => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
     type?: string;
     value?: string;
+    id?: string;
 
     className?: string;
     enter?: string;
@@ -23,13 +26,14 @@ interface Props{
     border?: string;
     borderBottom?: string;
     borderRadius?: string;
+    boxShadow?: string;
     padding?: string;
     fontSize?: string;
     fontWeight?: string;
     transition?: string;
 }
 
-const MyInput = ({className, enter, leave, onClick, onChange, type, value, width, height, cursor, display, justifyContent, alignItems, border, borderBottom, borderRadius, padding, fontSize, fontWeight, transition, }: Props) => {
+const MyInput = ({id, className, enter, leave, onClick, onChange, onFocus, onBlur, type, value, width, height, cursor, display, justifyContent, alignItems, border, borderBottom, borderRadius, padding, fontSize, boxShadow, fontWeight, transition, }: Props) => {
 
     const [hover, setHover] = useState(false)
         const handleMouseEnter = () => {
@@ -39,15 +43,20 @@ const MyInput = ({className, enter, leave, onClick, onChange, type, value, width
         const handleMouseLeave = () => {
             setHover(false)
         }
+        
 
-    const estiloInput: React.CSSProperties = {width, height, cursor, display, justifyContent, alignItems, backgroundColor: hover ? enter : leave, border, borderBottom, borderRadius, padding, fontSize, fontWeight, transition,}
+    const estiloInput: React.CSSProperties = {width, height, cursor, display, justifyContent, alignItems, backgroundColor: hover ? enter : leave, border, borderBottom, borderRadius, padding, fontSize, boxShadow, fontWeight, transition,}
 
     return(
         <input
+        onFocus={onFocus}
+        onBlur={onBlur}
+        id={id}
         value={value}
         className={className}
         style={estiloInput}
         type={type}
+        onChange={onChange}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         />
