@@ -7,6 +7,7 @@ import jiu1 from '../assets/jiu1-dePe.png'
 import jiu2 from '../assets/jiu2-pernaAberta.png'
 import jiu3 from '../assets/jiu3-kimono.png'
 import jiu4 from '../assets/jiu5-luta.png'
+import MyButton from '../components/MyButton'
 
 const Cadaster = () => {
 
@@ -89,7 +90,7 @@ const Cadaster = () => {
                     <div className="content-cadaster">
                         <span>Cadastro</span>
                         <div className="button-label-container">
-                            <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Nome</label>
+                            <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Nome completo</label>
                             <MyInput
                                 id="nome"
                                 onChange={(e) => setValueNome(e.target.value)}
@@ -103,7 +104,7 @@ const Cadaster = () => {
                                 fontSize= "2.4vh"
                                 border= "solid .3vh black"
                                 borderBottom="solid .3vh black"
-                                borderRadius='.9vh'
+                                borderRadius='.6vh'
                                 backgroundColor="transparent"
                                 transition= ".4s"
                                 enter= "transparent"
@@ -122,7 +123,7 @@ const Cadaster = () => {
                                 fontSize= "2.4vh"
                                 border= "solid .3vh black"
                                 borderBottom="solid .3vh black"
-                                borderRadius='.9vh'
+                                borderRadius='.6vh'
                                 background-color= "transparent"
                                 transition= ".4s"
                                 enter= "transparent"
@@ -131,7 +132,7 @@ const Cadaster = () => {
                         </div>
 
                         <div className="button-label-container">
-                            <label className={focusNomeResp ? "labelFocusedNomeResp" : "labelNotFocusedNomeResp"} htmlFor='nomeResp'>Nome do responsável</label>
+                            <label className={focusNomeResp ? "labelFocusedNomeResp" : "labelNotFocusedNomeResp"} htmlFor='nomeResp'>Nome completo do responsável</label>
                             <MyInput
                                 id="nomeResp"
                                 onChange={(e) => setValueNomeResp(e.target.value)}
@@ -145,7 +146,7 @@ const Cadaster = () => {
                                 fontSize= "2.4vh"
                                 border= "solid .3vh black"
                                 borderBottom="solid .3vh black"
-                                borderRadius='.9vh'
+                                borderRadius='.6vh'
                                 background-color= "transparent"
                                 transition= ".4s"
                                 enter= "transparent"
@@ -168,7 +169,7 @@ const Cadaster = () => {
                                 fontSize= "2.4vh"
                                 border= "solid .3vh black"
                                 borderBottom="solid .3vh black"
-                                borderRadius='.9vh'
+                                borderRadius='.6vh'
                                 background-color= "transparent"
                                 transition= ".4s"
                                 enter= "transparent"
@@ -176,7 +177,25 @@ const Cadaster = () => {
                                 />
                         </div>
 
-                        <button>Registrar</button>
+                        <MyButton
+                            width= "45%"
+                            height= "8%"
+                            padding="1vh"
+                            cursor= "pointer"
+                            fontSize= "2.5vh"
+                            fontWeight= "bold"
+                            background-color= "rgba(255, 0, 0, 0.3)"
+                            border= ".3vh black solid"
+                            borderBottom= ".3vh black solid"
+                            borderRadius=".6vh"
+                            transition= ".3s"
+                            children="Enviar"
+                            enter="rgba(255, 0, 0, 0.5)"
+                            leave="rgba(255, 0, 0, 0.3)"
+                        />
+                    <div className="redirect-login">
+                        <span className='question'>Já é aluno?<a href='/login'>Entrar.</a></span>
+                    </div>
                     </div>
                 </div>
             </div>

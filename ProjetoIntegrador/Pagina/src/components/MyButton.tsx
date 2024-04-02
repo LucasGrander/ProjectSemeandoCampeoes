@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './MyButton.css'
 
 interface Props{
-    onClick: () => void;
+    onClick?: () => void;
 
     className?: string;
     enter?: string;
