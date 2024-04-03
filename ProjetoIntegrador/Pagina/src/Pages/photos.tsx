@@ -1,6 +1,8 @@
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import './photos.css'
 import ImagemTemporaria from '../assets/temporaria-image.jpg'
+import PSCC from '../assets/PSCC.jpeg'
+import PSCLP from '../assets/PSCLP.jpeg'
 
 const Photos = () => {
     return(
@@ -20,25 +22,25 @@ const Photos = () => {
             <div className="container-photos">
                 <div className="box-ct">
                     <div className="box-photo-ct">
-                        <img src={ImagemTemporaria} alt='imagem do ct'></img>
+                        <img src={PSCC} alt='imagem do ct'></img>
                         <button className='photo-btn' >Fotos</button>
                     </div>
                     <div className="name-ct">
-                            <span>Nome do CT</span>
+                            <span>CT Centro</span>
                             <p>Atualizado:</p>
-                            <p>28/04/202</p>
+                            <p>03/04/2024</p>
                         </div>
                 </div>
 
                 <div className="box-ct">
                     <div className="box-photo-ct">
-                        <img src={ImagemTemporaria} alt='imagem do ct'></img>
+                        <img src={PSCLP} alt='imagem do ct'></img>
                         <button className='photo-btn'>Fotos</button>
                     </div>
                     <div className="name-ct">
-                            <span>Nome do CT</span>
+                            <span>CT Lar Paraná</span>
                             <p>Atualizado:</p>
-                            <p>28/04/202</p>
+                            <p>03/04/2024</p>
                         </div>
                 </div>
 
@@ -48,26 +50,15 @@ const Photos = () => {
                         <button className='photo-btn' >Fotos</button>
                     </div>
                     <div className="name-ct">
-                            <span>Nome do CT</span>
+                            <span>CT Iretama</span>
                             <p>Atualizado:</p>
-                            <p>28/04/202</p>
-                        </div>
-                </div>
-
-                <div className="box-ct">
-                    <div className="box-photo-ct">
-                        <img src={ImagemTemporaria} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
-                    </div>
-                    <div className="name-ct">
-                            <span>Nome do CT</span>
-                            <p>Atualizado:</p>
-                            <p>28/04/202</p>
+                            <p>Pendente</p>
                         </div>
                 </div>
             </div>
-            <div className="bottom-photos">
-                <span>Campeonatos</span>
+            <div className="title-photos">
+                <span>Copa Semeando Campeões</span>
+                
             </div>
     </div>
   )
