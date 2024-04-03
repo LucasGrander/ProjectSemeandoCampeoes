@@ -46,6 +46,7 @@ const Cadaster = () => {
     }
 
     const [valueNomeResp, setValueNomeResp] = useState("")
+    
 //telefone focus
     const [focusTelefone, setFocusTelefone] = useState(false)
 
@@ -65,8 +66,8 @@ const Cadaster = () => {
     const [valueTelefone, setValueTelefone] = useState<string>('');
 
     function formatarTelefone(valueTelefone: string): string {
-        const apenasDigitos = valueTelefone.replace(/\D/g, ''); // Remove all non-numeric characters
-        const onlyNums = /^(\d{2})(\d{2})(\d{1})(\d{4})(\d{4})$/; // Regex for a phone number with country code, area code, etc.
+        const apenasDigitos = valueTelefone.replace(/\D/g, ''); 
+        const onlyNums = /^(\d{2})(\d{2})(\d{1})(\d{4})(\d{4})$/; 
 
         if (onlyNums.test(apenasDigitos)) {
             const [, brasil, ddd, fixedNum, prefixe, sulfixe] = apenasDigitos.match(onlyNums)!;
