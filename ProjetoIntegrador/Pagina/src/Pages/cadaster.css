@@ -214,7 +214,7 @@
     box-shadow: .2vh .2vh 2vh rgba(0, 0, 0, 0.500);
 }
 
-.page-cadaster .container-cadaster .content-cadaster span{
+.page-cadaster .container-cadaster .content-cadaster .title-cadaster{
     color: red;
     -webkit-text-stroke: .2vh black;
     text-shadow: .2vh .3vh 0vh rgba(255, 0, 0, 0.5);
@@ -262,6 +262,8 @@
 .labelFocusedNomeResp,
 .labelFocusedTelefone,
 .labelFocusedDate{
+    z-index: 3;
+    left: 100%;
     transform:translateY(-120%);
     font-weight: 600;
     font-size: 1.9vh;

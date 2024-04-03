@@ -11,6 +11,7 @@ import tel from '../assets/telephone.svg'
 import responsavel from '../assets/responsavel.svg'
 import username from '../assets/userNOME.svg'
 import MyButton from '../components/MyButton'
+import MyPhoneButton from '../components/MyPhoneButton'
 
 const Cadaster = () => {
 //nome focus
@@ -46,42 +47,6 @@ const Cadaster = () => {
     }
 
     const [valueNomeResp, setValueNomeResp] = useState("")
-    
-//telefone focus
-    const [focusTelefone, setFocusTelefone] = useState(false)
-
-    const handleFocusedTelefone = () => {
-        setFocusTelefone(true)
-        
-    }
-    const handleNotFocusedTelefone = () => {
-        if(valueTelefone.trim() == ""){
-            setFocusTelefone(false)
-        }
-        else{
-            setFocusTelefone(true)
-        }
-    }
-
-    const [valueTelefone, setValueTelefone] = useState<string>('');
-
-    function formatarTelefone(valueTelefone: string): string {
-        const apenasDigitos = valueTelefone.replace(/\D/g, ''); 
-        const onlyNums = /^(\d{2})(\d{2})(\d{1})(\d{4})(\d{4})$/; 
-
-        if (onlyNums.test(apenasDigitos)) {
-            const [, brasil, ddd, fixedNum, prefixe, sulfixe] = apenasDigitos.match(onlyNums)!;
-            const telefoneFormatado = `+${brasil} (${ddd}) ${fixedNum} ${prefixe} - ${sulfixe}`;
-            return telefoneFormatado;
-        }
-        return valueTelefone.replace(/\D/g, '')
-    }
-
-    const handleTelefoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const novoValorTelefone = event.target.value;
-        const telefoneFormatado = formatarTelefone(novoValorTelefone);
-        setValueTelefone(telefoneFormatado);
-    };
 
     return(
         <div className="page-cadaster">
@@ -111,7 +76,7 @@ const Cadaster = () => {
                 </div>
                 <div className="container-cadaster">
                     <div className="content-cadaster">
-                        <span>Cadastro</span>
+                        <span className='title-cadaster' >Cadastro</span>
                         <div className="button-label-container">
                             <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Nome completo</label>
                             <MyInput
@@ -156,6 +121,14 @@ const Cadaster = () => {
                         </div>
 
                         <div className="button-label-container">
+                        <label className={"labelFocusedTelefone"} htmlFor='telefone'>Número de telefone</label>
+                            <MyPhoneButton
+                            
+                            />
+                                <img src={tel}></img>
+                        </div>
+
+                        <div className="button-label-container">
                             <label className={focusNomeResp ? "labelFocusedNomeResp" : "labelNotFocusedNomeResp"} htmlFor='nomeResp'>Nome completo do responsável</label>
                             <MyInput
                                 id="nomeResp"
@@ -177,32 +150,6 @@ const Cadaster = () => {
                                 leave= "transparent"
                             />
                             <img src={responsavel}></img>
-                        </div>
-
-                        <div className="button-label-container">
-                        <label className={focusTelefone ? "labelFocusedTelefone" : "labelNotFocusedTelefone"} htmlFor='telefone'>Telefone</label>
-                            <MyInput
-                                id="telefone"
-                                value={valueTelefone}
-                                maxlenght={14}
-                                onChange={handleTelefoneChange}
-                                onFocus={handleFocusedTelefone}
-                                onBlur={handleNotFocusedTelefone}
-                                className={focusTelefone ? "focusedTelefone" : "notFocusedTelefone"}
-                                type='text'
-                                width= "90%"
-                                height= "100%"
-                                padding="0vh 8vh 0vh 2.5vh"
-                                fontSize= "2.4vh"
-                                border= "solid .3vh black"
-                                borderBottom="solid .3vh black"
-                                borderRadius='.6vh'
-                                background-color= "transparent"
-                                transition= ".4s"
-                                enter= "transparent"
-                                leave= "transparent"
-                                />
-                                <img src={tel}></img>
                         </div>
 
                         <MyButton
