@@ -133,8 +133,10 @@ const Historico = ({id}: Props) => {
               Em 10 de março a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa.
 
               <h2>Competições e Resultados em 2024:</h2>
-              Em 10 de março a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa com 17 atletas, resultando em 15 medalhas:<br></br>
-
+              Em 10 de março a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa com 17 atletas, resultando em 16 medalhas:<br></br>
+              Ouro: 06<br></br>
+              Prata: 08<br></br>
+              Bronze: 02<br></br>
 
               </p>
             </div>

@@ -8,9 +8,7 @@
 .content{
     width: 100%;
     height: auto;
-
     display: flex;
-    align-items: center;
 }
 
 .content .box span{
@@ -43,7 +41,6 @@
     width: 30vh;
     height: 30vh;
     border-radius: 50%;
-
     box-shadow: 0vh .4vh .9vh rgba(0, 0, 0, 0.9);
 }
 
@@ -52,6 +49,9 @@
 }
 .dionata{
     border: solid .8vh rgb(93, 49, 15);
+}
+.Daniel{
+    border: solid .8vh black;
 }
 
 .box-info{
@@ -64,4 +64,6 @@
 .box-info span{
     text-align: center;
 }
-
+.box-info p{
+    text-align: justify;
+}
