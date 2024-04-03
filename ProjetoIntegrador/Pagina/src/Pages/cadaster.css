@@ -245,6 +245,19 @@
     justify-content: center;
 }
 
+.page-cadaster .container-cadaster .content-cadaster .button-label-container img{
+    position: absolute;
+    width: 3.5vh;
+    height: 3.5vh;
+    top: 30%;
+    right: 8%;
+    cursor: text;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .labelFocusedNome,
 .labelFocusedNomeResp,
 .labelFocusedTelefone,

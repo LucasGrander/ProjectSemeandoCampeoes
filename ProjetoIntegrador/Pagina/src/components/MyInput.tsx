@@ -6,6 +6,7 @@ interface Props{
     onClick?: () => void;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+    maxlenght?: number;
     type?: string;
     value?: string;
     id?: string;
@@ -33,7 +34,7 @@ interface Props{
     transition?: string;
 }
 
-const MyInput = ({id, className, enter, leave, onClick, onChange, onFocus, onBlur, type, value, width, height, cursor, display, justifyContent, alignItems, border, borderBottom, borderRadius, padding, fontSize, boxShadow, fontWeight, transition, }: Props) => {
+const MyInput = ({id, className, enter, leave, onClick, onChange, onFocus, onBlur, type, value, width, height, cursor, display, justifyContent, alignItems, border, borderBottom, borderRadius, padding, fontSize, boxShadow, fontWeight, transition, maxlenght, }: Props) => {
 
     const [hover, setHover] = useState(false)
         const handleMouseEnter = () => {
@@ -45,10 +46,11 @@ const MyInput = ({id, className, enter, leave, onClick, onChange, onFocus, onBlu
         }
         
 
-    const estiloInput: React.CSSProperties = {width, height, cursor, display, justifyContent, alignItems, backgroundColor: hover ? enter : leave, border, borderBottom, borderRadius, padding, fontSize, boxShadow, fontWeight, transition,}
+    const estiloInput: React.CSSProperties = {width, height, cursor, display, justifyContent, alignItems, backgroundColor: hover ? enter : leave, border, borderBottom, borderRadius, padding, fontSize, boxShadow, fontWeight, transition, }
 
     return(
         <input
+        maxLength={maxlenght}
         onFocus={onFocus}
         onBlur={onBlur}
         id={id}
@@ -57,6 +59,7 @@ const MyInput = ({id, className, enter, leave, onClick, onChange, onFocus, onBlu
         style={estiloInput}
         type={type}
         onChange={onChange}
+        onClick={onClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         />

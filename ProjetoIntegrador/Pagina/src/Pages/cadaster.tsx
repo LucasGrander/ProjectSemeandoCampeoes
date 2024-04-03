@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {  useState } from 'react'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import MyInput from '../components/MyInput'
 import './cadaster.css'
@@ -7,8 +7,10 @@ import jiu1 from '../assets/jiu1-dePe.png'
 import jiu2 from '../assets/jiu2-pernaAberta.png'
 import jiu3 from '../assets/jiu3-kimono.png'
 import jiu4 from '../assets/jiu5-luta.png'
+import tel from '../assets/telephone.svg'
+import responsavel from '../assets/responsavel.svg'
+import username from '../assets/userNOME.svg'
 import MyButton from '../components/MyButton'
-
 const Cadaster = () => {
 
 //nome focus
@@ -59,8 +61,22 @@ const Cadaster = () => {
             setFocusTelefone(true)
         }
     }
-    
+
+    //formatando o numero de telefone de forma automática
     const [valueTelefone, setValueTelefone] = useState("")
+
+        if (valueTelefone.length == 13) {
+            const brasil = valueTelefone.slice(0, 2);
+            const ddd = valueTelefone.slice(2, 4);
+            const fixedNum = valueTelefone.slice(4, 5);
+            const prefixe = valueTelefone.slice(5, 9);
+            const sulfixe = valueTelefone.slice(9, 13);
+    
+            const telefoneFormatado = `+${brasil} (${ddd}) ${fixedNum} ${prefixe} - ${sulfixe}`;
+            setValueTelefone(telefoneFormatado)
+        }
+    
+    
     return(
         <div className="page-cadaster">
             <header>
@@ -100,7 +116,7 @@ const Cadaster = () => {
                                 type='text'
                                 width= "90%"
                                 height= "100%"
-                                padding="2vh"
+                                padding="0vh 8vh 0vh 2.5vh"
                                 fontSize= "2.4vh"
                                 border= "solid .3vh black"
                                 borderBottom="solid .3vh black"
@@ -110,6 +126,7 @@ const Cadaster = () => {
                                 enter= "transparent"
                                 leave= "transparent"
                             />
+                            <img src={username}></img>
                         </div>
 
                         <div className="button-label-container">
@@ -119,7 +136,7 @@ const Cadaster = () => {
                                 type='date'
                                 width= "90%"
                                 height= "100%"
-                                padding="2vh"
+                                padding="2.5vh"
                                 fontSize= "2.4vh"
                                 border= "solid .3vh black"
                                 borderBottom="solid .3vh black"
@@ -142,7 +159,7 @@ const Cadaster = () => {
                                 type='text'
                                 width= "90%"
                                 height= "100%"
-                                padding="2vh"
+                                padding="0vh 8vh 0vh 2.5vh"
                                 fontSize= "2.4vh"
                                 border= "solid .3vh black"
                                 borderBottom="solid .3vh black"
@@ -152,20 +169,23 @@ const Cadaster = () => {
                                 enter= "transparent"
                                 leave= "transparent"
                             />
+                            <img src={responsavel}></img>
                         </div>
 
                         <div className="button-label-container">
                         <label className={focusTelefone ? "labelFocusedTelefone" : "labelNotFocusedTelefone"} htmlFor='telefone'>Telefone</label>
                             <MyInput
                                 id="telefone"
+                                value={valueTelefone}
+                                maxlenght={13}
                                 onChange={(e) => setValueTelefone(e.target.value)}
                                 onFocus={handleFocusedTelefone}
                                 onBlur={handleNotFocusedTelefone}
                                 className={focusTelefone ? "focusedTelefone" : "notFocusedTelefone"}
-                                type='tel'
+                                type='text'
                                 width= "90%"
                                 height= "100%"
-                                padding="2vh"
+                                padding="0vh 8vh 0vh 2.5vh"
                                 fontSize= "2.4vh"
                                 border= "solid .3vh black"
                                 borderBottom="solid .3vh black"
@@ -175,6 +195,7 @@ const Cadaster = () => {
                                 enter= "transparent"
                                 leave= "transparent"
                                 />
+                                <img src={tel}></img>
                         </div>
 
                         <MyButton
