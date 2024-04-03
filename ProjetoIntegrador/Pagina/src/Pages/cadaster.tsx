@@ -11,8 +11,8 @@ import tel from '../assets/telephone.svg'
 import responsavel from '../assets/responsavel.svg'
 import username from '../assets/userNOME.svg'
 import MyButton from '../components/MyButton'
-const Cadaster = () => {
 
+const Cadaster = () => {
 //nome focus
     const [focusNome, setFocusNome] = useState(false)
 
@@ -62,23 +62,29 @@ const Cadaster = () => {
         }
     }
 
-    //formatando o numero de telefone de forma automática
-    const [valueTelefone, setValueTelefone] = useState("")
+    const [valueTelefone, setValueTelefone] = useState<string>('');
 
-        if (valueTelefone.length == 13) {
-            const brasil = valueTelefone.slice(0, 2);
-            const ddd = valueTelefone.slice(2, 4);
-            const fixedNum = valueTelefone.slice(4, 5);
-            const prefixe = valueTelefone.slice(5, 9);
-            const sulfixe = valueTelefone.slice(9, 13);
-    
+    function formatarTelefone(valueTelefone: string): string {
+        const apenasDigitos = valueTelefone.replace(/\D/g, ''); // Remove all non-numeric characters
+        const onlyNums = /^(\d{2})(\d{2})(\d{1})(\d{4})(\d{4})$/; // Regex for a phone number with country code, area code, etc.
+
+        if (onlyNums.test(apenasDigitos)) {
+            const [, brasil, ddd, fixedNum, prefixe, sulfixe] = apenasDigitos.match(onlyNums)!;
             const telefoneFormatado = `+${brasil} (${ddd}) ${fixedNum} ${prefixe} - ${sulfixe}`;
-            setValueTelefone(telefoneFormatado)
+            return telefoneFormatado;
         }
-    
-    
+        return valueTelefone.replace(/\D/g, '')
+    }
+
+    const handleTelefoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const novoValorTelefone = event.target.value;
+        const telefoneFormatado = formatarTelefone(novoValorTelefone);
+        setValueTelefone(telefoneFormatado);
+    };
+
     return(
         <div className="page-cadaster">
+            
             <header>
                 <div className="logo">
                     <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
@@ -177,8 +183,8 @@ const Cadaster = () => {
                             <MyInput
                                 id="telefone"
                                 value={valueTelefone}
-                                maxlenght={13}
-                                onChange={(e) => setValueTelefone(e.target.value)}
+                                maxlenght={14}
+                                onChange={handleTelefoneChange}
                                 onFocus={handleFocusedTelefone}
                                 onBlur={handleNotFocusedTelefone}
                                 className={focusTelefone ? "focusedTelefone" : "notFocusedTelefone"}
