@@ -61,13 +61,14 @@ const Home = () => {
                 justifyContent="space-evenly"
                 alignItems="center"
                 border="solid .3vh black"
-                borderBottom="solid .3vh black"
-                borderRadius="2vh"
+                borderBottom="solid .7vh black"
+                borderRadius=".4vh"
                 fontSize="2.5vh"
-                fontWeight="600"
+                fontWeight="700"
                 transition=".4s"
-                leave="rgba(213, 213, 213, 0.659)"
-                enter="rgba(224, 224, 224, 0.215)"
+                boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, .9)"
+                enter="rgba(224, 224, 224, 1)"
+                leave="white"
                 >
                     Galeria de fotos <img src={Camera} alt='camera de foto' />
             </MyButton>
@@ -81,13 +82,14 @@ const Home = () => {
                 justifyContent="space-evenly"
                 alignItems="center"
                 border="solid .3vh black"
-                borderBottom="solid .3vh black"
-                borderRadius="2vh"
-                fontSize="2.7vh"
-                fontWeight="600"
+                borderBottom="solid .7vh black"
+                borderRadius=".4vh"
+                fontSize="2.5vh"
+                fontWeight="700"
                 transition=".4s"
-                leave="rgba(213, 213, 213, 0.659)"
-                enter="rgba(224, 224, 224, 0.215)"
+                boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, .9)"
+                enter="rgba(224, 224, 224, 1)"
+                leave="white"
                 >
                     Participe!<img src={HandShake} alt='aperto de mãos' />
             </MyButton>

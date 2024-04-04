@@ -26,8 +26,8 @@
 }
 
 .content-ct .boxes .imag-ct img{
-    width: 20vh;
-    height: 20vh;
+    width: 30vh;
+    height: 30vh;
 
     border-radius: 2vh;
 }
@@ -38,10 +38,17 @@
 }
 
 .content-ct .boxes .adress h2{
+    letter-spacing: .2vh;
     font-size: 4vh;
+}
+
+.content-ct .boxes .adress h3{
+    font-size: 2.4vh;
+    font-weight: 600;
 }
 
 .content-ct .boxes .adress span{
     font-size: 2vh;
-    font-weight: 400;
+    letter-spacing: .1vh;
+    font-weight: 500;
 }

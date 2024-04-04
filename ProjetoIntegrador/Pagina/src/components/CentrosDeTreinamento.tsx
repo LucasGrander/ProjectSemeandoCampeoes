@@ -33,7 +33,7 @@ const CentrosDeTreinamento = ({id}: Props) => {
                 <div className="adress">
                     <h2>CT Lar Paraná</h2>
                     <h3>Associação de Moradores do Lar Paraná</h3>
-                    <span>Rua Duque de Caxias, esquina com a Rua Shuhei Uetsuka Apolonia Staniszewski</span>
+                    <span>Rua Duque de Caxias, esquina com a Rua Shuhei Uetsuka</span>
                     <span>Jardim Lar Paraná, Campo Mourão - PR</span>
                     <span>CEP 87305-120</span>
                 </div>
