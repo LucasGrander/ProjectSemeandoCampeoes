@@ -65,9 +65,9 @@ const Home = () => {
                 borderRadius=".4vh"
                 fontSize="2.5vh"
                 fontWeight="700"
-                transition=".4s"
-                boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, .9)"
-                enter="rgba(224, 224, 224, 1)"
+                transition=".3s"
+                boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
+                enter="rgba(150, 150, 150, 0.8)"
                 leave="white"
                 >
                     Galeria de fotos <img src={Camera} alt='camera de foto' />
@@ -86,9 +86,9 @@ const Home = () => {
                 borderRadius=".4vh"
                 fontSize="2.5vh"
                 fontWeight="700"
-                transition=".4s"
-                boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, .9)"
-                enter="rgba(224, 224, 224, 1)"
+                transition=".3s"
+                boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
+                enter="rgba(150, 150, 150, 0.8)"
                 leave="white"
                 >
                     Participe!<img src={HandShake} alt='aperto de mãos' />
@@ -113,7 +113,7 @@ const Home = () => {
                     borderBottom= ".6vh black solid"
                     transition= ".4s"
                     children="Instrutores"
-                    enter={content == "instrutores" ? "black" : "rgba(85, 85, 85, 0.25)"}
+                    enter={content == "instrutores" ? "black" : "rgba(85, 85, 85, 0.55)"}
                     leave={content == "instrutores" ? "black" : "transparent"}
                 />
 
@@ -131,7 +131,7 @@ const Home = () => {
                     borderBottom= ".6vh black solid"
                     transition= ".4s"
                     children="Centros de treinamento"
-                    enter={content == "cts" ? "black" : "rgba(85, 85, 85, 0.25)"}
+                    enter={content == "cts" ? "black" : "rgba(85, 85, 85, 0.55)"}
                     leave={content == "cts" ? "black" : "transparent"}
                 />
 
@@ -149,7 +149,7 @@ const Home = () => {
                     borderBottom= ".6vh black solid"
                     transition= ".4s"
                     children="Histórico"
-                    enter={content == "histórico" ? "black" : "rgba(85, 85, 85, 0.25)"}
+                    enter={content == "histórico" ? "black" : "rgba(85, 85, 85, 0.55)"}
                     leave={content == "histórico" ? "black" : "transparent"}
                 />
 

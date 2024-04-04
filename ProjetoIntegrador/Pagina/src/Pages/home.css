@@ -59,17 +59,20 @@ header .redes-sociais{
 }
 
 header .redes-sociais img{
-    width: 7vh;
-    height: 7vh;
+    width: 7.5vh;
+    height: 7.5vh;
     transition: .4s;
+    filter: grayscale(100%);
+    transform: scale(.95);
 }
-header .redes-sociais .youtube{
-    width: 8.5vh;
-    height: 8.5vh;
+header .redes-sociais a{
+    width: 7.5vh;
+    height: 7.5vh;
+    transition: .4s;
 }
 
 header .redes-sociais img:hover{
-    filter: drop-shadow(.2vh .25vh 0vh white);
+    filter: drop-shadow(.2vh .2vh 0vh white);
     transform: scale(1.05);
     transition: .2s;
 }
@@ -90,13 +93,16 @@ header .login-acess img{
     width: 8.5vh;
     height: 8.5vh;
     padding: 1.5vh;
+    
     border-radius: 50%;
-    transition: .4s;
+    transition: .3s;
+    background-color: #53535365;
 }
 
 header .login-acess img:hover{
-    transition: .2s;
-    background-color: #ffffff38;
+    transform:rotate(360deg);
+    transition: .4s;
+    background-color: #535353;
 }
 
 
@@ -165,6 +171,9 @@ nav button:hover img{
 .infos{
     width: 86.8%;
     height: 97vh;
+
+    box-shadow: 0vh 0.4vh 1vh black;
+    margin-bottom: 5vh;
 
     background-color: #cccccc3f;
     overflow: auto;
