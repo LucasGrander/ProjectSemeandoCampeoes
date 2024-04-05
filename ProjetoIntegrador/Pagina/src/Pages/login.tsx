@@ -1,98 +1,157 @@
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
-import MyButton from "../components/MyButton";
 import MyInput from "../components/MyInput";
-import Logo from "../assets/LogoSemeandoCampeoes.png";
+import LogoSemeandoCampeoes from "../assets/LogoSemeandoCampeoes.png";
 import './login.css'
+import MyButton from "../components/MyButton";
+import blockICON from '../assets/lockIcon.svg'
+import userICON from '../assets/userIconLogin.svg'
+import designLogin from '../assets/designForLogin.svg'
 
 function Login (){
-    const [user, setUser] = useState("");
-    const [user2, setUser2] = useState("");
-    const [password, setPassword] = useState("");
-    const [password2, setPassword2] = useState("");
-    const [LoginFail, setLoginFail] = useState(false);
 
-    const handleUserOnChange1 = (e: ChangeEvent<HTMLInputElement>) => {
-        setUser(e.target.value)
+    const [user, setUser] = useState("")
+    const [password, setPassword] = useState("")
+    const [focusUser, setFocusUser] = useState(false)
+    const [focusPassW, setFocusPassW] = useState(false)
+
+    const handleFocusUser = () => {
+        setFocusUser(true)
     }
-    const handlePasswordOnChange1 = (e: ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value)
-    }
-    const handleUserOnChange2 = (e: ChangeEvent<HTMLInputElement>) => {
-        setUser2(e.target.value)
-    }
-    const handlePasswordOnChange2 = (e: ChangeEvent<HTMLInputElement>) => {
-        setPassword2(e.target.value)
-    }
-    const handleOnClick1 = () => {
-        if(user === "Ricardo" && password === "1234"){
-            alert ("seja bem vindo!");
-            // navigate("/to-do-list");
-        }else{
-            setLoginFail(true);
-            setUser("");
-            setPassword("");
-            alert("Usuário ou senha incorreto!");
-            setLoginFail(false);
+    const handleNotFocusUser = () => {
+        if(user.trim() != ""){
+            setFocusUser(true)
         }
+        else(
+            setFocusUser(false)
+        )
     }
-    const handleOnClick2 = () => {
-        if(user2 === "Ricardo" && password2 === "1234"){
-            alert ("seja bem vindo!");
-            // navigate("/to-do-list");
-        }else{
-            setLoginFail(true);
-            setUser2("");
-            setPassword2("");
-            alert("Usuário ou senha incorreto!");
-            setLoginFail(false);
+
+    const handleFocusPassW = () => {
+        setFocusPassW(true)
+    }
+    const handleNotFocusPassW = () => {
+        if(password.trim() != ""){
+            setFocusPassW(true)
         }
+        else(
+            setFocusPassW(false)
+        )
     }
 
 return (
     <>
-        <div className="container">
-            <div className="imagem">
-                <img src={Logo} alt="Logo" className="logo"/>
+    <div className="page-login">
+        <header>
+            <div className="logo">
+                <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
             </div>
-            <div className='Login'>
-                <div className="Instrutores"><h1><a>INSTRUTORES</a></h1>
-                    <MyInput 
-                    type='text' 
-                    placeHolder='Login'
-                    bgColor="white" 
-                    onChange={handleUserOnChange1}
-                    value={LoginFail ? " " : user}
+            <div className="title">
+                <h1>Semeando Campeões</h1>
+            </div>
+        </header>
+
+        <div className="container-login">
+            <div className="login-professores">
+                <img className="design-type-wifi-top" src={designLogin}></img>
+                <img className="design-type-wifi-bottom" src={designLogin}></img>
+                <span>Professor</span>
+
+                <div className="user-box-professor">
+                    <label className={focusUser ? "focusOn" : "focusOff"} htmlFor="userProfessor">Nome de usuário</label>
+                    <MyInput
+                        id="userProfessor"
+                        onChange={(e) => setUser(e.target.value)}
+                        onFocus={handleFocusUser}
+                        onBlur={handleNotFocusUser}
+                        type='text'
+                        width= "85%"
+                        height= "100%"
+                        fontSize= "2.4vh"
+                        fontWeight= "500"
+                        border= "solid .3vh black"
+                        borderBottom= ".3vh black solid"
+                        borderRadius=".6vh"
+                        padding="0vh 7vh 0vh 2vh"
+                        transition= ".3s"
+                        background-color= "transparent"
                     />
-                    <MyInput 
-                    type='Password' 
-                    placeHolder='Senha' 
-                    bgColor="white" 
-                    onChange={handlePasswordOnChange1}
-                    value={LoginFail ? " " : password}
-                    />
-                    <MyButton onClick={handleOnClick1}>Logar</MyButton>
+                        <img src={userICON}></img>
                 </div>
-                <br></br>
-                <div className="Alunos"><h1><a>ALUNOS</a></h1>
-                    <MyInput 
-                    type='text' 
-                    placeHolder='Login'
-                    bgColor="white" 
-                    onChange={handleUserOnChange2}
-                    value={LoginFail ? " " : user2}
+                
+                <div className="user-box-professor">
+                <label className={focusPassW ? "focusOn" : "focusOff"} htmlFor="passwordProf">Senha</label>
+                    <MyInput
+                        id="passwordProf"
+                        onChange={(e) => setPassword(e.target.value)}
+                        onFocus={handleFocusPassW}
+                        onBlur={handleNotFocusPassW}
+                        type='text'
+                        width= "85%"
+                        height= "100%"
+                        fontSize= "2.4vh"
+                        fontWeight= "500"
+                        border= "solid .3vh black"
+                        borderBottom= ".3vh black solid"
+                        borderRadius=".6vh"
+                        padding="0vh 7vh 0vh 2vh"
+                        transition= ".3s"
+                        background-color= "transparent"
                     />
-                    <MyInput 
-                    type='Password' 
-                    placeHolder='Senha' 
-                    bgColor="white" 
-                    onChange={handlePasswordOnChange2}
-                    value={LoginFail ? " " : password2}
+                    <img src={blockICON}></img>
+                </div>
+
+                    <MyButton
+                        width= "45%"
+                        height= "8%"
+                        padding="1vh"
+                        cursor= "pointer"
+                        fontSize= "2.5vh"
+                        fontWeight= "bold"
+                        background-color= "rgba(255, 0, 0, 0.3)"
+                        border= ".3vh black solid"
+                        borderBottom= ".3vh black solid"
+                        borderRadius=".6vh"
+                        transition= ".3s"
+                        children="Enviar"
+                        enter="rgba(255, 0, 0, 0.5)"
+                        leave="rgba(255, 0, 0, 0.3)"
                     />
-                    <MyButton onClick={handleOnClick2}>Logar</MyButton>
-                </div>    
+            </div>
+
+            <div className="center-login-page">
+    <span>Professor</span>
+
+                <div className="user-box-professor">
+                    <input id="userProfessor" type="text" />
+                    <label htmlFor="userProfessor">Nome de usuário</label>
+                </div>
+                
+                <div className="password-box-professor">
+                    <input id="passwordProf" type="password" />
+                    <label htmlFor="passwordProf">Senha</label>
+                </div>
+
+                <button>Entrar</button>
+            </div>
+
+            <div className="login-alunos">
+            <span>Professor</span>
+
+                <div className="user-box-aluno">
+                    <input id="userAlunor" type="text" />
+                    <label htmlFor="userAluno">Nome de usuário</label>
+                </div>
+
+                <div className="password-box-aluno">
+                    <input id="passwordAluno" type="password" />
+                    <label htmlFor="passwordAluno">Senha</label>
+                </div>
+
+                <button>Entrar</button>
             </div>
         </div>
+    </div>
     </>
 
 )

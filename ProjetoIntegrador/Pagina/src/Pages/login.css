@@ -1,42 +1,166 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+.page-login{
+    width: 100%;
+    height: 100vh;
 
-.container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+}
+
+.page-login header{
     width: 100%;
-    height: 100vh;
-    gap: 50px;
-}
-.Login{
-    background-color: red;
-    color:black;
-    width: 40%;
-    height: 18%;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
-    border-radius: 5px;
-    padding: 10px;
-}
-.Login .Instrutores{
+    height: 18vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    
     background-color: black;
+    border-bottom: solid .8vh rgb(255, 0, 0);
+}
+
+.page-login header .logo{
+    width: 15%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.page-login header .logo img{
+    width: 17vh;
+    height: 17vh;
+    margin-left: 9vh;
+}
+
+.page-login header .title{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    letter-spacing: 1vh;
+    word-spacing: 1vh;
+    font-size: 3.5vh;
     color: white;
-    box-sizing: border-box;
-    border-radius: 5px;
+    text-shadow: 0.2vh 0.2vh .4vh rgba(255, 255, 255, 0.567);
 }
-.Login .Alunos{
+
+.page-login .container-login{
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.page-login .container-login .login-professores{
+    width: 30%;
+    height: 100%;
+    gap: 5vh;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    box-shadow: .2vh .2vh 2vh rgba(0, 0, 0, 0.500);
+}
+
+.page-login .container-login .login-professores .design-type-wifi-top{
+    width: 40vh;
+    height: 40vh;
+    z-index: -1;
+
+    opacity: 0.2;
+    transform: rotate(60deg);
+
+    position: absolute;
+    top: -10vh;
+    left: -17vh;
+}
+
+.page-login .container-login .login-professores .design-type-wifi-bottom{
+    width: 40vh;
+    height: 40vh;
+    z-index: -1;
+
+    opacity: 0.2;
+    transform: rotate(230deg);
+
+    position: absolute;
+    top: 60vh;
+    right: -20vh;
+}
+
+.page-login .container-login .login-professores span{
+    color: red;
+    -webkit-text-stroke: .2vh black;
+    text-shadow: .2vh .3vh 0vh rgba(255, 0, 0, 0.5);
+    font-size: 5vh;
+    letter-spacing: 1vh;
+    font-weight: 600;
+}
+
+.page-login .container-login .login-professores .user-box-professor,
+.page-login .container-login .login-professores .password-box-professor{
+    width: 100%;
+    height: 10%;
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.page-login .container-login .login-professores .user-box-professor label,
+.page-login .container-login .login-professores .password-box-professor label{
+    position: absolute;
+    top: 30%;
+    left: 11%;
+
+    font-size: 2.5;
+    cursor: text;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.focusOn{
+    z-index: 3;
+    left: 100%;
+    transform:translateY(-120%);
+    font-weight: 600;
+    font-size: 1.9vh;
+    color: rgb(184, 0, 0);
     background-color: white;
-    color: black;
-    box-sizing: border-box;
-    border-radius: 5px;
+    padding: 0vh 2vh 0vh 2vh;
+    transition: .3s;
 }
-.imagem{
-    text-align: center;
-    box-sizing: border-box;
-    border-radius: 5px;
+
+.focusOff{
+    transform:translateY(0%);
+    font-weight: 500;
+    font-size: 2.2vh;
+    color: rgba(72, 72, 72, 0.86);
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0vh 1vh 0vh 1vh;
+    transition: .3s;
+}
+
+.page-login .container-login .login-professores img{
+    position: absolute;
+    width: 3.5vh;
+    height: 3.5vh;
+    top: 30%;
+    right: 10%;
+    cursor: text;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
