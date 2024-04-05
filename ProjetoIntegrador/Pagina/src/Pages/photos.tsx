@@ -18,11 +18,10 @@ const Photos = () => {
             </div>
             <div className="title">
                 <h1>Semeando Campeões</h1>
+                <span className="subtitle">Galeria de fotos</span>
             </div>
         </header>
-            <div className="title-photos1">
-                <span>Galeria de Fotos</span>
-            </div>
+
             <div className="title-photos">
                 <span>Centros de treinamento</span>
             </div>
@@ -31,7 +30,7 @@ const Photos = () => {
                 <div className="box-ct">
                     <div className="box-photo-ct">
                         <img src={PSCC} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
+                        <button className='photo-btn'>Fotos</button>
                     </div>
                     <div className="name-ct">
                             <span>CT Centro</span>

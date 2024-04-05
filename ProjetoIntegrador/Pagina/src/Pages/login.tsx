@@ -7,9 +7,9 @@ import MyButton from "../components/MyButton";
 import blockICON from '../assets/lockIcon.svg'
 import userICON from '../assets/userIconLogin.svg'
 import designLogin from '../assets/designForLogin.svg'
+import stickmanLogin from '../assets/JiuJitsuStickman.svg'
 
 function Login (){
-
 
     // alterações na parte de Login do professor
     const [userProf, setUserProf] = useState("")
@@ -42,34 +42,59 @@ function Login (){
     }
 
      // alterações na parte de Login do aluno
-     const [userAluno, setUserAluno] = useState("")
-     const [passwordAluno, setPasswordAluno] = useState("")
-     const [focusUserAluno, setFocusUserAluno] = useState(false)
-     const [focusPassWAluno, setFocusPassWAluno] = useState(false)
- 
-     const handleFocusUserAluno = () => {
-         setFocusUserAluno(true)
-     }
-     const handleNotFocusUserAluno = () => {
-         if(userAluno.trim() != ""){
-             setFocusUserAluno(true)
-         }
-         else(
-             setFocusUserAluno(false)
-         )
-     }
- 
-     const handleFocusPassWAluno = () => {
-         setFocusPassWAluno(true)
-     }
-     const handleNotFocusPassWAluno = () => {
-         if(passwordAluno.trim() != ""){
-             setFocusPassWAluno(true)
-         }
-         else(
-             setFocusPassWAluno(false)
-         )
-     }
+    const [userAluno, setUserAluno] = useState("")
+    const [passwordAluno, setPasswordAluno] = useState("")
+    const [focusUserAluno, setFocusUserAluno] = useState(false)
+    const [focusPassWAluno, setFocusPassWAluno] = useState(false)
+
+    const handleFocusUserAluno = () => {
+        setFocusUserAluno(true)
+    }
+    const handleNotFocusUserAluno = () => {
+        if(userAluno.trim() != ""){
+            setFocusUserAluno(true)
+        }
+        else(
+            setFocusUserAluno(false)   
+        )
+    }
+
+    const handleFocusPassWAluno = () => {
+        setFocusPassWAluno(true)
+    }
+    const handleNotFocusPassWAluno = () => {
+        if(passwordAluno.trim() != ""){
+            setFocusPassWAluno(true)
+        }
+        else(
+            setFocusPassWAluno(false)
+        )
+    }
+    const [activeLogin, setActiveLogin] = useState(true)
+
+    const handleOnClickSouProfessor = () =>{
+        setActiveLogin(false)
+    }
+
+    const handleOnClickSouAluno = () =>{
+        setActiveLogin(true)
+    }
+
+    const [mouseOnProf, setMouseOnProf] = useState(false)
+    const handleOnEnterLoginCenterProf = () => {
+        setMouseOnProf(true)
+    }
+    const handleOnLeaveLoginCenterProf = () => {
+        setMouseOnProf(false)
+    }
+    
+    const [mouseOnAluno, setMouseOnAluno] = useState(false)
+    const handleOnEnterLoginCenterAluno = () => {
+        setMouseOnAluno(true)
+    }
+    const handleOnLeaveLoginCenterAluno = () => {
+        setMouseOnAluno(false)
+    }
 
 return (
     <>
@@ -84,7 +109,7 @@ return (
         </header>
 
         <div className="container-login">
-            <div className="login-professores">
+            <div style={{pointerEvents: activeLogin ? "none" : "all", filter: activeLogin ? "grayscale(100%)" : "grayscale(0%)", opacity: activeLogin ? ".4" : "1", transition: "1s"}} className="login-professores">
                 <img className="design-type-wifi-top" src={designLogin}></img>
                 <img className="design-type-wifi-bottom" src={designLogin}></img>
                 <span>Professor</span>
@@ -156,12 +181,35 @@ return (
 
             <div className="center-login-page">
 
+                <div className="top">
+                    <div className="container-change-button">
+                        <div onMouseEnter={handleOnEnterLoginCenterProf} onMouseLeave={handleOnLeaveLoginCenterProf} style={{cursor: "pointer", transform: mouseOnProf ? "scale(1.03)" : "scale(1.0)"}} className="left">
+                            <span onClick={handleOnClickSouProfessor}>Sou professor</span>
+                        </div>
+
+                        <div onMouseEnter={handleOnEnterLoginCenterAluno} onMouseLeave={handleOnLeaveLoginCenterAluno} style={{cursor: "pointer", transform: mouseOnAluno ? "scale(1.03)" : "scale(1.0)"}} className="right">
+                            <span onClick={handleOnClickSouAluno}>Sou aluno</span>
+                        </div>
+                        
+                        <div style={{transform: activeLogin ? "translateX(12vh)" : "translateX(-11.5vh)", transition: ".6s ease-in-out"}} id="change-circle" className="change-circle">
+                        </div>
+                    </div>
+                    <div className="redirect-login">
+                    <span className='question'>Não é aluno?<a href='/participe'>Faça parte!</a></span>
+                </div>
+                </div>
+
+                <div className="bottom">
+                    <div className="conainer-stickman">
+                        <img src={stickmanLogin}></img>
+                    </div>
+                </div>
             </div>
 
 
 
 
-            <div className="login-alunos">
+            <div style={{pointerEvents: activeLogin ? "all" : "none", filter: activeLogin ? "grayscale(0%)" : "grayscale(100%)", opacity: activeLogin ? "1" : ".4", transition: "1s"}} className="login-alunos">
                 <img className="design-type-wifi-top" src={designLogin}></img>
                 <img className="design-type-wifi-bottom" src={designLogin}></img>
                 <span>Aluno</span>
@@ -183,7 +231,7 @@ return (
                         borderRadius=".6vh"
                         padding="0vh 7vh 0vh 2vh"
                         transition= ".3s"
-                        background-color= "transparent"
+                        backgroundColor= "transparent"
                     />
                         <img src={userICON}></img>
                 </div>
@@ -205,7 +253,7 @@ return (
                         borderRadius=".6vh"
                         padding="0vh 7vh 0vh 2vh"
                         transition= ".3s"
-                        background-color= "transparent"
+                        backgroundColor= "transparent"
                     />
                     <img src={blockICON}></img>
                 </div>
@@ -226,9 +274,6 @@ return (
                         enter="rgba(255, 0, 0, 0.5)"
                         leave="rgba(255, 0, 0, 0.3)"
                     />
-                <div className="redirect-login">
-                    <span className='question'>Não é aluno?<a href='/participe'>Faça parte!</a></span>
-                </div>
             </div>
         </div>
     </div>
