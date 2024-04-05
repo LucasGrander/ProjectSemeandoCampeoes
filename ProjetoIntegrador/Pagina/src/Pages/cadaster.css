@@ -292,7 +292,7 @@
     -webkit-text-stroke: 0vh;
     text-shadow: none;
     color: rgb(0, 0, 0);
-    transition: .2s;
+    transition: .1s;
     cursor: pointer;
 }
 
@@ -304,14 +304,14 @@
     -webkit-text-stroke: 0vh;
     text-shadow: none;
     color: rgb(255, 95, 95);
-    transition: .2s;
+    transition: .1s;
     cursor: pointer;
     margin-left: .7vh;
 }
 
 .page-cadaster .container-banner-form .container-cadaster .content-cadaster .redirect-login .question a:hover{
     color: rgb(255, 0, 0);
-    transition: .2s;
+    transition: .1s;
     text-decoration: underline;
 }
 

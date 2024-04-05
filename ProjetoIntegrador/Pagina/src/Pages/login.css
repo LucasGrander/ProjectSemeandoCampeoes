@@ -288,3 +288,33 @@
     align-items: center;
     justify-content: center;
 }
+
+.page-login .container-login .login-alunos .redirect-login .question{
+    font-size: 2vh;
+    letter-spacing: 0vh;
+    font-weight: 400;
+    -webkit-text-stroke: 0vh;
+    text-shadow: none;
+    color: rgb(0, 0, 0);
+    transition: .1s;
+    cursor: pointer;
+}
+
+.page-login .container-login .login-alunos .redirect-login .question a{
+    font-size: 2vh;
+    text-decoration: none;
+    letter-spacing: 0vh;
+    font-weight: 600;
+    -webkit-text-stroke: 0vh;
+    text-shadow: none;
+    color: rgb(255, 95, 95);
+    transition: .1s;
+    cursor: pointer;
+    margin-left: .7vh;
+}
+
+.page-login .container-login .login-alunos .redirect-login .question a:hover{
+    color: rgb(255, 0, 0);
+    transition: .1s;
+    text-decoration: underline;
+}

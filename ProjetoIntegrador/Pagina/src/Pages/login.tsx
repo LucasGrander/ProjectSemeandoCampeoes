@@ -226,6 +226,9 @@ return (
                         enter="rgba(255, 0, 0, 0.5)"
                         leave="rgba(255, 0, 0, 0.3)"
                     />
+                <div className="redirect-login">
+                    <span className='question'>Não é aluno?<a href='/participe'>Faça parte!</a></span>
+                </div>
             </div>
         </div>
     </div>
