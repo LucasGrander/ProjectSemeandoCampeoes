@@ -25,7 +25,7 @@ const Historico = ({id}: Props) => {
               Em 19 de janeiro realizado treino ao ar livre no Parque do Lago das 14h as 16h.<br></br>
               Em 01 de junho realizado treino ao ar livre no Parque do Lago das 14h as 16h.<br></br>
               Em 12 de setembro realizado treino da família nas dependências do EMMoL, das 18h30 as 20h.<br></br>
-              Em 26 de outubro realizada a I Copa Kids Semeando Campeões na quadra de esportes do EMMoL iniciando as 13h30, sendo recebidos aproximadamente 80 atletas de Campo Mourão e região.<br></br>
+              Em 26 de outubro realizada a <a href="https://tvcarajas.tv.br/2019/10/1o-campeonato-semeando-campeoes-foi-realizado-em-campo-mourao/">I Copa Kids</a> Semeando Campeões na quadra de esportes do EMMoL iniciando as 13h30, sendo recebidos aproximadamente 80 atletas de Campo Mourão e região.<br></br>
 
               <h2>Competições e Resultados 2019:</h2>
               Em 14 de abril a equipe levou 10 competidores para a Copa Amizade em Umuarama resultando em 07 medalhas:<br></br>
@@ -48,7 +48,7 @@ const Historico = ({id}: Props) => {
               Treino infantil as segundas e quartas as 18h30 e defesa pessoal para mulheres as 20h30 nas dependências do EMMoL de janeiro a março quando as atividades foram suspensas devido a pandemia de COVID-19.<br></br>
               Treino infantil as segundas e quartas as 18h30 de forma online de março a dezembro, sendo desenvolvidas atividades diversa como “rei do sprow”, “corrida do chocolate”, etc para incentivar as atividades.<br></br>
               Devidos problemas administrativos a diretoria do EMMoL não renovou parceria com o PSC, sendo que em 03 de dezembro foram reiniciadas as aulas presenciais nas segundas e quartas as 18h30, na Academia Life de forma provisória, com exercícios e simulações, utilizando mascara facial e demais cuidados necessários para se prevenir do contágio do COVID-19.<br></br>
-              Em 19 de dezembro foi realizada a II Copa Kids Semeando Campeões na Sede da AMJJ, momento em que os alunos apresentaram um “Kata”, sendo premiados as quatro melhores apresentações com troféus e todas as crianças de forma simbólica com medalhas.<br></br>
+              Em 19 de dezembro foi realizada a <a href = "https://resenhacm.com.br/criancas-e-adolescentes-participam-de-graduacao-anual-e-da-segunda-copa-semeando-campeoes/">II Copa Kids</a> Semeando Campeões na Sede da AMJJ, momento em que os alunos apresentaram um “Kata”, sendo premiados as quatro melhores apresentações com troféus e todas as crianças de forma simbólica com medalhas.<br></br>
 
               <h2>Competições e Resultados 2020:</h2>
               Em 19 de dezembro o PSC mobilizou 12 alunos para a II Copa Kids Semeando Campeões – modalidade Kata, resultando em 03 troféus:<br></br>
@@ -61,6 +61,7 @@ const Historico = ({id}: Props) => {
               Em 15 de maio os treinos de defesa pessoal feminino foram reiniciados, sendo ministradas aulas as 14h nos sábados.<br></br>
               Em 31 de Julho foi realizado o <a href = "https://resenhacm.com.br/projeto-semeando-campeoes-volta-as-atividades-com-treino-arraia/?fbclid=IwAR3mtpEhzEkLEByikNHj8GHZflVuF27uOQT_UeCbP-JWVDM_dmpXaunnocU">I treino Arraiá</a>, reunindo os alunos, sendo utilizadas mascaras e atividades adaptadas as medidas de distanciamento social.<br></br>
               Em 28 de outubro o PSC participou da campanha de arrecadação de roupas, fraudas, leite, etc organizada pelo dojo Uchoa de Judo.
+              Em 
 
               <h2>Competições e Resultados em 2021:</h2>
               Em 20 de novembro a equipe levou 05 competidores para participar da I Copa Brothers de Jiu Jitsu em Iretama:<br></br>
@@ -76,7 +77,7 @@ const Historico = ({id}: Props) => {
               Em 09 de julho realizado um Arraial solidário organizado para receber doações de roupas, calçados e comida que foram doados a famílias necessitadas com o auxílio do Pastor Gustado Daher da PIB. Foram realizas atividades diversas com as crianças, oferecidos quitutes e brinquedos doados pela Super Real Lar.<br></br>
               Em 19 de agosto realizado o “treino da família” nas dependências da AMLP onde foram convidados os pais dos alunos para aprender com seus filhos e realizada a graduação anual.<br></br>
               Em 04 de setembro participação no <a href="https://resenhacm.com.br/atletas-do-projeto-semeando-campeoes-destaques-em-competicoes-de-jiu-jitsu-em-maringa/?fbclid=IwAR2skN6oDZ4Ins-OdUS0CukxpmifVEMp_yifzIuLOksr3Tu9q5nnk_ywnb8">Torneiro Noroeste</a> de Judô, onde participaram 11 alunos ().<br></br>
-              Em 03 de dezembro foi realizada a III Copa Semeando Campeões, nas dependências do Ginásio de Esportes JK em Campo Mourão, com o apoio da FECAM e diversas empresas, onde recebemos aproximadamente 100 atletas de Campo Mourão e região, sendo transmitida ao vivo pela internet na página <a href = "https://www.facebook.com/servicoscmourao/videos/5588217054548901">Serviços Campo Mourão</a>.<br></br>
+              Em 03 de dezembro foi realizada a <a href="https://resenhacm.com.br/copa-semeando-campeoes-kids-de-jiu-jitsu-reuniu-criancas-no-ginasio-jk/">III Copa</a> Semeando Campeões, nas dependências do Ginásio de Esportes JK em Campo Mourão, com o apoio da FECAM e diversas empresas, onde recebemos aproximadamente 100 atletas de Campo Mourão e região, sendo transmitida ao vivo pela internet na página <a href = "https://www.facebook.com/servicoscmourao/videos/5588217054548901">Serviços Campo Mourão</a>.<br></br>
               Em 16 de dezembro houve o encerramento do ano letivo com um evento apresentando lutas casadas entre o Projeto social Brothers BJJ e o PSC, entrega de prêmios aos melhores do ano e confraternização.<br></br>
               <h2>Competições e Resultados em 2022:</h2>
               Em 24 de abril 03 atletas participaram do Campeonato BJJ Cascavel:<br></br>
@@ -105,7 +106,7 @@ const Historico = ({id}: Props) => {
               Em 30 de abril o PSC organiza um “I treinão” de Jiu Jitsu, em parceria com a Gracie Barra/Dojo Uchoa, reunindo todas as equipes de JiuJitsu de Campo Mourão, equipes de Mamborê e Iretama.<br></br>
               Em 16 de maio realizada visita o Tiro de Guerra de Campo Mourão, onde os alunos do PSC conheceram as instalações e conversaram com o comandante e instrutores do TG 05-19. <br></br>
               Em 13 de dezembro houve o encerramento do ano letivo com um evento de Jiu Jitsu sem kimono (GP Semeando Campeões) onde os atletas foram divididos em 4 categorias em formato de “Grand Prix”, participando atletas da Gracie Barra, Norte BJJ e o PSC, entrega de prêmios aos melhores do ano e confraternização.<br></br>
-              Em 16 de dezembro foi realizada a IV Copa Kids Semeando Campeões, onde foram recebidos pouco mais de 100 atletas, familiares e entusiastas da arte suave, sendo transmitida ao vivo pela internet pela página do <a href = "https://www.facebook.com/semeandocampeoes/videos/1415236546093928">Projeto Semeando Campeões</a>, sendo destaque nos <a href = "https://www.tribunadointerior.com.br/campo-mourao/projeto-semeando-campeoes-realizara-iv-copa-kids-de-jiu-jitsu-em-campo-mourao/?fbclid=IwAR2QlKVLkzimW3jSRoDCFJoRjvmAUUUy3pH3PhPaq0QWrmz0-DoEVwYZgrw">meios de comunicações</a>. Durante o evento foram arrecadadas doações de água de coco, café e alimentos para a Santa Casa de Campo Mourão.<br></br>
+              Em 16 de dezembro foi realizada a <a href="https://resenhacm.com.br/sucesso-iv-copa-kids-de-jiu-jitsu-semeando-campeoes-reuniu-mais-de-100-atletas/">meios de comunicações</a>. Durante o evento foram arrecadadas doações de água de coco, café e alimentos para a Santa Casa de Campo Mourão.<br></br>
 
               <h2>Competições e Resultados em 2023:</h2>
               Em 16 de abril, com 17 atletas na 10ª Copa da Amizade Umuarama resultando em 12 medalhas:<br></br>
