@@ -31,6 +31,8 @@
     width: 17vh;
     height: 17vh;
     margin-left: 9vh;
+    border-radius: 50%;
+    border: solid .2vh white;
 }
 
 .page-login header .title{

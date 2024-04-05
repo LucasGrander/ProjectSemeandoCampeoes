@@ -60,6 +60,53 @@ const Photos = () => {
                 <span>Copa Semeando Campeões</span>
                 
             </div>
+            <div className="container-photos">
+                <div className="box-ct">
+                    <div className="box-photo-ct">
+                        <img src={PSCC} alt='imagem do ct'></img>
+                        <button className='photo-btn' >Fotos</button>
+                    </div>
+                    <div className="name-ct">
+                            <span>I COPA KIDS</span>
+                            <p>Quadra de Esportes</p>
+                            <p>Escola Municipal Monteiro Lobato</p>
+                            <p>2019</p>
+                        </div>
+                </div>
+                <div className="box-ct">
+                    <div className="box-photo-ct">
+                        <img src={PSCC} alt='imagem do ct'></img>
+                        <button className='photo-btn' >Fotos</button>
+                    </div>
+                    <div className="name-ct">
+                            <span>II COPA KIDS</span>
+                            <p>Sede do PSC</p>
+                            <p>2021</p>
+                        </div>
+                </div>
+                <div className="box-ct">
+                    <div className="box-photo-ct">
+                        <img src={PSCC} alt='imagem do ct'></img>
+                        <button className='photo-btn' >Fotos</button>
+                    </div>
+                    <div className="name-ct">
+                            <span>III COPA KIDS</span>
+                            <p>Ginasio de Esportes JK</p>
+                            <p>2022</p>
+                        </div>
+                </div>
+                <div className="box-ct">
+                    <div className="box-photo-ct">
+                        <img src={PSCC} alt='imagem do ct'></img>
+                        <button className='photo-btn' >Fotos</button>
+                    </div>
+                    <div className="name-ct">
+                            <span>IV COPA KIDS</span>
+                            <p>Ginasio de Esportes JK</p>
+                            <p>2023</p>
+                        </div>
+                </div>
+            </div>
     </div>
   )
 }
