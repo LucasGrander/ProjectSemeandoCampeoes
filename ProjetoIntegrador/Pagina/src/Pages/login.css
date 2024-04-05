@@ -55,6 +55,8 @@
     justify-self: center;
 }
 
+/* MUDANÇAS NO CONTAINER DO PROFESSOR */
+
 .page-login .container-login .login-professores{
     width: 30%;
     height: 100%;
@@ -153,6 +155,126 @@
 }
 
 .page-login .container-login .login-professores img{
+    position: absolute;
+    width: 3.5vh;
+    height: 3.5vh;
+    top: 30%;
+    right: 10%;
+    cursor: text;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MUDANÇAS NO CONTAINER CENTRAL */
+
+.center-login-page{
+    width: 40%;
+    height: 100%;
+}
+
+
+/* MUDANÇAS NO CONTAINER DE LOGIN DO ALUNO */
+
+.page-login .container-login .login-alunos{
+    width: 30%;
+    height: 100%;
+    gap: 5vh;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    box-shadow: .2vh .2vh 2vh rgba(0, 0, 0, 0.500);
+}
+
+.page-login .container-login .login-alunos .design-type-wifi-top{
+    width: 40vh;
+    height: 40vh;
+    z-index: -1;
+
+    opacity: 0.2;
+    transform: rotate(60deg);
+
+    position: absolute;
+    top: 60%;
+    left: -40%;
+}
+
+.page-login .container-login .login-alunos .design-type-wifi-bottom{
+    width: 40vh;
+    height: 40vh;
+    z-index: -1;
+
+    opacity: 0.2;
+    transform: rotate(230deg);
+
+    position: absolute;
+    top: -10%;
+    right: -20%;
+}
+
+.page-login .container-login .login-alunos span{
+    color: red;
+    -webkit-text-stroke: .2vh black;
+    text-shadow: .2vh .3vh 0vh rgba(255, 0, 0, 0.5);
+    font-size: 5vh;
+    letter-spacing: 1vh;
+    font-weight: 600;
+}
+
+.page-login .container-login .login-alunos .user-box-aluno,
+.page-login .container-login .login-alunos .password-box-aluno{
+    width: 100%;
+    height: 10%;
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.page-login .container-login .login-alunos .user-box-aluno label,
+.page-login .container-login .login-alunos .password-box-aluno label{
+    position: absolute;
+    top: 30%;
+    left: 11%;
+
+    font-size: 2.5;
+    cursor: text;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.focusOn{
+    z-index: 3;
+    left: 100%;
+    transform:translateY(-120%);
+    font-weight: 600;
+    font-size: 1.9vh;
+    color: rgb(184, 0, 0);
+    background-color: white;
+    padding: 0vh 2vh 0vh 2vh;
+    transition: .3s;
+}
+
+.focusOff{
+    transform:translateY(0%);
+    font-weight: 500;
+    font-size: 2.2vh;
+    color: rgba(72, 72, 72, 0.86);
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0vh 1vh 0vh 1vh;
+    transition: .3s;
+}
+
+.page-login .container-login .login-alunos img{
     position: absolute;
     width: 3.5vh;
     height: 3.5vh;

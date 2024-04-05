@@ -10,34 +10,66 @@ import designLogin from '../assets/designForLogin.svg'
 
 function Login (){
 
-    const [user, setUser] = useState("")
-    const [password, setPassword] = useState("")
-    const [focusUser, setFocusUser] = useState(false)
-    const [focusPassW, setFocusPassW] = useState(false)
 
-    const handleFocusUser = () => {
-        setFocusUser(true)
+    // alterações na parte de Login do professor
+    const [userProf, setUserProf] = useState("")
+    const [passwordProf, setPasswordProf] = useState("")
+    const [focusUserProf, setFocusUserProf] = useState(false)
+    const [focusPassWProf, setFocusPassWProf] = useState(false)
+
+    const handleFocusUserProf = () => {
+        setFocusUserProf(true)
     }
-    const handleNotFocusUser = () => {
-        if(user.trim() != ""){
-            setFocusUser(true)
+    const handleNotFocusUserProf = () => {
+        if(userProf.trim() != ""){
+            setFocusUserProf(true)
         }
         else(
-            setFocusUser(false)
+            setFocusUserProf(false)
         )
     }
 
-    const handleFocusPassW = () => {
-        setFocusPassW(true)
+    const handleFocusPassWProf = () => {
+        setFocusPassWProf(true)
     }
-    const handleNotFocusPassW = () => {
-        if(password.trim() != ""){
-            setFocusPassW(true)
+    const handleNotFocusPassWProf = () => {
+        if(passwordProf.trim() != ""){
+            setFocusPassWProf(true)
         }
         else(
-            setFocusPassW(false)
+            setFocusPassWProf(false)
         )
     }
+
+     // alterações na parte de Login do aluno
+     const [userAluno, setUserAluno] = useState("")
+     const [passwordAluno, setPasswordAluno] = useState("")
+     const [focusUserAluno, setFocusUserAluno] = useState(false)
+     const [focusPassWAluno, setFocusPassWAluno] = useState(false)
+ 
+     const handleFocusUserAluno = () => {
+         setFocusUserAluno(true)
+     }
+     const handleNotFocusUserAluno = () => {
+         if(userAluno.trim() != ""){
+             setFocusUserAluno(true)
+         }
+         else(
+             setFocusUserAluno(false)
+         )
+     }
+ 
+     const handleFocusPassWAluno = () => {
+         setFocusPassWAluno(true)
+     }
+     const handleNotFocusPassWAluno = () => {
+         if(passwordAluno.trim() != ""){
+             setFocusPassWAluno(true)
+         }
+         else(
+             setFocusPassWAluno(false)
+         )
+     }
 
 return (
     <>
@@ -58,12 +90,12 @@ return (
                 <span>Professor</span>
 
                 <div className="user-box-professor">
-                    <label className={focusUser ? "focusOn" : "focusOff"} htmlFor="userProfessor">Nome de usuário</label>
+                    <label className={focusUserProf ? "focusOn" : "focusOff"} htmlFor="userProfessor">Nome de usuário</label>
                     <MyInput
                         id="userProfessor"
-                        onChange={(e) => setUser(e.target.value)}
-                        onFocus={handleFocusUser}
-                        onBlur={handleNotFocusUser}
+                        onChange={(e) => setUserProf(e.target.value)}
+                        onFocus={handleFocusUserProf}
+                        onBlur={handleNotFocusUserProf}
                         type='text'
                         width= "85%"
                         height= "100%"
@@ -80,12 +112,12 @@ return (
                 </div>
                 
                 <div className="user-box-professor">
-                <label className={focusPassW ? "focusOn" : "focusOff"} htmlFor="passwordProf">Senha</label>
+                <label className={focusPassWProf ? "focusOn" : "focusOff"} htmlFor="passwordProf">Senha</label>
                     <MyInput
                         id="passwordProf"
-                        onChange={(e) => setPassword(e.target.value)}
-                        onFocus={handleFocusPassW}
-                        onBlur={handleNotFocusPassW}
+                        onChange={(e) => setPasswordProf(e.target.value)}
+                        onFocus={handleFocusPassWProf}
+                        onBlur={handleNotFocusPassWProf}
                         type='text'
                         width= "85%"
                         height= "100%"
@@ -119,36 +151,81 @@ return (
                     />
             </div>
 
+
+
+
             <div className="center-login-page">
-    <span>Professor</span>
 
-                <div className="user-box-professor">
-                    <input id="userProfessor" type="text" />
-                    <label htmlFor="userProfessor">Nome de usuário</label>
-                </div>
-                
-                <div className="password-box-professor">
-                    <input id="passwordProf" type="password" />
-                    <label htmlFor="passwordProf">Senha</label>
-                </div>
-
-                <button>Entrar</button>
             </div>
 
+
+
+
             <div className="login-alunos">
-            <span>Professor</span>
+                <img className="design-type-wifi-top" src={designLogin}></img>
+                <img className="design-type-wifi-bottom" src={designLogin}></img>
+                <span>Aluno</span>
 
                 <div className="user-box-aluno">
-                    <input id="userAlunor" type="text" />
-                    <label htmlFor="userAluno">Nome de usuário</label>
+                    <label className={focusUserAluno ? "focusOn" : "focusOff"} htmlFor="userAluno">Nome de usuário</label>
+                    <MyInput
+                        id="userAluno"
+                        onChange={(e) => setUserAluno(e.target.value)}
+                        onFocus={handleFocusUserAluno}
+                        onBlur={handleNotFocusUserAluno}
+                        type='text'
+                        width= "85%"
+                        height= "100%"
+                        fontSize= "2.4vh"
+                        fontWeight= "500"
+                        border= "solid .3vh black"
+                        borderBottom= ".3vh black solid"
+                        borderRadius=".6vh"
+                        padding="0vh 7vh 0vh 2vh"
+                        transition= ".3s"
+                        background-color= "transparent"
+                    />
+                        <img src={userICON}></img>
                 </div>
-
+                
                 <div className="password-box-aluno">
-                    <input id="passwordAluno" type="password" />
-                    <label htmlFor="passwordAluno">Senha</label>
+                <label className={focusPassWAluno ? "focusOn" : "focusOff"} htmlFor="passwordAluno">Senha</label>
+                    <MyInput
+                        id="passwordAluno"
+                        onChange={(e) => setPasswordAluno(e.target.value)}
+                        onFocus={handleFocusPassWAluno}
+                        onBlur={handleNotFocusPassWAluno}
+                        type='text'
+                        width= "85%"
+                        height= "100%"
+                        fontSize= "2.4vh"
+                        fontWeight= "500"
+                        border= "solid .3vh black"
+                        borderBottom= ".3vh black solid"
+                        borderRadius=".6vh"
+                        padding="0vh 7vh 0vh 2vh"
+                        transition= ".3s"
+                        background-color= "transparent"
+                    />
+                    <img src={blockICON}></img>
                 </div>
 
-                <button>Entrar</button>
+                    <MyButton
+                        width= "45%"
+                        height= "8%"
+                        padding="1vh"
+                        cursor= "pointer"
+                        fontSize= "2.5vh"
+                        fontWeight= "bold"
+                        background-color= "rgba(255, 0, 0, 0.3)"
+                        border= ".3vh black solid"
+                        borderBottom= ".3vh black solid"
+                        borderRadius=".6vh"
+                        transition= ".3s"
+                        children="Enviar"
+                        enter="rgba(255, 0, 0, 0.5)"
+                        leave="rgba(255, 0, 0, 0.3)"
+                    />
             </div>
         </div>
     </div>

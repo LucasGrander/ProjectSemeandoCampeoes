@@ -176,7 +176,8 @@ nav button:hover img{
     margin-bottom: 5vh;
 
     background-color: #cccccc3f;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 footer{
