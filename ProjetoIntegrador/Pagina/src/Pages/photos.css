@@ -30,8 +30,8 @@
 }
 
 .page-photos header .logo img{
-    width: 17vh;
-    height: 17vh;
+    width: 16vh;
+    height: 16vh;
     margin-left: 9vh;
     border-radius: 50%;
     border: solid .2vh white;
@@ -49,6 +49,21 @@
     color: white;
     text-shadow: 0.2vh 0.2vh .2vh rgba(255, 255, 255, 0.272);
 }
+.page-photos .title-photos1{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+}
+.page-photos .title-photos1 span{
+    font-size: 2.5vh;
+    font-weight: bold;
+    letter-spacing: .4vh;
+    word-spacing: .2vh;
+    color: white;
+}
 
 .page-photos .title-photos{
     width: 100%;
@@ -65,6 +80,22 @@
     letter-spacing: .4vh;
     word-spacing: .2vh;
 }
+.page-photos .title-photos2{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d6d6d693;
+    margin-top: 5vh;
+}
+
+.page-photos .title-photos2 span{
+    font-size: 2.5vh;
+    font-weight: bold;
+    letter-spacing: .4vh;
+    word-spacing: .2vh;
+}
 
 .container-photos{
     width: 100%;
@@ -74,6 +105,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    
 }
 
 .container-photos .box-ct{

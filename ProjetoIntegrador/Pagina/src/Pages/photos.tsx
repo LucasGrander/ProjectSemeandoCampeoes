@@ -3,6 +3,11 @@ import './photos.css'
 import ImagemTemporaria from '../assets/temporaria-image.jpg'
 import PSCC from '../assets/PSCC.jpeg'
 import PSCLP from '../assets/PSCLP.jpeg'
+import Icopa from '../assets/Icopa.png'
+import IIcopa from '../assets/IIcopa.jpeg'
+import IIIcopa from '../assets/IIIcopa.webp'
+import IVcopa from '../assets/IVcopa.webp'
+
 
 const Photos = () => {
     return(
@@ -15,8 +20,11 @@ const Photos = () => {
                 <h1>Semeando Campeões</h1>
             </div>
         </header>
+            <div className="title-photos1">
+                <span>Galeria de Fotos</span>
+            </div>
             <div className="title-photos">
-                <span>Fotos dos Centros de Treinamento</span>
+                <span>Centros de treinamento</span>
             </div>
 
             <div className="container-photos">
@@ -56,14 +64,14 @@ const Photos = () => {
                         </div>
                 </div>
             </div>
-            <div className="title-photos">
+            <div className="title-photos2">
                 <span>Copa Semeando Campeões</span>
                 
             </div>
             <div className="container-photos">
                 <div className="box-ct">
                     <div className="box-photo-ct">
-                        <img src={PSCC} alt='imagem do ct'></img>
+                        <img src={Icopa} alt='imagem do ct'></img>
                         <button className='photo-btn' >Fotos</button>
                     </div>
                     <div className="name-ct">
@@ -75,18 +83,18 @@ const Photos = () => {
                 </div>
                 <div className="box-ct">
                     <div className="box-photo-ct">
-                        <img src={PSCC} alt='imagem do ct'></img>
+                        <img src={IIcopa} alt='imagem do ct'></img>
                         <button className='photo-btn' >Fotos</button>
                     </div>
                     <div className="name-ct">
                             <span>II COPA KIDS</span>
                             <p>Sede do PSC</p>
-                            <p>2021</p>
+                            <p>2020</p>
                         </div>
                 </div>
                 <div className="box-ct">
                     <div className="box-photo-ct">
-                        <img src={PSCC} alt='imagem do ct'></img>
+                        <img src={IIIcopa} alt='imagem do ct'></img>
                         <button className='photo-btn' >Fotos</button>
                     </div>
                     <div className="name-ct">
@@ -97,7 +105,7 @@ const Photos = () => {
                 </div>
                 <div className="box-ct">
                     <div className="box-photo-ct">
-                        <img src={PSCC} alt='imagem do ct'></img>
+                        <img src={IVcopa} alt='imagem do ct'></img>
                         <button className='photo-btn' >Fotos</button>
                     </div>
                     <div className="name-ct">
