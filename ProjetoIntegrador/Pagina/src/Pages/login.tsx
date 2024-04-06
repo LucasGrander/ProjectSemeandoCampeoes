@@ -7,7 +7,8 @@ import MyButton from "../components/MyButton";
 import blockICON from '../assets/lockIcon.svg'
 import userICON from '../assets/userIconLogin.svg'
 import designLogin from '../assets/designForLogin.svg'
-import stickmanLogin from '../assets/JiuJitsuStickman.svg'
+import stickmanLogin from '../assets/vetor-JiuJitsu-fight.png'
+import stickmanLogin2 from '../assets/vetor-JiuJitsu-fight-2.png'
 
 function Login (){
 
@@ -109,7 +110,7 @@ return (
         </header>
 
         <div className="container-login">
-            <div style={{pointerEvents: activeLogin ? "none" : "all", filter: activeLogin ? "grayscale(100%)" : "grayscale(0%)", opacity: activeLogin ? ".4" : "1", transition: "1s"}} className="login-professores">
+            <div style={{pointerEvents: activeLogin ? "none" : "all", filter: activeLogin ? "grayscale(100%)" : "grayscale(0%)", opacity: activeLogin ? ".3" : "1", transition: "1s"}} className="login-professores">
                 <img className="design-type-wifi-top" src={designLogin}></img>
                 <img className="design-type-wifi-bottom" src={designLogin}></img>
                 <span>Professor</span>
@@ -183,12 +184,12 @@ return (
 
                 <div className="top">
                     <div className="container-change-button">
-                        <div onMouseEnter={handleOnEnterLoginCenterProf} onMouseLeave={handleOnLeaveLoginCenterProf} style={{cursor: "pointer", transform: mouseOnProf ? "scale(1.03)" : "scale(1.0)"}} className="left">
-                            <span onClick={handleOnClickSouProfessor}>Sou professor</span>
+                        <div onClick={handleOnClickSouProfessor} onMouseEnter={handleOnEnterLoginCenterProf} onMouseLeave={handleOnLeaveLoginCenterProf} style={{cursor: "pointer", transform: mouseOnProf ? "scale(1.03)" : "scale(1.0)"}} className="left">
+                            <span style={{color: activeLogin ? "black" : "white", transition: "1s"}} >Sou professor</span>
                         </div>
 
-                        <div onMouseEnter={handleOnEnterLoginCenterAluno} onMouseLeave={handleOnLeaveLoginCenterAluno} style={{cursor: "pointer", transform: mouseOnAluno ? "scale(1.03)" : "scale(1.0)"}} className="right">
-                            <span onClick={handleOnClickSouAluno}>Sou aluno</span>
+                        <div onClick={handleOnClickSouAluno} onMouseEnter={handleOnEnterLoginCenterAluno} onMouseLeave={handleOnLeaveLoginCenterAluno} style={{cursor: "pointer", transform: mouseOnAluno ? "scale(1.03)" : "scale(1.0)"}} className="right">
+                            <span style={{color: activeLogin ? "white" : "black", transition: "1s"}}>Sou aluno</span>
                         </div>
                         
                         <div style={{transform: activeLogin ? "translateX(12vh)" : "translateX(-11.5vh)", transition: ".6s ease-in-out"}} id="change-circle" className="change-circle">
@@ -200,8 +201,9 @@ return (
                 </div>
 
                 <div className="bottom">
-                    <div className="conainer-stickman">
-                        <img src={stickmanLogin}></img>
+                    <div className="container-stickman">
+                        <img style={{opacity: activeLogin ? "1" : "0" , transition: "1s"}} src={stickmanLogin}></img>
+                        <img style={{opacity: activeLogin ? "0" : "1", transition: "1s"}} src={stickmanLogin2}></img>
                     </div>
                 </div>
             </div>
@@ -209,7 +211,7 @@ return (
 
 
 
-            <div style={{pointerEvents: activeLogin ? "all" : "none", filter: activeLogin ? "grayscale(0%)" : "grayscale(100%)", opacity: activeLogin ? "1" : ".4", transition: "1s"}} className="login-alunos">
+            <div style={{pointerEvents: activeLogin ? "all" : "none", filter: activeLogin ? "grayscale(0%)" : "grayscale(100%)", opacity: activeLogin ? "1" : ".3", transition: "1s"}} className="login-alunos">
                 <img className="design-type-wifi-top" src={designLogin}></img>
                 <img className="design-type-wifi-bottom" src={designLogin}></img>
                 <span>Aluno</span>
@@ -278,7 +280,6 @@ return (
         </div>
     </div>
     </>
-
 )
 }
 export default Login

@@ -79,7 +79,7 @@
     height: 40vh;
     z-index: -1;
 
-    opacity: 0.2;
+    opacity: 0.4;
     transform: rotate(60deg);
 
     position: absolute;
@@ -92,7 +92,7 @@
     height: 40vh;
     z-index: -1;
 
-    opacity: 0.2;
+    opacity: 0.4;
     transform: rotate(230deg);
 
     position: absolute;
@@ -183,7 +183,7 @@
 
 .center-login-page .top{
     width: 100%;
-    height: 50%;
+    height: 65%;
 
     display: flex;
     flex-direction: column;
@@ -203,7 +203,7 @@
     align-items: center;
     justify-content: space-around;
     
-    padding: 0vh 1vh 0vh 0vh;
+    padding: 0vh 1vh 0vh 1vh;
     border-radius: 1vh;
     box-shadow: .1vh .1vh 1vh black;
     overflow: hidden;
@@ -213,12 +213,22 @@
 
 .center-login-page .top .container-change-button .change-circle{
     position: absolute;
-    width: 50%;
+    width: 60%;
     height: 10vh;
     border-radius: 4vh;
     box-shadow: .1vh .1vh 1vh black;
     background-color: red;
     z-index: -1;
+}
+
+.center-login-page .top .container-change-button .left,
+.center-login-page .top .container-change-button .right{
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .center-login-page .top .redirect-login .question{
@@ -251,6 +261,28 @@
     text-decoration: underline;
 }
 
+.center-login-page .bottom{
+    width: 100%;
+    height: 45%;
+}
+.center-login-page .bottom .container-stickman{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+}
+
+.center-login-page .bottom .container-stickman img{
+    width: 50vh;
+    height: 50vh;
+
+    position: absolute;
+    bottom: -3.5vh;
+
+}
+
 /* MUDANÇAS NO CONTAINER DE LOGIN DO ALUNO */
 
 .page-login .container-login .login-alunos{
@@ -273,7 +305,7 @@
     height: 40vh;
     z-index: -1;
 
-    opacity: 0.2;
+    opacity: 0.4;
     transform: rotate(60deg);
 
     position: absolute;
@@ -286,7 +318,7 @@
     height: 40vh;
     z-index: -1;
 
-    opacity: 0.2;
+    opacity: 0.4;
     transform: rotate(230deg);
 
     position: absolute;
