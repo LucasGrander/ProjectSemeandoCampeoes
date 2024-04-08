@@ -91,11 +91,11 @@ const Home = () => {
                 enter="rgba(150, 150, 150, 0.8)"
                 leave="white"
                 >
-                    Participe!<img src={HandShake} alt='aperto de mãos' />
+                    Seja aluno!<img src={HandShake} alt='aperto de mãos' />
             </MyButton>
             </nav>
 
-            <div className="content">
+            <div className="container-home">
                 <div className="title-container">
                     <span>Sobre nós</span>
                 </div>

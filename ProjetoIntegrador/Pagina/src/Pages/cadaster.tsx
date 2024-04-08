@@ -76,7 +76,7 @@ const Cadaster = () => {
                 </div>
                 <div className="container-cadaster">
                     <div className="content-cadaster">
-                        <span className='title-cadaster' >Cadastro</span>
+                        <span className='title-cadaster' >Cadastro (fila de espera)</span>
                         <div className="button-label-container">
                             <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Nome completo</label>
                             <MyInput

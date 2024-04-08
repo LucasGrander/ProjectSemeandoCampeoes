@@ -218,8 +218,8 @@
     color: red;
     -webkit-text-stroke: .2vh black;
     text-shadow: .2vh .3vh 0vh rgba(255, 0, 0, 0.5);
-    font-size: 5vh;
-    letter-spacing: 1.5vh;
+    font-size: 4.5vh;
+    letter-spacing: .3vh;
     font-weight: 600;
     margin-top: 4vh;
 }
