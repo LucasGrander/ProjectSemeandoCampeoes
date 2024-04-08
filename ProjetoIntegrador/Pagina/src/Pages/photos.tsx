@@ -7,6 +7,8 @@ import Icopa from '../assets/Icopa.png'
 import IIcopa from '../assets/IIcopa.jpeg'
 import IIIcopa from '../assets/IIIcopa.webp'
 import IVcopa from '../assets/IVcopa.webp'
+import galeryICON from '../assets/galeryICON.svg'
+import mousePointer from '../assets/mouseHOVER.svg'
 
 
 const Photos = () => {
@@ -28,39 +30,58 @@ const Photos = () => {
 
             <div className="container-photos">
                 <div className="box-ct">
-                    <div className="box-photo-ct">
-                        <img src={PSCC} alt='imagem do ct'></img>
-                        <button className='photo-btn'>Fotos</button>
-                    </div>
-                    <div className="name-ct">
+                        <img className='bg-box-cards' src={PSCC} alt='imagem do ct'></img>
+                        <div className="name-ct">
+                        <div className="infos-card-galeria">
                             <span>CT Centro</span>
-                            <p>Atualizado:</p>
-                            <p>03/04/2024</p>
                         </div>
+                        <div className="icon-card-galeria">
+                            <div className="att-photos-time">
+                                <p>Atualizado:</p>
+                                <p>09/04/2024</p>
+                            </div>
+                            <div className="img-icon-media">
+                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="box-ct">
-                    <div className="box-photo-ct">
-                        <img src={PSCLP} alt='imagem do ct'></img>
-                        <button className='photo-btn'>Fotos</button>
-                    </div>
-                    <div className="name-ct">
+                        <img className='bg-box-cards' src={PSCLP} alt='imagem do ct'></img>
+                        <div className="name-ct">
+                        <div className="infos-card-galeria">
                             <span>CT Lar Paraná</span>
-                            <p>Atualizado:</p>
-                            <p>03/04/2024</p>
+                            <img className='hide-mouse' src={mousePointer}></img>
                         </div>
+                        <div className="icon-card-galeria">
+                            <div className="att-photos-time">
+                                <p>Atualizado:</p>
+                                <p>09/04/2024</p>
+                            </div>
+                            <div className="img-icon-media">
+                            <a href='/fotos'><img src={galeryICON}></img></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="box-ct">
-                    <div className="box-photo-ct">
-                        <img src={ImagemTemporaria} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
-                    </div>
+                        <img className='bg-box-cards' src={ImagemTemporaria} alt='imagem do ct'></img>
                     <div className="name-ct">
+                        <div className="infos-card-galeria">
                             <span>CT Iretama</span>
-                            <p>Atualizado:</p>
-                            <p>Pendente</p>
                         </div>
+                        <div className="icon-card-galeria">
+                            <div className="att-photos-time">
+                                <p>Atualizado:</p>
+                                <p>Pendente</p>
+                            </div>
+                            <div className="img-icon-media">
+                            <a href='/fotos'><img src={galeryICON}></img></a> 
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="title-photos2">

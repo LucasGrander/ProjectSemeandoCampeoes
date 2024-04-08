@@ -1,12 +1,12 @@
+import { useState } from 'react'
 import './home.css'
 import LogoSemeandoCampeoes from "../assets/LogoSemeandoCampeoes.png"
-import LogoInstagram from "../assets/facebook.svg"
-import LogoFacebook from "../assets/instagram.svg"
+import LogoInstagram from "../assets/instagram.svg"
+import LogoFacebook from "../assets/facebook.svg"
 import LogoYoutube from "../assets/youtube.svg"
 import UserLogin from "../assets/userICON.svg"
 import Camera from "../assets/camPHOTO.svg"
 import HandShake from "../assets/handShake.svg"
-import { useState } from 'react'
 import MyButton from '../components/MyButton'
 import Instrutores from '../components/Instrutores'
 import CentrosDeTreinamento from '../components/CentrosDeTreinamento'
@@ -67,7 +67,7 @@ const Home = () => {
                 fontWeight="700"
                 transition=".3s"
                 boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
-                enter="rgba(150, 150, 150, 0.8)"
+                enter="rgba(150, 150, 150, 0.5)"
                 leave="white"
                 >
                     Galeria de fotos <img src={Camera} alt='camera de foto' />
@@ -88,7 +88,7 @@ const Home = () => {
                 fontWeight="700"
                 transition=".3s"
                 boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
-                enter="rgba(150, 150, 150, 0.8)"
+                enter="rgba(150, 150, 150, 0.5)"
                 leave="white"
                 >
                     Seja aluno!<img src={HandShake} alt='aperto de mãos' />
