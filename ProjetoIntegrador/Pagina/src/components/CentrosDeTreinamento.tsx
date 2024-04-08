@@ -3,6 +3,8 @@ import AnyIMG from '../assets/react.svg'
 import PSCC from '../assets/PSCC.jpeg'
 import PSCLP from '../assets/PSCLP.jpeg'
 import PSC from '../assets/LogoSemeandoCampeoes.png'
+import instaLOGO from '../assets/instagram.svg'
+import whatsLOGO from '../assets/whatsapp.svg'
 
 interface Props{
     id?: string;
@@ -20,9 +22,9 @@ const CentrosDeTreinamento = ({id}: Props) => {
                 <div className="adress">
                     <h2>CT Centro</h2>
                     <h3>Primeira Igreja Batista</h3>
-                    <span>Rua São Josafat 1778</span>
-                    <span>Centro, Campo Mourão - PR</span>
-                    <span>CEP 87302-170</span>
+                    <span>Rua São Josafat, 1778</span>
+                    <span>Centro, Campo Mourão - PR,</span>
+                    <span>87302-170</span>
                 </div>
             </div>
 
@@ -33,9 +35,9 @@ const CentrosDeTreinamento = ({id}: Props) => {
                 <div className="adress">
                     <h2>CT Lar Paraná</h2>
                     <h3>Associação de Moradores do Lar Paraná</h3>
-                    <span>Rua Duque de Caxias, esquina com a Rua Shuhei Uetsuka</span>
-                    <span>Jardim Lar Paraná, Campo Mourão - PR</span>
-                    <span>CEP 87305-120</span>
+                    <span>Rua Duque de Caxias,</span>
+                    <span>Jardim Lar Paraná, Campo Mourão - PR,</span>
+                    <span>87305-120</span>
                 </div>
             </div>
 
@@ -46,9 +48,9 @@ const CentrosDeTreinamento = ({id}: Props) => {
                 <div className="adress">
                     <h2>CT Iretama</h2>
                     <h3>Ginasio Poliesportivo Wassilo Mamus</h3>
-                    <span>Rua Otaviano Felix, snº</span>
-                    <span>Centro, Iretama - PR</span>
-                    <span>CEP 87280-000</span>
+                    <span>Rua Otaviano Felix, 0000</span>
+                    <span>Centro, Iretama - PR,</span>
+                    <span>87280-000</span>
                 </div>
             </div>
 
@@ -58,7 +60,11 @@ const CentrosDeTreinamento = ({id}: Props) => {
                 </div>
                 <div className="adress">
                     <h2>Próximo CT</h2>
-                    <span>Se você tem interesse em um CT do Projeto entre em contato conosco</span>
+                    <span className='new-ct-contact' >Você tem interesse em um Centro de Treinamento do Projeto?<br /> Entre em contato conosco!</span>
+                    <div className="social-midia-new-ct">
+                        <a href='https://www.instagram.com/rmbradock/'><img src={instaLOGO}></img></a>
+                        <a href='https://api.whatsapp.com/send?phone=5544998130695'><img src={whatsLOGO}></img></a>
+                    </div>
                 </div>
             </div>
         </div>

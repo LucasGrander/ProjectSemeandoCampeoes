@@ -3,7 +3,7 @@
     height: auto;
 
     display: grid;
-    grid-template-columns: 85vh 85vh;
+    grid-template-columns: 80vh 80vh;
     grid-template-rows: 45vh 45vh;
     flex-direction: column;
     align-items: center;
@@ -33,6 +33,9 @@
 }
 
 .content-ct .boxes .adress{
+    width: 50%;
+    height: auto;
+
     display: flex;
     flex-direction: column;
 }
@@ -40,15 +43,49 @@
 .content-ct .boxes .adress h2{
     letter-spacing: .2vh;
     font-size: 4vh;
+    font-weight: 800;
 }
 
 .content-ct .boxes .adress h3{
-    font-size: 2.4vh;
+    width: 103%;
+    font-size: 2vh;
     font-weight: 600;
 }
 
 .content-ct .boxes .adress span{
+    width: 103%;
+
     font-size: 2vh;
-    letter-spacing: .1vh;
+    letter-spacing: 0vh;
     font-weight: 500;
 }
+
+.content-ct .boxes .adress .new-ct-contact{
+    width: 103%;
+    font-weight: 600;
+
+    font-size: 2vh;
+    letter-spacing: 0vh;
+}
+
+.content-ct .boxes .adress .social-midia-new-ct{
+    display: flex;
+    margin-top: 1vh;
+    gap: 1.5vh;
+}
+
+.content-ct .boxes .adress .social-midia-new-ct a{
+    width: 3.5vh;
+    height: 3.5vh;
+}
+
+.content-ct .boxes .adress .social-midia-new-ct img{
+    width: 3.5vh;
+    height: 3.5vh;
+    filter: grayscale(100%);
+}
+
+.content-ct .boxes .adress .social-midia-new-ct img:hover{
+    filter: grayscale(0%);
+}
+
