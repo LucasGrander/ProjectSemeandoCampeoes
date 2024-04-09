@@ -30,6 +30,7 @@
     height: 30vh;
 
     border-radius: 2vh;
+    box-shadow: .1vh .1vh 2vh rgba(0, 0, 0, 0.501);
 }
 
 .content-ct .boxes .adress{

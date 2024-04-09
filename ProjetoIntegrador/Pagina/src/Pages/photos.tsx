@@ -9,11 +9,24 @@ import IIIcopa from '../assets/IIIcopa.webp'
 import IVcopa from '../assets/IVcopa.webp'
 import galeryICON from '../assets/galeryICON.svg'
 import mousePointer from '../assets/mouseHOVER.svg'
+import wings from '../assets/windsDECORATION.svg'
+import feather from '../assets/feather.svg'
+import top1Star from '../assets/top1-star.svg'
+import trohpy from '../assets/trophy.svg'
+import medalha from '../assets/medal.svg'
+import iconCamPhotos from '../assets/icon-camera-photo.svg'
 
 
 const Photos = () => {
     return(
     <div className="page-photos">
+        <img className='background-page-photos' src='https://wallpapercave.com/wp/X3SKsUe.jpg'></img>
+        <img className='camera-right' src={iconCamPhotos}></img>
+        <img className='camera-left' src={iconCamPhotos}></img>
+        <img className='trophy-left' src={top1Star}></img>
+        <img className='trophy-right' src={trohpy}></img>
+        <img className='medal-left' src={medalha}></img>
+        <img className='medal-right' src={medalha}></img>
         <header>
             <div className="logo">
                 <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
@@ -24,10 +37,10 @@ const Photos = () => {
             </div>
         </header>
 
+            {/* //container superior */}
             <div className="title-photos">
-                <span>Centros de treinamento</span>
-            </div>
-
+                    <span>Centros De Treinamento</span>
+                </div>  
             <div className="container-photos">
                 <div className="box-ct">
                         <img className='bg-box-cards' src={PSCC} alt='imagem do ct'></img>
@@ -84,57 +97,100 @@ const Photos = () => {
                     </div>
                 </div>
             </div>
+
+
+            {/* //container inferior */}
             <div className="title-photos2">
-                <span>Copa Semeando Campeões</span>
-                
+                    <span>Copa - Semeando Campeões</span>
+                </div>
+            <div className="container-photos2">
+                <div className="box-ct2">
+                    <img className='bg-box-cards2' src={Icopa} alt='imagem do ct2'></img>
+                    <div className="name-ct2">
+                        <div className="infos-card-galeria2">
+                            <span>COPA I</span>
+                        </div>
+                        <div className="icon-card-galeria2">
+                            <div className="att-photos-time2">
+                                <p>Atualizado:</p>
+                                <p>09/04/2024</p>
+                            </div>
+                            <div className="img-icon-media2">
+                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="box-ct2">
+                    <img className='bg-box-cards2' src={IIcopa} alt='imagem do ct2'></img>
+                    <div className="name-ct2">
+                        <div className="infos-card-galeria2">
+                            <span>COPA II</span>
+                        </div>
+                        <div className="icon-card-galeria2">
+                            <div className="att-photos-time2">
+                                <p>Atualizado:</p>
+                                <p>09/04/2024</p>
+                            </div>
+                            <div className="img-icon-media2">
+                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="box-ct2">
+                    <img className='bg-box-cards2' src={IIIcopa} alt='imagem do ct2'></img>
+                    <div className="name-ct2">
+                        <div className="infos-card-galeria2">
+                            <span>COPA III</span>
+                        </div>
+                        <div className="icon-card-galeria2">
+                            <div className="att-photos-time2">
+                                <p>Atualizado:</p>
+                                <p>09/04/2024</p>
+                            </div>
+                            <div className="img-icon-media2">
+                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="box-ct2">
+                    <img className='bg-box-cards2' src={IVcopa} alt='imagem do ct2'></img>
+                    <div className="name-ct2">
+                        <div className="infos-card-galeria2">
+                            <span>COPA IV</span>
+                        </div>
+                        <div className="icon-card-galeria2">
+                            <div className="att-photos-time2">
+                                <p>Atualizado:</p>
+                                <p>09/04/2024</p>
+                            </div>
+                            <div className="img-icon-media2">
+                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="container-photos">
-                <div className="box-ct">
-                    <div className="box-photo-ct">
-                        <img src={Icopa} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
+            <footer>
+                <div className='content-footer'>
+                    <div className="icon">
+                        <img src={LogoSemeandoCampeoes} alt='logo Semeando Campeões'></img>
                     </div>
-                    <div className="name-ct">
-                            <span>I COPA KIDS</span>
-                            <p>Quadra de Esportes</p>
-                            <p>Escola Municipal Monteiro Lobato</p>
-                            <p>2019</p>
-                        </div>
-                </div>
-                <div className="box-ct">
-                    <div className="box-photo-ct">
-                        <img src={IIcopa} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
+                   <div className="text">
+                    <div>
+                        <span>Semeando Campeões</span>
                     </div>
-                    <div className="name-ct">
-                            <span>II COPA KIDS</span>
-                            <p>Sede do PSC</p>
-                            <p>2020</p>
-                        </div>
-                </div>
-                <div className="box-ct">
-                    <div className="box-photo-ct">
-                        <img src={IIIcopa} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
+                    <div className='copy'>
+                    Copyright © 2024 Lucas Grander & Ricardo M. Batista.
                     </div>
-                    <div className="name-ct">
-                            <span>III COPA KIDS</span>
-                            <p>Ginasio de Esportes JK</p>
-                            <p>2022</p>
-                        </div>
+                   </div>
                 </div>
-                <div className="box-ct">
-                    <div className="box-photo-ct">
-                        <img src={IVcopa} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
-                    </div>
-                    <div className="name-ct">
-                            <span>IV COPA KIDS</span>
-                            <p>Ginasio de Esportes JK</p>
-                            <p>2023</p>
-                        </div>
-                </div>
-            </div>
+            </footer>
     </div>
   )
 }
