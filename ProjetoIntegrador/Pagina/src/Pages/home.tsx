@@ -11,30 +11,52 @@ import MyButton from '../components/MyButton'
 import Instrutores from '../components/Instrutores'
 import CentrosDeTreinamento from '../components/CentrosDeTreinamento'
 import Historico from '../components/Historico'
+import overlayText from '../assets/overlayLoadingTextSemeandoCampeoes.gif'
+import overlayText2 from '../assets/overlayLoadingTextLoading.gif'
 
 //exemplos de componentes a serem criados
   
   
 
 const Home = () => {
-
     const [content, setContent] = useState('cts')
+    
+    const [overlay, setOverlay] = useState (false)
 
     const handleOnClickFotos = () => {
-        setTimeout(()=> {
-            window.location.href = `/fotos`
-        }, 500)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/fotos'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+        
     }
 
     const handleOnClickParticipe = () => {
-        setTimeout(()=> {
-            window.location.href = `/participe`
-        }, 500)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/participe'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
     }
 
     return(
     <>
         <div className="page-home">
+            <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
+                <img className='loading-top' src={overlayText2}></img>
+                <img className='loading-horiz' src={overlayText}></img>
+            </div>
             <header>
                 <div className="logo">
                     <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>

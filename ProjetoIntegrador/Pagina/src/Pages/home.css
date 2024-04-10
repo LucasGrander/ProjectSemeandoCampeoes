@@ -4,6 +4,37 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
+
+.overlay{
+    z-index: 2;
+    width: 100%;
+    min-height: 100%;
+    
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+}
+
+.overlay .loading-top{
+    position: absolute;
+
+    width: 30vh;
+    height: 30vh;
+}
+.overlay .loading-horiz{
+    position: absolute;
+
+    width: 15vh;
+    height: 15vh;
+}
+
 
 .page-home{
     width: 100%;
