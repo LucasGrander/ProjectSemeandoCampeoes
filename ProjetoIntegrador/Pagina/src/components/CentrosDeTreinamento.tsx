@@ -62,8 +62,8 @@ const CentrosDeTreinamento = ({id}: Props) => {
                     <h2>Próximo CT</h2>
                     <span className='new-ct-contact' >Você tem interesse em um Centro de Treinamento do Projeto?<br /> Entre em contato conosco!</span>
                     <div className="social-midia-new-ct">
-                        <a href='https://www.instagram.com/rmbradock/'><img src={instaLOGO}></img></a>
-                        <a href='https://api.whatsapp.com/send?phone=5544998130695'><img src={whatsLOGO}></img></a>
+                        <a target='_blank' href='https://www.instagram.com/rmbradock/'><img src={instaLOGO}></img></a>
+                        <a target='_blank' href='https://api.whatsapp.com/send?phone=5544998130695'><img src={whatsLOGO}></img></a>
                     </div>
                 </div>
             </div>

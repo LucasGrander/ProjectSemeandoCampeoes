@@ -96,7 +96,7 @@
 
 
     background-color: transparent;
-    border-bottom: 1vh solid rgba(0, 0, 0, 0.454);
+    border-bottom: 1vh solid rgba(255, 0, 0, 0.51);
 }
 
 .container-photos .box-ct{
@@ -251,7 +251,7 @@
 }
 
 .container-photos .box-ct .name-ct .icon-card-galeria img:hover{
-    transform: translateY(-1.5vh);
+    transform: translateY(-1.1vh);
     transition: .3s;
 }
 
@@ -442,7 +442,7 @@
 }
 
 .container-photos2 .box-ct2 .name-ct2 .icon-card-galeria2 img:hover{
-    transform: translateY(-1.5vh);
+    transform: translateY(-1.1vh);
     transition: .3s;
 }
 

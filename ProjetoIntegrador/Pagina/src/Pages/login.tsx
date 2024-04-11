@@ -74,8 +74,7 @@ function Login (){
         )
     }
 
-    // const [activeLogin, setActiveLogin] = useState<boolean | undefined>();
-    const [activeLogin, setActiveLogin] = useState(true)
+    const [activeLogin, setActiveLogin] = useState(true);
 
     const handleOnClickSouProfessor = () =>{
         setActiveLogin(false)
