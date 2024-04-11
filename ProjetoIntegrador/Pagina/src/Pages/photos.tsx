@@ -34,6 +34,42 @@ const Photos = () => {
         }, 2000)
     }
 
+    const handleOnClickGaleriaIretama = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/fotos/Galeria-Iretama'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
+    const handleOnClickGaleriaLarParana = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/fotos/Galeria-LarParana'
+        }, 1500)
+        
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
+    const handleOnClickGaleriaCentro = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/fotos/Galeria-Centro'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
     return(
     <div className="page-photos">
         <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
@@ -74,7 +110,7 @@ const Photos = () => {
                                 <p>09/04/2024</p>
                             </div>
                             <div className="img-icon-media">
-                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                                <img onClick={handleOnClickGaleriaCentro} src={galeryICON}></img>
                             </div>
                         </div>
                     </div>
@@ -93,7 +129,7 @@ const Photos = () => {
                                 <p>09/04/2024</p>
                             </div>
                             <div className="img-icon-media">
-                            <a href='/fotos'><img src={galeryICON}></img></a>
+                            <img onClick={handleOnClickGaleriaLarParana} src={galeryICON}></img>
                             </div>
                         </div>
                     </div>
@@ -111,7 +147,7 @@ const Photos = () => {
                                 <p>Pendente</p>
                             </div>
                             <div className="img-icon-media">
-                            <a href='/fotos'><img src={galeryICON}></img></a> 
+                            <img onClick={handleOnClickGaleriaIretama} src={galeryICON}></img>
                             </div>
                         </div>
                     </div>

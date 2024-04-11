@@ -1,9 +1,8 @@
 import './App.css'
 import Cadaster from './Pages/cadaster'
-import GaleriaCentro from './Pages/GaleriaCentro'
-import GaleriaIPB from './Pages/GaleriaIPB'
-import GaleriaIretama from './Pages/GaleriaIretama'
-import GaleriaLP from './Pages/GaleriaLP'
+import GaleriaCentro from './Pages/galeriaCentro'
+import GaleriaIretama from './Pages/galeriaIretama'
+import GaleriaLP from './Pages/galeriaLP'
 import Home from './Pages/home'
 import Login from './Pages/login'
 import Photos from './Pages/photos'
@@ -18,9 +17,9 @@ function App() {
             <Route path= "/login" element = {<Login />}/>
             <Route path= "/fotos" element = {<Photos />}/>
             <Route path= "/participe" element = {<Cadaster />}/>
-            <Route path= "/fotos/galeria-Iretama" element = {<GaleriaIretama />}/>
-            <Route path= "/fotos/galeria-Centro" element = {<GaleriaIPB />}/>
-            <Route path= "/fotos/galeria-LarParana" element = {<GaleriaLP />}/>
+            <Route path= "/fotos/Galeria-Iretama" element = {<GaleriaIretama />}/>
+            <Route path= "/fotos/Galeria-Centro" element = {<GaleriaCentro />}/>
+            <Route path= "/fotos/Galeria-LarParana" element = {<GaleriaLP />}/>
         </Routes>
     </BrowserRouter>
   )
