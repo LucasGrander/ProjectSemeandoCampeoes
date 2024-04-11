@@ -23,8 +23,31 @@ const Home = () => {
     
     const [overlay, setOverlay] = useState (false)
 
+    const handleOnClickHome = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
+    const handleOnClickLogin = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/login'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
     const handleOnClickFotos = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
         setOverlay(true)
     
         setTimeout(() => {
@@ -38,7 +61,6 @@ const Home = () => {
     }
 
     const handleOnClickParticipe = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
         setOverlay(true)
     
         setTimeout(() => {
@@ -50,6 +72,7 @@ const Home = () => {
         }, 2000)
     }
 
+
     return(
     <>
         <div className="page-home">
@@ -59,7 +82,7 @@ const Home = () => {
             </div>
             <header>
                 <div className="logo">
-                    <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
+                    <img onClick={handleOnClickHome} src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img>
                 </div>
                 <div className="title">
                     <h1>Semeando Campeões</h1>
@@ -70,7 +93,7 @@ const Home = () => {
                     <a href="https://www.youtube.com/@semeandocampeoes7001" target="_blank" ><img className='youtube' src={LogoYoutube} alt="logo do youtube"></img></a>
                 </div>
                 <div className="login-acess">
-                    <a href="/login"><img src={UserLogin} alt="user login"></img></a>
+                    <img onClick={handleOnClickLogin} src={UserLogin} alt="user login"></img>
                 </div>
             </header>
             <nav>

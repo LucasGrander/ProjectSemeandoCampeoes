@@ -18,7 +18,7 @@
 .page-photos header{
     width: 100%;
     height: 18vh;
-    z-index: 2;
+    z-index: 1;
 
     display: flex;
     justify-content: space-between;
@@ -36,7 +36,7 @@
 
 .page-photos header .logo img{
     width: 16vh;
-    height: 16vh;
+    height: 90%;
     margin-left: 9vh;
     border-radius: 50%;
     border: solid .2vh white;

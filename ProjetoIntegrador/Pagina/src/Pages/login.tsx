@@ -1,14 +1,16 @@
 import { useState } from "react";
+import './login.css'
 // import { useNavigate } from "react-router-dom";
 import MyInput from "../components/MyInput";
 import LogoSemeandoCampeoes from "../assets/LogoSemeandoCampeoes.png";
-import './login.css'
 import MyButton from "../components/MyButton";
 import blockICON from '../assets/lockIcon.svg'
 import userICON from '../assets/userIconLogin.svg'
 import designLogin from '../assets/designForLogin.svg'
 import stickmanLogin from '../assets/vetor-JiuJitsu-fight.png'
 import stickmanLogin2 from '../assets/vetor-JiuJitsu-fight-2.png'
+import overlayText from '../assets/overlayLoadingTextSemeandoCampeoes.gif'
+import overlayText2 from '../assets/overlayLoadingTextLoading.gif'
 
 function Login (){
 
@@ -71,6 +73,8 @@ function Login (){
             setFocusPassWAluno(false)
         )
     }
+
+    // const [activeLogin, setActiveLogin] = useState<boolean | undefined>();
     const [activeLogin, setActiveLogin] = useState(true)
 
     const handleOnClickSouProfessor = () =>{
@@ -97,12 +101,42 @@ function Login (){
         setMouseOnAluno(false)
     }
 
+    const [overlay, setOverlay] = useState (false)
+
+    const handleOnClickHome = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
+    const handleOnClickParticipe = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/participe'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
 return (
     <>
     <div className="page-login">
+        <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
+            <img className='loading-top' src={overlayText2}></img>
+            <img className='loading-horiz' src={overlayText}></img>
+        </div>
         <header>
             <div className="logo">
-                <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
+                <img onClick={handleOnClickHome} src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img>
             </div>
             <div className="title">
                 <h1>Semeando Campeões</h1>
@@ -196,7 +230,7 @@ return (
                         </div>
                     </div>
                     <div className="redirect-login">
-                    <span className='question'>Não é aluno?<a href='/participe'>Faça parte!</a></span>
+                    <span className='question'>Não é aluno?<a onClick={handleOnClickParticipe} >Faça parte!</a></span>
                 </div>
                 </div>
 

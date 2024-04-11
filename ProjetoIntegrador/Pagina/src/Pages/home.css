@@ -67,10 +67,11 @@ header .logo{
 
 header .logo img{
     width: 16vh;
-    height: 16vh;
+    height: 90%;
     margin-left: 9vh;
     border-radius: 50%;
     border: solid .2vh white;
+    cursor: pointer;
 }
 
 header .title{
@@ -131,6 +132,7 @@ header .login-acess img{
     border-radius: 50%;
     transition: .3s;
     background-color: #53535365;
+    cursor: pointer;
 }
 
 header .login-acess img:hover{

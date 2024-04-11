@@ -1,7 +1,7 @@
 import {  useState } from 'react'
+import './cadaster.css'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import MyInput from '../components/MyInput'
-import './cadaster.css'
 import Mancha from '../assets/mancha-background-cadaster.png'
 import jiu1 from '../assets/jiu1-dePe.png'
 import jiu2 from '../assets/jiu2-pernaAberta.png'
@@ -12,6 +12,8 @@ import responsavel from '../assets/responsavel.svg'
 import username from '../assets/userNOME.svg'
 import MyButton from '../components/MyButton'
 import MyPhoneButton from '../components/MyPhoneButton'
+import overlayText from '../assets/overlayLoadingTextSemeandoCampeoes.gif'
+import overlayText2 from '../assets/overlayLoadingTextLoading.gif'
 
 const Cadaster = () => {
 //nome focus
@@ -45,15 +47,44 @@ const Cadaster = () => {
             setFocusNomeResp(true)
         }
     }
-
     const [valueNomeResp, setValueNomeResp] = useState("")
+
+
+    const [overlay, setOverlay] = useState (false)
+
+    const handleOnClickHome = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
+    const handleOnClickLogin = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/login'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
 
     return(
         <div className="page-cadaster">
-            
+            <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
+                <img className='loading-top' src={overlayText2}></img>
+                <img className='loading-horiz' src={overlayText}></img>
+            </div>
             <header>
                 <div className="logo">
-                    <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
+                    <img onClick={handleOnClickHome} src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img>
                 </div>
                 <div className="title">
                     <h1>Semeando Campeões</h1>
@@ -169,7 +200,7 @@ const Cadaster = () => {
                             leave="rgba(255, 0, 0, 0.3)"
                         />
                     <div className="redirect-login">
-                        <span className='question'>Já é aluno?<a href='/login'>Entrar.</a></span>
+                        <span className='question'>Já é aluno?<a onClick={handleOnClickLogin} >Entrar.</a></span>
                     </div>
                     </div>
                 </div>

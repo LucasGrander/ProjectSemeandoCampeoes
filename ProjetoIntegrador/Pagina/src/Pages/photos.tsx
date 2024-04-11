@@ -1,5 +1,6 @@
-import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
+import { useState } from 'react'
 import './photos.css'
+import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import ImagemTemporaria from '../assets/temporaria-image.jpg'
 import PSCC from '../assets/PSCC.jpeg'
 import PSCLP from '../assets/PSCLP.jpeg'
@@ -9,17 +10,36 @@ import IIIcopa from '../assets/IIIcopa.webp'
 import IVcopa from '../assets/IVcopa.webp'
 import galeryICON from '../assets/galeryICON.svg'
 import mousePointer from '../assets/mouseHOVER.svg'
-import wings from '../assets/windsDECORATION.svg'
-import feather from '../assets/feather.svg'
 import top1Star from '../assets/top1-star.svg'
 import trohpy from '../assets/trophy.svg'
 import medalha from '../assets/medal.svg'
 import iconCamPhotos from '../assets/icon-camera-photo.svg'
+import overlayText from '../assets/overlayLoadingTextSemeandoCampeoes.gif'
+import overlayText2 from '../assets/overlayLoadingTextLoading.gif'
 
 
 const Photos = () => {
+
+    const [overlay, setOverlay] = useState (false)
+
+    const handleOnClickHome = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
     return(
     <div className="page-photos">
+        <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
+                <img className='loading-top' src={overlayText2}></img>
+                <img className='loading-horiz' src={overlayText}></img>
+            </div>
         <img className='background-page-photos' src='https://wallpapercave.com/wp/X3SKsUe.jpg'></img>
         <img className='camera-right' src={iconCamPhotos}></img>
         <img className='camera-left' src={iconCamPhotos}></img>
@@ -29,7 +49,7 @@ const Photos = () => {
         <img className='medal-right' src={medalha}></img>
         <header>
             <div className="logo">
-                <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
+                <img onClick={handleOnClickHome} src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img>
             </div>
             <div className="title">
                 <h1>Semeando Campeões</h1>
