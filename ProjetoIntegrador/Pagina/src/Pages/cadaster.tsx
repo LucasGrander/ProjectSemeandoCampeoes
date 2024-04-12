@@ -50,7 +50,7 @@ const Cadaster = () => {
     const [valueNomeResp, setValueNomeResp] = useState("")
 
 
-    const [overlay, setOverlay] = useState (false)
+    const [overlay, setOverlay] = useState (true)
 
     const handleOnClickHome = () => {
         setOverlay(true)
@@ -80,7 +80,8 @@ const Cadaster = () => {
         <div className="page-cadaster">
             <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
                 <img className='loading-top' src={overlayText2}></img>
-                <img className='loading-horiz' src={overlayText}></img>
+                {/* <img className='loading-horiz' src={overlayText}></img> */}
+                <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
             </div>
             <header>
                 <div className="logo">

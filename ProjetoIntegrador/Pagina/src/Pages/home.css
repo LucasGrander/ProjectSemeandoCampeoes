@@ -25,8 +25,8 @@ body{
 .overlay .loading-top{
     position: absolute;
 
-    width: 30vh;
-    height: 30vh;
+    width: 25vh;
+    height: 25vh;
 }
 .overlay .loading-horiz{
     position: absolute;
@@ -275,5 +275,22 @@ footer .content-footer img{
 
     100%{
         transform: rotate(10deg);
+    }
+}
+
+.page-home .loading-logo{
+    width: 200px;
+    height: 200px;
+
+    animation: rotateLogoLoading 1s infinite;
+}
+
+@keyframes rotateLogoLoading {  
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
     }
 }

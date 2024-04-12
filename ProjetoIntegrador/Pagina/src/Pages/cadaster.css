@@ -369,3 +369,20 @@
         animation: softRotateIcons 2s infinite alternate;
     }
 }
+
+.page-cadaster .loading-logo{
+    width: 200px;
+    height: 200px;
+
+    animation: rotateLogoLoading 1s infinite;
+}
+
+@keyframes rotateLogoLoading {  
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}

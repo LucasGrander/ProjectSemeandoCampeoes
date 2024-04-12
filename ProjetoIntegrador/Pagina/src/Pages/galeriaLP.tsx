@@ -1,4 +1,4 @@
-import './galeriaIPB.css'
+import './galeriaLP.css'
 import overlayText from '../assets/overlayLoadingTextSemeandoCampeoes.gif'
 import overlayText2 from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
