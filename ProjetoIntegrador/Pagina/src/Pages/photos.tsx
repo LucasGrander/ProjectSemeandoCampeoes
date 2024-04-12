@@ -15,6 +15,7 @@ import trohpy from '../assets/trophy.svg'
 import medalha from '../assets/medal.svg'
 import iconCamPhotos from '../assets/icon-camera-photo.svg'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
+import Footer from '../components/Footer'
 
 
 const Photos = () => {
@@ -231,21 +232,7 @@ const Photos = () => {
                     </div>
                 </div>
             </div>
-            <footer>
-                <div className='content-footer'>
-                    <div className="icon">
-                        <img src={LogoSemeandoCampeoes} alt='logo Semeando Campeões'></img>
-                    </div>
-                   <div className="text">
-                    <div>
-                        <span>Semeando Campeões</span>
-                    </div>
-                    <div className='copy'>
-                    Copyright © 2024 Lucas Grander & Ricardo M. Batista.
-                    </div>
-                   </div>
-                </div>
-            </footer>
+            <Footer />
     </div>
   )
 }

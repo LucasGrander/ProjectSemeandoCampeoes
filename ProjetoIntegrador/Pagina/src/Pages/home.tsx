@@ -12,6 +12,7 @@ import Instrutores from '../components/Instrutores'
 import CentrosDeTreinamento from '../components/CentrosDeTreinamento'
 import Historico from '../components/Historico'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
+import Footer from '../components/Footer'
 
 //exemplos de componentes a serem criados
   
@@ -204,21 +205,7 @@ const Home = () => {
                 {content === 'histórico' && <Historico id={content == "histórico" ? "active" : "inative"} />}
                 </div>
             </div>
-            <footer>
-                <div className='content-footer'>
-                    <div className="icon">
-                        <img src={LogoSemeandoCampeoes} alt='logo Semeando Campeões'></img>
-                    </div>
-                   <div className="text">
-                    <div>
-                        <span>Semeando Campeões</span>
-                    </div>
-                    <div className='copy'>
-                    Copyright © 2024 Lucas Grander & Ricardo M. Batista.
-                    </div>
-                   </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     </>
     )
