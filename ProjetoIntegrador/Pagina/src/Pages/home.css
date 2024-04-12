@@ -25,16 +25,9 @@ body{
 .overlay .loading-top{
     position: absolute;
 
-    width: 25vh;
-    height: 25vh;
+    width: 34vh;
+    height: 34vh;
 }
-.overlay .loading-horiz{
-    position: absolute;
-
-    width: 15vh;
-    height: 15vh;
-}
-
 
 .page-home{
     width: 100%;
@@ -249,10 +242,10 @@ footer .content-footer img{
 }
 
 #active{
-    animation: changeAbout 1s normal forwards;
+    animation: changeAbout 1.5s normal forwards;
 }
 #inative{
-    transition: .3s;
+    transition: .5s;
 }
 
 @keyframes changeAbout {

@@ -556,3 +556,20 @@
 
     opacity: .2;
 }
+
+.page-photos .loading-logo{
+    width: 200px;
+    height: 200px;
+
+    animation: rotateLogoLoading 1s infinite;
+}
+
+@keyframes rotateLogoLoading {  
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}

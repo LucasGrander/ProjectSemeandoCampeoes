@@ -9,8 +9,7 @@ import userICON from '../assets/userIconLogin.svg'
 import designLogin from '../assets/designForLogin.svg'
 import stickmanLogin from '../assets/vetor-JiuJitsu-fight.png'
 import stickmanLogin2 from '../assets/vetor-JiuJitsu-fight-2.png'
-import overlayText from '../assets/overlayLoadingTextSemeandoCampeoes.gif'
-import overlayText2 from '../assets/overlayLoadingTextLoading.gif'
+import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 
 function Login (){
 
@@ -130,8 +129,8 @@ return (
     <>
     <div className="page-login">
         <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
-            <img className='loading-top' src={overlayText2}></img>
-            <img className='loading-horiz' src={overlayText}></img>
+            <img className='loading-top' src={overlayLoadingCircle}></img>
+            <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
         </div>
         <header>
             <div className="logo">

@@ -59,3 +59,54 @@
     font-weight: 600;
     text-shadow: 0vh 0vh 0vh rgb(255, 255, 255);
 }
+
+.page-galeria-iretama .loading-logo{
+    width: 200px;
+    height: 200px;
+
+    animation: rotateLogoLoading 1s infinite;
+}
+
+.page-galeria-iretama .container-photos-iretama{
+    width: 100%;
+    height: 135vh;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple{
+    width: 100%;
+    height: 45vh;
+
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    gap: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple .box{
+    width: 25%;
+    height: 100%;
+
+    background-color: #27272719;
+    box-shadow: 0.1vh 0.2vh 1vh rgba(0, 0, 0, 0.850)
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple .box img{
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes rotateLogoLoading {  
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}

@@ -11,8 +11,7 @@ import MyButton from '../components/MyButton'
 import Instrutores from '../components/Instrutores'
 import CentrosDeTreinamento from '../components/CentrosDeTreinamento'
 import Historico from '../components/Historico'
-import overlayText from '../assets/overlayLoadingTextSemeandoCampeoes.gif'
-import overlayText2 from '../assets/overlayLoadingTextLoading.gif'
+import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 
 //exemplos de componentes a serem criados
   
@@ -21,7 +20,7 @@ import overlayText2 from '../assets/overlayLoadingTextLoading.gif'
 const Home = () => {
     const [content, setContent] = useState('cts')
     
-    const [overlay, setOverlay] = useState (true)
+    const [overlay, setOverlay] = useState (false)
 
     const handleOnClickHome = () => {
         setOverlay(true)
@@ -77,8 +76,7 @@ const Home = () => {
     <>
         <div className="page-home">
             <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
-            <img className='loading-top' src={overlayText2}></img>
-                {/* <img className='loading-horiz' src={overlayText}></img> */}
+                <img className='loading-top' src={overlayLoadingCircle}></img>
                 <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
             </div>
             <header>

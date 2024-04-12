@@ -12,8 +12,7 @@ import responsavel from '../assets/responsavel.svg'
 import username from '../assets/userNOME.svg'
 import MyButton from '../components/MyButton'
 import MyPhoneButton from '../components/MyPhoneButton'
-import overlayText from '../assets/overlayLoadingTextSemeandoCampeoes.gif'
-import overlayText2 from '../assets/overlayLoadingTextLoading.gif'
+import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 
 const Cadaster = () => {
 //nome focus
@@ -50,7 +49,7 @@ const Cadaster = () => {
     const [valueNomeResp, setValueNomeResp] = useState("")
 
 
-    const [overlay, setOverlay] = useState (true)
+    const [overlay, setOverlay] = useState (false)
 
     const handleOnClickHome = () => {
         setOverlay(true)
@@ -79,8 +78,7 @@ const Cadaster = () => {
     return(
         <div className="page-cadaster">
             <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
-                <img className='loading-top' src={overlayText2}></img>
-                {/* <img className='loading-horiz' src={overlayText}></img> */}
+                <img className='loading-top' src={overlayLoadingCircle}></img>
                 <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
             </div>
             <header>

@@ -14,8 +14,7 @@ import top1Star from '../assets/top1-star.svg'
 import trohpy from '../assets/trophy.svg'
 import medalha from '../assets/medal.svg'
 import iconCamPhotos from '../assets/icon-camera-photo.svg'
-import overlayText from '../assets/overlayLoadingTextSemeandoCampeoes.gif'
-import overlayText2 from '../assets/overlayLoadingTextLoading.gif'
+import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 
 
 const Photos = () => {
@@ -73,9 +72,9 @@ const Photos = () => {
     return(
     <div className="page-photos">
         <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
-                <img className='loading-top' src={overlayText2}></img>
-                <img className='loading-horiz' src={overlayText}></img>
-            </div>
+            <img className='loading-top' src={overlayLoadingCircle}></img>
+            <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
+        </div>
         <img className='background-page-photos' src='https://wallpapercave.com/wp/X3SKsUe.jpg'></img>
         <img className='camera-right' src={iconCamPhotos}></img>
         <img className='camera-left' src={iconCamPhotos}></img>
