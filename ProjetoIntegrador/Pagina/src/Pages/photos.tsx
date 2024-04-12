@@ -155,7 +155,7 @@ const Photos = () => {
             </div>
 
 
-            {/* //container inferior */}
+            {/* //container inferior -- FOTOS COPA PSC*/}
             <div className="title-photos2">
                     <span>Copa - Semeando Campeões</span>
                 </div>
