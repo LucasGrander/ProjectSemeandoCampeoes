@@ -3,10 +3,7 @@ import './cadaster.css'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import MyInput from '../components/MyInput'
 import Mancha from '../assets/mancha-background-cadaster.png'
-import jiu1 from '../assets/jiu1-dePe.png'
-import jiu2 from '../assets/jiu2-pernaAberta.png'
-import jiu3 from '../assets/jiu3-kimono.png'
-import jiu4 from '../assets/jiu5-luta.png'
+import decoCadaster from '../assets/designForLogin.svg'
 import tel from '../assets/telephone.svg'
 import responsavel from '../assets/responsavel.svg'
 import username from '../assets/userNOME.svg'
@@ -90,14 +87,14 @@ const Cadaster = () => {
                 </div>
             </header>
             <div className="container-banner-form">
-                <img className='jiu1' src={jiu1}></img>
-                <img className='jiu2' src={jiu2}></img>
-                <img className='jiu3' src={jiu3}></img>
-                <img className='jiu4' src={jiu4}></img>
+                <img className='deco-cadaster-top' src={decoCadaster}></img>
+                <img className='deco-cadaster-top2' src={decoCadaster}></img>
+                <img className='deco-cadaster-bottom' src={decoCadaster}></img>
+                <img className='deco-cadaster-bottom2' src={decoCadaster}></img>
                 <div className="container-banner">
                     <div className="content-banner">
                         <img src={Mancha} alt='mancha de fundo'></img>
-                        <span>FAÇA PARTE!</span>
+                        <span className='text-geral' >FAÇA PARTE!!</span>
                         <div className="box-name">
                             <span>Semeando</span>   
                             <span>Campeões</span>
@@ -195,8 +192,8 @@ const Cadaster = () => {
                             borderRadius=".6vh"
                             transition= ".3s"
                             children="Enviar"
-                            enter="rgba(255, 0, 0, 0.5)"
-                            leave="rgba(255, 0, 0, 0.3)"
+                            enter="rgba(0, 0, 0, 0.1)"
+                            leave="rgba(0, 0, 0, 0.3)"
                         />
                     <div className="redirect-login">
                         <span className='question'>Já é aluno?<a onClick={handleOnClickLogin} >Entrar.</a></span>
