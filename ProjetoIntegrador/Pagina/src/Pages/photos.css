@@ -155,7 +155,12 @@
     font-size: 1.5vh;
     font-weight: 900;
 }
-
+.container-photos .box-ct p{
+    margin-top: 1vh;
+    letter-spacing: .1vh ;
+    font-size: 2.5vh;
+    font-weight: 900;
+}
 
 
 

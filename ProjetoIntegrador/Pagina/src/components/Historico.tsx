@@ -13,7 +13,10 @@ const Historico = ({id}: Props) => {
             <div className="text-history">
               <span><h2>PROJETO SEMEANDO CAMPEÕES</h2></span>
               <br></br>
-              <p>O PSC se iniciou de uma parceria com o projeto social de Jiu Jitsu da IV Igreja Presbiteriana Renovada (IV IPR) de Campo Mourão no ano de 2018, em 18 de março de 2019, com a finalidade de oferecer aulas de Jiu Jitus e defesa pessoal a crianças da comunidade, o PSC se desmembrou da IV IPR em 2019 ministrando aulas na Escola Municipal Monteiro Lobato (EMMoL), após o advento da pandemia em 2021 migramos para as dependências Primeira Igreja Batista de Campo Mourão(PIB) e em 2022 foi fundada a Associação Mourãoense de Jiu Jitsu para dar suporte ao PSC, neste mesmo ano expandimos para Associação de Moradores do Lar Paraná.
+              <p>O PSC se iniciou de uma parceria com o projeto social de Jiu Jitsu da IV Igreja Presbiteriana Renovada (IV IPR) de Campo Mourão no ano de 2018, em 18 de março de 2019,
+                 com a finalidade de oferecer aulas de Jiu Jitus e defesa pessoal a crianças da comunidade, neste mesmo ano se iniciou um apoio em Iretama ao recém criado Projeto Social Brothers de Jiu Jitsu,
+                 o PSC se desmembrou da IV IPR em 2019 ministrando aulas na Escola Municipal Monteiro Lobato (EMMoL), após o advento da pandemia em 2021 migramos para as dependências Primeira Igreja Batista de Campo Mourão(PIB)
+                  e em 2022 foi fundada a Associação Mourãoense de Jiu Jitsu para dar suporte ao PSC, neste mesmo ano expandimos para Associação de Moradores do Lar Paraná.<br></br>
               A equipe ainda desenvolve diversas atividades sociais, como arrecadação de alimentos e roupas, tardes recreativas, como o treino arraiá e o treino com os pais.
               <h2>Homenagens</h2>
               2019 - <a href="https://www.campomourao.pr.leg.br/institucional/noticias/camara-entrega-mocao-a-idealizador-do-semeando-campeoes">Moção de Congratulação</a> pela Câmara de vereadores de Campo Mourão em 22 de Abril de 2019, pelos serviços prestados como PSC.<br></br>
@@ -43,6 +46,11 @@ const Historico = ({id}: Props) => {
               Ouro 04<br></br>
               Prata 07<br></br>
               Bronze 07<br></br>
+              <br></br>
+              Total de medalhas em 2019:<br></br>
+              Ouro 08<br></br>
+              Prata 10<br></br>
+              Bronze 13<br></br> 
 
               <h2>Atividades em 2020:</h2>
               Treino infantil as segundas e quartas as 18h30 e defesa pessoal para mulheres as 20h30 nas dependências do EMMoL de janeiro a março quando as atividades foram suspensas devido a pandemia de COVID-19.<br></br>
@@ -61,8 +69,7 @@ const Historico = ({id}: Props) => {
               Em 15 de maio os treinos de defesa pessoal feminino foram reiniciados, sendo ministradas aulas as 14h nos sábados.<br></br>
               Em 31 de Julho foi realizado o <a href = "https://resenhacm.com.br/projeto-semeando-campeoes-volta-as-atividades-com-treino-arraia/?fbclid=IwAR3mtpEhzEkLEByikNHj8GHZflVuF27uOQT_UeCbP-JWVDM_dmpXaunnocU">I treino Arraiá</a>, reunindo os alunos, sendo utilizadas mascaras e atividades adaptadas as medidas de distanciamento social.<br></br>
               Em 28 de outubro o PSC participou da campanha de arrecadação de roupas, fraudas, leite, etc organizada pelo dojo Uchoa de Judo.
-              Em 
-
+              
               <h2>Competições e Resultados em 2021:</h2>
               Em 20 de novembro a equipe levou 05 competidores para participar da I Copa Brothers de Jiu Jitsu em Iretama:<br></br>
               Ouro: 02<br></br>
@@ -96,6 +103,11 @@ const Historico = ({id}: Props) => {
               Ouro: 07<br></br>
               Prata: 06<br></br>
               Bronze: 07<br></br>
+              <br></br>
+              Total de medalhas em 2022:<br></br>
+              Ouro 16<br></br>
+              Prata 15<br></br>
+              Bronze 14<br></br> 
 
               <h2>Atividades em 2023:</h2>
               Reinicio das aulas em 17 de janeiro.<br></br>
@@ -128,16 +140,34 @@ const Historico = ({id}: Props) => {
               Ouro: 12<br></br>
               Prata: 11<br></br>
               Bronze: 07<br></br>
+              <br></br>
+              Total de medalhas em 2023:<br></br>
+              Ouro 25<br></br>
+              Prata 21<br></br>
+              Bronze 14<br></br> 
 
               <h2>Atividades em 2024:</h2>
               Reinicio das aulas em 02 de janeiro.<br></br>
-              Em 10 de março a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa.
+              Em 01 de fevereiro o Projeto Social Brothers Jiu Jitsu de Iretama passou a incorporar efetivamento o PSC, sendo renomeado como PSC Iretama, utilizando o brasão comum, o Projeto Brothers teve sua gênese em meados de 2018, empunhando a
+              bandeira da justiça social, velando sempre pelos valores éticos, morais e cristãos através do ensino das artes marciais para crianças e adultos. Agregando atletas dos municípios de Roncador e Nova Tebas.<br></br>
+              Em 10 de março a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa.<br></br>
+              Em 03 de Abril o PSC assinou o termo de colaboração da Lei de incentivo ao esporte firmando parceria com a Prefeitura Municipal de Campo Mourão através da fundação de esportes de Campo Mourão (FECAM), sendo liberados R$20.000,00 para o ano de 2024.<br></br>
+              Em 14 de abril a equipe participou da Copa da Amizade 2024 em Umuarama, com o apoio do 11º Batalhão de Polícia Militar do Paraná (Campo Mourão) que forneceu transporte para 16 dos 25 competidores, contando ainda com o apoio da FECAM atraves da Lei de Incentivo ao Esporte.  
 
               <h2>Competições e Resultados em 2024:</h2>
               Em 10 de março a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa com 17 atletas, resultando em 16 medalhas:<br></br>
               Ouro: 06<br></br>
               Prata: 08<br></br>
               Bronze: 02<br></br>
+              Em 14 de abril a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa com 25 atletas, resultando em 22 medalhas:<br></br>
+              Ouro: 05<br></br>
+              Prata: 11<br></br>
+              Bronze: 06<br></br>
+              <br></br>
+              Total de medalhas em 2024:<br></br>
+              Ouro 11<br></br>
+              Prata 19<br></br>
+              Bronze 08<br></br> 
 
               </p>
             </div>
