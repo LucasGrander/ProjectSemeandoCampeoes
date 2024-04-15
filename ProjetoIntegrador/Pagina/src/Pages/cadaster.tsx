@@ -192,7 +192,7 @@ const Cadaster = () => {
                             borderRadius=".6vh"
                             transition= ".3s"
                             children="Enviar"
-                            enter="rgba(0, 0, 0, 0.1)"
+                            enter="rgba(0, 0, 0, 0.2)"
                             leave="rgba(0, 0, 0, 0.3)"
                         />
                     <div className="redirect-login">

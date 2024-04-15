@@ -142,7 +142,7 @@ return (
         </header>
 
         <div className="container-login">
-            <div style={{pointerEvents: activeLogin ? "none" : "all", filter: activeLogin ? "grayscale(100%)" : "grayscale(0%)", opacity: activeLogin ? ".3" : "1", transition: "1s"}} className="login-professores">
+            <div style={{pointerEvents: activeLogin ? "none" : "all", filter: activeLogin ? "grayscale(100%)" : "grayscale(0%)", opacity: activeLogin ? ".2" : "1", transition: "1s"}} className="login-professores">
                 <img className="design-type-wifi-top" src={designLogin}></img>
                 <img className="design-type-wifi-bottom" src={designLogin}></img>
                 <span>Professor</span>
@@ -186,7 +186,7 @@ return (
                         borderRadius=".6vh"
                         padding="0vh 7vh 0vh 2vh"
                         transition= ".3s"
-                        background-color= "transparent"
+                        backgroundColor= "transparent"
                     />
                     <img src={blockICON}></img>
                 </div>
@@ -198,14 +198,14 @@ return (
                         cursor= "pointer"
                         fontSize= "2.5vh"
                         fontWeight= "bold"
-                        background-color= "rgba(255, 0, 0, 0.3)"
+                        backgroundColor= "transparent"
                         border= ".3vh black solid"
                         borderBottom= ".3vh black solid"
                         borderRadius=".6vh"
                         transition= ".3s"
                         children="Enviar"
-                        enter="rgba(255, 0, 0, 0.5)"
-                        leave="rgba(255, 0, 0, 0.3)"
+                        enter="rgba(0, 0, 0, 0.2)"
+                        leave="rgba(0, 0, 0, 0.3)"
                     />
             </div>
 
@@ -243,7 +243,7 @@ return (
 
 
 
-            <div style={{pointerEvents: activeLogin ? "all" : "none", filter: activeLogin ? "grayscale(0%)" : "grayscale(100%)", opacity: activeLogin ? "1" : ".3", transition: "1s"}} className="login-alunos">
+            <div style={{pointerEvents: activeLogin ? "all" : "none", filter: activeLogin ? "grayscale(0%)" : "grayscale(100%)", opacity: activeLogin ? "1" : ".2", transition: "1s"}} className="login-alunos">
                 <img className="design-type-wifi-top" src={designLogin}></img>
                 <img className="design-type-wifi-bottom" src={designLogin}></img>
                 <span>Aluno</span>
@@ -299,14 +299,14 @@ return (
                         cursor= "pointer"
                         fontSize= "2.5vh"
                         fontWeight= "bold"
-                        background-color= "rgba(255, 0, 0, 0.3)"
+                        backgroundColor= "transparent"
                         border= ".3vh black solid"
                         borderBottom= ".3vh black solid"
                         borderRadius=".6vh"
                         transition= ".3s"
                         children="Enviar"
-                        enter="rgba(255, 0, 0, 0.5)"
-                        leave="rgba(255, 0, 0, 0.3)"
+                        enter="rgba(0, 0, 0, 0.2)"
+                        leave="rgba(0, 0, 0, 0.3)"
                     />
             </div>
         </div>

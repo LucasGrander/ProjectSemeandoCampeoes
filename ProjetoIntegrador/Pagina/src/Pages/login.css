@@ -86,6 +86,7 @@
 
     opacity: 0.4;
     transform: rotate(60deg);
+    filter: grayscale(100%);
 
     position: absolute;
     top: -10vh;
@@ -99,6 +100,7 @@
 
     opacity: 0.4;
     transform: rotate(230deg);
+    filter: grayscale(100%);
 
     position: absolute;
     top: 60vh;
@@ -106,9 +108,9 @@
 }
 
 .page-login .container-login .login-professores span{
-    color: red;
-    -webkit-text-stroke: .2vh black;
-    text-shadow: .2vh .3vh 0vh rgba(255, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.365);
+    -webkit-text-stroke: .3vh black;
+    text-shadow: .2vh .3vh 0vh rgba(0, 0, 0, 0.5);
     font-size: 5vh;
     letter-spacing: 1vh;
     font-weight: 600;
@@ -145,7 +147,7 @@
     transform:translateY(-120%);
     font-weight: 600;
     font-size: 1.9vh;
-    color: rgb(184, 0, 0);
+    color: rgb(0, 0, 0);
     background-color: white;
     padding: 0vh 2vh 0vh 2vh;
     transition: .3s;
@@ -222,7 +224,7 @@
     height: 10vh;
     border-radius: 4vh;
     box-shadow: .1vh .1vh 1vh black;
-    background-color: red;
+    background-color: rgb(0, 0, 0);
     z-index: -1;
 }
 
@@ -254,14 +256,14 @@
     font-weight: 600;
     -webkit-text-stroke: 0vh;
     text-shadow: none;
-    color: rgb(255, 95, 95);
+    color: rgb(0, 0, 0);
     transition: .1s;
     cursor: pointer;
     margin-left: .7vh;
 }
 
 .center-login-page .top .redirect-login .question a:hover{
-    color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
     transition: .1s;
     text-decoration: underline;
 }
@@ -312,6 +314,7 @@
 
     opacity: 0.4;
     transform: rotate(60deg);
+    filter: grayscale(100%);
 
     position: absolute;
     top: 60%;
@@ -325,6 +328,7 @@
 
     opacity: 0.4;
     transform: rotate(230deg);
+    filter: grayscale(100%);
 
     position: absolute;
     top: -10%;
@@ -332,9 +336,9 @@
 }
 
 .page-login .container-login .login-alunos span{
-    color: red;
-    -webkit-text-stroke: .2vh black;
-    text-shadow: .2vh .3vh 0vh rgba(255, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.365);
+    -webkit-text-stroke: .3vh black;
+    text-shadow: .2vh .3vh 0vh rgba(0, 0, 0, 0.5);
     font-size: 5vh;
     letter-spacing: 1vh;
     font-weight: 600;
@@ -371,7 +375,7 @@
     transform:translateY(-120%);
     font-weight: 600;
     font-size: 1.9vh;
-    color: rgb(184, 0, 0);
+    color: rgb(0, 0, 0);
     background-color: white;
     padding: 0vh 2vh 0vh 2vh;
     transition: .3s;
