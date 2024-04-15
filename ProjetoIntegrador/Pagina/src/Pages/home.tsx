@@ -51,7 +51,7 @@ const Home = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/fotos'
+            window.location.href = '/galeria-de-fotos'
         }, 1500)
 
         setTimeout(() => {

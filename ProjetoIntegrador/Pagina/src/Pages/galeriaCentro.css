@@ -101,6 +101,44 @@
     height: 100%;
 }
 
+.page-galeria-centro .container-photos-centro .content-tripple .box-return{
+    width: 25%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.page-galeria-centro .container-photos-centro .content-tripple .box-return .title-return{
+    width: 100%;
+    height: 30%;
+
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.page-galeria-centro .container-photos-centro .content-tripple .box-return .title-return span{
+    font-size: 4vh;
+    font-weight: 600;
+}
+
+.page-galeria-centro .container-photos-centro .content-tripple .box-return .icon-return{
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-galeria-centro .container-photos-centro .content-tripple .box-return .icon-return img{
+    width: 15vh;
+    height: 15vh;
+}
+
 @keyframes rotateLogoLoading {  
     0%{
         transform: rotate(0deg);
