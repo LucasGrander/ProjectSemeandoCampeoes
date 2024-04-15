@@ -61,8 +61,8 @@
 }
 
 .page-galeria-iretama .loading-logo{
-    width: 200px;
-    height: 200px;
+    width: 23vh;
+    height: 23vh;
 
     animation: rotateLogoLoading 1s infinite;
 }
