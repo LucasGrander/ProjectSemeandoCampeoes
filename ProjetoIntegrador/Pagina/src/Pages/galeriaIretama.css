@@ -1,0 +1,112 @@
+.page-galeria-iretama{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.page-galeria-iretama header{
+    width: 100%;
+    height: 18vh;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    background-color: black;
+    border-bottom: solid .8vh rgb(255, 0, 0);
+}
+
+.page-galeria-iretama header .logo{
+    width: 15%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.page-galeria-iretama header .logo img{
+    width: 16vh;
+    height: 90%;
+    margin-left: 9vh;
+    border-radius: 50%;
+    border: solid .2vh white;
+}
+
+.page-galeria-iretama header .title{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    letter-spacing: 1vh;
+    word-spacing: 1vh;
+    font-size: 3.5vh;
+    color: white;
+    text-shadow: 0.2vh 0.2vh .2vh rgba(255, 255, 255, 0.272);
+}
+
+.page-galeria-iretama header .title .subtitle{
+    width: 70%;
+    text-align: center;
+
+    font-size: 2.5vh;
+    letter-spacing: .3vh;
+    font-weight: 600;
+    text-shadow: 0vh 0vh 0vh rgb(255, 255, 255);
+}
+
+.page-galeria-iretama .loading-logo{
+    width: 23vh;
+    height: 23vh;
+
+    animation: rotateLogoLoading 1s infinite;
+}
+
+.page-galeria-iretama .container-photos-iretama{
+    width: 100%;
+    height: 135vh;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple{
+    width: 100%;
+    height: 45vh;
+
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    gap: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple .box{
+    width: 25%;
+    height: 100%;
+
+    background-color: #27272719;
+    box-shadow: 0.1vh 0.2vh 1vh rgba(0, 0, 0, 0.850)
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple .box img{
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes rotateLogoLoading {  
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}

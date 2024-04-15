@@ -1,43 +1,88 @@
+import { useState } from 'react'
 import './home.css'
 import LogoSemeandoCampeoes from "../assets/LogoSemeandoCampeoes.png"
-import LogoInstagram from "../assets/facebook.svg"
-import LogoFacebook from "../assets/instagram.svg"
+import LogoInstagram from "../assets/instagram.svg"
+import LogoFacebook from "../assets/facebook.svg"
 import LogoYoutube from "../assets/youtube.svg"
 import UserLogin from "../assets/userICON.svg"
 import Camera from "../assets/camPHOTO.svg"
 import HandShake from "../assets/handShake.svg"
-import { useState } from 'react'
 import MyButton from '../components/MyButton'
 import Instrutores from '../components/Instrutores'
 import CentrosDeTreinamento from '../components/CentrosDeTreinamento'
 import Historico from '../components/Historico'
+import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
+import Footer from '../components/Footer'
 
 //exemplos de componentes a serem criados
   
   
 
 const Home = () => {
-
     const [content, setContent] = useState('cts')
+    
+    const [overlay, setOverlay] = useState (false)
+
+    const handleOnClickHome = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
+    const handleOnClickLogin = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/login'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
 
     const handleOnClickFotos = () => {
-        setTimeout(()=> {
-            window.location.href = `/fotos`
-        }, 500)
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/fotos'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+        
     }
 
     const handleOnClickParticipe = () => {
-        setTimeout(()=> {
-            window.location.href = `/participe`
-        }, 500)
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/participe'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
     }
+
 
     return(
     <>
         <div className="page-home">
+            <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
+                <img className='loading-top' src={overlayLoadingCircle}></img>
+                <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
+            </div>
             <header>
                 <div className="logo">
-                    <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
+                    <img onClick={handleOnClickHome} src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img>
                 </div>
                 <div className="title">
                     <h1>Semeando Campeões</h1>
@@ -48,7 +93,7 @@ const Home = () => {
                     <a href="https://www.youtube.com/@semeandocampeoes7001" target="_blank" ><img className='youtube' src={LogoYoutube} alt="logo do youtube"></img></a>
                 </div>
                 <div className="login-acess">
-                    <a href="/login"><img src={UserLogin} alt="user login"></img></a>
+                    <img onClick={handleOnClickLogin} src={UserLogin} alt="user login"></img>
                 </div>
             </header>
             <nav>
@@ -67,7 +112,7 @@ const Home = () => {
                 fontWeight="700"
                 transition=".3s"
                 boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
-                enter="rgba(150, 150, 150, 0.8)"
+                enter="rgba(150, 150, 150, 0.5)"
                 leave="white"
                 >
                     Galeria de fotos <img src={Camera} alt='camera de foto' />
@@ -88,14 +133,14 @@ const Home = () => {
                 fontWeight="700"
                 transition=".3s"
                 boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
-                enter="rgba(150, 150, 150, 0.8)"
+                enter="rgba(150, 150, 150, 0.5)"
                 leave="white"
                 >
-                    Participe!<img src={HandShake} alt='aperto de mãos' />
+                    Seja aluno!<img src={HandShake} alt='aperto de mãos' />
             </MyButton>
             </nav>
 
-            <div className="content">
+            <div className="container-home">
                 <div className="title-container">
                     <span>Sobre nós</span>
                 </div>
@@ -160,21 +205,7 @@ const Home = () => {
                 {content === 'histórico' && <Historico id={content == "histórico" ? "active" : "inative"} />}
                 </div>
             </div>
-            <footer>
-                <div className='content-footer'>
-                    <div className="icon">
-                        <img src={LogoSemeandoCampeoes} alt='logo Semeando Campeões'></img>
-                    </div>
-                   <div className="text">
-                    <div>
-                        <span>Semeando Campeões</span>
-                    </div>
-                    <div className='copy'>
-                    Copyright © 2024 Lucas Grander & Ricardo M. Batista.
-                    </div>
-                   </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     </>
     )

@@ -81,3 +81,38 @@
     border: solid .8vh black;
 }
 /* ----------------- */
+
+.content .box .box-info .redes-sociais-instrutor{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    width: 15%;
+    height: auto;
+    margin-top: .5vh;
+
+    border-top: .4vh solid black;
+    gap: 1vh;
+    padding: 1vh;
+}
+
+.content .box .box-info .redes-sociais-instrutor a{
+    width: 3.5vh;
+    height: 3.5vh;
+}
+
+.content .box .box-info .redes-sociais-instrutor img{
+    filter: grayscale(100%);
+    transition: .1s;
+
+    width: 3.5vh;
+    height: 3.5vh;
+}
+
+.content .box .box-info .redes-sociais-instrutor img:hover{
+    filter: grayscale(0%);
+    transition: .1s;
+
+    width: 3.5vh;
+    height: 3.5vh;
+}

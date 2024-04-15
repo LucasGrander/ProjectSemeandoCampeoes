@@ -4,6 +4,30 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
+
+.overlay{
+    z-index: 2;
+    width: 100%;
+    min-height: 100%;
+    
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+}
+
+.overlay .loading-top{
+    position: absolute;
+
+    width: 29vh;
+    height: 29vh;
+}
 
 .page-home{
     width: 100%;
@@ -12,7 +36,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    background-color: white;
+}   
 
 header{
     width: 100%;
@@ -23,7 +48,7 @@ header{
     align-self: center;
     
     background-color: black;
-    border-bottom: solid .8vh rgb(255, 0, 0);
+    border-bottom: rgb(255, 0, 0) solid .8vh;
 }
 
 header .logo{
@@ -35,10 +60,11 @@ header .logo{
 
 header .logo img{
     width: 16vh;
-    height: 16vh;
+    height: 90%;
     margin-left: 9vh;
     border-radius: 50%;
     border: solid .2vh white;
+    cursor: pointer;
 }
 
 header .title{
@@ -99,6 +125,7 @@ header .login-acess img{
     border-radius: 50%;
     transition: .3s;
     background-color: #53535365;
+    cursor: pointer;
 }
 
 header .login-acess img:hover{
@@ -111,12 +138,12 @@ header .login-acess img:hover{
 nav{
     width: 100%;
     height: 10vh;
-    margin-top: 2vh;
+    gap: 15vh;
+    margin-top: 2vh ;
     
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15vh;
 }
 
 nav button img{
@@ -139,19 +166,16 @@ nav button:hover img{
     height: 3.2vh;
 }
 
-
-
-.content{
+.container-home{
     width: 100%;
-    height: 800px;
-    margin-top: 8vh;
+    height: auto;
 
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.content span{
+.container-home span{
     color: rgba(0, 0, 0, 0.75);
     letter-spacing: .4vh;
     font-size: 7vh;
@@ -170,6 +194,12 @@ nav button:hover img{
     gap: 12vh;
 }
 
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .infos{
     width: 86.8%;
     height: 97vh;
@@ -182,40 +212,11 @@ nav button:hover img{
     overflow-x: hidden;
 }
 
-footer{
-    width: 100%;
-    height: 14vh;
-    border-top: solid .8vh rgb(255, 0, 0);
-    background-color: rgb(0, 0, 0);
-
-    color: white;
-}
-
-footer .content-footer{
-    width: 100%;
-    height: 13vh;
-    gap: 2vh;
-    font-size: 2.5vh ;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-footer .content-footer img{
-    width: 7vh;
-    height: 7vh;
-}
-
-.copy{
-    font-size:1.5vh;
-}
-
 #active{
-    animation: changeAbout 1s normal forwards;
+    animation: changeAbout 1.5s normal forwards;
 }
 #inative{
-    transition: .3s;
+    transition: .5s;
 }
 
 @keyframes changeAbout {
@@ -238,5 +239,22 @@ footer .content-footer img{
 
     100%{
         transform: rotate(10deg);
+    }
+}
+
+.page-home .loading-logo{
+    width: 23vh;
+    height: 23vh;
+
+    animation: rotateLogoLoading 1s infinite;
+}
+
+@keyframes rotateLogoLoading {  
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
     }
 }

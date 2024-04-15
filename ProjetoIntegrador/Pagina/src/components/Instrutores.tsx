@@ -4,6 +4,10 @@ import RicardoIMG from '../assets/FotoRicardo.png'
 import DanielIMG from '../assets/Daniel.jpg'
 import PSC from '../assets/LogoSemeandoCampeoes.png'
 
+import instaLOGO from '../assets/instagram.svg'
+import faceLOGO from '../assets/facebook.svg'
+import youtubeLOGO from '../assets/youtube.svg'
+
 interface Props{
     id?: string;
 }
@@ -22,7 +26,13 @@ const Instrutores = ({id}: Props) => {
                 <span>Daniel Bruno da Silva Ramos</span>
                 <p className='desc-breve'>Faixa Preta de Jiu Jitsu, instrutor certificado pela Gracie Barra BJJ e curso de primeiros socorros básico.</p>
                 <p className='desc-instrutor'>Professor responsável pela Gracie Barra Campo Mourão, Presidente da Associação Mourãoense de Jiu Jitsu, Professor responsável pelo PSC, com vários títulos em Campeonatos de Jiu jitsu do Rio de Janeiro, Paraná e Brasileiros com e sem quimono.</p>
+                <div className="redes-sociais-instrutor">
+                    <a target='_blank' href='https://www.instagram.com/danielramosjj/'><img src={instaLOGO}></img></a> 
+                    <a target='_blank' href='https://www.youtube.com/@danielramosbjj8333'><img src={youtubeLOGO}></img></a> 
+                    <a target='_blank' href='https://www.facebook.com/daniel.jjvp'><img src={faceLOGO}></img></a> 
+                </div>
             </div>
+             
         </div>
 
         <div className="box">
@@ -33,6 +43,14 @@ const Instrutores = ({id}: Props) => {
                 <span>Ricardo Maciel Batista</span>
                 <p className='desc-breve' >Faixa Preta de Jiu Jitsu, Faixa azul de Judô, Instrutor certificado pela Gracie Barra BJJ e curso de APH</p>
                 <p className='desc-instrutor'>Professor coordenador do PSC com Bacharelado e Licenciatura em Educação Física, Multiplicador institucional de Atendimento Pré-Hospitalar (APH) Tático pela Polícia Militar do Parana, APH/MARC 1 pela Polícia Civil do Paraná e Polícia Rodoviária Federal, Tecnólogo Ambiental com pós graduação em Inteligência policiao e Direito Militar..</p>
+                <p className='desc-breve' >Faixa Preta de Jiu Jitsu, Faixa azul de Judô, com Bacharelado e Licenciatura em Educação Física</p>
+                <p className='desc-instrutor'>Instrutor certificado pela Gracie Barra BJJ, Multiplicador institucional de Atendimento Pré-Hospitalar (APH) Tático pela Polícia Militar do Parana, APH/MARC 1 pela Polícia Civil do Paraná e Polícia Rodoviária Federal.</p>
+                <div className="redes-sociais-instrutor">
+                    <a target='_blank' href='https://www.instagram.com/rmbradock/'><img src={instaLOGO}></img></a> 
+                    <a target='_blank' href='https://www.youtube.com/@ricardobatista5534'><img src={youtubeLOGO}></img></a> 
+                    <a target='_blank' href='https://www.facebook.com/rm.bradock'><img src={faceLOGO}></img></a> 
+                </div>
+
             </div>
         </div>
 
@@ -44,6 +62,11 @@ const Instrutores = ({id}: Props) => {
                 <span>Dionata da Silva Benedito</span>
                 <p className='desc-breve' > Faixa Marrom de Jiu Jitsu, Faixa laranja de Judô, instrutor certificado pela Gracie Barra BJJ e curso de primeiros socorros básico.</p>
                 <p className="desc-instrutor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi libero laboriosam ipsum neque at, reprehenderit facere cum, harum, consequuntur iusto placeat omnis quis fugiat debitis. Beatae veniam repellendus architecto.</p>
+                <div className="redes-sociais-instrutor">
+                    <a target='_blank' href='https://www.instagram.com/dionatadioh/'><img src={instaLOGO}></img></a> 
+                    <a target='_blank' href='https://www.youtube.com/@semeandocampeoes7001'><img src={youtubeLOGO}></img></a> 
+                    <a target='_blank' href='https://www.facebook.com/dioh.silva.9'><img src={faceLOGO}></img></a> 
+                </div>
             </div>
         </div>
         <div className="box">
@@ -54,7 +77,12 @@ const Instrutores = ({id}: Props) => {
                 <span>Diego Antonio de Oliveira Ribeiro</span>
                 <p className='desc-breve' > Faixa Roxa de Jiu Jitsu, Faixa preta de Karatê, árbitro  de Karatê pela AKSD, instrutor certificado pela Gracie Barra BJJ e curso de primeiros socorros básico.</p>
                 <p className="desc-instrutor">Graduação em História, Letras inglês, Letras espanhol, Letras e Literaturas de língua portuguesa, Sociologia, Ciências Biológicas, Ciências Contábeis, Gestâo pública e Educação física, bacharelado em Fisioterapia, especialista em Educação física adaptada e Educação física e Atletismo.</p>
-            </div>
+                <div className="redes-sociais-instrutor">
+                    <a target='_blank' href='https://www.instagram.com/dionatadioh/'><img src={instaLOGO}></img></a> 
+                    <a target='_blank' href='https://www.youtube.com/@semeandocampeoes7001'><img src={youtubeLOGO}></img></a> 
+                    <a target='_blank' href='https://www.facebook.com/dioh.silva.9'><img src={faceLOGO}></img></a> 
+                </div>
+          </div>
         </div>
     </div>
   )

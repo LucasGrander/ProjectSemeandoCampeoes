@@ -1,17 +1,15 @@
 import {  useState } from 'react'
+import './cadaster.css'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import MyInput from '../components/MyInput'
-import './cadaster.css'
 import Mancha from '../assets/mancha-background-cadaster.png'
-import jiu1 from '../assets/jiu1-dePe.png'
-import jiu2 from '../assets/jiu2-pernaAberta.png'
-import jiu3 from '../assets/jiu3-kimono.png'
-import jiu4 from '../assets/jiu5-luta.png'
+import decoCadaster from '../assets/designForLogin.svg'
 import tel from '../assets/telephone.svg'
 import responsavel from '../assets/responsavel.svg'
 import username from '../assets/userNOME.svg'
 import MyButton from '../components/MyButton'
 import MyPhoneButton from '../components/MyPhoneButton'
+import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 
 const Cadaster = () => {
 //nome focus
@@ -45,29 +43,58 @@ const Cadaster = () => {
             setFocusNomeResp(true)
         }
     }
-
     const [valueNomeResp, setValueNomeResp] = useState("")
+
+
+    const [overlay, setOverlay] = useState (false)
+
+    const handleOnClickHome = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
+    const handleOnClickLogin = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/login'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
 
     return(
         <div className="page-cadaster">
-            
+            <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
+                <img className='loading-top' src={overlayLoadingCircle}></img>
+                <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
+            </div>
             <header>
                 <div className="logo">
-                    <a href='/'><img src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img></a>
+                    <img onClick={handleOnClickHome} src={LogoSemeandoCampeoes} alt="Logo Semeando Campeões"></img>
                 </div>
                 <div className="title">
                     <h1>Semeando Campeões</h1>
                 </div>
             </header>
             <div className="container-banner-form">
-                <img className='jiu1' src={jiu1}></img>
-                <img className='jiu2' src={jiu2}></img>
-                <img className='jiu3' src={jiu3}></img>
-                <img className='jiu4' src={jiu4}></img>
+                <img className='deco-cadaster-top' src={decoCadaster}></img>
+                <img className='deco-cadaster-top2' src={decoCadaster}></img>
+                <img className='deco-cadaster-bottom' src={decoCadaster}></img>
+                <img className='deco-cadaster-bottom2' src={decoCadaster}></img>
                 <div className="container-banner">
                     <div className="content-banner">
                         <img src={Mancha} alt='mancha de fundo'></img>
-                        <span>FAÇA PARTE!</span>
+                        <span className='text-geral' >FAÇA PARTE!!</span>
                         <div className="box-name">
                             <span>Semeando</span>   
                             <span>Campeões</span>
@@ -76,7 +103,7 @@ const Cadaster = () => {
                 </div>
                 <div className="container-cadaster">
                     <div className="content-cadaster">
-                        <span className='title-cadaster' >Cadastro</span>
+                        <span className='title-cadaster' >Cadastro (fila de espera)</span>
                         <div className="button-label-container">
                             <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Nome completo</label>
                             <MyInput
@@ -165,11 +192,11 @@ const Cadaster = () => {
                             borderRadius=".6vh"
                             transition= ".3s"
                             children="Enviar"
-                            enter="rgba(255, 0, 0, 0.5)"
-                            leave="rgba(255, 0, 0, 0.3)"
+                            enter="rgba(0, 0, 0, 0.2)"
+                            leave="rgba(0, 0, 0, 0.3)"
                         />
                     <div className="redirect-login">
-                        <span className='question'>Já é aluno?<a href='/login'>Entrar.</a></span>
+                        <span className='question'>Já é aluno?<a onClick={handleOnClickLogin} >Entrar.</a></span>
                     </div>
                     </div>
                 </div>
