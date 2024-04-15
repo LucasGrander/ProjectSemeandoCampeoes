@@ -70,6 +70,17 @@ const Photos = () => {
             setOverlay(false)
         }, 2000)
     }
+    const handleOnClickIVCopa = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = 'http://www.facebook.com/share/owa7o2zN42ZJePRk/?'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
     return(
     <div className="page-photos">
         <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
@@ -160,56 +171,6 @@ const Photos = () => {
 
                 <span>Copa Semeando Campeões</span>
                 
-            </div>
-            <div className="container-photos">
-                <div className="box-ct">
-                    <p>2019</p>
-                    <div className="box-photo-ct">
-                        <img src={Icopa} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
-                    </div>
-                    <div className="name-ct">
-                            <span>I COPA KIDS</span>
-                            <p>Quadra de Esportes</p>
-                            <p>Escola Municipal Monteiro Lobato</p>
-                    </div>
-                </div>
-                <div className="box-ct">
-                    <p>2020</p>
-                    <div className="box-photo-ct">
-                        <img src={IIcopa} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
-                    </div>
-                    <div className="name-ct">
-                            <span>II COPA KIDS</span>
-                            <p>Sede do PSC</p>
-                    </div>
-                </div>
-                <div className="box-ct">
-                    <p>2022</p>
-                    <div className="box-photo-ct">
-                        <img src={IIIcopa} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
-                    </div>
-                    <div className="name-ct">
-                            <span>III COPA KIDS</span>
-                            <p>Ginasio de Esportes JK</p>
-                    </div>
-                </div>
-                <div className="box-ct">
-                    <p>2023</p>
-                    <div className="box-photo-ct">
-                        <img src={IVcopa} alt='imagem do ct'></img>
-                        <button className='photo-btn' >Fotos</button>
-                    </div>
-                    <div className="name-ct">
-                            <span>IV COPA KIDS</span>
-                            <p>Ginasio de Esportes JK</p>
-                    </div>
-                </div>
-            </div>
-           
-                    <span>Copa - Semeando Campeões</span>
                 </div>
             <div className="container-photos2">
                 <div className="box-ct2">
@@ -278,12 +239,13 @@ const Photos = () => {
                                 <p>09/04/2024</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                                <a onClick={handleOnClickIVCopa}><img src={galeryICON}></img></a> 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        
             <Footer />
 
     </div>
