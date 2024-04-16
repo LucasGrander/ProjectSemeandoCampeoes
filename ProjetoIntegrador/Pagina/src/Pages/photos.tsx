@@ -70,6 +70,17 @@ const Photos = () => {
             setOverlay(false)
         }, 2000)
     }
+    const handleOnClickIVCopa = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = 'http://www.facebook.com/share/owa7o2zN42ZJePRk/?'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
     return(
     <div className="page-photos">
         <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
@@ -159,6 +170,7 @@ const Photos = () => {
             <div className="title-photos2">
                 <span>Copa - Semeando Campeões</span>
             </div>
+
             <div className="container-photos2">
                 <div className="box-ct2">
                     <img className='bg-box-cards2' src={Icopa} alt='imagem do ct2'></img>
@@ -226,12 +238,13 @@ const Photos = () => {
                                 <p>09/04/2024</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                                <a onClick={handleOnClickIVCopa}><img src={galeryICON}></img></a> 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        
             <Footer />
     </div>
   )
