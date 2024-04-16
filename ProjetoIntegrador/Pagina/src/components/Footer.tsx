@@ -1,5 +1,6 @@
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import PrefetuiraLogo from '../assets/Logo-CM-Prefeitura.png'
+import FecamLogo from '../assets/Logo-FECAM.png'
 import './Footes.css'
 
 const Footer = () => {
@@ -13,13 +14,16 @@ const Footer = () => {
                 <img src={LogoSemeandoCampeoes} alt='logo Semeando Campeões'></img>
             </div>
             <div className="text">
-            <div>
-                <span>Semeando Campeões</span>
-            </div>
-            <div className='copy'>
-            Copyright © 2024 Lucas Grander & Ricardo M. Batista.
-            </div>
-            </div>
+              <div>
+                  <span>Semeando Campeões</span>
+              </div>
+              <div className='copy'>
+                Copyright © 2024 Lucas Grander & Ricardo M. Batista.
+              </div>
+              </div>
+            <div className="sb-box">
+                <img className='fecam-img' src={FecamLogo} alt='logo Prefeitura de Campo Mourão'></img>
+          </div>
         </div>
     </footer>
   )

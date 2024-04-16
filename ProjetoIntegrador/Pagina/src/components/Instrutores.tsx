@@ -64,7 +64,6 @@ const Instrutores = ({id}: Props) => {
                 <p className="desc-instrutor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi libero laboriosam ipsum neque at, reprehenderit facere cum, harum, consequuntur iusto placeat omnis quis fugiat debitis. Beatae veniam repellendus architecto.</p>
                 <div className="redes-sociais-instrutor">
                     <a target='_blank' href='https://www.instagram.com/dionatadioh/'><img src={instaLOGO}></img></a> 
-                    <a target='_blank' href='https://www.youtube.com/@semeandocampeoes7001'><img src={youtubeLOGO}></img></a> 
                     <a target='_blank' href='https://www.facebook.com/dioh.silva.9'><img src={faceLOGO}></img></a> 
                 </div>
             </div>
@@ -78,9 +77,8 @@ const Instrutores = ({id}: Props) => {
                 <p className='desc-breve' > Faixa Roxa de Jiu Jitsu, Faixa preta de Karatê, árbitro  de Karatê pela AKSD, instrutor certificado pela Gracie Barra BJJ e curso de primeiros socorros básico.</p>
                 <p className="desc-instrutor">Graduação em História, Letras inglês, Letras espanhol, Letras e Literaturas de língua portuguesa, Sociologia, Ciências Biológicas, Ciências Contábeis, Gestâo pública e Educação física, bacharelado em Fisioterapia, especialista em Educação física adaptada e Educação física e Atletismo.</p>
                 <div className="redes-sociais-instrutor">
-                    <a target='_blank' href='https://www.instagram.com/dionatadioh/'><img src={instaLOGO}></img></a> 
-                    <a target='_blank' href='https://www.youtube.com/@semeandocampeoes7001'><img src={youtubeLOGO}></img></a> 
-                    <a target='_blank' href='https://www.facebook.com/dioh.silva.9'><img src={faceLOGO}></img></a> 
+                    <a target='_blank' href='https://www.instagram.com/diego_bjj_star/'><img src={instaLOGO}></img></a> 
+                    <a target='_blank' href='https://www.facebook.com/diego.oliveira.182'><img src={faceLOGO}></img></a> 
                 </div>
           </div>
         </div>
