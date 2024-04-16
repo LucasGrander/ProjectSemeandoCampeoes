@@ -168,10 +168,9 @@ const Photos = () => {
 
             {/* //container inferior -- FOTOS COPA PSC*/}
             <div className="title-photos2">
+                <span>Copa - Semeando Campeões</span>
+            </div>
 
-                <span>Copa Semeando Campeões</span>
-                
-                </div>
             <div className="container-photos2">
                 <div className="box-ct2">
                     <img className='bg-box-cards2' src={Icopa} alt='imagem do ct2'></img>
@@ -247,7 +246,6 @@ const Photos = () => {
             </div>
         
             <Footer />
-
     </div>
   )
 }

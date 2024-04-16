@@ -15,7 +15,7 @@ function App() {
         <Routes>
             <Route path= "/" element = {<Home />}/>
             <Route path= "/login" element = {<Login />}/>
-            <Route path= "/fotos" element = {<Photos />}/>
+            <Route path= "/galeria-de-fotos" element = {<Photos />}/>
             <Route path= "/participe" element = {<Cadaster />}/>
             <Route path= "/fotos/Galeria-Iretama" element = {<GaleriaIretama />}/>
             <Route path= "/fotos/Galeria-Centro" element = {<GaleriaCentro />}/>

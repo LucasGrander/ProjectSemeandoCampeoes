@@ -39,8 +39,13 @@ const GaleriaCentro = () => {
         <div className="container-photos-centro">
 
           <div className="content-tripple">
-            <div className="box">
-              <img src={teste}></img>
+            <div className="box-return">
+              <div className="title-return">
+                <span>Escolher outra galeria:</span>
+              </div>
+              <div className="icon-return">
+                <img src={LogoSemeandoCampeoes} alt="" />
+              </div>
             </div>
             <div className="box">
               <img src={teste}></img>
