@@ -44,10 +44,41 @@ function Login (){
     }
 
      // alterações na parte de Login do aluno
+    const [loginMode, setLoginMode] = useState(false)
+    const [boxMode, setBoxMode] = useState(false)
+    const [mensage, setMensage] = useState("")
     const [userAluno, setUserAluno] = useState("")
     const [passwordAluno, setPasswordAluno] = useState("")
     const [focusUserAluno, setFocusUserAluno] = useState(false)
     const [focusPassWAluno, setFocusPassWAluno] = useState(false)
+
+    const handleMensageShowed = () => {
+        setBoxMode(true)
+        if(userAluno == "Lucas" && passwordAluno == "1234"){
+            setLoginMode(true)
+            setMensage(`Seja bem vindo, ${userAluno}`)
+            
+            setTimeout(() => {
+                setOverlay(true)
+                setTimeout(()=>{
+                    window.location.href = '/'
+                },1500)
+            }, 2000)
+        }
+        else{
+            setLoginMode(false)
+            setMensage(`Nome de usuário ou senha incorreto.`)
+        }
+
+        if(boxMode){
+            setBoxMode(true)
+        }
+        else{
+        setTimeout(() => {
+            setBoxMode(false)
+        }, 2500)
+        }
+    }
 
     const handleFocusUserAluno = () => {
         setFocusUserAluno(true)
@@ -244,9 +275,9 @@ return (
 
 
             <div style={{pointerEvents: activeLogin ? "all" : "none", filter: activeLogin ? "grayscale(0%)" : "grayscale(100%)", opacity: activeLogin ? "1" : ".2", transition: "1s"}} className="login-alunos">
-                <img className="design-type-wifi-top" src={designLogin}></img>
-                <img className="design-type-wifi-bottom" src={designLogin}></img>
-                <span>Aluno</span>
+                    <img className="design-type-wifi-top" src={designLogin}></img>
+                    <img className="design-type-wifi-bottom" src={designLogin}></img>
+                    <span>Aluno</span>
 
                 <div className="user-box-aluno">
                     <label className={focusUserAluno ? "focusOn" : "focusOff"} htmlFor="userAluno">Nome de usuário</label>
@@ -277,7 +308,7 @@ return (
                         onChange={(e) => setPasswordAluno(e.target.value)}
                         onFocus={handleFocusPassWAluno}
                         onBlur={handleNotFocusPassWAluno}
-                        type='text'
+                        type='password'
                         width= "85%"
                         height= "100%"
                         fontSize= "2.4vh"
@@ -293,6 +324,7 @@ return (
                 </div>
 
                     <MyButton
+                    onClick={handleMensageShowed}
                         width= "45%"
                         height= "8%"
                         padding="1vh"
@@ -308,6 +340,11 @@ return (
                         enter="rgba(0, 0, 0, 0.2)"
                         leave="rgba(0, 0, 0, 0.3)"
                     />
+                <div  style={{transform: boxMode ? "translateY(-2vh)" : "translateY(10vh)", transition: ".8s"}} className={loginMode ? "mensage-submit-correct" : "mensage-submit-incorrect"}>
+                    <span className="submit-msg">
+                        {mensage}
+                    </span>
+                </div>
             </div>
         </div>
     </div>

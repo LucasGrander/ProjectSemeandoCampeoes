@@ -1,7 +1,7 @@
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import PrefetuiraLogo from '../assets/Logo-CM-Prefeitura.png'
 import FecamLogo from '../assets/Logo-FECAM.png'
-import './Footes.css'
+import './Footer.css'
 
 const Footer = () => {
   return (
