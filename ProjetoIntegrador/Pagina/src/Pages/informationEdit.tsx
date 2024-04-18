@@ -20,7 +20,7 @@ const informationEdit = () => {
     }
     
     return(
-    <div className="page-galeria-lp">
+    <div className="page-infos-edit">
         <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
         <img className='loading-top' src={overlayLoadingCircle}></img>
         <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
@@ -31,7 +31,6 @@ const informationEdit = () => {
             </div>
             <div className="title">
                 <h1>Semeando Campeões</h1>
-                <span className="subtitle">Galeria: Lar Parana</span>
             </div>
         </header>
     </div>

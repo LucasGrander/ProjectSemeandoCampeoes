@@ -18,7 +18,7 @@ const Footer = () => {
                   <span>Semeando Campeões</span>
               </div>
               <div className='copy'>
-                Copyright © 2024 Lucas Grander & Ricardo M. Batista.
+                Todos os direitos reservados © 2024 Lucas Grander & Ricardo M. Batista.
               </div>
               </div>
             <div className="sb-box">

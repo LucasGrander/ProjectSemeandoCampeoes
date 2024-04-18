@@ -132,11 +132,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: returnLeftFlick 2s infinite alternate;
 }
 
 .page-galeria-centro .container-photos-centro .content-tripple .box-return .icon-return img{
     width: 15vh;
     height: 15vh;
+    background-color: #cccccc30;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: .1vh .1vh .3vh black;
+}
+
+.page-galeria-centro .container-photos-centro .content-tripple .box-return .icon-return img:hover{
+    background-color: #cccccc90;
 }
 
 @keyframes rotateLogoLoading {  
@@ -146,5 +155,23 @@
 
     100%{
         transform: rotate(360deg);
+    }
+}
+
+@keyframes returnLeftFlick {
+    0%{
+        transform: translateX(0vh);
+    }
+    25%{
+        transform: translateX(-1.5vh);
+    }
+    50%{
+        transform: translateX(0vh);
+    }
+    75%{
+        transform: translateX(-1.5vh);
+    }
+    100%{
+        transform: translateX(0vh);
     }
 }

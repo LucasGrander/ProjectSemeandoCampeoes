@@ -38,7 +38,7 @@ const Photos = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/fotos/Galeria-Iretama'
+            window.location.href = '/galeria-de-fotos/Galeria-Iretama'
         }, 1500)
 
         setTimeout(() => {
@@ -50,7 +50,7 @@ const Photos = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/fotos/Galeria-LarParana'
+            window.location.href = '/galeria-de-fotos/Galeria-LarParana'
         }, 1500)
         
 
@@ -63,7 +63,7 @@ const Photos = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/fotos/Galeria-Centro'
+            window.location.href = '/galeria-de-fotos/Galeria-Centro'
         }, 1500)
 
         setTimeout(() => {

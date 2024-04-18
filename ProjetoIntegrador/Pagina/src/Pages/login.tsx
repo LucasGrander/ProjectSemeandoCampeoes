@@ -61,7 +61,7 @@ function Login (){
             setTimeout(() => {
                 setOverlay(true)
                 setTimeout(()=>{
-                    window.location.href = '/'
+                    window.location.href = '/login/informações'
                 },1500)
             }, 2000)
         }
