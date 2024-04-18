@@ -68,6 +68,10 @@ function Login (){
         else{
             setLoginMode(false)
             setMensage(`Nome de usuário ou senha incorreto.`)
+            setUserAluno("")
+            setPasswordAluno("")
+            setFocusUserAluno(false)
+            setFocusPassWAluno(false)
         }
 
         if(boxMode){
@@ -76,7 +80,7 @@ function Login (){
         else{
         setTimeout(() => {
             setBoxMode(false)
-        }, 2500)
+        }, 4000)
         }
     }
 
@@ -286,6 +290,7 @@ return (
                         onChange={(e) => setUserAluno(e.target.value)}
                         onFocus={handleFocusUserAluno}
                         onBlur={handleNotFocusUserAluno}
+                        value={userAluno}
                         type='text'
                         width= "85%"
                         height= "100%"
@@ -308,6 +313,7 @@ return (
                         onChange={(e) => setPasswordAluno(e.target.value)}
                         onFocus={handleFocusPassWAluno}
                         onBlur={handleNotFocusPassWAluno}
+                        value={passwordAluno}
                         type='password'
                         width= "85%"
                         height= "100%"

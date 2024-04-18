@@ -246,7 +246,6 @@
     text-shadow: none;
     color: rgb(0, 0, 0);
     transition: .1s;
-    cursor: pointer;
 }
 
 .center-login-page .top .redirect-login .question a{
@@ -441,6 +440,7 @@
     background-color: rgba(0, 255, 0, 0.55);
     border: solid .1vh black;
     box-shadow: .1vh .1vh 1vh black;
+    border-radius: .6vh;
 }
 
 .mensage-submit-incorrect{
@@ -456,9 +456,10 @@
     align-items: center;
     justify-content: center;
 
-    background-color: rgba(255, 0, 0, 0.55);
+    background-color: rgba(255, 0, 0, 0.75);
     border: solid .1vh black;
     box-shadow: .1vh .1vh 1vh black;
+    border-radius: .6vh;
 }
 
 .page-login .container-login .login-alunos .mensage-submit-correct .submit-msg{
@@ -488,4 +489,3 @@
         transform: rotate(360deg);
     }
 }
-
