@@ -24,7 +24,7 @@
 .react-tel-input .selected-flag{
     width: 6vh;
     height: 8.5vh;
-    padding: 0  ;
+    padding: 0 ;
 
     display: flex;
     align-items: center;
@@ -56,6 +56,14 @@
 .react-tel-input .flag-dropdown.open .selected-flag{
     background-color:transparent;
     border-radius: .2vh;
+    border: none;
+}
+
+.react-tel-input .flag-dropdown.open{
+    background-color:transparent;
+    border: none;
+    border-radius: .2vh;
+    z-index: 1;
 }
 
 .react-tel-input .flag-dropdown.open .flag{
