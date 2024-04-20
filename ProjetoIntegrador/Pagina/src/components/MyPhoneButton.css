@@ -8,6 +8,7 @@
 }
 
 .react-tel-input .form-control{
+    height: 9vh;
     outline: none;
     border: none;
     background-color: transparent;
@@ -71,6 +72,7 @@
     transform: scale(1.6);
     transition: .3s ;
     border-radius: .2vh;
+    z-index: 1;
 }
 
 .react-tel-input .flag{
@@ -78,6 +80,7 @@
     height: 1.5vh;
     transform: scale(1.4);
     transition: .3s ;
+    z-index: 1;
 }
 
 
@@ -92,6 +95,7 @@
     padding: 0;
     margin: 2vh 0 2vh -.2vh;
     overflow-y: scroll;
+    z-index: 1;
 
     box-shadow: .2vh .3vh 2vh rgba(0, 0, 0, 0.85);
     background-color: rgb(255, 255, 255);
