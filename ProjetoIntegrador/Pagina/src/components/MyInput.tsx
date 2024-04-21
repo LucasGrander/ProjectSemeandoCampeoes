@@ -22,6 +22,7 @@ interface Props{
     display?: string;
     justifyContent?: string;
     alignItems?: string;
+    ph?: string;
     
     backgroundColor?: string;
     border?: string;
@@ -34,7 +35,7 @@ interface Props{
     transition?: string;
 }
 
-const MyInput = ({id, className, enter, leave, onClick, onChange, onFocus, onBlur, type, value, width, height, cursor, display, justifyContent, alignItems, border, borderBottom, borderRadius, padding, fontSize, boxShadow, fontWeight, transition, maxlenght, }: Props) => {
+const MyInput = ({id, className, enter, leave, onClick, onChange, onFocus, onBlur, type, value, width, height, cursor, display, justifyContent, alignItems, border, borderBottom, borderRadius, padding, fontSize, boxShadow, fontWeight, transition, maxlenght, ph }: Props) => {
 
     const [hover, setHover] = useState(false)
         const handleMouseEnter = () => {
@@ -50,6 +51,8 @@ const MyInput = ({id, className, enter, leave, onClick, onChange, onFocus, onBlu
 
     return(
         <input
+        placeholder={ph}
+        required
         maxLength={maxlenght}
         onFocus={onFocus}
         onBlur={onBlur}

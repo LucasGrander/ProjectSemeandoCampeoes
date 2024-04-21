@@ -412,6 +412,11 @@
 .labelFocusedNome,
 .labelFocusedNomeResp,
 .labelFocusedTelefone,
+.labelFocusedCity,
+.labelFocusedBairro,
+.labelFocusedRua,
+.labelFocusedComplemento,
+.labelFocusedNumRes,
 .labelFocusedDate{
     z-index: 1;
     left: 100%;
@@ -426,7 +431,12 @@
 
 .labelNotFocusedNome,
 .labelNotFocusedNomeResp,
-.labelNotFocusedTelefone{
+.labelNotFocusedTelefone,
+.labelNotFocusedBairro,
+.labelNotFocusedRua,
+.labelNotFocusedComplemento,
+.labelNotFocusedNumRes,
+.labelNotFocusedCity{
     transform:translateY(0%);
     font-weight: 500;
     font-size: 2.2vh;
@@ -515,3 +525,51 @@
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
+
+.msg-button-enviar{
+    width: 40vh;
+    height: 5vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+    border: solid .1vh transparent;
+    color: rgb(255, 255, 255);
+    font-weight:700 ;
+    background-color: rgba(105, 0, 0, 0.9);
+    border-radius: 10vh 2vh 2vh 5vh;
+
+    right: 10vh;
+    bottom: 7vh;
+}
+
+.msg-button-enviar-appear{
+    width: 40vh;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+    border: solid .1vh transparent;
+    color: rgb(255, 255, 255);
+    font-weight:700 ;
+    background-color: rgba(105, 0, 0, 0.9);
+    border-radius: 10vh 2vh 2vh 5vh;
+
+    right: 10vh;
+    bottom: 7vh;
+}
+
+.msg-button-enviar-appear::after{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: -1vh solid transparent;
+    border-right: 6vh solid transparent;
+    border-top: 2vh solid rgba(105, 0, 0, 0.9);
+    bottom: -1vh;
+    left: 0vh;
+  }

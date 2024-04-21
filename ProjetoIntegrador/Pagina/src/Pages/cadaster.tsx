@@ -1,4 +1,4 @@
-import {  useState } from 'react'
+import {  useState, useTransition } from 'react'
 import './cadaster.css'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import MyInput from '../components/MyInput'
@@ -17,39 +17,6 @@ import complementICON from '../assets/complemento.svg'
 import numResidICON from '../assets/numResid.svg'
 
 const Cadaster = () => {
-//nome focus
-    const [focusNome, setFocusNome] = useState(false)
-
-    const handleFocusedNome = () => {
-        setFocusNome(true)
-    }
-    const handleNotFocusedNome = () => {
-        if(valueNome.trim() == ""){
-            setFocusNome(false)
-        }
-        else{
-            setFocusNome(true)
-        }
-    }
-
-    const [valueNome, setValueNome] = useState("")
-
-//nome do resp focus
-    const [focusNomeResp, setFocusNomeResp] = useState(false)
-
-    const handleFocusedNomeResp = () => {
-        setFocusNomeResp(true)
-    }
-    const handleNotFocusedNomeResp = () => {
-        if(valueNomeResp.trim() == ""){
-            setFocusNomeResp(false)
-        }
-        else{
-            setFocusNomeResp(true)
-        }
-    }
-    const [valueNomeResp, setValueNomeResp] = useState("")
-
 
     const [overlay, setOverlay] = useState (false)
 
@@ -77,6 +44,123 @@ const Cadaster = () => {
         }, 2000)
     }
 
+
+    // *************************** Validação de label --- INFOS PESSOAIS ********************************
+    //nome
+    const [focusNome, setFocusNome] = useState(false)
+    const [valueNome, setValueNome] = useState("")
+
+    const handleFocusedNome = () => {
+        setFocusNome(true)
+    }
+    const handleNotFocusedNome = () => {
+        if(valueNome.trim() == ""){
+            setFocusNome(false)
+        }
+        else{
+            setFocusNome(true)
+        }
+    }
+
+    // data de nascimento
+    const [valueDate, setValueDate] = useState("")
+
+    //nome do responsável
+    const [focusNomeResp, setFocusNomeResp] = useState(false)
+    const [valueNomeResp, setValueNomeResp] = useState("")
+
+    const handleFocusedNomeResp = () => {
+        setFocusNomeResp(true)
+    }
+    const handleNotFocusedNomeResp = () => {
+        if(valueNomeResp.trim() == ""){
+            setFocusNomeResp(false)
+        }
+        else{
+            setFocusNomeResp(true)
+        }
+    }
+
+
+    // *************************** Validação de label --- ENDEREÇO ********************************
+
+    //cidade
+    const [focusCity, setFocusCity] = useState(false)
+    const [valueCity, setValueCity] = useState("")
+
+    const handleFocusedCity = () => {
+        setFocusCity(true)
+    }
+    const handleNotFocusedCity = () => {
+        if(valueCity.trim() == ""){
+            setFocusCity(false)
+        }
+        else{
+            setFocusCity(true)
+        }
+    }
+    //bairro
+    const [focusBairro, setFocusBairro] = useState(false)
+    const [valueBairro, setValueBairro] = useState("")
+
+    const handleFocusedBairro = () => {
+        setFocusBairro(true)
+    }
+    const handleNotFocusedBairro = () => {
+        if(valueBairro.trim() == ""){
+            setFocusBairro(false)
+        }
+        else{
+            setFocusBairro(true)
+        }
+    }
+    //rua
+    const [focusRua, setFocusRua] = useState(false)
+    const [valueRua, setValueRua] = useState("")
+
+    const handleFocusedRua = () => {
+        setFocusRua(true)
+    }
+    const handleNotFocusedRua = () => {
+        if(valueRua.trim() == ""){
+            setFocusRua(false)
+        }
+        else{
+            setFocusRua(true)
+        }
+    }
+    //complemento
+    const [focusComplemento, setFocusComplemento] = useState(false)
+    const [valueComplemento, setValueComplemento] = useState("")
+
+    const handleFocusedComplemento = () => {
+        setFocusComplemento(true)
+    }
+    const handleNotFocusedComplemento = () => {
+        if(valueComplemento.trim() == ""){
+            setFocusComplemento(false)
+        }
+        else{
+            setFocusComplemento(true)
+        }
+    }
+    //complemento
+    const [focusNumRes, setFocusNumRes] = useState(false)
+    const [valueNumRes, setValueNumRes] = useState("")
+
+    const handleFocusedNumRes = () => {
+        setFocusNumRes(true)
+    }
+    const handleNotFocusedNumRes = () => {
+        if(valueNumRes.trim() == ""){
+            setFocusNumRes(false)
+        }
+        else{
+            setFocusNumRes(true)
+        }
+    }
+
+    //select box do centro de treinamento
     const [focusSelectBox, setFocusSelectBox] = useState(false)
     const [valueSelectBox, setvalueSelectBox] = useState("")
 
@@ -92,8 +176,27 @@ const Cadaster = () => {
         }
     }
 
+    // ********************** verificação se todos os inputs estão com algum value **************************
+
+    const [eventButton, setEventButton] = useState(false)
+
+    const handleCheckEventButton = () => {
+        if(valueNome.trim() != "" && valueDate.trim() != "" && valueCity.trim() != "" && valueBairro.trim() != "" && valueRua.trim() != "" && valueComplemento.trim() != "" && valueNumRes.trim() != "" && valueSelectBox != ""){
+            setEventButton(true)
+            setMsgInputs(false)
+        }
+        else{
+            setEventButton(false)
+            setMsgInputs(true)
+        }
+    }
+
+    // ********************** verificação se todos os inputs estão com algum value **************************
+
+    const [msgInputs, setMsgInputs] = useState(false)
+
     return(
-        <div className="page-cadaster">
+        <div onMouseMove={handleCheckEventButton} className="page-cadaster">
             <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
                 <img className='loading-top' src={overlayLoadingCircle}></img>
                 <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
@@ -153,6 +256,7 @@ const Cadaster = () => {
                             <div className="button-label-container">
                                 <label className="labelFocusedDate" htmlFor='date'>Data de nascimento</label>
                                 <MyInput
+                                    onChange={(e) => setValueDate(e.target.value)}
                                     id='date'
                                     type='date'
                                     width= "90%"
@@ -172,13 +276,13 @@ const Cadaster = () => {
                             <div className="button-label-container">
                             <label className={"labelFocusedTelefone"} htmlFor='telefone'>Número de telefone</label>
                                 <MyPhoneButton
-                                
+
                                 />
                                     <img src={tel}></img>
                             </div>
 
                             <div className="button-label-container">
-                                <label className={focusNomeResp ? "labelFocusedNomeResp" : "labelNotFocusedNomeResp"} htmlFor='nomeResp'>Nome completo do responsável</label>
+                                <label className={focusNomeResp ? "labelFocusedNomeResp" : "labelNotFocusedNomeResp"} htmlFor='nomeResp'>Nome completo do responsável (não obrigatório)</label>
                                 <MyInput
                                     id="nomeResp"
                                     onChange={(e) => setValueNomeResp(e.target.value)}
@@ -203,13 +307,13 @@ const Cadaster = () => {
 
                             <span className='title-info-endereco'>Informações de endereço</span>
                             <div className="button-label-container">
-                                <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Cidade</label>
+                                <label className={focusCity ? "labelFocusedCity" : "labelNotFocusedCity"} htmlFor='city'>Cidade</label>
                                 <MyInput
-                                    id="nome"
-                                    onChange={(e) => setValueNome(e.target.value)}
-                                    onFocus={handleFocusedNome}
-                                    onBlur={handleNotFocusedNome}
-                                    className={focusNome ? "focusedNome" : "notFocusedNome"}
+                                    id="city"
+                                    onChange={(e) => setValueCity(e.target.value)}
+                                    onFocus={handleFocusedCity}
+                                    onBlur={handleNotFocusedCity}
+                                    className={focusCity ? "focusedCity" : "notFocusedCity"}
                                     type='text'
                                     width= "90%"
                                     height= "100%"
@@ -227,13 +331,13 @@ const Cadaster = () => {
                             </div>
 
                             <div className="button-label-container">
-                                <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Bairro</label>
+                                <label className={focusBairro ? "labelFocusedBairro" : "labelNotFocusedBairro"} htmlFor='bairro'>Bairro</label>
                                 <MyInput
-                                    id="nome"
-                                    onChange={(e) => setValueNome(e.target.value)}
-                                    onFocus={handleFocusedNome}
-                                    onBlur={handleNotFocusedNome}
-                                    className={focusNome ? "focusedNome" : "notFocusedNome"}
+                                    id="bairro"
+                                    onChange={(e) => setValueBairro(e.target.value)}
+                                    onFocus={handleFocusedBairro}
+                                    onBlur={handleNotFocusedBairro}
+                                    className={focusBairro ? "Bairro" : "notFocusedBairro"}
                                     type='text'
                                     width= "90%"
                                     height= "100%"
@@ -251,13 +355,13 @@ const Cadaster = () => {
                             </div>
 
                             <div className="button-label-container">
-                                <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Rua</label>
+                                <label className={focusRua ? "labelFocusedRua" : "labelNotFocusedRua"} htmlFor='rua'>Rua</label>
                                 <MyInput
-                                    id="nome"
-                                    onChange={(e) => setValueNome(e.target.value)}
-                                    onFocus={handleFocusedNome}
-                                    onBlur={handleNotFocusedNome}
-                                    className={focusNome ? "focusedNome" : "notFocusedNome"}
+                                    id="rua"
+                                    onChange={(e) => setValueRua(e.target.value)}
+                                    onFocus={handleFocusedRua}
+                                    onBlur={handleNotFocusedRua}
+                                    className={focusRua ? "focusedRua" : "notFocusedRua"}
                                     type='text'
                                     width= "90%"
                                     height= "100%"
@@ -277,13 +381,13 @@ const Cadaster = () => {
                             <div className="container-comp-num">
                                 <div className="button-label-container-comp">
                                     <div className="complemento"></div>
-                                    <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Complemento</label>
+                                    <label className={focusComplemento ? "labelFocusedComplemento" : "labelNotFocusedComplemento"} htmlFor='complemento'>Complemento</label>
                                     <MyInput
-                                        id="nome"
-                                        onChange={(e) => setValueNome(e.target.value)}
-                                        onFocus={handleFocusedNome}
-                                        onBlur={handleNotFocusedNome}
-                                        className={focusNome ? "focusedNome" : "notFocusedNome"}
+                                        id="complemento"
+                                        onChange={(e) => setValueComplemento(e.target.value)}
+                                        onFocus={handleFocusedComplemento}
+                                        onBlur={handleNotFocusedComplemento}
+                                        className={focusComplemento ? "focusedComplemento" : "notFocusedComplemento"}
                                         type='text'
                                         width= "90%"
                                         height= "100%"
@@ -296,19 +400,20 @@ const Cadaster = () => {
                                         transition= ".4s"
                                         enter= "transparent"
                                         leave= "transparent"
+                                        ph={focusComplemento ? "Ex: Casa, apartamento..." : ""}
                                     />
                                     <img src={complementICON}></img>
                                 </div>
 
                                 <div className="button-label-container-num">
                                     <div className="complemento"></div>
-                                    <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>N°</label>
+                                    <label className={focusNumRes ? "labelFocusedNumRes" : "labelNotFocusedNumRes"} htmlFor='numRes'>N°</label>
                                     <MyInput
-                                        id="nome"
-                                        onChange={(e) => setValueNome(e.target.value)}
-                                        onFocus={handleFocusedNome}
-                                        onBlur={handleNotFocusedNome}
-                                        className={focusNome ? "focusedNome" : "notFocusedNome"}
+                                        id="numRes"
+                                        onChange={(e) => setValueNumRes(e.target.value)}
+                                        onFocus={handleFocusedNumRes}
+                                        onBlur={handleNotFocusedNumRes}
+                                        className={focusNumRes ? "focusedNumRes" : "notFocusedNumRes"}
                                         type='text'
                                         width= "90%"
                                         height= "100%"
@@ -339,22 +444,28 @@ const Cadaster = () => {
                                 </select>
                             </div>
 
-                            <MyButton
-                                width= "45%"
-                                height= "8vh"
-                                padding="1vh"
-                                cursor= "pointer"
-                                fontSize= "2.5vh"
-                                fontWeight= "bold"
-                                background-color= "rgba(255, 0, 0, 0.3)"
-                                border= ".3vh black solid"
-                                borderBottom= ".3vh black solid"
-                                borderRadius=".6vh"
-                                transition= ".3s"
-                                children="Enviar"
-                                enter="rgba(0, 0, 0, 0.2)"
-                                leave="rgba(0, 0, 0, 0.3)"
-                            />
+                            <div className="button-label-container">
+                                <MyButton
+                                    width= "45%"
+                                    height= "8vh"
+                                    padding="1vh"
+                                    cursor={eventButton ? "pointer" : ""}
+                                    fontSize= "2.5vh"
+                                    fontWeight= "bold"
+                                    backgroundColor={eventButton ? "rgba(0, 255, 0, 0.4)": "rgba(255, 0, 0, 0.4)"}
+                                    border= ".3vh black solid"
+                                    borderBottom= ".3vh black solid"
+                                    borderRadius=".6vh"
+                                    transition= ".3s"
+                                    children="Enviar"
+                                    enter={eventButton ? "rgba(0, 255, 0, 0.4)": "rgba(255, 0, 0, 0.4)"}
+                                    leave={eventButton ? "rgba(0, 255, 0, 0.3)": "rgba(255, 0, 0, 0.4)"}
+                                />
+                                <div className={msgInputs ? "msg-button-enviar-appear" : "msg-button-enviar" }>
+                                    <span>Preencha os campos acima.</span>
+                                </div>
+                            </div>
+                            
 
                             <div className="redirect-login">
                                 <span className='question'>Já é aluno?<a onClick={handleOnClickLogin} >Entrar.</a></span>
