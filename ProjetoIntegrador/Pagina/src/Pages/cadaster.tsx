@@ -1,4 +1,4 @@
-import {  useState, useTransition } from 'react'
+import {  useState } from 'react'
 import './cadaster.css'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import MyInput from '../components/MyInput'
@@ -15,6 +15,11 @@ import streetICON from '../assets/street.svg'
 import neighICON from '../assets/neigh.svg'
 import complementICON from '../assets/complemento.svg'
 import numResidICON from '../assets/numResid.svg'
+import LogoInstagram from "../assets/instagram.svg"
+import LogoFacebook from "../assets/facebook.svg"
+import LogoWhatszap from '../assets/whatsapp.svg'
+import closePage from "../assets/closePage.svg"
+
 
 const Cadaster = () => {
 
@@ -191,9 +196,46 @@ const Cadaster = () => {
         }
     }
 
-    // ********************** verificação se todos os inputs estão com algum value **************************
+    // ********* verificação para a mensagem box (PREENCHA OS CAMPOS) do botão de enviar aparecer e desaparecer ************
 
     const [msgInputs, setMsgInputs] = useState(false)
+
+    // ******* verificação se todos os inputs estão com valores, caso sim, mostrar pop-up de cadastro concluído *************** 
+
+    const [popUp, setPopUp] = useState(false)
+    const [popUpBox, setPopUpBox] = useState(false)
+
+    const handleOnClickSendCadaster = () => {
+        setTimeout(()=> {
+            setPopUp(true)
+            setPopUpBox(true)
+        }, 300)
+    }
+
+    const handleOnClickClosePop = () => {
+        setPopUpBox(false)
+        
+        setTimeout(() => {
+            setPopUp(false)
+            setValueNome("")
+            setFocusNome(false)
+            setValueDate("")
+            setValueNomeResp("")
+            setFocusNomeResp(false)
+            setValueCity("")
+            setFocusCity(false)
+            setValueBairro("")
+            setFocusBairro(false)
+            setValueRua("")
+            setFocusRua(false)
+            setValueComplemento("")
+            setFocusComplemento(false)
+            setValueNumRes("")
+            setFocusNumRes(false)
+            setvalueSelectBox("")
+            setFocusSelectBox(false)
+        }, 1100);
+    }
 
     return(
         <div onMouseMove={handleCheckEventButton} className="page-cadaster">
@@ -233,6 +275,7 @@ const Cadaster = () => {
                                 <label className={focusNome ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='nome'>Nome completo</label>
                                 <MyInput
                                     id="nome"
+                                    value={valueNome}
                                     onChange={(e) => setValueNome(e.target.value)}
                                     onFocus={handleFocusedNome}
                                     onBlur={handleNotFocusedNome}
@@ -258,6 +301,7 @@ const Cadaster = () => {
                                 <MyInput
                                     onChange={(e) => setValueDate(e.target.value)}
                                     id='date'
+                                    value={valueDate}
                                     type='date'
                                     width= "90%"
                                     height= "100%"
@@ -285,6 +329,7 @@ const Cadaster = () => {
                                 <label className={focusNomeResp ? "labelFocusedNomeResp" : "labelNotFocusedNomeResp"} htmlFor='nomeResp'>Nome completo do responsável (não obrigatório)</label>
                                 <MyInput
                                     id="nomeResp"
+                                    value={valueNomeResp}
                                     onChange={(e) => setValueNomeResp(e.target.value)}
                                     onFocus={handleFocusedNomeResp}
                                     onBlur={handleNotFocusedNomeResp}
@@ -310,6 +355,7 @@ const Cadaster = () => {
                                 <label className={focusCity ? "labelFocusedCity" : "labelNotFocusedCity"} htmlFor='city'>Cidade</label>
                                 <MyInput
                                     id="city"
+                                    value={valueCity}
                                     onChange={(e) => setValueCity(e.target.value)}
                                     onFocus={handleFocusedCity}
                                     onBlur={handleNotFocusedCity}
@@ -334,6 +380,7 @@ const Cadaster = () => {
                                 <label className={focusBairro ? "labelFocusedBairro" : "labelNotFocusedBairro"} htmlFor='bairro'>Bairro</label>
                                 <MyInput
                                     id="bairro"
+                                    value={valueBairro}
                                     onChange={(e) => setValueBairro(e.target.value)}
                                     onFocus={handleFocusedBairro}
                                     onBlur={handleNotFocusedBairro}
@@ -358,6 +405,7 @@ const Cadaster = () => {
                                 <label className={focusRua ? "labelFocusedRua" : "labelNotFocusedRua"} htmlFor='rua'>Rua</label>
                                 <MyInput
                                     id="rua"
+                                    value={valueRua}
                                     onChange={(e) => setValueRua(e.target.value)}
                                     onFocus={handleFocusedRua}
                                     onBlur={handleNotFocusedRua}
@@ -384,6 +432,7 @@ const Cadaster = () => {
                                     <label className={focusComplemento ? "labelFocusedComplemento" : "labelNotFocusedComplemento"} htmlFor='complemento'>Complemento</label>
                                     <MyInput
                                         id="complemento"
+                                        value={valueComplemento}
                                         onChange={(e) => setValueComplemento(e.target.value)}
                                         onFocus={handleFocusedComplemento}
                                         onBlur={handleNotFocusedComplemento}
@@ -410,6 +459,7 @@ const Cadaster = () => {
                                     <label className={focusNumRes ? "labelFocusedNumRes" : "labelNotFocusedNumRes"} htmlFor='numRes'>N°</label>
                                     <MyInput
                                         id="numRes"
+                                        value={valueNumRes}
                                         onChange={(e) => setValueNumRes(e.target.value)}
                                         onFocus={handleFocusedNumRes}
                                         onBlur={handleNotFocusedNumRes}
@@ -438,14 +488,15 @@ const Cadaster = () => {
                                 <select value={valueSelectBox} onChange={(e) => setvalueSelectBox(e.target.value)} onFocus={handleFocusedSelectBox} onBlur={handleNotFocusedSelectBox} className='ct-box-pick' name="ct" id="ct">
                                     <option value="0" hidden></option>
                                     <option value="1">Centro de treinamento  -  Centro </option>
-                                    <option value="2">Centro de treinamento  -  Lar  </option>
-                                    <option value="3">Centro de treinamento  -  ginásio de Iretama </option>
+                                    <option value="2">Centro de treinamento  -  Lar Paraná</option>
+                                    <option value="3">Centro de treinamento  -  Ginásio de Iretama </option>
                                     <option value="4">Centro de treinamento  -  ??? </option>
                                 </select>
                             </div>
 
                             <div className="button-label-container">
                                 <MyButton
+                                    onClick={eventButton ? handleOnClickSendCadaster : handleCheckEventButton}
                                     width= "45%"
                                     height= "8vh"
                                     padding="1vh"
@@ -465,11 +516,63 @@ const Cadaster = () => {
                                     <span>Preencha os campos acima.</span>
                                 </div>
                             </div>
-                            
 
                             <div className="redirect-login">
                                 <span className='question'>Já é aluno?<a onClick={handleOnClickLogin} >Entrar.</a></span>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style={{display: popUp ? "flex" : "none"}} className="pop-up-container">
+                <div className={popUpBox ? "pop-up-box" : "pop-up-box-close"}>
+                    <img onClick={handleOnClickClosePop} className='closePage' src={closePage}></img>
+                    <div className="pop-up-content">
+                        <div className="left">
+                            <div className="pop-up-title">
+                                <span>Cadastro Concluído</span>
+                            </div>
+                            <h2>O seu cadastro foi concluído com sucesso!</h2>
+
+                            <span className='pop-up-redes-sociais'>Entre em contato</span>
+
+                            <div className="pop-up-icons-redes">
+                                <img src={LogoInstagram}></img>
+                                <img src={LogoWhatszap}></img>
+                                <img src={LogoFacebook}></img>
+                            </div>
+                        </div>
+
+                        <div className="right">
+                            <span className='title-right-pop-up'>Dados inseridos</span>
+                            <ul>
+                                <br />
+                                <span>Informações Pessoais</span>
+                                <li><strong>Nome Completo: </strong>{valueNome}</li>
+                                <li><strong>Data de nascimento(AAAA-MM-DD): </strong>{valueDate}</li>
+                                <li><strong>Número de telefone: </strong>{}</li>
+                                <li><strong>Nome do responsável: </strong>{valueNomeResp}</li>
+                                <br />
+                                <span>Informações de endereço</span>
+                                <li><strong>Cidade: </strong>{valueCity}</li>
+                                <li><strong>Bairro: </strong> {valueBairro}</li>
+                                <li><strong>Rua: </strong> {valueRua}</li>
+                                <li><strong>Complemento: </strong> {valueComplemento}</li>
+                                <li><strong>Número da residência: </strong> {valueNumRes}</li>
+                                <br />
+                                <span>Local de treino escolhido</span>
+
+                                <li>
+                                    <strong>Centro de treinamento: </strong>
+                                    {valueSelectBox == '1' && "Centro de treinamento - Centro"}
+                                    {valueSelectBox == '2' && "Centro de treinamento - Lar Parana"}
+                                    {valueSelectBox == '3' && "Centro de treinamento - Ginásio de Iretama"}
+                                    {valueSelectBox == '4' && "Centro de treinamento - ???"}
+                                </li>
+
+                            </ul>
                         </div>
                     </div>
                 </div>
