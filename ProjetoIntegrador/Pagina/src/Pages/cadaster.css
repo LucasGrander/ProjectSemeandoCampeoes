@@ -486,23 +486,6 @@
     }
 }
 
-@media (max-width: 1500px) {
-    
-    .container-banner-form .jiu2{
-        width: 9vh;
-        height: 9vh;
-        padding: 1vh;
-        opacity: .4;
-        position: absolute;
-    
-        top: 20vh;
-        left: 90vh;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.4);
-        animation: softRotateIcons 1s infinite alternate;
-    }
-}
-
 .page-cadaster .loading-logo{
     width: 23vh;
     height: 23vh;
@@ -561,6 +544,8 @@
 
     right: 10vh;
     bottom: 7vh;
+
+    animation: animateScaleMsgButton 1s infinite alternate;
 }
 
 .msg-button-enviar-appear::after{
@@ -807,5 +792,14 @@
 
     100%{
         transform: scale(0);
+    }
+}
+
+@keyframes animateScaleMsgButton {
+    0%{
+        transform: scale(1.0);
+    }
+    100%{
+        transform: scale(0.95);
     }
 }
