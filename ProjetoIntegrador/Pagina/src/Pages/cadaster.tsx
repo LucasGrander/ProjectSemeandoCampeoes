@@ -539,9 +539,9 @@ const Cadaster = () => {
                             <span className='pop-up-redes-sociais'>Entre em contato</span>
 
                             <div className="pop-up-icons-redes">
-                                <img src={LogoInstagram}></img>
-                                <img src={LogoWhatszap}></img>
-                                <img src={LogoFacebook}></img>
+                                <a target="_blank" href='https://www.instagram.com/semeando.campeoes/'><img src={LogoInstagram}></img></a>
+                                <a target="_blank" href='https://api.whatsapp.com/send?phone=5544998130695'><img src={LogoWhatszap}></img></a>
+                                <a target="_blank" href='https://www.facebook.com/semeandocampeoes/'><img src={LogoFacebook}></img></a>
                             </div>
                         </div>
 
