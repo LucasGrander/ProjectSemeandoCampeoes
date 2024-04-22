@@ -3,6 +3,7 @@ import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import teste from '../assets/PSCC.jpeg'
 import { useState } from 'react'
+import returnIcon from '../assets/returnIcon.svg'
 
 const GaleriaIretama = () => {
   const [overlay, setOverlay] = useState (false)
@@ -18,6 +19,18 @@ const GaleriaIretama = () => {
           setOverlay(false)
       }, 2000)
   }
+
+  const handleOnClickReturn = () => {
+    setOverlay(true)
+
+    setTimeout(() => {
+        window.location.href = '/galeria-de-fotos'
+    }, 1500)
+
+    setTimeout(() => {
+        setOverlay(false)
+    }, 2000)
+}
 
   return (
     <div className="page-galeria-iretama">
@@ -38,15 +51,20 @@ const GaleriaIretama = () => {
         <div className="container-photos-iretama">
 
           <div className="content-tripple">
-            <div className="box">
-              <img src={teste}></img>
-            </div>
-            <div className="box">
-              <img src={teste}></img>
-            </div>
-            <div className="box">
-              <img src={teste}></img>
-            </div>
+            <div className="box-return">
+                <div className="title-return">
+                  <span>Escolher outra galeria:</span>
+                </div>
+                <div className="icon-return">
+                  <img onClick={handleOnClickReturn} src={returnIcon} alt="icone de retornar" />
+                </div>
+              </div>
+              <div className="box">
+                <img src={teste}></img>
+              </div>
+              <div className="box">
+                <img src={teste}></img>
+              </div>
           </div>
 
           <div className="content-tripple">

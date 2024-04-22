@@ -75,6 +75,53 @@
     flex-direction: column;
 }
 
+.page-galeria-iretama .container-photos-iretama .content-tripple .box-return{
+    width: 25%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple .box-return .title-return{
+    width: 100%;
+    height: 30%;
+
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple .box-return .title-return span{
+    font-size: 4vh;
+    font-weight: 600;
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple .box-return .icon-return{
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: returnLeftFlick 2s infinite alternate;
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple .box-return .icon-return img{
+    width: 15vh;
+    height: 15vh;
+    background-color: #cccccc30;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: .1vh .1vh .3vh black;
+}
+
+.page-galeria-iretama .container-photos-iretama .content-tripple .box-return .icon-return img:hover{
+    background-color: #cccccc90;
+}
+
 .page-galeria-iretama .container-photos-iretama .content-tripple{
     width: 100%;
     height: 45vh;
@@ -108,5 +155,23 @@
 
     100%{
         transform: rotate(360deg);
+    }
+}
+
+@keyframes returnLeftFlick {
+    0%{
+        transform: translateX(0vh);
+    }
+    25%{
+        transform: translateX(-1.5vh);
+    }
+    50%{
+        transform: translateX(0vh);
+    }
+    75%{
+        transform: translateX(-1.5vh);
+    }
+    100%{
+        transform: translateX(0vh);
     }
 }
