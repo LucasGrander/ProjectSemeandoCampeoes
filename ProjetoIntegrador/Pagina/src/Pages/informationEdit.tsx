@@ -32,6 +32,34 @@ const informationEdit = () => {
             <div className="title">
                 <h1>Semeando Campeões</h1>
             </div>
+
+            <div className="container-edit-infos">
+                <div className="box-edit-infos">
+                    <div className="box-nav">
+                        <div className="btn-filtro">
+                            <span>Filtrar</span>
+                            <div className="dropDown-filters">
+                                <div className="box-filters">
+                                    <span>Faixas</span>
+                                    <select name="" id=""></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-pesquisa">
+                            <input type="text" />
+                        </div>
+                        
+                        <div className="btn-pesquisar">
+                            <span>pesquisar</span>
+                        </div>
+                    </div>
+                    
+                    <div className="table-result-pesquisa">
+
+                    </div>
+                </div>
+            </div>
         </header>
     </div>
     )
