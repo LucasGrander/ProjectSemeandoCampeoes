@@ -13,74 +13,51 @@ import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 
 function Login (){
 
-    // alterações na parte de Login do professor
-    const [userProf, setUserProf] = useState("")
-    const [passwordProf, setPasswordProf] = useState("")
-    const [focusUserProf, setFocusUserProf] = useState(false)
-    const [focusPassWProf, setFocusPassWProf] = useState(false)
-
-    const handleFocusUserProf = () => {
-        setFocusUserProf(true)
-    }
-    const handleNotFocusUserProf = () => {
-        if(userProf.trim() != ""){
-            setFocusUserProf(true)
-        }
-        else(
-            setFocusUserProf(false)
-        )
-    }
-
-    const handleFocusPassWProf = () => {
-        setFocusPassWProf(true)
-    }
-    const handleNotFocusPassWProf = () => {
-        if(passwordProf.trim() != ""){
-            setFocusPassWProf(true)
-        }
-        else(
-            setFocusPassWProf(false)
-        )
-    }
-
      // alterações na parte de Login do aluno
-    const [loginMode, setLoginMode] = useState(false)
-    const [boxMode, setBoxMode] = useState(false)
-    const [mensage, setMensage] = useState("")
+    const [loginModeAluno, setLoginModeAluno] = useState(false)
+    const [boxModeAluno, setBoxModeAluno] = useState(false)
+    const [mensageAluno, setMensageAluno] = useState("")
     const [userAluno, setUserAluno] = useState("")
     const [passwordAluno, setPasswordAluno] = useState("")
     const [focusUserAluno, setFocusUserAluno] = useState(false)
     const [focusPassWAluno, setFocusPassWAluno] = useState(false)
+    const [clasnameAluno, setClassnameAluno] = useState(true)
 
-    const handleMensageShowed = () => {
-        setBoxMode(true)
-        if(userAluno == "Lucas" && passwordAluno == "1234"){
-            setLoginMode(true)
-            setMensage(`Seja bem vindo, ${userAluno}`)
+    const handleMensageShowedAluno = () => {
+        setBoxModeAluno(true)
+        if(userAluno == "Lucas" && passwordAluno == "123"){
+            setLoginModeAluno(true)
+            setMensageAluno(`Seja bem vindo, ${userAluno}`)
             
             setTimeout(() => {
                 setOverlay(true)
                 setTimeout(()=>{
-                    window.location.href = '/login/informações'
+                    window.location.href = '/login/informações-acessoAluno'
                 },1500)
             }, 2000)
         }
         else{
-            setLoginMode(false)
-            setMensage(`Nome de usuário ou senha incorreto.`)
+            setLoginModeAluno(false)
+            setMensageAluno(`Nome de usuário ou senha incorreto.`)
             setUserAluno("")
             setPasswordAluno("")
             setFocusUserAluno(false)
             setFocusPassWAluno(false)
+
+            setClassnameAluno(false)
+
+            setTimeout(() => {
+                setClassnameAluno(true)
+            }, 2000);
         }
 
-        if(boxMode){
-            setBoxMode(true)
+        if(boxModeAluno){
+            setBoxModeAluno(true)
         }
         else{
         setTimeout(() => {
-            setBoxMode(false)
-        }, 4000)
+            setBoxModeAluno(false)
+        }, 2000)
         }
     }
 
@@ -108,14 +85,86 @@ function Login (){
         )
     }
 
+    // alterações na parte de Login do professor
+    const [loginModeProfessor, setLoginModeProfessor] = useState(false)
+    const [boxModeProfessor, setBoxModeProfessor] = useState(false)
+    const [mensageProfessor, setMensageProfessor] = useState("")
+    const [userProfessor, setUserProfessor] = useState("")
+    const [passwordProfessor, setPasswordProfessor] = useState("")
+    const [focusUserProfessor, setFocusUserProfessor] = useState(false)
+    const [focusPassWProfessor, setFocusPassWProfessor] = useState(false)
+    const [clasnameProfessor, setClassnameProfessor] = useState(true)
+
+    const handleMensageShowedProfessor = () => {
+        setBoxModeProfessor(true)
+        if(userProfessor == "Ricardo" && passwordProfessor == "123"){
+            setLoginModeProfessor(true)
+            setMensageProfessor(`Seja bem vindo, ${userProfessor}`)
+            
+            setTimeout(() => {
+                setOverlay(true)
+                setTimeout(()=>{
+                    window.location.href = '/login/informações-acessoProfessor'
+                },1500)
+            }, 2000)
+        }
+        else{
+            setLoginModeProfessor(false)
+            setMensageProfessor(`Nome de usuário ou senha incorreto.`)
+            setUserProfessor("")
+            setPasswordProfessor("")
+            setFocusUserProfessor(false)
+            setFocusPassWProfessor(false)
+            setClassnameProfessor(false)
+            setTimeout(() => {
+                setClassnameProfessor(true)
+            }, 2000);
+        }
+
+        if(boxModeProfessor){
+            setBoxModeProfessor(true)
+        }
+        else{
+        setTimeout(() => {
+            setBoxModeProfessor(false)
+        }, 2000)
+        }
+    }
+
+    const handleFocusUserProfessor = () => {
+        setFocusUserProfessor(true)
+    }
+    const handleNotFocusUserProfessor = () => {
+        if(userProfessor.trim() != ""){
+            setFocusUserProfessor(true)
+        }
+        else(
+            setFocusUserProfessor(false)   
+        )
+    }
+
+    const handleFocusPassWProfessor = () => {
+        setFocusPassWProfessor(true)
+    }
+    const handleNotFocusPassWProfessor = () => {
+        if(passwordProfessor.trim() != ""){
+            setFocusPassWProfessor(true)
+        }
+        else(
+            setFocusPassWProfessor(false)
+        )
+    }
+
+    
+    // center da página (alteração de container-login)
+    
     const [activeLogin, setActiveLogin] = useState(true);
+    const handleOnClickSouAluno = () =>{
+        setActiveLogin(true)
+    }
 
     const handleOnClickSouProfessor = () =>{
         setActiveLogin(false)
-    }
-
-    const handleOnClickSouAluno = () =>{
-        setActiveLogin(true)
     }
 
     const [mouseOnProf, setMouseOnProf] = useState(false)
@@ -183,20 +232,22 @@ return (
                 <span>Professor</span>
 
                 <div className="user-box-professor">
-                    <label className={focusUserProf ? "focusOn" : "focusOff"} htmlFor="userProfessor">Nome de usuário</label>
+                    <label className={focusUserProfessor ? "focusOn" : "focusOff"} htmlFor="userProfessor">Nome de usuário</label>
                     <MyInput
+                        className={clasnameProfessor ? "" : "loginFail-professor"}
                         id="userProfessor"
-                        onChange={(e) => setUserProf(e.target.value)}
-                        onFocus={handleFocusUserProf}
-                        onBlur={handleNotFocusUserProf}
+                        onChange={(e) => setUserProfessor(e.target.value)}
+                        onFocus={handleFocusUserProfessor}
+                        onBlur={handleNotFocusUserProfessor}
+                        value={userProfessor}
                         type='text'
                         width= "85%"
                         height= "100%"
                         fontSize= "2.4vh"
                         fontWeight= "500"
-                        border= "solid .3vh black"
+                        border= {loginModeProfessor ? "solid .3vh rgba(0, 255, 0, .7)" : "solid .3vh black"}
                         borderBottom= ".3vh black solid"
-                        borderRadius=".6vh"
+                        borderRadius="1vh"
                         padding="0vh 7vh 0vh 2vh"
                         transition= ".3s"
                         background-color= "transparent"
@@ -205,20 +256,22 @@ return (
                 </div>
                 
                 <div className="user-box-professor">
-                <label className={focusPassWProf ? "focusOn" : "focusOff"} htmlFor="passwordProf">Senha</label>
+                <label className={focusPassWProfessor ? "focusOn" : "focusOff"} htmlFor="passwordProf">Senha</label>
                     <MyInput
+                        className={clasnameProfessor ? "" : "loginFail-professor"}
                         id="passwordProf"
-                        onChange={(e) => setPasswordProf(e.target.value)}
-                        onFocus={handleFocusPassWProf}
-                        onBlur={handleNotFocusPassWProf}
-                        type='text'
+                        onChange={(e) => setPasswordProfessor(e.target.value)}
+                        onFocus={handleFocusPassWProfessor}
+                        onBlur={handleNotFocusPassWProfessor}
+                        value={passwordProfessor}
+                        type='password'
                         width= "85%"
                         height= "100%"
                         fontSize= "2.4vh"
                         fontWeight= "500"
-                        border= "solid .3vh black"
+                        border= {loginModeProfessor ? "solid .3vh rgba(0, 255, 0, .7)" : "solid .3vh black"}
                         borderBottom= ".3vh black solid"
-                        borderRadius=".6vh"
+                        borderRadius="1vh"
                         padding="0vh 7vh 0vh 2vh"
                         transition= ".3s"
                         backgroundColor= "transparent"
@@ -227,6 +280,7 @@ return (
                 </div>
 
                     <MyButton
+                        onClick={handleMensageShowedProfessor}
                         width= "45%"
                         height= "8%"
                         padding="1vh"
@@ -236,12 +290,17 @@ return (
                         backgroundColor= "transparent"
                         border= ".3vh black solid"
                         borderBottom= ".3vh black solid"
-                        borderRadius=".6vh"
+                        borderRadius="1vh"
                         transition= ".3s"
                         children="Enviar"
                         enter="rgba(0, 0, 0, 0.2)"
                         leave="rgba(0, 0, 0, 0.3)"
                     />
+                    <div  style={{transform: boxModeProfessor ? "translateY(-2vh)" : "translateY(10vh)", transition: ".8s"}} className={loginModeProfessor ? "mensage-submit-correct-professor" : "mensage-submit-incorrect-professor"}>
+                    <span className="submit-msg-professor">
+                        {mensageProfessor}
+                    </span>
+                </div>
             </div>
 
 
@@ -286,6 +345,7 @@ return (
                 <div className="user-box-aluno">
                     <label className={focusUserAluno ? "focusOn" : "focusOff"} htmlFor="userAluno">Nome de usuário</label>
                     <MyInput
+                        className={clasnameAluno ? "" : "loginFail-aluno"}
                         id="userAluno"
                         onChange={(e) => setUserAluno(e.target.value)}
                         onFocus={handleFocusUserAluno}
@@ -296,9 +356,9 @@ return (
                         height= "100%"
                         fontSize= "2.4vh"
                         fontWeight= "500"
-                        border= "solid .3vh black"
+                        border= {loginModeAluno ? "solid .3vh rgba(0, 255, 0, .7)" : "solid .3vh black"}
                         borderBottom= ".3vh black solid"
-                        borderRadius=".6vh"
+                        borderRadius="1vh"
                         padding="0vh 7vh 0vh 2vh"
                         transition= ".3s"
                         backgroundColor= "transparent"
@@ -309,6 +369,7 @@ return (
                 <div className="password-box-aluno">
                 <label className={focusPassWAluno ? "focusOn" : "focusOff"} htmlFor="passwordAluno">Senha</label>
                     <MyInput
+                        className={clasnameAluno ? "" : "loginFail-aluno"}
                         id="passwordAluno"
                         onChange={(e) => setPasswordAluno(e.target.value)}
                         onFocus={handleFocusPassWAluno}
@@ -319,9 +380,9 @@ return (
                         height= "100%"
                         fontSize= "2.4vh"
                         fontWeight= "500"
-                        border= "solid .3vh black"
+                        border= {loginModeAluno ? "solid .3vh rgba(0, 255, 0, .7)" : "solid .3vh black"}
                         borderBottom= ".3vh black solid"
-                        borderRadius=".6vh"
+                        borderRadius="1vh"
                         padding="0vh 7vh 0vh 2vh"
                         transition= ".3s"
                         backgroundColor= "transparent"
@@ -330,7 +391,7 @@ return (
                 </div>
 
                     <MyButton
-                    onClick={handleMensageShowed}
+                        onClick={handleMensageShowedAluno}
                         width= "45%"
                         height= "8%"
                         padding="1vh"
@@ -340,15 +401,15 @@ return (
                         backgroundColor= "transparent"
                         border= ".3vh black solid"
                         borderBottom= ".3vh black solid"
-                        borderRadius=".6vh"
+                        borderRadius="1vh"
                         transition= ".3s"
                         children="Enviar"
                         enter="rgba(0, 0, 0, 0.2)"
                         leave="rgba(0, 0, 0, 0.3)"
                     />
-                <div  style={{transform: boxMode ? "translateY(-2vh)" : "translateY(10vh)", transition: ".8s"}} className={loginMode ? "mensage-submit-correct" : "mensage-submit-incorrect"}>
-                    <span className="submit-msg">
-                        {mensage}
+                <div  style={{transform: boxModeAluno ? "translateY(-2vh)" : "translateY(10vh)", transition: ".8s"}} className={loginModeAluno ? "mensage-submit-correct-aluno" : "mensage-submit-incorrect-aluno"}>
+                    <span className="submit-msg-aluno">
+                        {mensageAluno}
                     </span>
                 </div>
             </div>

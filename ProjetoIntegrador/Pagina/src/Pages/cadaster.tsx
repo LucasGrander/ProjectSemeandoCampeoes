@@ -487,6 +487,7 @@ const Cadaster = () => {
                                 <label className={focusSelectBox ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='ct'>Centro de treinamento</label>
                                 <select value={valueSelectBox} onChange={(e) => setvalueSelectBox(e.target.value)} onFocus={handleFocusedSelectBox} onBlur={handleNotFocusedSelectBox} className='ct-box-pick' name="ct" id="ct">
                                     <option value="0" hidden></option>
+                                    <option value="5" disabled>*Selecione um centro de treinamento:</option>
                                     <option value="1">Centro de treinamento  -  Centro </option>
                                     <option value="2">Centro de treinamento  -  Lar Paraná</option>
                                     <option value="3">Centro de treinamento  -  Ginásio de Iretama </option>
