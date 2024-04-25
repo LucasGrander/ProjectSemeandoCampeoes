@@ -23,9 +23,58 @@ const informationEdit = () => {
             setOverlay(false)
         }, 2000)
     }
+
+    const [dropdown, setDropdown] = useState(false)
+
+    const handleOnClickBtnFiltro = () => {
+        if(dropdown == false){
+            setDropdown(true)
+        }
+        else{
+            setDropdown(false)
+        }
+    }
+    const [variosFiltros, setVariosFiltros] = useState<string[]>([])
+
+    const handleSetFilter = (selectedFilter: string) => {
+        setVariosFiltros([...variosFiltros, selectedFilter])
+    }   
+
+    const handleRemoverFiltro = (index: number) => {
+        const atuaisFiltros = [...variosFiltros];
+        atuaisFiltros.splice(index, 1);
+        setVariosFiltros(atuaisFiltros);
+    };
+
+    const [todosFilter, setTodosFilter] = useState(false)
+    const [longName, setLongName] = useState(false)
     
+    const handleFilterTodos = () => {
+        if(variosFiltros.length < 1){
+            setTodosFilter(true)
+        }
+        else{
+            setTodosFilter(false)
+        }
+
+        if(variosFiltros.length > 4){
+            setLongName(true)
+        }
+        else{
+            setLongName(false)
+        }
+    }
+
+    const handleCloseDropOnBlur = () => {
+        if(dropdown){
+            setDropdown(false)
+        }
+    }
+    
+
+    console.log(variosFiltros.length)
     return(
-    <div className="page-infos-edit">
+    <div  onMouseMove={handleFilterTodos} className="page-infos-edit">
         <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
         <img className='loading-top' src={overlayLoadingCircle}></img>
         <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
@@ -43,74 +92,56 @@ const informationEdit = () => {
             <div className="box-edit-infos">
 
                 <div className="box-nav">
-                    <div className="btn-filtro">
+                    <div style={{background: dropdown ? "linear-gradient(180deg, rgb(255, 255, 255), rgba(0, 0, 0, 0.158))": "transparent"}} onClick={handleOnClickBtnFiltro} className="btn-filtro">
                         <span>Filtros</span>
                         <img className='filter-icon' src={filterICON}></img>
-                        <img className='dropdown-icon' src={dropdownCloseOpenICON}></img>
-                        <div className="dropDown-filters">
-                        </div>
-                        <div className="dropdown-container">
-                            <div className="dropdown-itens">
-                                <span>Aluno:</span>
-                                <span>asda</span>
-                                <span>Cidsadsdsdnza</span>
-                                <span>tesdsdsdsdste</span>
-                                <span>teasste</span>
-                                <span>tedsdsdadste</span>
-                                <span>tesasdasdte</span>
-                                <span>teasdasdste</span>
-                                <span>tesasdate</span>
-                                <span>tessdasdasdte</span>
-                            </div>
-
-                            <div className="dropdown-itens">
-                                <span>Faixas:</span>
-                                <span>Branca</span>
-                                <span>Cinza</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                            </div>
-
-                            <div className="dropdown-itens">
-                                <span>Faixas:</span>
-                                <span>Branca</span>
-                                <span>Cinza</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                            </div>
-
-                            <div className="dropdown-itens">
-                                <span>Faixas:</span>
-                                <span>Branca</span>
-                                <span>Cinza</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                                <span>teste</span>
-                            </div>
-                        </div>
+                        <img style={{transform: dropdown ? "rotate(180deg)" : "rotate(0deg)", transition: ".3s"}} className='dropdown-icon' src={dropdownCloseOpenICON}></img>
                     </div>
 
-                    <div className="input-pesquisa">
-                        <input type="text" />
+                        <div onMouseLeave={handleCloseDropOnBlur} className="dropdown-container">
+                            <div  style={{opacity: dropdown ? "1" : "0",pointerEvents: dropdown ? "all" : "none", transition: ".2s"}} className="dropdown-itens-faixa">
+                                <span className='title-drop' >Faixas</span>
+                                <span onClick={() => handleSetFilter("Branca")} className='item-drop' >Branca</span>
+                                <span onClick={() => handleSetFilter("Cinza")} className='item-drop' >Cinza</span>
+                                <span onClick={() => handleSetFilter("Amarela")} className='item-drop' >Amarela</span>
+                                <span onClick={() => handleSetFilter("Laranja")} className='item-drop' >Laranja</span>
+                                <span onClick={() => handleSetFilter("Verde")} className='item-drop' >Verde</span>
+                                <span onClick={() => handleSetFilter("Azul")} className='item-drop' >Azul</span>
+                                <span onClick={() => handleSetFilter("Roxa")} className='item-drop' >Roxa</span>
+                                <span onClick={() => handleSetFilter("Marrom")} className='item-drop' >Marrom</span>
+                                <span onClick={() => handleSetFilter("Preta")} className='item-drop' >Preta</span>
+                            </div>
 
-                        <div className="filter-picked">
-                            <span>Alunos</span>
+                            <div style={{opacity: dropdown ? "1" : "0",pointerEvents: dropdown ? "all" : "none", transition: ".4s"}} className="dropdown-itens-cts">
+                                <span className='title-drop'>Centros de treinamento</span>
+                                <span onClick={() => handleSetFilter("CT Lar Paraná")} className='item-drop' >CT - Lar Paraná</span>
+                                <span onClick={() => handleSetFilter("CT Centro")} className='item-drop' >CT - Centro</span>
+                                <span onClick={() => handleSetFilter("CT ???")} className='item-drop' >CT - ???</span>
+                                <span onClick={() => handleSetFilter("CT Ginásio Iretama")} className='item-drop' >CT - Ginásio Iretama</span>
+                            </div>
+
+                            <div style={{opacity: dropdown ? "1" : "0",pointerEvents: dropdown ? "all" : "none", transition: ".6s"}} className="dropdown-itens-diversos">
+                                <span className='title-drop' >Diversos</span>
+                                <span onClick={() => handleSetFilter("A-Z")} className='item-drop' >Ordem A-Z</span>
+                                <span onClick={() => handleSetFilter("Z-A")} className='item-drop' >Ordem Z-A</span>
+                                <span onClick={() => handleSetFilter(">18")} className='item-drop' >Maior de 18</span>
+                                <span onClick={() => handleSetFilter("<18")} className='item-drop' >Menor de 18</span>
+                            </div>
+
+                        </div>
+                    
+
+                    <div className="input-pesquisa">
+                        <div style={{display: todosFilter ? "flex" : "none", pointerEvents: "none"}}  className="filter-picked">
+                            <span>Todos</span>
                             <img src={deleteFilter}></img>
                         </div>
+                        {variosFiltros.map((filtro, index) => (
+                        <div onClick={() => handleRemoverFiltro(index)} key={index} className={longName ? "filter-picked-long" : "filter-picked"}>
+                            <span>{filtro}</span>
+                            <img src={deleteFilter}></img>
+                        </div>
+                        ))}
 
                     </div>
                     
