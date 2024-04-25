@@ -41,9 +41,9 @@ const informationEdit = () => {
     }   
 
     const handleRemoverFiltro = (index: number) => {
-        const atuaisFiltros = [...variosFiltros];
-        atuaisFiltros.splice(index, 1);
-        setVariosFiltros(atuaisFiltros);
+        const atualizaFiltros = [...variosFiltros];
+        atualizaFiltros.splice(index, 1);
+        setVariosFiltros(atualizaFiltros);
     };
 
     const [todosFilter, setTodosFilter] = useState(false)
