@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
--- Host: localhost    Database: Projeto_Semeando_Campeoes
+-- Host: localhost    Database: projeto_semeando_campeoes
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
@@ -23,17 +23,14 @@ DROP TABLE IF EXISTS `aluno`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aluno` (
-  `ID` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `id_pessoa` int NOT NULL,
-  `id_centroDeTreinamento` int NOT NULL,
   `id_faixa` int NOT NULL,
-  PRIMARY KEY (`ID`),
+  PRIMARY KEY (`id`),
   KEY `aluno_pessoa_FK` (`id_pessoa`),
-  KEY `aluno_centro_de_treinamento_FK` (`id_centroDeTreinamento`),
   KEY `aluno_faixa_FK` (`id_faixa`),
-  CONSTRAINT `aluno_centro_de_treinamento_FK` FOREIGN KEY (`id_centroDeTreinamento`) REFERENCES `centro de treinamento` (`ID`),
-  CONSTRAINT `aluno_faixa_FK` FOREIGN KEY (`id_faixa`) REFERENCES `faixa` (`ID`),
-  CONSTRAINT `aluno_pessoa_FK` FOREIGN KEY (`id_pessoa`) REFERENCES `pessoa` (`ID`)
+  CONSTRAINT `aluno_faixa_FK` FOREIGN KEY (`id_faixa`) REFERENCES `faixa` (`id`),
+  CONSTRAINT `aluno_pessoa_FK` FOREIGN KEY (`id_pessoa`) REFERENCES `pessoa` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -43,35 +40,35 @@ CREATE TABLE `aluno` (
 
 LOCK TABLES `aluno` WRITE;
 /*!40000 ALTER TABLE `aluno` DISABLE KEYS */;
-INSERT INTO `aluno` VALUES (1,2,1,5),(2,1,3,5);
+INSERT INTO `aluno` VALUES (1,2,5),(2,1,5);
 /*!40000 ALTER TABLE `aluno` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `centro de treinamento`
+-- Table structure for table `centro_de_treinamento`
 --
 
-DROP TABLE IF EXISTS `centro de treinamento`;
+DROP TABLE IF EXISTS `centro_de_treinamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `centro de treinamento` (
-  `ID` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `centro_de_treinamento` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `id_endereco` int NOT NULL,
   `nome` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`ID`),
+  PRIMARY KEY (`id`),
   KEY `Centro_de_treinamento_endereco_FK` (`id_endereco`),
-  CONSTRAINT `Centro_de_treinamento_endereco_FK` FOREIGN KEY (`id_endereco`) REFERENCES `endereco` (`ID`)
+  CONSTRAINT `Centro_de_treinamento_endereco_FK` FOREIGN KEY (`id_endereco`) REFERENCES `endereco` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `centro de treinamento`
+-- Dumping data for table `centro_de_treinamento`
 --
 
-LOCK TABLES `centro de treinamento` WRITE;
-/*!40000 ALTER TABLE `centro de treinamento` DISABLE KEYS */;
-INSERT INTO `centro de treinamento` VALUES (1,1,'a'),(2,2,'b'),(3,2,'c'),(4,1,'d');
-/*!40000 ALTER TABLE `centro de treinamento` ENABLE KEYS */;
+LOCK TABLES `centro_de_treinamento` WRITE;
+/*!40000 ALTER TABLE `centro_de_treinamento` DISABLE KEYS */;
+INSERT INTO `centro_de_treinamento` VALUES (1,1,'a'),(2,2,'b'),(3,2,'c'),(4,1,'d');
+/*!40000 ALTER TABLE `centro_de_treinamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -82,9 +79,9 @@ DROP TABLE IF EXISTS `cidade`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cidade` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `Nome` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -106,14 +103,14 @@ DROP TABLE IF EXISTS `endereco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `endereco` (
-  `ID` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `id_cidade` int NOT NULL,
   `rua` varchar(100) NOT NULL,
   `numero` varchar(100) NOT NULL,
   `bairro` varchar(100) NOT NULL,
-  PRIMARY KEY (`ID`),
+  PRIMARY KEY (`id`),
   KEY `endereco_cidade_FK` (`id_cidade`),
-  CONSTRAINT `endereco_cidade_FK` FOREIGN KEY (`id_cidade`) REFERENCES `cidade` (`ID`)
+  CONSTRAINT `endereco_cidade_FK` FOREIGN KEY (`id_cidade`) REFERENCES `cidade` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -135,9 +132,9 @@ DROP TABLE IF EXISTS `faixa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `faixa` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `Cor` varchar(30) NOT NULL,
-  PRIMARY KEY (`ID`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cor_da_faixa` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -159,13 +156,13 @@ DROP TABLE IF EXISTS `login`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `login` (
-  `ID` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `id_pessoa` int NOT NULL,
   `usuario` varchar(100) NOT NULL,
   `senha` varchar(100) NOT NULL,
-  PRIMARY KEY (`ID`),
+  PRIMARY KEY (`id`),
   KEY `login_pessoa_FK` (`id_pessoa`),
-  CONSTRAINT `login_pessoa_FK` FOREIGN KEY (`id_pessoa`) REFERENCES `pessoa` (`ID`)
+  CONSTRAINT `login_pessoa_FK` FOREIGN KEY (`id_pessoa`) REFERENCES `pessoa` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -187,18 +184,18 @@ DROP TABLE IF EXISTS `pessoa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pessoa` (
-  `ID` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
-  `dataDeNascimento` date NOT NULL,
+  `data_de_nascimento` date NOT NULL,
   `telefone` varchar(100) NOT NULL,
   `responsavel` varchar(100) DEFAULT NULL,
-  `id_centroDeTreinamento` int NOT NULL,
-  `id_endereco` int DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `Pessoa_centro_de_treinamento_FK` (`id_centroDeTreinamento`),
+  `id_centro_de_treinamento` int NOT NULL,
+  `id_endereco` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `Pessoa_centro_de_treinamento_FK` (`id_centro_de_treinamento`),
   KEY `Pessoa_endereco_FK` (`id_endereco`),
-  CONSTRAINT `Pessoa_centro_de_treinamento_FK` FOREIGN KEY (`id_centroDeTreinamento`) REFERENCES `centro de treinamento` (`ID`),
-  CONSTRAINT `Pessoa_endereco_FK` FOREIGN KEY (`id_endereco`) REFERENCES `endereco` (`ID`)
+  CONSTRAINT `Pessoa_centro_de_treinamento_FK` FOREIGN KEY (`id_centro_de_treinamento`) REFERENCES `centro_de_treinamento` (`id`),
+  CONSTRAINT `Pessoa_endereco_FK` FOREIGN KEY (`id_endereco`) REFERENCES `endereco` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -220,14 +217,14 @@ DROP TABLE IF EXISTS `professor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `professor` (
-  `ID` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `id_pessoa` int NOT NULL,
-  `id_centroDeTreinamento` int NOT NULL,
   `id_faixa` int NOT NULL,
-  PRIMARY KEY (`ID`),
+  PRIMARY KEY (`id`),
   KEY `aluno_faixa_FK` (`id_faixa`) USING BTREE,
   KEY `aluno_pessoa_FK` (`id_pessoa`) USING BTREE,
-  KEY `aluno_centro_de_treinamento_FK` (`id_centroDeTreinamento`) USING BTREE
+  CONSTRAINT `professor_faixa_FK` FOREIGN KEY (`id_faixa`) REFERENCES `faixa` (`id`),
+  CONSTRAINT `professor_pessoa_FK` FOREIGN KEY (`id_pessoa`) REFERENCES `pessoa` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -237,12 +234,12 @@ CREATE TABLE `professor` (
 
 LOCK TABLES `professor` WRITE;
 /*!40000 ALTER TABLE `professor` DISABLE KEYS */;
-INSERT INTO `professor` VALUES (1,2,3,1),(2,1,1,5);
+INSERT INTO `professor` VALUES (1,2,1),(2,1,5);
 /*!40000 ALTER TABLE `professor` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'Projeto_Semeando_Campeoes'
+-- Dumping routines for database 'projeto_semeando_campeoes'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -254,4 +251,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-19 11:07:48
+-- Dump completed on 2024-04-25 13:42:38
