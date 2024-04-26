@@ -53,6 +53,12 @@ const informationEdit = () => {
     const [estadoZ_A, setEstadoZ_A] = useState(false)
     const [estadoMaior18, setEstadoMaior18] = useState(false)
     const [estadoMenor18, setEstadoMenor18] = useState(false)
+
+    // verficar o tipo de seleção dos diversos
+    const [estadoCtLarParana, setEstadoCtLarParana] = useState(false)
+    const [estadoCtCentro, setEstadoCtCentro] = useState(false)
+    const [estadoCt, setEstadoCt] = useState(false)
+    const [estadoCtIretama, setEstadoCtIretama] = useState(false)
     
     const handleSetFilter = (selectedFilter: string) => {
         setVariosFiltros([...variosFiltros, selectedFilter])
@@ -95,6 +101,18 @@ const informationEdit = () => {
         }
         else if(selectedFilter.toLocaleLowerCase() == "<18"){
             setEstadoMenor18(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "ct lar paraná"){
+            setEstadoCtLarParana(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "ct centro"){
+            setEstadoCtCentro(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "ct ???"){
+            setEstadoCt(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "ct iretama"){
+            setEstadoCtIretama(true)
         }
     }
 
@@ -142,6 +160,18 @@ const informationEdit = () => {
         else if(filtro.toLocaleLowerCase() == "<18"){
             setEstadoMenor18(false)
         }
+        else if(filtro.toLocaleLowerCase() == "ct lar paraná"){
+            setEstadoCtLarParana(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "ct centro"){
+            setEstadoCtCentro(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "ct ???"){
+            setEstadoCt(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "ct iretama"){
+            setEstadoCtIretama(false)
+        }
     }
 
     const [todosFilter, setTodosFilter] = useState(false)
@@ -155,7 +185,7 @@ const informationEdit = () => {
             setTodosFilter(false)
         }
 
-        if(variosFiltros.length > 4){
+        if(variosFiltros.length > 9){
             setLongName(true)
         }
         else{
@@ -210,10 +240,10 @@ const informationEdit = () => {
 
                             <div style={{opacity: dropdown ? "1" : "0",pointerEvents: dropdown ? "all" : "none", transition: ".4s"}} className="dropdown-itens-cts">
                                 <span className='title-drop'>Centros de treinamento</span>
-                                <span onClick={() => handleSetFilter("CT Lar Paraná")} className='item-drop' >CT - Lar Paraná</span>
-                                <span onClick={() => handleSetFilter("CT Centro")} className='item-drop' >CT - Centro</span>
-                                <span onClick={() => handleSetFilter("CT ???")} className='item-drop' >CT - ???</span>
-                                <span onClick={() => handleSetFilter("CT Ginásio Iretama")} className='item-drop' >CT - Ginásio Iretama</span>
+                                <span onClick={() => handleSetFilter("CT Lar Paraná")} className={estadoCtLarParana ? "item-drop-selected" : "item-drop"} >CT - Lar Paraná</span>
+                                <span onClick={() => handleSetFilter("CT Centro")} className={estadoCtCentro ? "item-drop-selected" : "item-drop"} >CT - Centro</span>
+                                <span onClick={() => handleSetFilter("CT ???")} className={estadoCt ? "item-drop-selected" : "item-drop"} >CT - ???</span>
+                                <span onClick={() => handleSetFilter("CT Iretama")} className={estadoCtIretama ? "item-drop-selected" : "item-drop"} >CT - Ginásio Iretama</span>
                             </div>
 
                             <div style={{opacity: dropdown ? "1" : "0",pointerEvents: dropdown ? "all" : "none", transition: ".6s"}} className="dropdown-itens-diversos">
@@ -242,7 +272,8 @@ const informationEdit = () => {
                     </div>
                     
                     <div className="btn-pesquisar">
-                    <img src={loupSearchICON}></img>
+                    <span>Pesquisar</span>
+                        <img src={loupSearchICON}></img>
                     </div>
                 </div>
                 
