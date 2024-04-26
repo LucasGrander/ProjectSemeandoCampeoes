@@ -218,7 +218,7 @@ const informationEdit = () => {
             <div className="box-edit-infos">
 
                 <div className="box-nav">
-                    <div style={{background: dropdown ? "linear-gradient(180deg, rgb(255, 255, 255), rgba(0, 0, 0, 0.158))": "transparent"}} onClick={handleOnClickBtnFiltro} className="btn-filtro">
+                    <div onClick={handleOnClickBtnFiltro} className={dropdown ? "btn-filtro-selected" : "btn-filtro"}>
                         <span>Filtros</span>
                         <img className='filter-icon' src={filterICON}></img>
                         <img style={{transform: dropdown ? "rotate(180deg)" : "rotate(0deg)", transition: ".3s"}} className='dropdown-icon' src={dropdownCloseOpenICON}></img>
@@ -243,7 +243,7 @@ const informationEdit = () => {
                                 <span onClick={() => handleSetFilter("CT Lar Paraná")} className={estadoCtLarParana ? "item-drop-selected" : "item-drop"} >CT - Lar Paraná</span>
                                 <span onClick={() => handleSetFilter("CT Centro")} className={estadoCtCentro ? "item-drop-selected" : "item-drop"} >CT - Centro</span>
                                 <span onClick={() => handleSetFilter("CT ???")} className={estadoCt ? "item-drop-selected" : "item-drop"} >CT - ???</span>
-                                <span onClick={() => handleSetFilter("CT Iretama")} className={estadoCtIretama ? "item-drop-selected" : "item-drop"} >CT - Ginásio Iretama</span>
+                                <span onClick={() => handleSetFilter("CT Iretama")} className={estadoCtIretama ? "item-drop-selected" : "item-drop"} >CT - Iretama</span>
                             </div>
 
                             <div style={{opacity: dropdown ? "1" : "0",pointerEvents: dropdown ? "all" : "none", transition: ".6s"}} className="dropdown-itens-diversos">
