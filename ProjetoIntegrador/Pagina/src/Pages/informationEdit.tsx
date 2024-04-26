@@ -47,6 +47,12 @@ const informationEdit = () => {
     const [estadoRoxa, setEstadoRoxa] = useState(false)
     const [estadoMarrom, setEstadoMarrom] = useState(false)
     const [estadoPreta, setEstadoPreta] = useState(false)
+
+    // verficar o tipo de seleção dos diversos
+    const [estadoA_Z, setEstadoA_Z] = useState(false)
+    const [estadoZ_A, setEstadoZ_A] = useState(false)
+    const [estadoMaior18, setEstadoMaior18] = useState(false)
+    const [estadoMenor18, setEstadoMenor18] = useState(false)
     
     const handleSetFilter = (selectedFilter: string) => {
         setVariosFiltros([...variosFiltros, selectedFilter])
@@ -75,8 +81,20 @@ const informationEdit = () => {
         else if(selectedFilter.toLocaleLowerCase() == "marrom"){
             setEstadoMarrom(true)
         }
-        else{
+        else if(selectedFilter.toLocaleLowerCase() == "preta"){
             setEstadoPreta(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "a-z"){
+            setEstadoA_Z(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "z-a"){
+            setEstadoZ_A(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == ">18"){
+            setEstadoMaior18(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "<18"){
+            setEstadoMenor18(true)
         }
     }
 
@@ -109,8 +127,20 @@ const informationEdit = () => {
         else if(filtro.toLocaleLowerCase() == "marrom"){
             setEstadoMarrom(false)
         }
-        else{
+        else if(filtro.toLocaleLowerCase() == "preta"){
             setEstadoPreta(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "a-z"){
+            setEstadoA_Z(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "z-a"){
+            setEstadoZ_A(false)
+        }
+        else if(filtro.toLocaleLowerCase() == ">18"){
+            setEstadoMaior18(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "<18"){
+            setEstadoMenor18(false)
         }
     }
 
@@ -188,10 +218,10 @@ const informationEdit = () => {
 
                             <div style={{opacity: dropdown ? "1" : "0",pointerEvents: dropdown ? "all" : "none", transition: ".6s"}} className="dropdown-itens-diversos">
                                 <span className='title-drop' >Diversos</span>
-                                <span onClick={() => handleSetFilter("A-Z")} className='item-drop' >Ordem A-Z</span>
-                                <span onClick={() => handleSetFilter("Z-A")} className='item-drop' >Ordem Z-A</span>
-                                <span onClick={() => handleSetFilter(">18")} className='item-drop' >Maior de 18</span>
-                                <span onClick={() => handleSetFilter("<18")} className='item-drop' >Menor de 18</span>
+                                <span onClick={() => handleSetFilter("A-Z")} className={estadoA_Z ? "item-drop-selected" : "item-drop"} >Ordem A-Z</span>
+                                <span onClick={() => handleSetFilter("Z-A")} className={estadoZ_A ? "item-drop-selected" : "item-drop"} >Ordem Z-A</span>
+                                <span onClick={() => handleSetFilter(">18")} className={estadoMaior18 ? "item-drop-selected" : "item-drop"} >Maior de 18</span>
+                                <span onClick={() => handleSetFilter("<18")} className={estadoMenor18 ? "item-drop-selected" : "item-drop"} >Menor de 18</span>
                             </div>
 
                         </div>
