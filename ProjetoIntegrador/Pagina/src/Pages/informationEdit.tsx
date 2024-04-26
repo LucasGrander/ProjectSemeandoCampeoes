@@ -34,17 +34,85 @@ const informationEdit = () => {
             setDropdown(false)
         }
     }
+
     const [variosFiltros, setVariosFiltros] = useState<string[]>([])
 
+    // verficar o tipo de seleção das faixas
+    const [estadoBranca, setEstadoBranca] = useState(false)
+    const [estadoCinza, setEstadoCinza] = useState(false)
+    const [estadoAmarela, setEstadoAmarela] = useState(false)
+    const [estadoLaranja, setEstadoLaranja] = useState(false)
+    const [estadoVerde, setEstadoVerde] = useState(false)
+    const [estadoAzul, setEstadoAzul] = useState(false)
+    const [estadoRoxa, setEstadoRoxa] = useState(false)
+    const [estadoMarrom, setEstadoMarrom] = useState(false)
+    const [estadoPreta, setEstadoPreta] = useState(false)
+    
     const handleSetFilter = (selectedFilter: string) => {
         setVariosFiltros([...variosFiltros, selectedFilter])
-    }   
+        
+        if(selectedFilter.toLocaleLowerCase() == "branca"){
+            setEstadoBranca(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "cinza"){
+            setEstadoCinza(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "amarela"){
+            setEstadoAmarela(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "laranja"){
+            setEstadoLaranja(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "verde"){
+            setEstadoVerde(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "azul"){
+            setEstadoAzul(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "roxa"){
+            setEstadoRoxa(true)
+        }
+        else if(selectedFilter.toLocaleLowerCase() == "marrom"){
+            setEstadoMarrom(true)
+        }
+        else{
+            setEstadoPreta(true)
+        }
+    }
 
-    const handleRemoverFiltro = (index: number) => {
-        const atualizaFiltros = [...variosFiltros];
-        atualizaFiltros.splice(index, 1);
-        setVariosFiltros(atualizaFiltros);
-    };
+    const handleRemoverFiltro = (index: number, filtro: any) => {
+        const atualizaFiltros = [...variosFiltros]
+        atualizaFiltros.splice(index, 1)
+        setVariosFiltros(atualizaFiltros)
+
+        if(filtro.toLowerCase() == "branca"){
+            setEstadoBranca(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "cinza"){
+            setEstadoCinza(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "amarela"){
+            setEstadoAmarela(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "laranja"){
+            setEstadoLaranja(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "verde"){
+            setEstadoVerde(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "azul"){
+            setEstadoAzul(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "roxa"){
+            setEstadoRoxa(false)
+        }
+        else if(filtro.toLocaleLowerCase() == "marrom"){
+            setEstadoMarrom(false)
+        }
+        else{
+            setEstadoPreta(false)
+        }
+    }
 
     const [todosFilter, setTodosFilter] = useState(false)
     const [longName, setLongName] = useState(false)
@@ -71,8 +139,6 @@ const informationEdit = () => {
         }
     }
     
-
-    console.log(variosFiltros.length)
     return(
     <div  onMouseMove={handleFilterTodos} className="page-infos-edit">
         <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
@@ -101,15 +167,15 @@ const informationEdit = () => {
                         <div onMouseLeave={handleCloseDropOnBlur} className="dropdown-container">
                             <div  style={{opacity: dropdown ? "1" : "0",pointerEvents: dropdown ? "all" : "none", transition: ".2s"}} className="dropdown-itens-faixa">
                                 <span className='title-drop' >Faixas</span>
-                                <span onClick={() => handleSetFilter("Branca")} className='item-drop' >Branca</span>
-                                <span onClick={() => handleSetFilter("Cinza")} className='item-drop' >Cinza</span>
-                                <span onClick={() => handleSetFilter("Amarela")} className='item-drop' >Amarela</span>
-                                <span onClick={() => handleSetFilter("Laranja")} className='item-drop' >Laranja</span>
-                                <span onClick={() => handleSetFilter("Verde")} className='item-drop' >Verde</span>
-                                <span onClick={() => handleSetFilter("Azul")} className='item-drop' >Azul</span>
-                                <span onClick={() => handleSetFilter("Roxa")} className='item-drop' >Roxa</span>
-                                <span onClick={() => handleSetFilter("Marrom")} className='item-drop' >Marrom</span>
-                                <span onClick={() => handleSetFilter("Preta")} className='item-drop' >Preta</span>
+                                <span onClick={() => handleSetFilter("Branca")} className={estadoBranca ? "item-drop-selected" : "item-drop"} >Branca</span>
+                                <span onClick={() => handleSetFilter("Cinza")} className={estadoCinza ? "item-drop-selected" : "item-drop"} >Cinza</span>
+                                <span onClick={() => handleSetFilter("Amarela")} className={estadoAmarela ? "item-drop-selected" : "item-drop"} >Amarela</span>
+                                <span onClick={() => handleSetFilter("Laranja")} className={estadoLaranja ? "item-drop-selected" : "item-drop"} >Laranja</span>
+                                <span onClick={() => handleSetFilter("Verde")} className={estadoVerde ? "item-drop-selected" : "item-drop"} >Verde</span>
+                                <span onClick={() => handleSetFilter("Azul")} className={estadoAzul ? "item-drop-selected" : "item-drop"} >Azul</span>
+                                <span onClick={() => handleSetFilter("Roxa")} className={estadoRoxa ? "item-drop-selected" : "item-drop"} >Roxa</span>
+                                <span onClick={() => handleSetFilter("Marrom")} className={estadoMarrom ? "item-drop-selected" : "item-drop"} >Marrom</span>
+                                <span onClick={() => handleSetFilter("Preta")} className={estadoPreta ? "item-drop-selected" : "item-drop"} >Preta</span>
                             </div>
 
                             <div style={{opacity: dropdown ? "1" : "0",pointerEvents: dropdown ? "all" : "none", transition: ".4s"}} className="dropdown-itens-cts">
@@ -137,7 +203,7 @@ const informationEdit = () => {
                             <img src={deleteFilter}></img>
                         </div>
                         {variosFiltros.map((filtro, index) => (
-                        <div onClick={() => handleRemoverFiltro(index)} key={index} className={longName ? "filter-picked-long" : "filter-picked"}>
+                        <div onClick={() => handleRemoverFiltro(index, filtro)} key={index} className={longName ? "filter-picked-long" : "filter-picked"}>
                             <span>{filtro}</span>
                             <img src={deleteFilter}></img>
                         </div>
