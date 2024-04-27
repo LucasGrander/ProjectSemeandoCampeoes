@@ -306,8 +306,8 @@ const informationEdit = () => {
                 </div>
                 
                 <div className="table-result-pesquisa">
-                    
                     <div className="adaptive-infos-overlay">
+                        
                         <div className={showInfosIntegrante ? "container-integrante-active" : "container-integrante-inative"}>
                             <div onClick={handleShowInfosIntegrante} className="box-integrante">
                                 <span>Nome de aluno</span>
@@ -315,7 +315,7 @@ const informationEdit = () => {
                             </div>
                         </div>
                         <div className={showInfosIntegrante ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
-                        <div className="infos-integ">
+                            <div className="infos-integ">
 
                             </div> 
                             <div className="infos-integ">
@@ -325,10 +325,8 @@ const informationEdit = () => {
 
                             </div>    
                         </div>
-                    </div>
-
-
-            
+                        
+                    </div>         
                 </div>
             </div>
         </div>
