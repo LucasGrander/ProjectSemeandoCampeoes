@@ -6,6 +6,7 @@ import { useState } from 'react'
 import filterICON from '../assets/filterICON.svg'
 import loupSearchICON from '../assets/loupSearchIcon.svg'
 import deleteFilter from '../assets/closePage.svg'
+import lockICON from '../assets/lockIcon.svg'
 import dropdownCloseOpenICON from '../assets/openCloseDropdown.svg'
 
 const informationEdit = () => {
@@ -258,9 +259,9 @@ const informationEdit = () => {
                     
 
                     <div className="input-pesquisa">
-                        <div style={{display: todosFilter ? "flex" : "none", pointerEvents: "none"}}  className="filter-picked">
+                        <div style={{display: todosFilter ? "flex" : "none", pointerEvents: "none"}}  className="filter-fixed">
                             <span>Todos</span>
-                            <img src={deleteFilter}></img>
+                            <img src={lockICON}></img>
                         </div>
                         {variosFiltros.map((filtro, index) => (
                         <div onClick={() => handleRemoverFiltro(index, filtro)} key={index} className={longName ? "filter-picked-long" : "filter-picked"}>
@@ -271,9 +272,8 @@ const informationEdit = () => {
 
                     </div>
                     
-                    <div className="btn-pesquisar">
-                    <span>Pesquisar</span>
-                        <img src={loupSearchICON}></img>
+                    <div className="box-search-icon">
+                        <img className='search-icon' src={loupSearchICON}></img>
                     </div>
                 </div>
                 

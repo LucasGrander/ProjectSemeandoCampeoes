@@ -89,14 +89,16 @@
 .page-infos-edit .container-edit-infos .box-edit-infos{
     width: 95%;
     height: 95%;
-
-    border: solid .1vh rgba(0, 0, 0, 0.5);
     padding: 3vh;
-    display: flex;
-    justify-content: center;
+    gap: 3vh;
 
-    box-shadow: 0vh 0vh 1vh rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
     background-color: #cccccc3d;
+    border: solid .1vh rgba(0, 0, 0, 0.5);
+    box-shadow: 0vh 0vh 1vh rgba(0, 0, 0, 0.5);
 }
 
 .page-infos-edit .container-edit-infos .box-edit-infos .box-nav{
@@ -105,8 +107,8 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 3vh;
+    justify-content: start;
+    gap: 2vh;
     position: relative;
 }
 
@@ -128,6 +130,7 @@
     border-radius: 1vh;
     cursor: pointer;
     box-shadow: .1vh .2vh .6vh black;
+    background-color: white;
 }
 
 .box-nav .btn-filtro:hover{
@@ -187,22 +190,85 @@
 }
 
 .box-nav .input-pesquisa{
-    width: 80%;
+    width: 85%;
     height: 100%;
+    padding: 1vh;
 
     display: flex;
     align-items: center;
     justify-content: centaer;
     
-    padding: 1vh;
-    border: .2vh black solid;
-    border-radius: .4vh;
     overflow-y: hidden;
     overflow-x: auto;
 
     border: .1vh solid black;
-    box-shadow: .1vh .1vh .5vh black;
-    border-radius: 1vh;
+    border-right: none;
+    box-shadow: -.5vh .2vh .5vh black;
+    border-top-left-radius: 1vh;
+    border-bottom-left-radius: 1vh;
+    background-color: white;
+}
+
+.box-search-icon{
+    width: 4%;
+    height: 100%;
+    padding: 1vh;
+
+    position: absolute;
+    right: .9vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border: .1vh solid black;
+    border-left: none;
+    box-shadow: .5vh .2vh .5vh black;
+    border-top-right-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    background-color: white;
+}
+
+.box-search-icon:hover{
+    cursor: pointer;
+}
+
+.search-icon{
+    width: 4vh;
+    height: 4vh;
+    transition: .5s;
+}
+.box-search-icon:hover .search-icon{
+    transform: scale(1.2);
+    transition: .3s;
+}
+
+.box-nav .input-pesquisa .filter-fixed{
+    width: auto;
+    height: 100%;
+    padding: 1vh 1vh 1vh 2vh;
+    margin-left: 1vh;
+    gap: 1vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: solid .1vh black;
+    border-radius: 5vh;
+    box-shadow: .1vh .1vh .3vh black;
+    font-size: 2.3vh;
+    animation: filterAppear .5s normal forwards;
+}
+
+.box-nav .input-pesquisa .filter-fixed img{
+    height: 2.2vh;
+    width: 2.2vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .box-nav .input-pesquisa .filter-picked{
@@ -219,6 +285,8 @@
     border: solid .1vh black;
     border-radius: 5vh;
     box-shadow: .1vh .1vh .3vh black;
+    font-size: 2.3vh;
+    animation: filterAppear .5s normal forwards;
 }
 
 .box-nav .input-pesquisa .filter-picked:hover{
@@ -244,8 +312,8 @@
 
 .box-nav .input-pesquisa .filter-picked-long{
     width: auto;
-    min-width: calc(20% + 5vh);
-    height: 140%;
+    min-width: calc(13% + 5vh);
+    height: 130%;
     padding: 1vh 0vh 1vh 2vh;
     margin-left: 1vh;
     gap: 1vh;
@@ -256,6 +324,7 @@
 
     border: solid .1vh black;
     border-radius: 5vh;
+    animation: filterAppear .5s normal forwards;
 }
 
 .box-nav .input-pesquisa .filter-picked-long:hover{
@@ -278,42 +347,6 @@
     transition: .2s;
 }
 
-.box-nav .btn-pesquisar{
-    width: 10%;
-    height: 100%;
-    position: relative;
-    gap: 1vh;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 2.5vh;
-    font-weight: 600;
-    border: solid .2vh black;
-
-    border-radius: 1vh;
-    cursor: pointer;
-    box-shadow: .1vh .2vh .6vh black;
-}
-
-.box-nav .btn-pesquisar:hover {
-    background: linear-gradient(180deg, rgb(255, 255, 255), rgba(0, 0, 0, 0.3));
-    box-shadow: .1vh .1vh .6vh black;
-}
-.box-nav .btn-pesquisar:hover img {
-    transform: scale(1.05);
-}
-
-.box-nav .btn-pesquisar img{
-    width: 3vh;
-    height: 3vh;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* DROPDOWN ESTILOS */
 
 .dropdown-container{
@@ -332,6 +365,7 @@
     grid-template-columns: 15vh;
     grid-template-rows: 4vh 5vh 5vh 5vh 5vh 5vh 5vh 5vh 5vh 5vh;
     gap: .3vh;
+    min-height: 10%;
 }
 
 .dropdown-itens-cts{
@@ -405,5 +439,25 @@
 
     cursor: pointer;
     pointer-events: none;
-    
 }
+
+.table-result-pesquisa{
+    width: 100%;
+    height: 100%;
+
+    background-color: #00000010;
+    border-radius: 3vh;
+}
+
+
+@keyframes filterAppear {
+    0%{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
