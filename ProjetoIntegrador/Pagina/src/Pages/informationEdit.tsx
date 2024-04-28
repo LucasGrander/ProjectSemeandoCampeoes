@@ -34,6 +34,10 @@ const informationEdit = () => {
         else{
             setDropdown(false)
         }
+
+        if(showInfosIntegrante){
+            setShowInfosIntegrante(false)
+        }
     }
 
     const [variosFiltros, setVariosFiltros] = useState<string[]>([])
@@ -236,7 +240,7 @@ const informationEdit = () => {
                         <img style={{transform: dropdown ? "rotate(180deg)" : "rotate(0deg)", transition: ".3s"}} className='dropdown-icon' src={dropdownCloseOpenICON}></img>
                     </div>
 
-                        <div style={{backdropFilter: dropdown ? "blur(2vh)" : "blur(0vh)", pointerEvents: dropdown ? "all" : "none"}} onMouseLeave={handleCloseDropOnBlur} className="dropdown-container">
+                        <div style={{pointerEvents: dropdown ? "all" : "none"}} onMouseLeave={handleCloseDropOnBlur} className="dropdown-container">
                             <div className="dropdown-itens-faixa">
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" ,pointerEvents: dropdown ? "all" : "none", transition: ".1s"}}  className='title-drop' >Faixas</span>
 
@@ -308,13 +312,13 @@ const informationEdit = () => {
                 <div className="table-result-pesquisa">
                     <div className="adaptive-infos-overlay">
                         
-                        <div className={showInfosIntegrante ? "container-integrante-active" : "container-integrante-inative"}>
+                        <div className={showInfosIntegrante ? "container-integrante-active" : "container-integrante-inative"} style={{opacity: dropdown ? ".1" : "1"}} >
                             <div onClick={handleShowInfosIntegrante} className="box-integrante">
                                 <span>Nome de aluno</span>
                                 <img style={{transform: showInfosIntegrante ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>
                             </div>
                         </div>
-                        <div className={showInfosIntegrante ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
+                        <div className={showInfosIntegrante ? "container-integrante-infos-opened" : "container-integrante-infos-closed"} >
                             <div className="infos-integ">
 
                             </div> 

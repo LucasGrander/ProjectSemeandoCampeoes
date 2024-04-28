@@ -50,6 +50,20 @@
     text-shadow: 0.2vh 0.2vh .2vh rgba(255, 255, 255, 0.272);
 }
 
+.overlay{
+    z-index: 99;
+    width: 100%;
+    min-height: 100%;
+    
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+}
+
 .page-infos-edit .overlay .loading-logo{
     width: 23vh;
     height: 23vh;
@@ -361,7 +375,7 @@
     gap: 1vh;
     cursor: default;
 
-    z-index: 99;
+    z-index: 98;
 }
 
 .dropdown-itens-faixa{
