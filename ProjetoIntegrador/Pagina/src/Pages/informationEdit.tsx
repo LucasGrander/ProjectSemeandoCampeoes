@@ -320,13 +320,30 @@ const informationEdit = () => {
                         </div>
                         <div className={showInfosIntegrante ? "container-integrante-infos-opened" : "container-integrante-infos-closed"} >
                             <div className="infos-integ">
-
+                                <span className="title-infos-integ">Title</span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
                             </div> 
-                            <div className="infos-integ">
 
+                            <div className="infos-integ">
+                            <span className="title-infos-integ">Title</span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
                             </div>
-                            <div className="infos-integ">
 
+                            <div className="infos-integ">
+                            <span className="title-infos-integ">Title</span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <span><strong>Info: </strong> xxxxxxx </span>
                             </div>    
                         </div>
                         
