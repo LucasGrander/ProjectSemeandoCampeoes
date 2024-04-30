@@ -50,7 +50,7 @@ export const updateUsers = (req, res) => {
 }
 
 export const deleteUsers = (req, res) => {
-    const sql = "delete from pessoa where id = ?";
+    const sql = "delete from aluno where id = ?";
 
     const { id } = req.query;
 

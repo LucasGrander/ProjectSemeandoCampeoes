@@ -2,6 +2,8 @@ import './informationEdit.css'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import { useRef, useState } from 'react'
+import axios from 'axios'
+import { Participante } from '../interfaces/interfaces'
 
 import filterICON from '../assets/filterICON.svg'
 import closeX from '../assets/closePage.svg'
@@ -222,11 +224,6 @@ const informationEdit = () => {
     const [boxEditMode, setBoxEditMode] = useState(false)
     const [containerEditMode, setContainerEditMode] = useState(false)
 
-    const handleOnClickOpenEdit = () => {
-        setBoxEditMode(true)
-        setContainerEditMode(true)
-
-    }
 
     const handleOnClickCloseEdit = () => {
         setBoxEditMode(false)
@@ -242,6 +239,70 @@ const informationEdit = () => {
           containerRef.current.scrollTop = 0
         }
   }
+
+  // ligação com o banco de dados ---->
+
+  const [participants, setParticipants] = useState<Participante[]>([])
+  const [id, setId] = useState(-1)
+  const [nome, setNome] = useState("")
+//   const [dataNasc, setDataNasc] = useState("")
+//   const [telefone, setTelefone] = useState("")
+//   const [responsavel, setResponsavel] = useState("")
+//   const [centroDeTreino, setCentroDeTreino] = useState("")
+//   const [endereco, setEndereco] = useState("")
+
+
+
+  const handleGetInfos = async () => {
+    const res = await axios.get("http://localhost:8080/users")
+
+    setParticipants(res.data)
+  }
+
+  const handleUpdateInfos = async () => {
+    // await axios.put("http://localhost:8080/users", {id: id, nome: nome, data_de_nascimento: dataNasc, telefone: telefone, nome_do_responsavel: responsavel, centro_de_treinamento: centroDeTreino, endereco: endereco})
+    if(id <= 0){
+    await axios.put("http://localhost:8080/users", {nome: nome})
+
+    setBoxEditMode(false)
+        setTimeout(() =>{
+            scrollToTop()
+            setContainerEditMode(false)
+
+            setNome("")
+            // setDataNasc("")
+            // setTelefone("")
+            // setResponsavel("")
+            // setCentroDeTreino("")
+            // setEndereco("")
+            setId(-1)
+        }, 1100)
+
+    handleGetInfos()
+    }
+  }
+
+  const handleSelectInfos = async (id : number) => {
+      setBoxEditMode(true)
+      setContainerEditMode(true)
+      
+    const participante = participants.find((participante : Participante) => participante.id === id)
+    if(participante){
+        setNome(participante.nome)
+        // setDataNasc(participante.data_de_nascimento)
+        // setTelefone(participante.telefone)
+        // setResponsavel(participante.responsavel)
+        // setCentroDeTreino(participante.centro_de_treino)
+        // setEndereco(participante.endereco)
+    }
+  }
+
+  const handleDeleteInfos = async (id : number) => {
+    await axios.delete(`http://localhost:8080/users?id=${id}`)
+
+    handleGetInfos()
+  }
+    
     
     return(
     <div  onMouseMove={handleFilterTodos} className="page-infos-edit">
@@ -333,56 +394,62 @@ const informationEdit = () => {
                     </div>
                     
                     <div className="box-search-icon">
-                        <img className='search-icon' src={searchUser}></img>
+                        <img onClick={handleGetInfos} className='search-icon' src={searchUser}></img>
                     </div>
                 </div>
                 
                 <div className="table-result-pesquisa">
-                    <div className="adaptive-infos-overlay">
                         
-                        <div className={showInfosIntegrante ? "container-integrante-active" : "container-integrante-inative"} style={{opacity: dropdown ? ".1" : "1"}} >
-                            <div onClick={handleShowInfosIntegrante} className="box-integrante">
-                                <span>Nome de aluno</span>
-                                <img style={{transform: showInfosIntegrante ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>
+                        {participants.map((participante)=> (
+                        <div className="adaptive-infos-overlay" key={participante.id}>
+                            <div className={showInfosIntegrante ? "container-integrante-active" : "container-integrante-inative"} style={{opacity: dropdown ? ".1" : "1"}} >
+                                <div onClick={handleShowInfosIntegrante} className="box-integrante">
+                                    <span>Nome de aluno</span>
+                                    <img style={{transform: showInfosIntegrante ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>
+                                </div>
                             </div>
-                        </div>
-                        <div className={showInfosIntegrante ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
-                            <div className="icons-edit-remove">
-                                <img onClick={handleOnClickOpenEdit} className='edit-icon' src={editUSER}></img>
-                                <img  className='remove-icon' src={removeUSER}></img>
-                            </div>
-                            <div className="infos-integ">
+
+                            <div className={showInfosIntegrante ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
+                                <div className="icons-edit-remove">
+                                    <img onClick={() => handleSelectInfos(participante.id)} className='edit-icon' src={editUSER}></img>
+                                    <img onClick={() => handleDeleteInfos(participante.id)} className='remove-icon' src={removeUSER}></img>
+                                </div>
+
+                                <div className="infos-integ">
+                                    <span className="title-infos-integ">Title</span>
+                                    <span><strong>Nome Completo: </strong> {participante.nome} </span>
+                                    <span><strong>Data de nascimento: </strong> {participante.data_de_nascimento} </span>
+                                    <span><strong>Número de telefone: </strong> {participante.telefone} </span>
+                                    <span><strong>Responsável: </strong> {participante.responsavel} </span>
+                                    <span><strong>Centro de treinamento: </strong> {participante.centro_de_treino} </span>
+                                    <span><strong>Cor da faixa: </strong> {participante.cor_da_faixa} </span>
+                                </div> 
+
+                                <div className="infos-integ">
                                 <span className="title-infos-integ">Title</span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                            </div> 
+                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                </div>
 
-                            <div className="infos-integ">
-                            <span className="title-infos-integ">Title</span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
+                                <div className="infos-integ">
+                                <span className="title-infos-integ">Title</span>
+                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                </div>    
                             </div>
-
-                            <div className="infos-integ">
-                            <span className="title-infos-integ">Title</span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                                <span><strong>Info: </strong> xxxxxxx </span>
-                            </div>    
                         </div>
-                        
-                    </div>         
+                        ))}
+                                            
                 </div>
             </div>
         </div>
+
         <div style={{display: containerEditMode ? "flex" : "none"}} className="container-edicao">
             <div ref={containerRef} className={boxEditMode ? "content-edicao-on" : "content-edicao-off"}>
                 <span className='title-container-edit' >Alteração</span>
@@ -391,8 +458,29 @@ const informationEdit = () => {
                     <label className="labelFocused" htmlFor='nome'>Nome Completo</label>
                     <MyInput
                         id="nomeCompleto"
-                        // value={"nome"}
-                        // onChange={(e) => set(e.target.value)}
+                        value={nome.length > 0 ? nome : ""}
+                        onChange={(e) => setNome(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                {/* <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='dataNas'>Data de nascimento</label>
+                    <MyInput
+                        id="dataNas"
+                        value={dataNasc.length > 0 ? dataNasc : ""}
+                        onChange={(e) => setDataNasc(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"
@@ -409,11 +497,11 @@ const informationEdit = () => {
                 </div>
 
                 <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <label className="labelFocused" htmlFor='telefone'>Telefone</label>
                     <MyInput
-                        id="data"
-                        // value={"nome"}
-                        // onChange={(e) => set(e.target.value)}
+                        id="telefone"
+                        value={telefone.length > 0 ? telefone : ""}
+                        onChange={(e) => setTelefone(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"
@@ -430,11 +518,11 @@ const informationEdit = () => {
                 </div>
 
                 <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <label className="labelFocused" htmlFor='responsavel'>Responsável</label>
                     <MyInput
-                        id="data"
-                        // value={"nome"}
-                        // onChange={(e) => set(e.target.value)}
+                        id="responsavel"
+                        value={responsavel.length > 0 ? responsavel : ""}
+                        onChange={(e) => setResponsavel(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"
@@ -451,11 +539,11 @@ const informationEdit = () => {
                 </div>
 
                 <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <label className="labelFocused" htmlFor='ct'>Centro de Treinamento</label>
                     <MyInput
-                        id="data"
-                        // value={"nome"}
-                        // onChange={(e) => set(e.target.value)}
+                        id="ct"
+                        value={centroDeTreino.length > 0 ? centroDeTreino : ""}
+                        onChange={(e) => setCentroDeTreino(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"
@@ -469,136 +557,11 @@ const informationEdit = () => {
                         enter= "transparent"
                         leave= "transparent"
                     />
-                </div>
+                </div> */}
 
-                <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='data'>Data</label>
-                    <MyInput
-                        id="data"
-                        // value={"nome"}
-                        // onChange={(e) => set(e.target.value)}
-                        type='text'
-                        width= "90%"
-                        height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
-                        fontSize= "2.4vh"
-                        border= "solid .3vh black"
-                        borderBottom="solid .3vh black"
-                        borderRadius='.6vh'
-                        backgroundColor="transparent"
-                        transition= ".4s"
-                        enter= "transparent"
-                        leave= "transparent"
-                    />
-                </div>
-
-                <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='data'>Data</label>
-                    <MyInput
-                        id="data"
-                        // value={"nome"}
-                        // onChange={(e) => set(e.target.value)}
-                        type='text'
-                        width= "90%"
-                        height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
-                        fontSize= "2.4vh"
-                        border= "solid .3vh black"
-                        borderBottom="solid .3vh black"
-                        borderRadius='.6vh'
-                        backgroundColor="transparent"
-                        transition= ".4s"
-                        enter= "transparent"
-                        leave= "transparent"
-                    />
-                </div>
-
-                <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='data'>Data</label>
-                    <MyInput
-                        id="data"
-                        // value={"nome"}
-                        // onChange={(e) => set(e.target.value)}
-                        type='text'
-                        width= "90%"
-                        height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
-                        fontSize= "2.4vh"
-                        border= "solid .3vh black"
-                        borderBottom="solid .3vh black"
-                        borderRadius='.6vh'
-                        backgroundColor="transparent"
-                        transition= ".4s"
-                        enter= "transparent"
-                        leave= "transparent"
-                    />
-                </div>
-
-                <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='data'>Data</label>
-                    <MyInput
-                        id="data"
-                        // value={"nome"}
-                        // onChange={(e) => set(e.target.value)}
-                        type='text'
-                        width= "90%"
-                        height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
-                        fontSize= "2.4vh"
-                        border= "solid .3vh black"
-                        borderBottom="solid .3vh black"
-                        borderRadius='.6vh'
-                        backgroundColor="transparent"
-                        transition= ".4s"
-                        enter= "transparent"
-                        leave= "transparent"
-                    />
-                </div>
-
-                <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='data'>Data</label>
-                    <MyInput
-                        id="data"
-                        // value={"nome"}
-                        // onChange={(e) => set(e.target.value)}
-                        type='text'
-                        width= "90%"
-                        height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
-                        fontSize= "2.4vh"
-                        border= "solid .3vh black"
-                        borderBottom="solid .3vh black"
-                        borderRadius='.6vh'
-                        backgroundColor="transparent"
-                        transition= ".4s"
-                        enter= "transparent"
-                        leave= "transparent"
-                    />
-                </div>
-
-                <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='data'>Data</label>
-                    <MyInput
-                        id="data"
-                        // value={"nome"}
-                        // onChange={(e) => set(e.target.value)}
-                        type='text'
-                        width= "90%"
-                        height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
-                        fontSize= "2.4vh"
-                        border= "solid .3vh black"
-                        borderBottom="solid .3vh black"
-                        borderRadius='.6vh'
-                        backgroundColor="transparent"
-                        transition= ".4s"
-                        enter= "transparent"
-                        leave= "transparent"
-                    />
-                </div>
                 <div className="save-cancel">
                     <MyButton
-                    // onClick={}
+                    onClick={handleUpdateInfos}
                     width= "auto"
                     height= "8vh"
                     padding="1vh 3vh"
