@@ -4,10 +4,13 @@ import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import { useState } from 'react'
 
 import filterICON from '../assets/filterICON.svg'
-import loupSearchICON from '../assets/loupSearchIcon.svg'
-import deleteFilter from '../assets/closePage.svg'
+import closeX from '../assets/closePage.svg'
 import lockICON from '../assets/lockIcon.svg'
 import dropdownCloseOpenICON from '../assets/openCloseDropdown.svg'
+import searchUser from '../assets/searchUserIcon.svg'
+import removeUSER from '../assets/removeUserIcon.svg'
+import editUSER from '../assets/editUserIcon.svg'
+import MyInput from '../components/MyInput'
 
 const informationEdit = () => {
 
@@ -214,6 +217,22 @@ const informationEdit = () => {
             setShowInfosIntegrante(false)
         }
     }
+
+    const [boxEditMode, setBoxEditMode] = useState(false)
+    const [containerEditMode, setContainerEditMode] = useState(false)
+
+    const handleOnClickOpenEdit = () => {
+        setBoxEditMode(true)
+        setContainerEditMode(true)
+    }
+
+    const handleOnClickCloseEdit = () => {
+        setBoxEditMode(false)
+
+        setTimeout(() =>{
+            setContainerEditMode(false)
+        }, 1100)
+    }
     
     return(
     <div  onMouseMove={handleFilterTodos} className="page-infos-edit">
@@ -298,14 +317,14 @@ const informationEdit = () => {
                         {variosFiltros.map((filtro, index) => (
                         <div onClick={() => handleRemoverFiltro(index, filtro)} key={index} className={longName ? "filter-picked-long" : "filter-picked"}>
                             <span>{filtro}</span>
-                            <img src={deleteFilter}></img>
+                            <img src={closeX}></img>
                         </div>
                         ))}
 
                     </div>
                     
                     <div className="box-search-icon">
-                        <img className='search-icon' src={loupSearchICON}></img>
+                        <img className='search-icon' src={searchUser}></img>
                     </div>
                 </div>
                 
@@ -318,7 +337,11 @@ const informationEdit = () => {
                                 <img style={{transform: showInfosIntegrante ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>
                             </div>
                         </div>
-                        <div className={showInfosIntegrante ? "container-integrante-infos-opened" : "container-integrante-infos-closed"} >
+                        <div className={showInfosIntegrante ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
+                            <div className="icons-edit-remove">
+                                <img onClick={handleOnClickOpenEdit} className='edit-icon' src={editUSER}></img>
+                                <img  className='remove-icon' src={removeUSER}></img>
+                            </div>
                             <div className="infos-integ">
                                 <span className="title-infos-integ">Title</span>
                                 <span><strong>Info: </strong> xxxxxxx </span>
@@ -351,6 +374,54 @@ const informationEdit = () => {
                 </div>
             </div>
         </div>
+        <div style={{display: containerEditMode ? "flex" : "none"}} className="container-edicao">
+            <div className={boxEditMode ? "content-edicao-on" : "content-edicao-off"}>
+                <img onClick={handleOnClickCloseEdit} src={closeX}></img>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='nome'>Nome Completo</label>
+                    <MyInput
+                        id="nomeCompleto"
+                        // value={"nome"}
+                        // onChange={(e) => set(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "100%"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <MyInput
+                        id="data"
+                        // value={"nome"}
+                        // onChange={(e) => set(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "100%"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+            </div>
+        </div>
+
     </div>
     )
 }

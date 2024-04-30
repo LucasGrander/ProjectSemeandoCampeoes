@@ -1,7 +1,7 @@
 import { db } from '../database/db.js'
 
 export const getUsers = (_, res) => {
-    const sql = "select * from usuario"
+    const sql = "select a.id as id, p.nome as nome, f.cor_da_faixa as faixa from aluno a join pessoa p on a.id_pessoa = p.id join faixa f on a.id_faixa = f.id "
 
     db.query (sql, (err, data)=> {
         if(err){
@@ -16,11 +16,11 @@ export const getUsers = (_, res) => {
 }
 
 export const addUsers = (req, res) => {
-    const sql = "insert into usuario (nome) value (?)"
+    const sql = "insert into aluno (id, id_pessoa, id_faixa) value (?, ?, ?)"
 
-    const {nome} = req.body
+    const {id, id_pessoa, id_faixa} = req.body
 
-    db.query(sql, [nome], (err, data) => {
+    db.query(sql, [id, id_pessoa, id_faixa], (err, data) => {
         if(err){
             console.log("Erro ao processar a requisição")
             return res.status(500).json(err)
@@ -33,11 +33,11 @@ export const addUsers = (req, res) => {
 }
 
 export const updateUsers = (req, res) => {
-    const sql = "update usuario set nome = ? where id = ?"
+    const sql = "update aluno set id_pessoa = ?, id_faixa = ? where id = ?"
 
-    const {nome, id } = req.body;
+    const {id_pessoa, id_faixa, id } = req.body;
 
-    db.query(sql, [nome, id], (err, data) => {
+    db.query(sql, [id_pessoa, id_faixa, id ], (err, data) => {
         if(err){
             console.log("Erro ao processar a requisição")
             return res.status(500).json(err)
@@ -50,7 +50,7 @@ export const updateUsers = (req, res) => {
 }
 
 export const deleteUsers = (req, res) => {
-    const sql = "delete from usuario where id = ?";
+    const sql = "delete from pessoa where id = ?";
 
     const { id } = req.query;
 

@@ -10,7 +10,7 @@ app.use(cors())
 
 app.use("/users", userRoutes)
 
-const port = process.env.PORT || 7070
+const port = process.env.PORT || 8080
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta: ${port}`)

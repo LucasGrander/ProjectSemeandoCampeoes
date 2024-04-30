@@ -567,7 +567,7 @@
     background-color: rgba(0, 0, 0, 0.05);
 
     transform: translateY(-3vh);
-    z-index: -1;
+    z-index: 1;
 
     animation: integranteOpenInfo .7s normal forwards;
     overflow: hidden;
@@ -612,6 +612,159 @@
     justify-content: center;
 }
 
+.icons-edit-remove{
+    width: auto;
+    height: auto;
+    
+    position: absolute;
+    right: 2vh;
+    bottom: 2vh;
+    gap: 2vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons-edit-remove img{
+    width: 5vh;
+    height: 5vh;
+    padding: .5vh;
+    
+    border-radius: 1vh;
+    background-color: transparent;
+    transition: .3s;
+}
+
+.icons-edit-remove .edit-icon:hover{
+    background-color: rgba(0, 0, 255, 0.350);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.icons-edit-remove .remove-icon:hover{
+    background-color: rgba(255, 0, 0, 0.350);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.icons-edit-remove img:hover{
+    background-color: rgba(128, 128, 128, 0.479);
+    cursor: pointer;
+}
+
+/* mexendo com o modal de Edição das informações de usuário */
+
+.container-edicao{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+}
+
+.content-edicao-on{
+    width: 80vh;
+    height: 90vh;
+    padding: 10vh 0vh 3vh 0vh;
+    position: relative;
+    gap: 4vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 3vh;
+
+    animation: editModeAnimeOn 1s normal forwards;
+}
+
+.content-edicao-on img{
+    width: 7vh;
+    height: 7vh;
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+
+    border-radius: 50%;
+}
+
+.content-edicao-on img:hover{
+    background-color: #cccccc55;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.content-edicao-off{
+    width: 80vh;
+    height: 90vh;
+    padding: 10vh 0vh 3vh 0vh;
+    gap: 4vh;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 3vh;
+
+    animation: editModeAnimeOff 1s normal forwards;
+}
+
+.content-edicao-off img{
+    width: 7vh;
+    height: 7vh;
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+
+    border-radius: 50%;
+}
+
+.content-edicao-off img:hover{
+    background-color: #cccccc55;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.button-label-editUser{
+    width: 100%;
+    height: 6vh;
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-label-editUser label{
+    top: 30%;
+    left: 7%;
+    cursor: text;
+    position: absolute;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+    transform:translateY(-120%);
+    font-weight: 600;
+    font-size: 1.9vh;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    padding: 0vh 2vh 0vh 2vh;
+    transition: .3s;
+}
+
 @keyframes filterAppear {
     0%{
         transform: scale(1.5);
@@ -642,5 +795,35 @@
     100%{
         height: 0vh;
         color: transparent;
+    }
+}
+
+@keyframes editModeAnimeOn {
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    75%{
+        transform: scale(.9);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes editModeAnimeOff {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(.95);
+    }
+    75%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(0);
     }
 }
