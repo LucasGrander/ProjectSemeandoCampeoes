@@ -1,7 +1,7 @@
 import './informationEdit.css'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 import filterICON from '../assets/filterICON.svg'
 import closeX from '../assets/closePage.svg'
@@ -225,15 +225,23 @@ const informationEdit = () => {
     const handleOnClickOpenEdit = () => {
         setBoxEditMode(true)
         setContainerEditMode(true)
+
     }
 
     const handleOnClickCloseEdit = () => {
         setBoxEditMode(false)
 
         setTimeout(() =>{
+            scrollToTop()
             setContainerEditMode(false)
         }, 1100)
     }
+    const containerRef = useRef<HTMLDivElement>(null)
+    const scrollToTop = () => {
+        if (containerRef.current) {
+          containerRef.current.scrollTop = 0
+        }
+  }
     
     return(
     <div  onMouseMove={handleFilterTodos} className="page-infos-edit">
@@ -376,7 +384,7 @@ const informationEdit = () => {
             </div>
         </div>
         <div style={{display: containerEditMode ? "flex" : "none"}} className="container-edicao">
-            <div className={boxEditMode ? "content-edicao-on" : "content-edicao-off"}>
+            <div ref={containerRef} className={boxEditMode ? "content-edicao-on" : "content-edicao-off"}>
                 <span className='title-container-edit' >Alteração</span>
                 <img className='editBC' src={editUSER}></img>
                 <div className="button-label-editUser">
