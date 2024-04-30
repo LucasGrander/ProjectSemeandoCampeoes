@@ -40,10 +40,6 @@ const informationEdit = () => {
         else{
             setDropdown(false)
         }
-
-        if(showInfosIntegrante){
-            setShowInfosIntegrante(false)
-        }
     }
 
     const [variosFiltros, setVariosFiltros] = useState<string[]>([])
@@ -210,15 +206,13 @@ const informationEdit = () => {
         }
     }
 
-    const [showInfosIntegrante, setShowInfosIntegrante] = useState(false)
+    const [showInfosIntegrante, setShowInfosIntegrante] = useState([{}])
 
-    const handleShowInfosIntegrante = () => {
-        if(showInfosIntegrante == false){
-            setShowInfosIntegrante(true)
-        }
-        else{
-            setShowInfosIntegrante(false)
-        }
+    const handleShowInfosIntegrante = (id: any) => {
+        setShowInfosIntegrante(prevState => ({
+            ...prevState,
+            [id]: !prevState[id]
+        }))
     }
 
     const [boxEditMode, setBoxEditMode] = useState(false)
@@ -403,13 +397,13 @@ const informationEdit = () => {
                         {participants.map((participante)=> (
                         <div className="adaptive-infos-overlay" key={participante.id}>
                             <div className={showInfosIntegrante ? "container-integrante-active" : "container-integrante-inative"} style={{opacity: dropdown ? ".1" : "1"}} >
-                                <div onClick={handleShowInfosIntegrante} className="box-integrante">
-                                    <span>Nome de aluno</span>
-                                    <img style={{transform: showInfosIntegrante ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>
+                                <div onClick={() =>handleShowInfosIntegrante(participante.id)} className="box-integrante">
+                                    <span>{participante.nome}</span>
+                                    <img style={{transform: showInfosIntegrante[participante.id] ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>
                                 </div>
                             </div>
 
-                            <div className={showInfosIntegrante ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
+                            <div className={showInfosIntegrante[participante.id] ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
                                 <div className="icons-edit-remove">
                                     <img onClick={() => handleSelectInfos(participante.id)} className='edit-icon' src={editUSER}></img>
                                     <img onClick={() => handleDeleteInfos(participante.id)} className='remove-icon' src={removeUSER}></img>

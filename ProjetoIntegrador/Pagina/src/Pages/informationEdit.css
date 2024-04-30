@@ -462,7 +462,6 @@
 .table-result-pesquisa{
     width: 100%;
     height: 100%;
-    gap: 3vh;
 
     display: flex;
     align-items: center;
@@ -476,16 +475,11 @@
 
 .table-result-pesquisa .adaptive-infos-overlay{
     width: 100%;
-    height: auto;
     padding: 2vh 0vh;
-    gap: 3vh;
-
     display: flex;
-    align-items: center;
     flex-direction: column;
-    background-color: transparent;
-
-    overflow: auto;
+    align-items: center;
+    gap: 3vh;
 }
 
 .table-result-pesquisa .container-integrante-active{
@@ -506,6 +500,7 @@
 
 .table-result-pesquisa .container-integrante-inative{
     width: 95%;
+    height: vh;
     position: relative;
     z-index: 2;
 
@@ -523,6 +518,7 @@
 .table-result-pesquisa .container-integrante-inative:hover{
     background-color: #ffffff;
     transition: .3s;
+    border: .2vh solid black;
 }
 
 .table-result-pesquisa .box-integrante{
@@ -551,7 +547,7 @@
 
 .container-integrante-infos-opened{
     width: 93%;
-    height: 30vh;
+    height: 60vh;
     position: relative;
 
     display: flex;
@@ -605,11 +601,14 @@
 
 .infos-integ{
     width: 30%;
-    height: 100%;
+    height: 10vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    font-size: 2.3vh;
+    gap: 1vh;
 }
 
 .icons-edit-remove{
@@ -795,14 +794,14 @@
         opacity: 0;
     }
     100%{
-        height: 30vh;
+        height: 40vh;
         opacity: 1;
     }
 }
 
 @keyframes integranteCloseInfo {
     0%{
-        height: 30vh;
+        height: 40vh;
         color: black;
     }
     100%{
