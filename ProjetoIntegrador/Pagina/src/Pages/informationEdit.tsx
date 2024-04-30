@@ -11,6 +11,7 @@ import searchUser from '../assets/searchUserIcon.svg'
 import removeUSER from '../assets/removeUserIcon.svg'
 import editUSER from '../assets/editUserIcon.svg'
 import MyInput from '../components/MyInput'
+import MyButton from '../components/MyButton'
 
 const informationEdit = () => {
 
@@ -376,8 +377,8 @@ const informationEdit = () => {
         </div>
         <div style={{display: containerEditMode ? "flex" : "none"}} className="container-edicao">
             <div className={boxEditMode ? "content-edicao-on" : "content-edicao-off"}>
-                <img onClick={handleOnClickCloseEdit} src={closeX}></img>
-
+                <span className='title-container-edit' >Alteração</span>
+                <img className='editBC' src={editUSER}></img>
                 <div className="button-label-editUser">
                     <label className="labelFocused" htmlFor='nome'>Nome Completo</label>
                     <MyInput
@@ -386,7 +387,7 @@ const informationEdit = () => {
                         // onChange={(e) => set(e.target.value)}
                         type='text'
                         width= "90%"
-                        height= "100%"
+                        height= "7vh"
                         padding="0vh 8vh 0vh 2.5vh"
                         fontSize= "2.4vh"
                         border= "solid .3vh black"
@@ -407,7 +408,7 @@ const informationEdit = () => {
                         // onChange={(e) => set(e.target.value)}
                         type='text'
                         width= "90%"
-                        height= "100%"
+                        height= "7vh"
                         padding="0vh 8vh 0vh 2.5vh"
                         fontSize= "2.4vh"
                         border= "solid .3vh black"
@@ -417,6 +418,211 @@ const informationEdit = () => {
                         transition= ".4s"
                         enter= "transparent"
                         leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <MyInput
+                        id="data"
+                        // value={"nome"}
+                        // onChange={(e) => set(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <MyInput
+                        id="data"
+                        // value={"nome"}
+                        // onChange={(e) => set(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <MyInput
+                        id="data"
+                        // value={"nome"}
+                        // onChange={(e) => set(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <MyInput
+                        id="data"
+                        // value={"nome"}
+                        // onChange={(e) => set(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <MyInput
+                        id="data"
+                        // value={"nome"}
+                        // onChange={(e) => set(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <MyInput
+                        id="data"
+                        // value={"nome"}
+                        // onChange={(e) => set(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <MyInput
+                        id="data"
+                        // value={"nome"}
+                        // onChange={(e) => set(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='data'>Data</label>
+                    <MyInput
+                        id="data"
+                        // value={"nome"}
+                        // onChange={(e) => set(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+                <div className="save-cancel">
+                    <MyButton
+                    // onClick={}
+                    width= "auto"
+                    height= "8vh"
+                    padding="1vh 3vh"
+                    cursor="pointer"
+                    fontSize= "2.5vh"
+                    fontWeight= "bold"
+                    backgroundColor="rgba(0, 255, 0, 0.8)"
+                    border= ".3vh black solid"
+                    borderBottom= ".3vh black solid"
+                    borderRadius="1vh"
+                    transition= ".5s"
+                    children="Salvar alterações"
+                    enter="rgba(0, 255, 0, 0.8)"
+                    leave="rgba(0, 255, 0, 0.3)"
+                    />
+
+                    <MyButton
+                    onClick={handleOnClickCloseEdit}
+                    width= "auto"
+                    height= "8vh"
+                    padding="1vh 3vh"
+                    cursor="pointer"
+                    fontSize= "2.5vh"
+                    fontWeight= "bold"
+                    backgroundColor="rgba(255, 0, 0, 0.8)"
+                    border= ".3vh black solid"
+                    borderBottom=".3vh black solid"
+                    borderRadius="1vh"
+                    transition= ".5s"
+                    children="Cancelar"
+                    enter="rgba(255, 0, 0, 0.8)"
+                    leave="rgba(255, 0, 0, 0.3)"
                     />
                 </div>
             </div>
