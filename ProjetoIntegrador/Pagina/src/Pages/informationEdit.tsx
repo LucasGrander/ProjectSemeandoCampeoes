@@ -236,13 +236,14 @@ const informationEdit = () => {
 
   // ligação com o banco de dados ---->
 
-  const [participants, setParticipants] = useState<Participante[]>([])
-  const [id, setId] = useState(-1)
-  const [nome, setNome] = useState("")
-//   const [dataNasc, setDataNasc] = useState("")
-//   const [telefone, setTelefone] = useState("")
-//   const [responsavel, setResponsavel] = useState("")
-//   const [centroDeTreino, setCentroDeTreino] = useState("")
+const [participants, setParticipants] = useState<Participante[]>([])
+const [id, setId] = useState(-1)
+const [nome, setNome] = useState("")
+const [faixa, setFaixa] = useState("")
+const [dataNasc, setDataNasc] = useState("")
+const [telefone, setTelefone] = useState("")
+const [responsavel, setResponsavel] = useState("")
+const [centroDeTreino, setCentroDeTreino] = useState("")
 //   const [endereco, setEndereco] = useState("")
 
 
@@ -254,9 +255,8 @@ const informationEdit = () => {
   }
 
   const handleUpdateInfos = async () => {
-    // await axios.put("http://localhost:8080/users", {id: id, nome: nome, data_de_nascimento: dataNasc, telefone: telefone, nome_do_responsavel: responsavel, centro_de_treinamento: centroDeTreino, endereco: endereco})
     if(id <= 0){
-    await axios.put("http://localhost:8080/users", {nome: nome})
+    await axios.put("http://localhost:8080/users", {nome: nome, faixa: faixa, dataNasc: dataNasc, telefone: telefone, responsavel: responsavel, centro_treino: centroDeTreino})
 
     setBoxEditMode(false)
         setTimeout(() =>{
@@ -264,11 +264,11 @@ const informationEdit = () => {
             setContainerEditMode(false)
 
             setNome("")
-            // setDataNasc("")
-            // setTelefone("")
-            // setResponsavel("")
-            // setCentroDeTreino("")
-            // setEndereco("")
+            setFaixa("")
+            setDataNasc("")
+            setTelefone("")
+            setResponsavel("")
+            setCentroDeTreino("")
             setId(-1)
         }, 1100)
 
@@ -283,11 +283,11 @@ const informationEdit = () => {
     const participante = participants.find((participante : Participante) => participante.id === id)
     if(participante){
         setNome(participante.nome)
-        // setDataNasc(participante.data_de_nascimento)
-        // setTelefone(participante.telefone)
-        // setResponsavel(participante.responsavel)
-        // setCentroDeTreino(participante.centro_de_treino)
-        // setEndereco(participante.endereco)
+        setFaixa(participante.faixa)
+        setDataNasc(participante.dataNas)
+        setTelefone(participante.telefone)
+        setResponsavel(participante.responsavel)
+        setCentroDeTreino(participante.centro_treino)
     }
   }
 
@@ -412,11 +412,11 @@ const informationEdit = () => {
                                 <div className="infos-integ">
                                     <span className="title-infos-integ">Title</span>
                                     <span><strong>Nome Completo: </strong> {participante.nome} </span>
-                                    <span><strong>Data de nascimento: </strong> {participante.data_de_nascimento} </span>
+                                    <span><strong>Data de nascimento: </strong> {participante.dataNas} </span>
                                     <span><strong>Número de telefone: </strong> {participante.telefone} </span>
                                     <span><strong>Responsável: </strong> {participante.responsavel} </span>
-                                    <span><strong>Centro de treinamento: </strong> {participante.centro_de_treino} </span>
-                                    <span><strong>Cor da faixa: </strong> {participante.cor_da_faixa} </span>
+                                    <span><strong>Centro de treinamento: </strong> {participante.centro_treino} </span>
+                                    <span><strong>Cor da faixa: </strong> {participante.faixa} </span>
                                 </div> 
 
                                 <div className="infos-integ">
@@ -469,7 +469,7 @@ const informationEdit = () => {
                     />
                 </div>
 
-                {/* <div className="button-label-editUser">
+                 <div className="button-label-editUser">
                     <label className="labelFocused" htmlFor='dataNas'>Data de nascimento</label>
                     <MyInput
                         id="dataNas"
@@ -551,7 +551,7 @@ const informationEdit = () => {
                         enter= "transparent"
                         leave= "transparent"
                     />
-                </div> */}
+                </div>
 
                 <div className="save-cancel">
                     <MyButton

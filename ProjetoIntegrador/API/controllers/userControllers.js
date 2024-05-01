@@ -1,11 +1,22 @@
 import { db } from '../database/db.js'
 
 export const getUsers = (_, res) => {
-    const sql = "select a.id as id, p.nome as nome, f.cor_da_faixa as faixa from aluno a join pessoa p on a.id_pessoa = p.id join faixa f on a.id_faixa = f.id "
+    const sql =
+    `select a.id as id,
+    p.nome as nome,
+    p.data_de_nascimento as dataNas,
+    p.telefone as telefone,
+    p.responsavel as responsavel,
+    ct.nome as centro_treino,
+    f.cor_da_faixa as faixa
+    from aluno a 
+    join pessoa p on a.id_pessoa = p.id 
+    join faixa f on a.id_faixa = f.id 
+    join centro_de_treinamento ct on p.id_centro_de_treinamento = ct.id`
 
     db.query (sql, (err, data)=> {
         if(err){
-            console.log("Erro ao processar a requisição.")
+            console.log("Erro ao processar a requisição.", err)
             return res.status(500).json(data)
         }
         else{
@@ -16,7 +27,13 @@ export const getUsers = (_, res) => {
 }
 
 export const addUsers = (req, res) => {
-    const sql = "insert into aluno (id, id_pessoa, id_faixa) value (?, ?, ?)"
+    const sql =
+    `update aluno
+    join pessoa p on a.id_pessoa = p.id 
+    join faixa f on a.id_faixa = f.id
+    join centro_de_treinamento ct on p.id_centro_de_treinamento = ct.id
+    
+    `
 
     const {id, id_pessoa, id_faixa} = req.body
 
