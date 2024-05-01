@@ -225,7 +225,7 @@ const informationEdit = () => {
         setTimeout(() =>{
             scrollToTop()
             setContainerEditMode(false)
-        }, 1100)
+        }, 300)
     }
     const containerRef = useRef<HTMLDivElement>(null)
     const scrollToTop = () => {
@@ -237,8 +237,8 @@ const informationEdit = () => {
   // ligação com o banco de dados ---->
 
 const [participants, setParticipants] = useState<Participante[]>([])
-const [id, setId] = useState(-1)
-const [nome, setNome] = useState("")
+const [activeId, setActiveId] = useState(-1)
+const [nomePessoa, setNomePessoa] = useState("")
 const [faixa, setFaixa] = useState("")
 const [dataNasc, setDataNasc] = useState("")
 const [telefone, setTelefone] = useState("")
@@ -255,25 +255,23 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
   }
 
   const handleUpdateInfos = async () => {
-    if(id <= 0){
-    await axios.put("http://localhost:8080/users", {nome: nome, faixa: faixa, dataNasc: dataNasc, telefone: telefone, responsavel: responsavel, centro_treino: centroDeTreino})
+    await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, faixa: faixa, dataNasc: dataNasc, telefone: telefone, responsavel: responsavel, centro_treino: centroDeTreino})
 
     setBoxEditMode(false)
         setTimeout(() =>{
             scrollToTop()
             setContainerEditMode(false)
 
-            setNome("")
+            setNomePessoa("")
             setFaixa("")
             setDataNasc("")
             setTelefone("")
             setResponsavel("")
             setCentroDeTreino("")
-            setId(-1)
-        }, 1100)
+            setActiveId(-1)
+        }, 300)
 
     handleGetInfos()
-    }
   }
 
   const handleSelectInfos = async (id : number) => {
@@ -282,9 +280,9 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
       
     const participante = participants.find((participante : Participante) => participante.id === id)
     if(participante){
-        setNome(participante.nome)
+        setNomePessoa(participante.nome)
         setFaixa(participante.faixa)
-        setDataNasc(participante.dataNas)
+        setDataNasc(participante.dataNas.slice(0, 10))
         setTelefone(participante.telefone)
         setResponsavel(participante.responsavel)
         setCentroDeTreino(participante.centro_treino)
@@ -410,9 +408,9 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
                                 </div>
 
                                 <div className="infos-integ">
-                                    <span className="title-infos-integ">Title</span>
+                                    <span className="title-infos-integ">Dados</span>
                                     <span><strong>Nome Completo: </strong> {participante.nome} </span>
-                                    <span><strong>Data de nascimento: </strong> {participante.dataNas} </span>
+                                    <span><strong>Data de nascimento (aaaa/mm/dd): </strong> {participante.dataNas.slice(0, 10)} </span>
                                     <span><strong>Número de telefone: </strong> {participante.telefone} </span>
                                     <span><strong>Responsável: </strong> {participante.responsavel} </span>
                                     <span><strong>Centro de treinamento: </strong> {participante.centro_treino} </span>
@@ -420,16 +418,7 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
                                 </div> 
 
                                 <div className="infos-integ">
-                                <span className="title-infos-integ">Title</span>
-                                    <span><strong>Info: </strong> xxxxxxx </span>
-                                    <span><strong>Info: </strong> xxxxxxx </span>
-                                    <span><strong>Info: </strong> xxxxxxx </span>
-                                    <span><strong>Info: </strong> xxxxxxx </span>
-                                    <span><strong>Info: </strong> xxxxxxx </span>
-                                </div>
-
-                                <div className="infos-integ">
-                                <span className="title-infos-integ">Title</span>
+                                <span className="title-infos-integ">Endereço</span>
                                     <span><strong>Info: </strong> xxxxxxx </span>
                                     <span><strong>Info: </strong> xxxxxxx </span>
                                     <span><strong>Info: </strong> xxxxxxx </span>
@@ -452,8 +441,8 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
                     <label className="labelFocused" htmlFor='nome'>Nome Completo</label>
                     <MyInput
                         id="nomeCompleto"
-                        value={nome.length > 0 ? nome : ""}
-                        onChange={(e) => setNome(e.target.value)}
+                        value={nomePessoa.length > 0 ? nomePessoa : ""}
+                        onChange={(e) => setNomePessoa(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"

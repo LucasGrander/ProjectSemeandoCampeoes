@@ -600,15 +600,16 @@
 }
 
 .infos-integ{
-    width: 30%;
+    width: 45%;
     height: 10vh;
 
     display: flex;
     flex-direction: column;
+    align-content: center;
     justify-content: center;
 
     font-size: 2.3vh;
-    gap: 1vh;
+    gap: 1.5vh;
 }
 
 .icons-edit-remove{
@@ -715,7 +716,7 @@
     border: 1vh rgb(0, 28, 98) double;
     box-shadow: .1vh .1vh 1vh black;
 
-    animation: editModeAnimeOff 1s normal forwards;
+    animation: editModeAnimeOff .3s normal forwards;
 
     overflow: auto;
 }
@@ -828,12 +829,6 @@
 @keyframes editModeAnimeOff {
     0%{
         transform: scale(1);
-    }
-    50%{
-        transform: scale(.95);
-    }
-    75%{
-        transform: scale(1.05);
     }
     100%{
         transform: scale(0);
