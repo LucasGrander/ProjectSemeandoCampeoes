@@ -28,30 +28,19 @@ export const getUsers = (_, res) => {
 
 export const addUsers = (req, res) => {
     const sql =
-    `update aluno
-    join pessoa p on a.id_pessoa = p.id 
-    join faixa f on a.id_faixa = f.id
-    join centro_de_treinamento ct on p.id_centro_de_treinamento = ct.id
-    set p.nome = ?,
-    p.data_de_nascimento = ?,
-    p.responsavel,
-    ct.nome = ?, 
-    f.cor_da_faixa = ?
-    where a.id = ?
-    `
+    `insert into pessoa (nome, data_de_nascimento, telefone, responsavel) values (?, ?, ?, ?)`;
 
-    const {id, id_pessoa, id_faixa} = req.body
+    const { nome, data_de_nascimento, telefone, responsavel } = req.body;
 
-    db.query(sql, [id, id_pessoa, id_faixa], (err, data) => {
-        if(err){
-            console.log("Erro ao processar a requisição")
-            return res.status(500).json(err)
+    db.query(sql, [nome, data_de_nascimento, telefone, responsavel], (err, data) => {
+        if (err) {
+            console.log("Erro ao processar a requisição");
+            return res.status(500).json(err);
+        } else {
+            console.log("Requisição bem sucedida!");
+            return res.status(201).json(data);
         }
-        else{
-            console.log("Requisição bem sucedida!")
-            return res.status(201).json(data)
-        }
-    })
+    });
 }
 
 export const updateUsers = (req, res) => {

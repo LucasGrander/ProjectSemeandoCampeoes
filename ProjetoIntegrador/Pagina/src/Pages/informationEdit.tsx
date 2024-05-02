@@ -244,7 +244,6 @@ const [dataNasc, setDataNasc] = useState("")
 const [telefone, setTelefone] = useState("")
 const [responsavel, setResponsavel] = useState("")
 const [centroDeTreino, setCentroDeTreino] = useState("")
-//   const [endereco, setEndereco] = useState("")
 
 
 
