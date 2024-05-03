@@ -803,6 +803,46 @@
     justify-content: center;
 }
 
+.box-postput{
+    position: absolute;
+    right: 1vh;
+    bottom: 1vh;
+
+    width: 50vh;
+    height: 15vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: red;
+    border-radius: 2vh;
+    animation: boxPostPutAnime 3s normal forwards; 
+}
+
+.box-postput span{
+    font-size: 2.5vh;
+    font-weight: 600;
+    color: white;
+}
+
+.box-postput-hidden{
+    position: absolute;
+    right: 1vh;
+    bottom: 1vh;
+
+    width: 50vh;
+    height: 15vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: red;
+    border-radius: 2vh;
+    transform: translateX(55vh);
+}
+
 @keyframes filterAppear {
     0%{
         transform: scale(1.5);
@@ -857,5 +897,38 @@
     }
     100%{
         transform: scale(0);
+    }
+}
+
+@keyframes boxPostPutAnime {
+    0%{
+    transform: translateX(55vh)   
+    }
+    20%{
+     transform: translateX(-5vh)   
+    }
+    40%{
+     transform: translateX(0vh)   
+    }
+    60%{
+     transform: translateX(0vh)   
+    }
+    75%{
+     transform: translateX(0vh)   
+    }
+    90%{
+     transform: translateX(-5vh)   
+    }
+    100%{
+     transform: translateX(55vh)   
+    }
+}
+
+@keyframes boxPostPutAnimeHidden {
+    0%{
+    transform: translateX(55vh)   
+    }
+    100%{
+    transform: translateX(55vh)   
     }
 }

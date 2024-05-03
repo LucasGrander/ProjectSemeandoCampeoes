@@ -333,7 +333,15 @@ const [idfaixa, setIdFaixa] = useState("")
     await axios.delete(`http://localhost:8080/users?id=${id}`)
 
     handleGetInfos()
+    setBoxForCrud(true)
+
+    setTimeout(() => {
+        setBoxForCrud(false)        
+    }, 3000);
   }
+
+  const [textForPostAndPut, setTextForPostAndPut] = useState("")
+  const [boxForCrud, setBoxForCrud] = useState(false)
     
     
     return(
@@ -602,6 +610,10 @@ const [idfaixa, setIdFaixa] = useState("")
                     />
                 </div>
             </div>
+        </div>
+
+        <div className={boxForCrud ? "box-postput" : "box-postput-hidden"}>
+            <span>Alteração realizada com sucesso</span>
         </div>
 
     </div>
