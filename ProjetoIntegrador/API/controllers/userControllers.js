@@ -4,13 +4,13 @@ export const getUsers = (_, res) => {
     const sql =
     `select a.id as id,
     p.nome as nome,
-    p.data_de_nascimento as dataNas,
+    p.data_de_nascimento as data_de_nascimento,
     p.telefone as telefone,
     p.responsavel as responsavel,
     ct.nome as centro_treino,
     f.cor_da_faixa as faixa
-    from aluno a 
-    join pessoa p on a.id_pessoa = p.id 
+    from pessoa p 
+    join aluno a on p.id = a.id_pessoa
     join faixa f on a.id_faixa = f.id 
     join centro_de_treinamento ct on p.id_centro_de_treinamento = ct.id`
 
@@ -28,11 +28,11 @@ export const getUsers = (_, res) => {
 
 export const addUsers = (req, res) => {
     const sql =
-    `insert into pessoa (nome, data_de_nascimento, telefone, responsavel) values (?, ?, ?, ?)`;
+    `insert into aluno (id_pessoa, id_faixa) values (?, ?)`;
 
-    const { nome, data_de_nascimento, telefone, responsavel } = req.body;
+    const { id_pessoa, id_faixa } = req.body;
 
-    db.query(sql, [nome, data_de_nascimento, telefone, responsavel], (err, data) => {
+    db.query(sql, [id_pessoa, id_faixa], (err, data) => {
         if (err) {
             console.log("Erro ao processar a requisição");
             return res.status(500).json(err);

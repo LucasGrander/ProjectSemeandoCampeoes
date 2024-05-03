@@ -12,6 +12,7 @@ import dropdownCloseOpenICON from '../assets/openCloseDropdown.svg'
 import searchUser from '../assets/searchUserIcon.svg'
 import removeUSER from '../assets/removeUserIcon.svg'
 import editUSER from '../assets/editUserIcon.svg'
+import addUSerIcon from '../assets/addUserIcon.svg'
 import MyInput from '../components/MyInput'
 import MyButton from '../components/MyButton'
 
@@ -245,6 +246,9 @@ const [telefone, setTelefone] = useState("")
 const [responsavel, setResponsavel] = useState("")
 const [centroDeTreino, setCentroDeTreino] = useState("")
 
+const [idpessoa, setIdPessoa] = useState("")
+const [idfaixa, setIdFaixa] = useState("")
+
 
 
   const handleGetInfos = async () => {
@@ -254,6 +258,25 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
   }
 
   const handleUpdateInfos = async () => {
+    if(activeId < 0){
+    await axios.post("http://localhost:8080/users",{id_pessoa: idpessoa, id_faixa: idfaixa})
+    setBoxEditMode(false)
+        setTimeout(() =>{
+            scrollToTop()
+            setContainerEditMode(false)
+
+            setNomePessoa("")
+            setFaixa("")
+            setDataNasc("")
+            setTelefone("")
+            setResponsavel("")
+            setCentroDeTreino("")
+            setActiveId(-1)
+        }, 300)
+
+    handleGetInfos()
+    }
+    else{
     await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, faixa: faixa, dataNasc: dataNasc, telefone: telefone, responsavel: responsavel, centro_treino: centroDeTreino})
 
     setBoxEditMode(false)
@@ -271,6 +294,7 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
         }, 300)
 
     handleGetInfos()
+    }
   }
 
   const handleSelectInfos = async (id : number) => {
@@ -281,12 +305,29 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
     if(participante){
         setNomePessoa(participante.nome)
         setFaixa(participante.faixa)
-        setDataNasc(participante.dataNas.slice(0, 10))
+        setDataNasc(participante.data_de_nascimento.slice(0, 10))
         setTelefone(participante.telefone)
         setResponsavel(participante.responsavel)
         setCentroDeTreino(participante.centro_treino)
     }
   }
+
+  const handleAddInfos = async () => {
+
+    setBoxEditMode(true)
+    setContainerEditMode(true)
+    
+    handleGetInfos()
+
+    setIdPessoa("")
+    setIdFaixa("")
+
+    setNomePessoa("")
+    setFaixa("")
+    setDataNasc("")
+    setTelefone("")
+    setResponsavel("")
+    }
 
   const handleDeleteInfos = async (id : number) => {
     await axios.delete(`http://localhost:8080/users?id=${id}`)
@@ -314,6 +355,9 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
             <div className="box-edit-infos">
 
                 <div className="box-nav">
+                    <div className="adding-integrante">
+                        <img onClick={handleAddInfos} src={addUSerIcon}></img>
+                    </div>
                     <div onClick={handleOnClickBtnFiltro} className={dropdown ? "btn-filtro-selected" : "btn-filtro"}>
                         <span>Filtros</span>
                         <img className='filter-icon' src={filterICON}></img>
@@ -409,7 +453,7 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
                                 <div className="infos-integ">
                                     <span className="title-infos-integ">Dados</span>
                                     <span><strong>Nome Completo: </strong> {participante.nome} </span>
-                                    <span><strong>Data de nascimento (aaaa/mm/dd): </strong> {participante.dataNas.slice(0, 10)} </span>
+                                    <span><strong>Data de nascimento (aaaa/mm/dd): </strong> {participante.data_de_nascimento.slice(0, 10)} </span>
                                     <span><strong>Número de telefone: </strong> {participante.telefone} </span>
                                     <span><strong>Responsável: </strong> {participante.responsavel} </span>
                                     <span><strong>Centro de treinamento: </strong> {participante.centro_treino} </span>
@@ -440,8 +484,8 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
                     <label className="labelFocused" htmlFor='nome'>Nome Completo</label>
                     <MyInput
                         id="nomeCompleto"
-                        value={nomePessoa.length > 0 ? nomePessoa : ""}
-                        onChange={(e) => setNomePessoa(e.target.value)}
+                        value={idpessoa.length > 0 ? idpessoa : ""}
+                        onChange={(e) => setIdPessoa(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"
@@ -461,8 +505,8 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
                     <label className="labelFocused" htmlFor='dataNas'>Data de nascimento</label>
                     <MyInput
                         id="dataNas"
-                        value={dataNasc.length > 0 ? dataNasc : ""}
-                        onChange={(e) => setDataNasc(e.target.value)}
+                        value={idfaixa.length > 0 ? idfaixa : ""}
+                        onChange={(e) => setIdFaixa(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"
@@ -505,27 +549,6 @@ const [centroDeTreino, setCentroDeTreino] = useState("")
                         id="responsavel"
                         value={responsavel.length > 0 ? responsavel : ""}
                         onChange={(e) => setResponsavel(e.target.value)}
-                        type='text'
-                        width= "90%"
-                        height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
-                        fontSize= "2.4vh"
-                        border= "solid .3vh black"
-                        borderBottom="solid .3vh black"
-                        borderRadius='.6vh'
-                        backgroundColor="transparent"
-                        transition= ".4s"
-                        enter= "transparent"
-                        leave= "transparent"
-                    />
-                </div>
-
-                <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='ct'>Centro de Treinamento</label>
-                    <MyInput
-                        id="ct"
-                        value={centroDeTreino.length > 0 ? centroDeTreino : ""}
-                        onChange={(e) => setCentroDeTreino(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"

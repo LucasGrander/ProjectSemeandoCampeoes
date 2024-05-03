@@ -128,6 +128,31 @@
     position: relative;
 }
 
+.adding-integrante{
+    width: 3%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adding-integrante img{
+    width: 7vh;
+    height: 7vh;
+    padding: 1vh;
+
+    background-color: transparent;
+    border-radius: 2vh;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.adding-integrante img:hover{
+    background-color: rgba(0, 128, 0, 0.4);
+    transition: .2s;
+}
+
 /* DROPDOWN FECHADO */
 .box-nav .btn-filtro{
     width: 10%;
@@ -206,7 +231,7 @@
 }
 
 .box-nav .input-pesquisa{
-    width: 85%;
+    width: 81%;
     height: 100%;
     padding: 1vh;
 
@@ -250,12 +275,12 @@
 }
 
 .search-icon{
-    width: 4vh;
-    height: 4vh;
+    width: 5vh;
+    height: 5vh;
     transition: .5s;
 }
 .box-search-icon:hover .search-icon{
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: .3s;
 }
 
