@@ -490,7 +490,7 @@ const Cadaster = () => {
                                     <option value="5" disabled>*Selecione um centro de treinamento:</option>
                                     <option value="1">Centro de treinamento  -  Centro </option>
                                     <option value="2">Centro de treinamento  -  Lar Paraná</option>
-                                    <option value="3">Centro de treinamento  -  Ginásio de Iretama </option>
+                                    <option value="3">Centro de treinamento  -  Iretama </option>
                                     <option value="4">Centro de treinamento  -  ??? </option>
                                 </select>
                             </div>
@@ -569,7 +569,7 @@ const Cadaster = () => {
                                     <strong>Centro de treinamento: </strong>
                                     {valueSelectBox == '1' && "Centro de treinamento - Centro"}
                                     {valueSelectBox == '2' && "Centro de treinamento - Lar Parana"}
-                                    {valueSelectBox == '3' && "Centro de treinamento - Ginásio de Iretama"}
+                                    {valueSelectBox == '3' && "Centro de treinamento - Iretama"}
                                     {valueSelectBox == '4' && "Centro de treinamento - ???"}
                                 </li>
 
