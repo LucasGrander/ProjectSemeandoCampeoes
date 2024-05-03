@@ -183,7 +183,7 @@ const informationEdit = () => {
                                 <span onClick={() => handleSetFilter("CT Lar Paraná")} className='item-drop' >CT - Lar Paraná</span>
                                 <span onClick={() => handleSetFilter("CT Centro")} className='item-drop' >CT - Centro</span>
                                 <span onClick={() => handleSetFilter("CT ???")} className='item-drop' >CT - ???</span>
-                                <span onClick={() => handleSetFilter("CT Ginásio Iretama")} className='item-drop' >CT - Ginásio Iretama</span>
+                                <span onClick={() => handleSetFilter("CT Ginásio Iretama")} className='item-drop' >CT - Iretama</span>
                             </div>
 
                             <div style={{opacity: dropdown ? "1" : "0",pointerEvents: dropdown ? "all" : "none", transition: ".6s"}} className="dropdown-itens-diversos">
