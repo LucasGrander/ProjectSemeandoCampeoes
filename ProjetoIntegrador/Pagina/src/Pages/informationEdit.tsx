@@ -245,10 +245,7 @@ const [dataNasc, setDataNasc] = useState("")
 const [telefone, setTelefone] = useState("")
 const [responsavel, setResponsavel] = useState("")
 const [centroDeTreino, setCentroDeTreino] = useState("")
-
-const [idpessoa, setIdPessoa] = useState("")
-const [idfaixa, setIdFaixa] = useState("")
-
+const [endereco, setEndereco] = useState("")
 
 
   const handleGetInfos = async () => {
@@ -259,7 +256,7 @@ const [idfaixa, setIdFaixa] = useState("")
 
   const handleUpdateInfos = async () => {
     if(activeId < 0){
-    await axios.post("http://localhost:8080/users",{id_pessoa: idpessoa, id_faixa: idfaixa})
+    await axios.post("http://localhost:8080/users",{id: activeId, nome: nomePessoa, faixa: faixa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, id_endereco: endereco})
     setBoxEditMode(false)
         setTimeout(() =>{
             scrollToTop()
@@ -271,13 +268,12 @@ const [idfaixa, setIdFaixa] = useState("")
             setTelefone("")
             setResponsavel("")
             setCentroDeTreino("")
-            setActiveId(-1)
         }, 300)
 
     handleGetInfos()
     }
     else{
-    await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, faixa: faixa, dataNasc: dataNasc, telefone: telefone, responsavel: responsavel, centro_treino: centroDeTreino})
+    await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, faixa: faixa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, id_endereco: endereco})
 
     setBoxEditMode(false)
         setTimeout(() =>{
@@ -289,20 +285,21 @@ const [idfaixa, setIdFaixa] = useState("")
             setDataNasc("")
             setTelefone("")
             setResponsavel("")
-            setCentroDeTreino("")
+            setCentroDeTreino("0")
             setActiveId(-1)
         }, 300)
 
     handleGetInfos()
     }
   }
-
+console.log(centroDeTreino)
   const handleSelectInfos = async (id : number) => {
       setBoxEditMode(true)
       setContainerEditMode(true)
       
     const participante = participants.find((participante : Participante) => participante.id === id)
     if(participante){
+        setActiveId(participante.id)
         setNomePessoa(participante.nome)
         setFaixa(participante.faixa)
         setDataNasc(participante.data_de_nascimento.slice(0, 10))
@@ -319,14 +316,12 @@ const [idfaixa, setIdFaixa] = useState("")
     
     handleGetInfos()
 
-    setIdPessoa("")
-    setIdFaixa("")
-
     setNomePessoa("")
     setFaixa("")
     setDataNasc("")
     setTelefone("")
     setResponsavel("")
+    setCentroDeTreino("0")
     }
 
   const handleDeleteInfos = async (id : number) => {
@@ -492,8 +487,8 @@ const [idfaixa, setIdFaixa] = useState("")
                     <label className="labelFocused" htmlFor='nome'>Nome Completo</label>
                     <MyInput
                         id="nomeCompleto"
-                        value={idpessoa.length > 0 ? idpessoa : ""}
-                        onChange={(e) => setIdPessoa(e.target.value)}
+                        value={nomePessoa.length > 0 ? nomePessoa : ""}
+                        onChange={(e) => setNomePessoa(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"
@@ -513,8 +508,8 @@ const [idfaixa, setIdFaixa] = useState("")
                     <label className="labelFocused" htmlFor='dataNas'>Data de nascimento</label>
                     <MyInput
                         id="dataNas"
-                        value={idfaixa.length > 0 ? idfaixa : ""}
-                        onChange={(e) => setIdFaixa(e.target.value)}
+                        value={dataNasc.length > 0 ? dataNasc : ""}
+                        onChange={(e) => setDataNasc(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"
@@ -557,6 +552,39 @@ const [idfaixa, setIdFaixa] = useState("")
                         id="responsavel"
                         value={responsavel.length > 0 ? responsavel : ""}
                         onChange={(e) => setResponsavel(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 8vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='centrodetreino'>Centro de treinamento</label>
+                    <select value={centroDeTreino} onChange={(e) => setCentroDeTreino(e.target.value)} className='ct-box-alter' name="faixa" id="ct">
+                        <option value="0" hidden></option>
+                        <option value="5" disabled>*Selecione um centro de treinamento:</option>
+                        <option value="1">Centro de treinamento  -  Centro </option>
+                        <option value="2">Centro de treinamento  -  Lar Paraná</option>
+                        <option value="3">Centro de treinamento  -  Iretama </option>
+                        <option value="4">Centro de treinamento  -  ??? </option>
+                    </select>
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='responsavel'>id_endereco</label>
+                    <MyInput
+                        id="id_endereco"
+                        value={endereco.length > 0 ? endereco : ""}
+                        onChange={(e) => setEndereco(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"

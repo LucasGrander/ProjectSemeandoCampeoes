@@ -793,6 +793,39 @@
     transition: .3s;
 }
 
+.button-label-editUser .ct-box-alter{
+    width: 90%;
+    height: 7vh;
+    position: relative;
+    
+    padding:0vh 8vh 0vh 2.5vh;
+    font-size: 2.4vh;
+    border: solid .3vh black;
+    border-bottom:solid .3vh black;
+    border-radius:.6vh;
+    background-color:transparent;
+    transition: .4s;
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-label-editUser .ct-box-alter option{
+    font-size: 2.5vh;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+
+.button-label-editUser .ct-box-alter option:checked{
+    font-size: 2.5vh;
+    background-color:rgb(203, 203, 203);
+    color: black;
+    font-weight: 700;
+}
+
 .save-cancel{
     width: 100%;
     height: auto;
