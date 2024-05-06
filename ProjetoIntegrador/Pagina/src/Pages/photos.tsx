@@ -70,6 +70,39 @@ const Photos = () => {
             setOverlay(false)
         }, 2000)
     }
+    const handleOnClickICopa = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = 'http://www.facebook.com/share/nVK8sAoGN9JVHH4i/?'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+    const handleOnClickIICopa = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = 'http://www.facebook.com/share/owa7o2zN42ZJePRk/?'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+    const handleOnClickIIICopa = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = 'http://www.facebook.com/share/pjo4A11NkWZsMAaB/?'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
     const handleOnClickIVCopa = () => {
         setOverlay(true)
     
@@ -176,15 +209,15 @@ const Photos = () => {
                     <img className='bg-box-cards2' src={Icopa} alt='imagem do ct2'></img>
                     <div className="name-ct2">
                         <div className="infos-card-galeria2">
-                            <span>COPA I</span>
+                            <span>I COPA</span>
                         </div>
                         <div className="icon-card-galeria2">
                             <div className="att-photos-time2">
-                                <p>Atualizado:</p>
-                                <p>09/04/2024</p>
+                                <p>Realização:</p>
+                                <p>2019</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                                <a onClick={handleOnClickICopa}><img src={galeryICON}></img></a> 
                             </div>
                         </div>
                     </div>
@@ -194,15 +227,15 @@ const Photos = () => {
                     <img className='bg-box-cards2' src={IIcopa} alt='imagem do ct2'></img>
                     <div className="name-ct2">
                         <div className="infos-card-galeria2">
-                            <span>COPA II</span>
+                            <span>II COPA</span>
                         </div>
                         <div className="icon-card-galeria2">
                             <div className="att-photos-time2">
-                                <p>Atualizado:</p>
-                                <p>09/04/2024</p>
+                                <p>Realização:</p>
+                                <p>2021</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                                <a onClick={handleOnClickIICopa}><img src={galeryICON}></img></a> 
                             </div>
                         </div>
                     </div>
@@ -212,15 +245,15 @@ const Photos = () => {
                     <img className='bg-box-cards2' src={IIIcopa} alt='imagem do ct2'></img>
                     <div className="name-ct2">
                         <div className="infos-card-galeria2">
-                            <span>COPA III</span>
+                            <span>III COPA</span>
                         </div>
                         <div className="icon-card-galeria2">
                             <div className="att-photos-time2">
-                                <p>Atualizado:</p>
-                                <p>09/04/2024</p>
+                                <p>Realização:</p>
+                                <p>2023</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a href='/fotos'><img src={galeryICON}></img></a> 
+                                <a onClick={handleOnClickIIICopa}><img src={galeryICON}></img></a> 
                             </div>
                         </div>
                     </div>
@@ -230,12 +263,12 @@ const Photos = () => {
                     <img className='bg-box-cards2' src={IVcopa} alt='imagem do ct2'></img>
                     <div className="name-ct2">
                         <div className="infos-card-galeria2">
-                            <span>COPA IV</span>
+                            <span>IV COPA</span>
                         </div>
                         <div className="icon-card-galeria2">
                             <div className="att-photos-time2">
-                                <p>Atualizado:</p>
-                                <p>09/04/2024</p>
+                                <p>Realização:</p>
+                                <p>2024</p>
                             </div>
                             <div className="img-icon-media2">
                                 <a onClick={handleOnClickIVCopa}><img src={galeryICON}></img></a> 
