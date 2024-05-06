@@ -301,11 +301,11 @@ console.log(centroDeTreino)
     if(participante){
         setActiveId(participante.id)
         setNomePessoa(participante.nome)
-        setFaixa(participante.faixa)
+        setFaixa(participante.cor_da_faixa)
         setDataNasc(participante.data_de_nascimento.slice(0, 10))
         setTelefone(participante.telefone)
         setResponsavel(participante.responsavel)
-        setCentroDeTreino(participante.centro_treino)
+        setCentroDeTreino(participante.centro_de_treinamento)
     }
   }
 
@@ -459,8 +459,8 @@ console.log(centroDeTreino)
                                     <span><strong>Data de nascimento (aaaa/mm/dd): </strong> {participante.data_de_nascimento.slice(0, 10)} </span>
                                     <span><strong>Número de telefone: </strong> {participante.telefone} </span>
                                     <span><strong>Responsável: </strong> {participante.responsavel} </span>
-                                    <span><strong>Centro de treinamento: </strong> {participante.centro_treino} </span>
-                                    <span><strong>Cor da faixa: </strong> {participante.faixa} </span>
+                                    <span><strong>Centro de treinamento: </strong> {participante.centro_de_treinamento} </span>
+                                    <span><strong>Cor da faixa: </strong> {participante.cor_da_faixa} </span>
                                 </div> 
 
                                 <div className="infos-integ">
