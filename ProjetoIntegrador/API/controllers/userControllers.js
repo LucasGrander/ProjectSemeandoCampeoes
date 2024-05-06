@@ -64,7 +64,6 @@ export const getUsers = (_, res) => {
 export const addUsers = (req, res) => {
     const { nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, rua, numero, bairro, nome_cidade } = req.body
 
-    // Inserir na tabela cidade
     const sqlCidade = `insert into cidade (nome_cidade) values (?)`
     db.query(sqlCidade, [nome_cidade], function(err, resultCidade) {
         if (err) { 
