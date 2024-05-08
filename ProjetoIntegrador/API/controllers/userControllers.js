@@ -66,7 +66,7 @@ export const addUsers = (req, res) => {
 
     const sqlCidade = `insert into cidade (nome_cidade) values (?)`
     db.query(sqlCidade, [nome_cidade], function(err, resultCidade) {
-        if (err) { 
+        if (err) {
             console.log("Erro ao inserir na tabela cidade:", err)
             return res.status(500).json({ error: "Erro ao processar a requisição" })
         }

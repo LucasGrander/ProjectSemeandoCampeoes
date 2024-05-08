@@ -3,7 +3,7 @@ import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import { useRef, useState } from 'react'
 import axios from 'axios'
-import { Participante } from '../interfaces/interfaces'
+import { Endereco, Participante } from '../interfaces/interfaces'
 
 import filterICON from '../assets/filterICON.svg'
 import closeX from '../assets/closePage.svg'
@@ -245,7 +245,10 @@ const [dataNasc, setDataNasc] = useState("")
 const [telefone, setTelefone] = useState("")
 const [responsavel, setResponsavel] = useState("")
 const [centroDeTreino, setCentroDeTreino] = useState("")
-const [endereco, setEndereco] = useState("")
+const [rua, setRua] = useState("")
+const [numCasa, setNumCasa] = useState("")
+const [bairro, setBairro] = useState("")
+const [nomeCidade, setNomeCidade] = useState("")
 
 
   const handleGetInfos = async () => {
@@ -256,7 +259,7 @@ const [endereco, setEndereco] = useState("")
 
   const handleUpdateInfos = async () => {
     if(activeId < 0){
-    await axios.post("http://localhost:8080/users",{id: activeId, nome: nomePessoa, faixa: faixa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, id_endereco: endereco})
+    await axios.post("http://localhost:8080/users",{nome: nomePessoa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
     setBoxEditMode(false)
         setTimeout(() =>{
             scrollToTop()
@@ -268,12 +271,16 @@ const [endereco, setEndereco] = useState("")
             setTelefone("")
             setResponsavel("")
             setCentroDeTreino("")
+            setRua("")
+            setNumCasa("")
+            setBairro("")
+            setNomeCidade("")
         }, 300)
 
     handleGetInfos()
     }
     else{
-    await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, faixa: faixa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, id_endereco: endereco})
+    await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, faixa: faixa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
 
     setBoxEditMode(false)
         setTimeout(() =>{
@@ -286,6 +293,10 @@ const [endereco, setEndereco] = useState("")
             setTelefone("")
             setResponsavel("")
             setCentroDeTreino("0")
+            setRua("")
+            setNumCasa("")
+            setBairro("")
+            setNomeCidade("")
             setActiveId(-1)
         }, 300)
 
@@ -293,21 +304,33 @@ const [endereco, setEndereco] = useState("")
     }
   }
 console.log(centroDeTreino)
-  const handleSelectInfos = async (id : number) => {
-      setBoxEditMode(true)
-      setContainerEditMode(true)
-      
-    const participante = participants.find((participante : Participante) => participante.id === id)
-    if(participante){
-        setActiveId(participante.id)
-        setNomePessoa(participante.nome)
-        setFaixa(participante.cor_da_faixa)
-        setDataNasc(participante.data_de_nascimento.slice(0, 10))
-        setTelefone(participante.telefone)
-        setResponsavel(participante.responsavel)
-        setCentroDeTreino(participante.centro_de_treinamento)
+    const handleSelectInfos = async (id: number) => {
+        setBoxEditMode(true)
+        setContainerEditMode(true)
+        
+        const participante = participants.find((participante: Participante) => participante.id === id)
+        if (participante) {
+            setActiveId(participante.id)
+            setNomePessoa(participante.nome)
+            setFaixa(participante.cor_da_faixa)
+            setDataNasc(participante.data_de_nascimento.slice(0, 10))
+            setTelefone(participante.telefone)
+            setResponsavel(participante.responsavel)
+            setCentroDeTreino(participante.centro_de_treinamento)
+            
+            if (participante.endereco) {
+                const endereco = participante.endereco
+                setRua(endereco.rua)
+                setNumCasa(endereco.numCasa)
+                setBairro(endereco.bairro)
+                
+                if (participante.endereco.cidade) {
+                    const cidade = participante.endereco.cidade
+                    setNomeCidade(cidade.nome_cidade)
+                }
+            }
+        }
     }
-  }
 
   const handleAddInfos = async () => {
 
@@ -322,6 +345,9 @@ console.log(centroDeTreino)
     setTelefone("")
     setResponsavel("")
     setCentroDeTreino("0")
+    setRua("")
+    setNumCasa("")
+    setBairro("")
     }
 
   const handleDeleteInfos = async (id : number) => {
@@ -332,7 +358,7 @@ console.log(centroDeTreino)
 
     setTimeout(() => {
         setBoxForCrud(false)        
-    }, 3000);
+    }, 3000)
   }
 
   const [textForPostAndPut, setTextForPostAndPut] = useState("")
@@ -580,11 +606,11 @@ console.log(centroDeTreino)
                 </div>
 
                 <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='responsavel'>id_endereco</label>
+                    <label className="labelFocused" htmlFor='cidade'>Cidade</label>
                     <MyInput
-                        id="id_endereco"
-                        value={endereco.length > 0 ? endereco : ""}
-                        onChange={(e) => setEndereco(e.target.value)}
+                        id="cidade"
+                        value={nomeCidade.length > 0 ? nomeCidade : ""}
+                        onChange={(e) => setNomeCidade(e.target.value)}
                         type='text'
                         width= "90%"
                         height= "7vh"
