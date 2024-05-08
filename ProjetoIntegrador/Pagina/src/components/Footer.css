@@ -30,15 +30,19 @@ footer .content-footer .sa-box{
 }
 
 footer .content-footer .sa-box .prefeitura-img{
-    width: 30vh;
+    width: 15vh;
     height: 13vh;
+}
+footer .content-footer .sa-box .texto{
+    color: rgb(18, 124, 18);
+    text-align: center;
+    text-shadow: 0.7px 0.7px 1px rgba(255, 255, 255, 0.726);
 }
 
 footer .content-footer .sb-box{
     width: 100%;
     height: 13vh;
     margin-right: 10vh;
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -46,8 +50,9 @@ footer .content-footer .sb-box{
 }
 
 footer .content-footer .sb-box .fecam-img{
-    width: 15vh;
-    height: 12vh;
+    border-radius: 50%;
+    width: 11vh;
+    height: 10vh;
 }
 
 footer .content-footer img{
