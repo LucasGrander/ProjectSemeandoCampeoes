@@ -1,6 +1,6 @@
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
-import PrefetuiraLogo from '../assets/Logo-CM-Prefeitura.png'
-import FecamLogo from '../assets/Logo-FECAM.png'
+import PrefetuiraLogo from '../assets/Logo-CM-Prefeitura2.png'
+import FecamLogo from '../assets/Logo-FECAM2.png'
 import './Footer.css'
 
 const Footer = () => {
@@ -9,6 +9,10 @@ const Footer = () => {
         <div className='content-footer'>
           <div className="sa-box">
                 <img className='prefeitura-img' src={PrefetuiraLogo} alt='logo Prefeitura de Campo Mourão'></img>
+                <div className='texto'>
+                <a><h6>Município de</h6></a>
+                <a> <h5>Campo Mourão</h5></a>
+                </div>
           </div>
             <div className="icon">
                 <img src={LogoSemeandoCampeoes} alt='logo Semeando Campeões'></img>

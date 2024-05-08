@@ -41,10 +41,8 @@ const Instrutores = ({id}: Props) => {
             </div>
             <div className="box-info">
                 <span>Ricardo Maciel Batista</span>
-                <p className='desc-breve' >Faixa Preta de Jiu Jitsu, Faixa azul de Judô, Instrutor certificado pela Gracie Barra BJJ e curso de APH</p>
-                <p className='desc-instrutor'>Professor coordenador do PSC com Bacharelado e Licenciatura em Educação Física, Multiplicador institucional de Atendimento Pré-Hospitalar (APH) Tático pela Polícia Militar do Parana, APH/MARC 1 pela Polícia Civil do Paraná e Polícia Rodoviária Federal, Tecnólogo Ambiental com pós graduação em Inteligência policiao e Direito Militar..</p>
                 <p className='desc-breve' >Faixa Preta de Jiu Jitsu, Faixa azul de Judô, com Bacharelado e Licenciatura em Educação Física</p>
-                <p className='desc-instrutor'>Instrutor certificado pela Gracie Barra BJJ, Multiplicador institucional de Atendimento Pré-Hospitalar (APH) Tático pela Polícia Militar do Parana, APH/MARC 1 pela Polícia Civil do Paraná e Polícia Rodoviária Federal.</p>
+                <p className='desc-instrutor'>Instrutor certificado pela Gracie Barra BJJ, Multiplicador institucional de Atendimento Pré-Hospitalar (APH) Tático pela Polícia Militar do Parana, APH/MARC 1 pela Polícia Civil do Paraná e Polícia Rodoviária Federal, técnico auxiliar de Wrestlling.</p>
                 <div className="redes-sociais-instrutor">
                     <a target='_blank' href='https://www.instagram.com/rmbradock/'><img src={instaLOGO}></img></a> 
                     <a target='_blank' href='https://www.youtube.com/@ricardobatista5534'><img src={youtubeLOGO}></img></a> 
@@ -61,7 +59,7 @@ const Instrutores = ({id}: Props) => {
             <div className="box-info">
                 <span>Dionata da Silva Benedito</span>
                 <p className='desc-breve' > Faixa Marrom de Jiu Jitsu, Faixa laranja de Judô, instrutor certificado pela Gracie Barra BJJ e curso de primeiros socorros básico.</p>
-                <p className="desc-instrutor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi libero laboriosam ipsum neque at, reprehenderit facere cum, harum, consequuntur iusto placeat omnis quis fugiat debitis. Beatae veniam repellendus architecto.</p>
+                <p className="desc-instrutor">Acadêmico do curso de Bacharelado em Educação Física, massoterapeuta, Campeão Paranaense de Jiu jitsu, competidor de Judô e técnico de Wrestlling.</p>
                 <div className="redes-sociais-instrutor">
                     <a target='_blank' href='https://www.instagram.com/dionatadioh/'><img src={instaLOGO}></img></a> 
                     <a target='_blank' href='https://www.facebook.com/dioh.silva.9'><img src={faceLOGO}></img></a> 

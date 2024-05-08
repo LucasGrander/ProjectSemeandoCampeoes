@@ -85,7 +85,7 @@ const Photos = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = 'http://www.facebook.com/share/owa7o2zN42ZJePRk/?'
+            window.location.href = 'https://resenhacm.com.br/criancas-e-adolescentes-participam-de-graduacao-anual-e-da-segunda-copa-semeando-campeoes/'
         }, 1500)
 
         setTimeout(() => {

@@ -13,11 +13,12 @@ const Historico = ({id}: Props) => {
             <div className="text-history">
               <span><h2>PROJETO SEMEANDO CAMPEÕES</h2></span>
               <br></br>
-              <p>O PSC se iniciou de uma parceria com o projeto social de Jiu Jitsu da IV Igreja Presbiteriana Renovada (IV IPR) de Campo Mourão no ano de 2018, em 18 de março de 2019,
-                 com a finalidade de oferecer aulas de Jiu Jitus e defesa pessoal a crianças da comunidade, neste mesmo ano se iniciou um apoio em Iretama ao recém criado Projeto Social Brothers de Jiu Jitsu,
-                 o PSC se desmembrou da IV IPR em 2019 ministrando aulas na Escola Municipal Monteiro Lobato (EMMoL), após o advento da pandemia em 2021 migramos para as dependências Primeira Igreja Batista de Campo Mourão(PIB)
-                  e em 2022 foi fundada a Associação Mourãoense de Jiu Jitsu para dar suporte ao PSC, neste mesmo ano expandimos para Associação de Moradores do Lar Paraná.<br></br>
-              A equipe ainda desenvolve diversas atividades sociais, como arrecadação de alimentos e roupas, tardes recreativas, como o treino arraiá e o treino com os pais.
+              <p>O PSC se nasceu de uma parceria com o projeto social de Jiu Jitsu da IV Igreja Presbiteriana Renovada (IV IPR) de Campo Mourão no ano de 2018, neste mesmo ano se iniciou 
+                um apoio em Iretama ao recém criado Projeto Social Brothers de Jiu Jitsu, em 18 de março de 2019, com a finalidade de oferecer aulas de Jiu Jitus e defesa pessoal a crianças
+                 da comunidade, o PSC se desmembrou da IV IPR ministrando aulas na Escola Municipal Monteiro Lobato (EMMoL), após o advento da pandemia em 2021 migramos para as dependências 
+                 da Primeira Igreja Batista de Campo Mourão(PIB) e em 2022 foi fundada a Associação Mourãoense de Jiu Jitsu para dar suporte ao PSC, neste mesmo ano expandimos para 
+                 Associação de Moradores do Lar Paraná.<br></br>
+                A equipe ainda desenvolve diversas atividades sociais, como arrecadação de alimentos e roupas, tardes recreativas, como o treino arraiá e o treino com os pais.
               <h2>Homenagens</h2>
               2019 - <a target='_blank'  href="https://www.campomourao.pr.leg.br/institucional/noticias/camara-entrega-mocao-a-idealizador-do-semeando-campeoes">Moção de Congratulação</a> pela Câmara de vereadores de Campo Mourão em 22 de Abril de 2019, pelos serviços prestados como PSC.<br></br>
               2022 - O PSC recebeu um <a target='_blank'  href = "https://resenhacm.com.br/projeto-semeando-campeoes-e-homenageado-pela-camara-de-vereadores/">Voto de Louvor</a> da Câmara de Vereadores de Campo Mourão, em 05 de Julho de 2022 pelos serviços prestados como PSC.<br></br>
@@ -159,15 +160,16 @@ const Historico = ({id}: Props) => {
               Ouro: 06<br></br>
               Prata: 08<br></br>
               Bronze: 02<br></br>
-              Em 14 de abril a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa com 25 atletas, resultando em 22 medalhas:<br></br>
+              Em 14 de abril a equipe participou da Copa da Amizade 2024 com 25 atletas, resultando em 23 medalhas:<br></br>
               Ouro: 05<br></br>
               Prata: 11<br></br>
-              Bronze: 06<br></br>
+              Bronze: 07<br></br>
               <br></br>
               Total de medalhas em 2024:<br></br>
               Ouro 11<br></br>
               Prata 19<br></br>
-              Bronze 08<br></br> 
+              Bronze 09<br></br>
+
 
               </p>
             </div>
