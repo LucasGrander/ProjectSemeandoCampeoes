@@ -5,15 +5,21 @@ export interface Participante{
     telefone: string
     responsavel: string
     centro_de_treinamento: number
-    cor_da_faixa: string
     endereco: Endereco
+    faixa: Faixa
 }  
+
 export interface Endereco{
     rua: string;
     numCasa: string;
     bairro: string;
     cidade: Cidade
-}  
+} 
+
 export interface Cidade{
     nome_cidade: string
 }  
+
+export interface Faixa{
+    cor_da_faixa: string
+}

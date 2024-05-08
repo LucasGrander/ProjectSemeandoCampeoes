@@ -106,7 +106,7 @@ CREATE TABLE `faixa` (
   `id` int NOT NULL AUTO_INCREMENT,
   `cor_da_faixa` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,7 +115,7 @@ CREATE TABLE `faixa` (
 
 LOCK TABLES `faixa` WRITE;
 /*!40000 ALTER TABLE `faixa` DISABLE KEYS */;
-INSERT INTO `faixa` VALUES (1,'Branca'),(2,'Cinza'),(3,'Amarela'),(4,'Laranja'),(5,'Verde'),(6,'Azul'),(7,'Roxa'),(8,'Marrom'),(9,'Preta');
+INSERT INTO `faixa` VALUES (1,'Branca'),(2,'Cinza/Branca'),(3,'Cinza'),(4,'Cinza/Preta'),(5,'Amarela_Branca'),(6,'Amarela'),(7,'Amarela/Preta'),(8,'Laranja/Branca'),(9,'Laranja'),(10,'Laranja/Preta'),(11,'Verde/Branca'),(12,'Verde'),(13,'Verde/Preta'),(14,'Azul'),(15,'Roxa'),(16,'Marrom'),(17,'Preta');
 /*!40000 ALTER TABLE `faixa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,7 +179,7 @@ CREATE TABLE `participante` (
 
 LOCK TABLES `participante` WRITE;
 /*!40000 ALTER TABLE `participante` DISABLE KEYS */;
-INSERT INTO `participante` VALUES (1,'id1-larissa','1900-01-29','44 9994659245','Ricardinho',1,2,NULL),(2,'id2-ds','1900-01-29','44 9994659245','Ricardinho',3,1,NULL),(3,'id3-ricarod','2005-08-08','44 991354595','Neidinha',1,1,NULL),(4,'id4-ll','1800-03-10','44 9989023498','Batman',2,1,NULL),(5,'id5-pp','2000-12-05','44 991354595','bah',3,2,NULL),(14,'tdtfront','2022-02-05','44991354595','tetedtetew',1,4,NULL),(15,'aaaaaaaaaaaaaaaaaa','2024-05-10','11111111111111','aaaaaaaaaaaaaaaaaaaaa',4,5,NULL);
+INSERT INTO `participante` VALUES (1,'id1-larissa','1900-01-29','44 9994659245','Ricardinho',1,2,1),(2,'id2-ds','1900-01-29','44 9994659245','Ricardinho',3,1,5),(3,'id3-ricarod','2005-08-08','44 991354595','Neidinha',1,1,2),(4,'id4-ll','1800-03-10','44 9989023498','Batman',2,1,12),(5,'id5-pp','2000-12-05','44 991354595','bah',3,2,17),(14,'tdtfront','2022-02-05','44991354595','tetedtetew',1,4,5),(15,'aaaaaaaaaaaaaaaaaa','2024-05-10','11111111111111','aaaaaaaaaaaaaaaaaaaaa',4,5,3);
 /*!40000 ALTER TABLE `participante` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -196,4 +196,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-08 10:44:06
+-- Dump completed on 2024-05-08 11:23:43

@@ -313,7 +313,7 @@ console.log(centroDeTreino)
         if (participante) {
             setActiveId(participante.id)
             setNomePessoa(participante.nome)
-            setFaixa(participante.cor_da_faixa)
+            setFaixa(participante.faixa.cor_da_faixa)
             setDataNasc(participante.data_de_nascimento.slice(0, 10))
             setTelefone(participante.telefone)
             setResponsavel(participante.responsavel)
@@ -328,6 +328,11 @@ console.log(centroDeTreino)
                 if (participante.endereco.cidade) {
                     const cidade = participante.endereco.cidade
                     setNomeCidade(cidade.nome_cidade)
+
+                    if (participante.faixa) {
+                        const faixa = participante.faixa
+                        setFaixa(faixa.cor_da_faixa)
+                    }
                 }
             }
         }
@@ -485,7 +490,7 @@ console.log(centroDeTreino)
                                     <span><strong>Número de telefone: </strong> {participante.telefone} </span>
                                     <span><strong>Responsável: </strong> {participante.responsavel} </span>
                                     <span><strong>Centro de treinamento: </strong> {participante.centro_de_treinamento} </span>
-                                    <span><strong>Cor da faixa: </strong> {participante.cor_da_faixa} </span>
+                                    <span><strong>Cor da faixa: </strong> {participante.faixa.cor_da_faixa} </span>
                                 </div> 
 
                                 <div className="infos-integ">
@@ -596,7 +601,7 @@ console.log(centroDeTreino)
 
                 <div className="button-label-editUser">
                     <label className="labelFocused" htmlFor='centrodetreino'>Centro de treinamento</label>
-                    <select value={centroDeTreino} onChange={(e) => setCentroDeTreino(e.target.value)} className='ct-box-alter' name="faixa" id="ct">
+                    <select value={centroDeTreino} onChange={(e) => setCentroDeTreino(parseInt(e.target.value))} className='ct-box-alter' name="faixa" id="ct">
                         <option value="0" hidden></option>
                         <option value="5" disabled>*Selecione um centro de treinamento:</option>
                         <option value="1">Centro de treinamento  -  Centro </option>
@@ -610,16 +615,24 @@ console.log(centroDeTreino)
                     <label className="labelFocused" htmlFor='centrodetreino'>Cor da faixa</label>
                     <select value={faixa} onChange={(e) => setFaixa(e.target.value)} className='ct-box-alter' name="faixa" id="ct">
                         <option value="0" hidden></option>
-                        <option value="5" disabled>*Selecione a faixa do participante</option>
+                        <option value="99" disabled>*Selecione a faixa do participante</option>
                         <option value="1">Branca</option>
-                        <option value="2">Centro de treinamaraná</option>
-                        <option value="3">Centro de treinamento  -ento  -  Lar P  Iretama </option>
-                        <option value="4">Centro de treinamento  -  ??? </option>
-                        <option value="4">Centro de treinamento  -  ??? </option>
-                        <option value="4">Centro de treinamento  -  ??? </option>
-                        <option value="4">Centro de treinamento  -  ??? </option>
-                        <option value="4">Centro de treinamento  -  ??? </option>
-                        <option value="4">Centro de treinamento  -  ??? </option>
+                        <option value="2">Cinza/Branca</option>
+                        <option value="3">Cinza</option>
+                        <option value="4">Cinza/Preta</option>
+                        <option value="5">Amarela/Branca</option>
+                        <option value="6">Amarela</option>
+                        <option value="7">Amarela/Preta</option>
+                        <option value="8">Laranja/Branca</option>
+                        <option value="9">Laranja</option>
+                        <option value="10">Laranja/Preta</option>
+                        <option value="11">Verde/Branca</option>
+                        <option value="12">Verde</option>
+                        <option value="13">Verde/Preta</option>
+                        <option value="14">Azul</option>
+                        <option value="15">Roxa</option>
+                        <option value="16">Marrom</option>
+                        <option value="17">Preta</option>
                     </select>
                 </div>
 
