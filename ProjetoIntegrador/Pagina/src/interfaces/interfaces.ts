@@ -4,7 +4,7 @@ export interface Participante{
     data_de_nascimento: string
     telefone: string
     responsavel: string
-    centro_de_treinamento: string
+    centro_de_treinamento: number
     cor_da_faixa: string
     endereco: Endereco
 }  

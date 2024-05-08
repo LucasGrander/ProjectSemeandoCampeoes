@@ -3,7 +3,7 @@ import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import { useRef, useState } from 'react'
 import axios from 'axios'
-import { Endereco, Participante } from '../interfaces/interfaces'
+import { Participante } from '../interfaces/interfaces'
 
 import filterICON from '../assets/filterICON.svg'
 import closeX from '../assets/closePage.svg'
@@ -244,11 +244,12 @@ const [faixa, setFaixa] = useState("")
 const [dataNasc, setDataNasc] = useState("")
 const [telefone, setTelefone] = useState("")
 const [responsavel, setResponsavel] = useState("")
-const [centroDeTreino, setCentroDeTreino] = useState("")
+const [centroDeTreino, setCentroDeTreino] = useState(0)
 const [rua, setRua] = useState("")
 const [numCasa, setNumCasa] = useState("")
 const [bairro, setBairro] = useState("")
 const [nomeCidade, setNomeCidade] = useState("")
+const [titleAddOrUpdate, setTitleAddOrUpdate] = useState("")
 
 
   const handleGetInfos = async () => {
@@ -270,7 +271,7 @@ const [nomeCidade, setNomeCidade] = useState("")
             setDataNasc("")
             setTelefone("")
             setResponsavel("")
-            setCentroDeTreino("")
+            setCentroDeTreino(0)
             setRua("")
             setNumCasa("")
             setBairro("")
@@ -280,7 +281,7 @@ const [nomeCidade, setNomeCidade] = useState("")
     handleGetInfos()
     }
     else{
-    await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, faixa: faixa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
+    await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
 
     setBoxEditMode(false)
         setTimeout(() =>{
@@ -292,7 +293,7 @@ const [nomeCidade, setNomeCidade] = useState("")
             setDataNasc("")
             setTelefone("")
             setResponsavel("")
-            setCentroDeTreino("0")
+            setCentroDeTreino(0)
             setRua("")
             setNumCasa("")
             setBairro("")
@@ -333,18 +334,16 @@ console.log(centroDeTreino)
     }
 
   const handleAddInfos = async () => {
-
+    setTitleAddOrUpdate("Adicionar Participante")
     setBoxEditMode(true)
     setContainerEditMode(true)
-    
-    handleGetInfos()
 
     setNomePessoa("")
     setFaixa("")
     setDataNasc("")
     setTelefone("")
     setResponsavel("")
-    setCentroDeTreino("0")
+    setCentroDeTreino(0)
     setRua("")
     setNumCasa("")
     setBairro("")
@@ -507,8 +506,10 @@ console.log(centroDeTreino)
 
         <div style={{display: containerEditMode ? "flex" : "none"}} className="container-edicao">
             <div ref={containerRef} className={boxEditMode ? "content-edicao-on" : "content-edicao-off"}>
-                <span className='title-container-edit' >Alteração</span>
+                <span className='title-container-edit' >{titleAddOrUpdate}</span>
                 <img className='editBC' src={editUSER}></img>
+                <span className='subtitle-container-edit' >Dados</span>
+
                 <div className="button-label-editUser">
                     <label className="labelFocused" htmlFor='nome'>Nome Completo</label>
                     <MyInput
@@ -518,7 +519,7 @@ console.log(centroDeTreino)
                         type='text'
                         width= "90%"
                         height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
+                        padding="0vh 3vh 0vh 2.5vh"
                         fontSize= "2.4vh"
                         border= "solid .3vh black"
                         borderBottom="solid .3vh black"
@@ -536,10 +537,10 @@ console.log(centroDeTreino)
                         id="dataNas"
                         value={dataNasc.length > 0 ? dataNasc : ""}
                         onChange={(e) => setDataNasc(e.target.value)}
-                        type='text'
+                        type='date'
                         width= "90%"
                         height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
+                        padding="0vh 3vh 0vh 2.5vh"
                         fontSize= "2.4vh"
                         border= "solid .3vh black"
                         borderBottom="solid .3vh black"
@@ -560,7 +561,7 @@ console.log(centroDeTreino)
                         type='text'
                         width= "90%"
                         height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
+                        padding="0vh 3vh 0vh 2.5vh"
                         fontSize= "2.4vh"
                         border= "solid .3vh black"
                         borderBottom="solid .3vh black"
@@ -581,7 +582,7 @@ console.log(centroDeTreino)
                         type='text'
                         width= "90%"
                         height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
+                        padding="0vh 3vh 0vh 2.5vh"
                         fontSize= "2.4vh"
                         border= "solid .3vh black"
                         borderBottom="solid .3vh black"
@@ -606,6 +607,24 @@ console.log(centroDeTreino)
                 </div>
 
                 <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='centrodetreino'>Cor da faixa</label>
+                    <select value={faixa} onChange={(e) => setFaixa(e.target.value)} className='ct-box-alter' name="faixa" id="ct">
+                        <option value="0" hidden></option>
+                        <option value="5" disabled>*Selecione a faixa do participante</option>
+                        <option value="1">Branca</option>
+                        <option value="2">Centro de treinamaraná</option>
+                        <option value="3">Centro de treinamento  -ento  -  Lar P  Iretama </option>
+                        <option value="4">Centro de treinamento  -  ??? </option>
+                        <option value="4">Centro de treinamento  -  ??? </option>
+                        <option value="4">Centro de treinamento  -  ??? </option>
+                        <option value="4">Centro de treinamento  -  ??? </option>
+                        <option value="4">Centro de treinamento  -  ??? </option>
+                        <option value="4">Centro de treinamento  -  ??? </option>
+                    </select>
+                </div>
+
+                <span className='subtitle-container-edit' >Endereço</span>
+                <div className="button-label-editUser">
                     <label className="labelFocused" htmlFor='cidade'>Cidade</label>
                     <MyInput
                         id="cidade"
@@ -614,7 +633,70 @@ console.log(centroDeTreino)
                         type='text'
                         width= "90%"
                         height= "7vh"
-                        padding="0vh 8vh 0vh 2.5vh"
+                        padding="0vh 3vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='bairro'>Bairro</label>
+                    <MyInput
+                        id="bairro"
+                        value={bairro.length > 0 ? bairro : ""}
+                        onChange={(e) => setBairro(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 3vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='rua'>Rua</label>
+                    <MyInput
+                        id="rua"
+                        value={rua.length > 0 ? rua : ""}
+                        onChange={(e) => setRua(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 3vh 0vh 2.5vh"
+                        fontSize= "2.4vh"
+                        border= "solid .3vh black"
+                        borderBottom="solid .3vh black"
+                        borderRadius='.6vh'
+                        backgroundColor="transparent"
+                        transition= ".4s"
+                        enter= "transparent"
+                        leave= "transparent"
+                    />
+                </div>
+
+                <div className="button-label-editUser">
+                    <label className="labelFocused" htmlFor='numCasa'>Numero da residência</label>
+                    <MyInput
+                        id="numCasa"
+                        value={numCasa.length > 0 ? numCasa : ""}
+                        onChange={(e) => setNumCasa(e.target.value)}
+                        type='text'
+                        width= "90%"
+                        height= "7vh"
+                        padding="0vh 3vh 0vh 2.5vh"
                         fontSize= "2.4vh"
                         border= "solid .3vh black"
                         borderBottom="solid .3vh black"

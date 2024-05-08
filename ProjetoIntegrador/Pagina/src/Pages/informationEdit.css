@@ -763,6 +763,13 @@
     text-shadow: .1vh .1vh .4vh rgba(0, 0, 0, 0.5);
 }
 
+.subtitle-container-edit{
+    font-size: 3.5vh;
+    font-weight: 600;
+    color: rgb(0, 28, 98);
+    text-shadow: .1vh .1vh .4vh rgba(0, 0, 0, 0.5);
+}
+
 .button-label-editUser{
     width: 100%;
     height: auto;
