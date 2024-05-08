@@ -54,6 +54,12 @@ footer .content-footer .sb-box .fecam-img{
     width: 11vh;
     height: 10vh;
 }
+footer .content-footer .icon{
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    border: solid .1vh white;
+}
 
 footer .content-footer img{
     width: 10vh;
