@@ -31,6 +31,8 @@ function Login (){
             
             setTimeout(() => {
                 setOverlay(true)
+                setUserAluno("")
+                setPasswordAluno("")
                 setTimeout(()=>{
                     window.location.href = '/login/informações-acessoAluno'
                 },1500)
@@ -103,8 +105,11 @@ function Login (){
             
             setTimeout(() => {
                 setOverlay(true)
+                setUserProfessor("")
+                setPasswordProfessor("")
                 setTimeout(()=>{
                     window.location.href = '/login/informações-acessoProfessor'
+        
                 },1500)
             }, 2000)
         }

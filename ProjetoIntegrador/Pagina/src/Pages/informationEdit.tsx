@@ -208,12 +208,27 @@ const informationEdit = () => {
     }
 
     const [showInfosIntegrante, setShowInfosIntegrante] = useState([{}])
+    const [deleteBoxMode, setDeleteBoxMode] = useState([{}])
 
     const handleShowInfosIntegrante = (id: any) => {
         setShowInfosIntegrante(prevState => ({
             ...prevState,
             [id]: !prevState[id]
         }))
+    }
+
+    const handleDeleteBoxState = (id: any) => {
+        setDeleteBoxMode(prevState => ({
+            ...prevState,
+            [id]: !prevState[id]
+        }))
+        
+        setBoxForCrud(false)
+        if(deleteBoxMode[id]){
+            setBoxForCrud(true)
+            setActionCrudColor("box-postput-removed")
+            setTextForPostAndPut(`Ação cancelada`)
+        }
     }
 
     const [boxEditMode, setBoxEditMode] = useState(false)
@@ -261,8 +276,6 @@ const [buttonActionAddOrUpdate, setButtonActionAddOrUpdate] = useState("")
 const [addOrUpdate, setAddOrUpdate] = useState(false)
 
 const [actionCrudColor, setActionCrudColor] = useState("")
-
-const [deleteBoxMode, setDeleteBoxMode] = useState(false)
 
 const [classUpdAddContent, setClassUpdAddContent] = useState("")
 const [classUpdAddTitle, setClassUpdAddTitle] = useState("")
@@ -388,15 +401,10 @@ const [colorButton, setColorButton] = useState(false)
     setBairro("")
     }
 
-    const handleDeleteBoxStateOpen = () => {
-        setDeleteBoxMode(true)
-    }
-
     const handleDeleteBoxStateClose = () => {
         setBoxForCrud(false)
 
         setTimeout(() => {
-            setDeleteBoxMode(false)
         setBoxForCrud(true)
         setTextForPostAndPut(`Ação cancelada`)
         setActionCrudColor("box-postput-removed")
@@ -530,7 +538,7 @@ const [colorButton, setColorButton] = useState(false)
                             <div className={showInfosIntegrante[participante.id] ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
                                 <div className="icons-edit-remove">
                                     <img onClick={() => handleSelectInfos(participante.id)} className={boxEditMode ? 'edit-iconFocus' :'edit-icon'} src={editUSER}></img>
-                                    <img onClick={handleDeleteBoxStateOpen} className={deleteBoxMode ? 'remove-iconFocus' :'remove-icon'} src={removeUSER}></img>
+                                    <img onClick={() => handleDeleteBoxState(participante.id)} className={deleteBoxMode[participante.id] ? 'remove-iconFocus' :'remove-icon'} src={removeUSER}></img>
                                 </div>
 
                                 <div className="infos-integ">
@@ -549,7 +557,7 @@ const [colorButton, setColorButton] = useState(false)
                                     <span><strong>Rua: </strong> {participante.rua} </span>
                                     <span><strong>Número da residência: </strong> {participante.numero} </span>
 
-                                    <div style={{opacity: deleteBoxMode ? "1" : "0", pointerEvents: deleteBoxMode ? "all" : "none", transition: ".3s"}} className="confirm-dialog-box">
+                                    <div style={{opacity: deleteBoxMode[participante.id] ? "1" : "0", pointerEvents: deleteBoxMode[participante.id] ? "all" : "none", transition: ".3s"}} className="confirm-dialog-box">
                                         <div className="confirm-dialog">
                                             <span>Confirmar?</span>
                                         </div>
@@ -576,7 +584,7 @@ const [colorButton, setColorButton] = useState(false)
                                         />
 
                                         <MyButton
-                                            onClick={handleDeleteBoxStateClose}
+                                            onClick={() => handleDeleteBoxState(participante.id)}
                                             width= "10vh"
                                             height= "3vh"
                                             padding="1vh 1vh"
