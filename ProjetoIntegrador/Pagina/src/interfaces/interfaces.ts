@@ -1,17 +1,30 @@
 export interface Participante{
+
+//verificar com o professor
+    nome_cidade: string
+    bairro: string
+    rua: string
+    numero: string
+// -------------------------
+
     id: number
     nome: string
     data_de_nascimento: string
     telefone: string
     responsavel: string
-    centro_de_treinamento: number
+
     endereco: Endereco
-    faixa: Faixa
+
+    centro_de_treinamento: number
+    cor_da_faixa: number
+    
+    fid: number
+    cdtid: number
 }  
 
 export interface Endereco{
     rua: string;
-    numCasa: string;
+    numero: string;
     bairro: string;
     cidade: Cidade
 } 
@@ -19,7 +32,3 @@ export interface Endereco{
 export interface Cidade{
     nome_cidade: string
 }  
-
-export interface Faixa{
-    cor_da_faixa: string
-}

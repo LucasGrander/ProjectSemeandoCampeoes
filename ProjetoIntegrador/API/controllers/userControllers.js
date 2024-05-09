@@ -46,14 +46,29 @@ export const getUsers = (_, res) => {
 //      centro_de_treinamento ct ON p.id_centro_de_treinamento = ct.id
 //  `
 
- `select p.id, p.nome, p.data_de_nascimento, p.telefone, p.responsavel, cdt.nome as centro_de_treinamento, e.bairro, e.rua, e.numero, c.nome_cidade
+`
+select p.id,
+f.id as fid,
+cdt.id as cdtid,
+p.nome,
+p.data_de_nascimento,
+p.telefone, p.responsavel,
+cdt.nome as centro_de_treinamento,
+f.cor_da_faixa,
+e.bairro,
+e.rua,
+e.numero,
+c.nome_cidade
  from participante p
  join centro_de_treinamento cdt 
  	on p.id_centro_de_treinamento = cdt.id
  join endereco e
  	on p.id_endereco = e.id
  join cidade c 
- 	on e.id_cidade = c.id`
+ 	on e.id_cidade = c.id
+ join faixa f
+ 	on p.id_faixa = f.id 
+`
 
     db.query (sql, (err, data)=> {
         if(err){
@@ -90,25 +105,15 @@ export const addUsers = (req, res) => {
 
             const enderecoId = resultEndereco.insertId
 
-            const sqlFaixa = `insert into faixa (cor_da_faixa) values (?)`;
-            db.query(sqlFaixa, [cor_da_faixa], function(err, resultFaixa) {
-            if (err) { 
-                console.log("Erro ao inserir na tabela faixa:", err)
-                return res.status(500).json({ error: "Erro ao processar a requisição" })
-            }
+            const sqlPessoa = `insert into participante (nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, id_faixa, id_endereco) values (?, ?, ?, ?, ?, ?, ?)`
+            db.query(sqlPessoa, [nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, id_faixa, enderecoId], function(err, resultPessoa) {
+                if (err) { 
+                    console.log("Erro ao inserir na tabela pessoa:", err)
+                    return res.status(500).json({ error: "Erro ao processar a requisição" })
+                }
 
-            const faixaId = resultFaixa.insertId
-
-                const sqlPessoa = `insert into participante (nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, id_faixa, id_endereco) values (?, ?, ?, ?, ?, ?, ?)`
-                db.query(sqlPessoa, [nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, faixaId, enderecoId], function(err, resultPessoa) {
-                    if (err) { 
-                        console.log("Erro ao inserir na tabela pessoa:", err)
-                        return res.status(500).json({ error: "Erro ao processar a requisição" })
-                    }
-
-                    console.log("Requisição bem sucedida!")
-                    return res.status(201).json({ pessoaId: resultPessoa.insertId, enderecoId, cidadeId })
-                })
+                console.log("Requisição bem sucedida!")
+                return res.status(201).json({ pessoaId: resultPessoa.insertId, enderecoId, cidadeId })
             })
         })
     })
@@ -117,20 +122,30 @@ export const addUsers = (req, res) => {
 // -----------------------------------    UPDATE USER      ------------------------------------------------------------
 
 export const updateUsers = (req, res) => {
-    const sql =
-    `update pessoa
-    set nome = ?,
-    data_de_nascimento = ?,
-    telefone = ?,
-    responsavel = ?
-    id_centro_de_treinamento = ?
-    id_endereco = ?
-    where id = ?`
+    const sqlPessoa =
+    `
+    update participante p
+    join endereco e 
+ 	    on p.id_endereco = e.id
+    join cidade c 
+ 	    on e.id_cidade = c.id
+    set p.nome = ?,
+    p.data_de_nascimento = ?,
+    p.telefone = ?,
+    p.responsavel = ?,
+    p.id_centro_de_treinamento = ?,
+    p.id_faixa = ?,
+    e.bairro = ?,
+    e.rua = ?,
+    e.numero = ?,
+    c.nome_cidade = ?
+    where p.id = ?
+    `
 
-    const {nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, id_endereco, id} = req.body
+    const {nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, id_faixa, bairro, rua, numero, nome_cidade, id} = req.body
 
 
-    db.query(sql, [nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, id_endereco, id], (err, data) => {
+    db.query(sqlPessoa, [nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, id_faixa, bairro, rua, numero, nome_cidade, id], (err, data) => {
         if(err){
             console.log("Erro ao processar a requisição")
             return res.status(500).json(err)
@@ -147,7 +162,7 @@ export const updateUsers = (req, res) => {
 // -----------------------------------    REMOVE USER      ------------------------------------------------------------
 
 export const deleteUsers = (req, res) => {
-    const sql = "delete from aluno where id = ?"
+    const sql = "delete from participante where id = ?"
 
     const { id } = req.query
 

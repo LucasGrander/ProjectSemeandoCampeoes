@@ -222,10 +222,15 @@ const informationEdit = () => {
 
     const handleOnClickCloseEdit = () => {
         setBoxEditMode(false)
+        setBoxForCrud(false)
 
         setTimeout(() =>{
             scrollToTop()
-            setContainerEditMode(false)
+            setContainerEditMode(false) 
+            setBoxForCrud(true)
+            setActionCrudColor("box-postput-removed")
+            setTextForPostAndPut(`Ação cancelada`)
+            setBoxEditModeToAdd(false)
         }, 300)
     }
     const containerRef = useRef<HTMLDivElement>(null)
@@ -240,7 +245,7 @@ const informationEdit = () => {
 const [participants, setParticipants] = useState<Participante[]>([])
 const [activeId, setActiveId] = useState(-1)
 const [nomePessoa, setNomePessoa] = useState("")
-const [faixa, setFaixa] = useState("")
+const [faixa, setFaixa] = useState(0)
 const [dataNasc, setDataNasc] = useState("")
 const [telefone, setTelefone] = useState("")
 const [responsavel, setResponsavel] = useState("")
@@ -249,7 +254,21 @@ const [rua, setRua] = useState("")
 const [numCasa, setNumCasa] = useState("")
 const [bairro, setBairro] = useState("")
 const [nomeCidade, setNomeCidade] = useState("")
+
+// estados 
 const [titleAddOrUpdate, setTitleAddOrUpdate] = useState("")
+const [buttonActionAddOrUpdate, setButtonActionAddOrUpdate] = useState("")
+const [addOrUpdate, setAddOrUpdate] = useState(false)
+
+const [actionCrudColor, setActionCrudColor] = useState("")
+
+const [deleteBoxMode, setDeleteBoxMode] = useState(false)
+
+const [classUpdAddContent, setClassUpdAddContent] = useState("")
+const [classUpdAddTitle, setClassUpdAddTitle] = useState("")
+const [classUpdAddSubTitle, setClassUpdAddSubTitle] = useState("")
+const [boxEditModeToAdd, setBoxEditModeToAdd] = useState(false)
+const [colorButton, setColorButton] = useState(false)
 
 
   const handleGetInfos = async () => {
@@ -260,14 +279,16 @@ const [titleAddOrUpdate, setTitleAddOrUpdate] = useState("")
 
   const handleUpdateInfos = async () => {
     if(activeId < 0){
-    await axios.post("http://localhost:8080/users",{nome: nomePessoa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
+    await axios.post("http://localhost:8080/users",{nome: nomePessoa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, id_faixa: faixa, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
     setBoxEditMode(false)
+    setBoxForCrud(false)
+
         setTimeout(() =>{
             scrollToTop()
             setContainerEditMode(false)
 
             setNomePessoa("")
-            setFaixa("")
+            setFaixa(0)
             setDataNasc("")
             setTelefone("")
             setResponsavel("")
@@ -276,20 +297,26 @@ const [titleAddOrUpdate, setTitleAddOrUpdate] = useState("")
             setNumCasa("")
             setBairro("")
             setNomeCidade("")
+            setBoxForCrud(true)
+            setActionCrudColor("box-postput-added")
+            setTextForPostAndPut(`Novo participante adiconado: ${nomePessoa}`)
+            setBoxEditModeToAdd(false)
         }, 300)
 
     handleGetInfos()
     }
     else{
-    await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
+    await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, id_faixa: faixa, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
 
+    setBoxForCrud(false)
     setBoxEditMode(false)
+
         setTimeout(() =>{
             scrollToTop()
             setContainerEditMode(false)
 
             setNomePessoa("")
-            setFaixa("")
+            setFaixa(0)
             setDataNasc("")
             setTelefone("")
             setResponsavel("")
@@ -299,52 +326,59 @@ const [titleAddOrUpdate, setTitleAddOrUpdate] = useState("")
             setBairro("")
             setNomeCidade("")
             setActiveId(-1)
+            setBoxForCrud(true)
+            setActionCrudColor("box-postput-updated")
+            setTextForPostAndPut(`Alterações realizadas no(a) ${nomePessoa}`)
         }, 300)
 
     handleGetInfos()
     }
   }
-console.log(centroDeTreino)
+
     const handleSelectInfos = async (id: number) => {
+        setAddOrUpdate(true)
         setBoxEditMode(true)
         setContainerEditMode(true)
+        setTitleAddOrUpdate("Atualizar participante")
+        setButtonActionAddOrUpdate("Salvar Mudanças")
+        setClassUpdAddContent("content-edicao-on-updating")
+        setClassUpdAddTitle("title-container-edit-updating")
+        setClassUpdAddSubTitle("subtitle-container-edit-updating")
+        setColorButton(true)
+
         
         const participante = participants.find((participante: Participante) => participante.id === id)
         if (participante) {
             setActiveId(participante.id)
             setNomePessoa(participante.nome)
-            setFaixa(participante.faixa.cor_da_faixa)
+            setFaixa(participante.cor_da_faixa)
             setDataNasc(participante.data_de_nascimento.slice(0, 10))
             setTelefone(participante.telefone)
             setResponsavel(participante.responsavel)
-            setCentroDeTreino(participante.centro_de_treinamento)
-            
-            if (participante.endereco) {
-                const endereco = participante.endereco
-                setRua(endereco.rua)
-                setNumCasa(endereco.numCasa)
-                setBairro(endereco.bairro)
-                
-                if (participante.endereco.cidade) {
-                    const cidade = participante.endereco.cidade
-                    setNomeCidade(cidade.nome_cidade)
-
-                    if (participante.faixa) {
-                        const faixa = participante.faixa
-                        setFaixa(faixa.cor_da_faixa)
-                    }
-                }
-            }
+            setCentroDeTreino(participante.cdtid)
+            setFaixa(participante.fid)
+            setFaixa(participante.fid)
+            setRua(participante.rua)
+            setNumCasa(participante.numero)
+            setBairro(participante.bairro)
+            setNomeCidade(participante.nome_cidade)
         }
     }
 
   const handleAddInfos = async () => {
+    setAddOrUpdate(false)
     setTitleAddOrUpdate("Adicionar Participante")
     setBoxEditMode(true)
     setContainerEditMode(true)
+    setButtonActionAddOrUpdate("Inserir participante")
+    setClassUpdAddContent("content-edicao-on-adding")
+    setClassUpdAddTitle("title-container-edit-adding")
+    setClassUpdAddSubTitle("subtitle-container-edit-adding")
+    setBoxEditModeToAdd(true)
+    setColorButton(false)
 
     setNomePessoa("")
-    setFaixa("")
+    setFaixa(0)
     setDataNasc("")
     setTelefone("")
     setResponsavel("")
@@ -354,15 +388,31 @@ console.log(centroDeTreino)
     setBairro("")
     }
 
+    const handleDeleteBoxStateOpen = () => {
+        setDeleteBoxMode(true)
+    }
+
+    const handleDeleteBoxStateClose = () => {
+        setBoxForCrud(false)
+
+        setTimeout(() => {
+            setDeleteBoxMode(false)
+        setBoxForCrud(true)
+        setTextForPostAndPut(`Ação cancelada`)
+        setActionCrudColor("box-postput-removed")
+        }, 100);
+    }
+
   const handleDeleteInfos = async (id : number) => {
     await axios.delete(`http://localhost:8080/users?id=${id}`)
-
     handleGetInfos()
-    setBoxForCrud(true)
-
+    setBoxForCrud(false)
+    
     setTimeout(() => {
-        setBoxForCrud(false)        
-    }, 3000)
+        setBoxForCrud(true)
+        setTextForPostAndPut(`Participante removido!`)
+        setActionCrudColor("box-postput-removed")
+    }, 100);
   }
 
   const [textForPostAndPut, setTextForPostAndPut] = useState("")
@@ -389,7 +439,7 @@ console.log(centroDeTreino)
 
                 <div className="box-nav">
                     <div className="adding-integrante">
-                        <img onClick={handleAddInfos} src={addUSerIcon}></img>
+                        <img className={boxEditModeToAdd ? 'add-iconFocus' :'add-icon'} onClick={handleAddInfos} src={addUSerIcon}></img>
                     </div>
                     <div onClick={handleOnClickBtnFiltro} className={dropdown ? "btn-filtro-selected" : "btn-filtro"}>
                         <span>Filtros</span>
@@ -472,15 +522,15 @@ console.log(centroDeTreino)
                         <div className="adaptive-infos-overlay" key={participante.id}>
                             <div className={showInfosIntegrante ? "container-integrante-active" : "container-integrante-inative"} style={{opacity: dropdown ? ".1" : "1"}} >
                                 <div onClick={() =>handleShowInfosIntegrante(participante.id)} className="box-integrante">
-                                    <span>{participante.nome}</span>
+                                    <span>{participante.nome}  <span className='faixa-box-integ' >({participante.cor_da_faixa})</span></span>
                                     <img style={{transform: showInfosIntegrante[participante.id] ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>
                                 </div>
                             </div>
 
                             <div className={showInfosIntegrante[participante.id] ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
                                 <div className="icons-edit-remove">
-                                    <img onClick={() => handleSelectInfos(participante.id)} className='edit-icon' src={editUSER}></img>
-                                    <img onClick={() => handleDeleteInfos(participante.id)} className='remove-icon' src={removeUSER}></img>
+                                    <img onClick={() => handleSelectInfos(participante.id)} className={boxEditMode ? 'edit-iconFocus' :'edit-icon'} src={editUSER}></img>
+                                    <img onClick={handleDeleteBoxStateOpen} className={deleteBoxMode ? 'remove-iconFocus' :'remove-icon'} src={removeUSER}></img>
                                 </div>
 
                                 <div className="infos-integ">
@@ -489,19 +539,67 @@ console.log(centroDeTreino)
                                     <span><strong>Data de nascimento (aaaa/mm/dd): </strong> {participante.data_de_nascimento.slice(0, 10)} </span>
                                     <span><strong>Número de telefone: </strong> {participante.telefone} </span>
                                     <span><strong>Responsável: </strong> {participante.responsavel} </span>
-                                    <span><strong>Centro de treinamento: </strong> {participante.centro_de_treinamento} </span>
-                                    <span><strong>Cor da faixa: </strong> {participante.faixa.cor_da_faixa} </span>
+                                    <span><strong>Local de treino: </strong> CT - {participante.centro_de_treinamento} </span>
                                 </div> 
 
                                 <div className="infos-integ">
                                 <span className="title-infos-integ">Endereço</span>
-                                    <span><strong>Info: </strong> xxxxxxx </span>
-                                    <span><strong>Info: </strong> xxxxxxx </span>
-                                    <span><strong>Info: </strong> xxxxxxx </span>
-                                    <span><strong>Info: </strong> xxxxxxx </span>
-                                    <span><strong>Info: </strong> xxxxxxx </span>
+                                    <span><strong>Cidade: </strong> {participante.nome_cidade} </span>
+                                    <span><strong>Bairro: </strong> {participante.bairro} </span>
+                                    <span><strong>Rua: </strong> {participante.rua} </span>
+                                    <span><strong>Número da residência: </strong> {participante.numero} </span>
+
+                                    <div style={{opacity: deleteBoxMode ? "1" : "0", pointerEvents: deleteBoxMode ? "all" : "none", transition: ".3s"}} className="confirm-dialog-box">
+                                        <div className="confirm-dialog">
+                                            <span>Confirmar?</span>
+                                        </div>
+                                        <div className="confirm-buttons">
+                                        <MyButton
+                                            onClick={() => handleDeleteInfos(participante.id)}
+                                            width= "10vh"
+                                            height= "3vh"
+                                            padding="1vh 1vh"
+                                            display='flex'
+                                            alignItems='center'
+                                            justifyContent='center'
+                                            cursor="pointer"
+                                            fontSize= "2vh"
+                                            fontWeight= "bold"
+                                            backgroundColor="rgba(0, 255, 0, 0.8)"
+                                            border= ".3vh black solid"
+                                            borderBottom= ".3vh black solid"
+                                            borderRadius="1vh"
+                                            transition= ".2s"
+                                            children="Sim"
+                                            enter="rgba(0, 255, 0, 0.8)"
+                                            leave="rgba(0, 255, 0, 0.3)"
+                                        />
+
+                                        <MyButton
+                                            onClick={handleDeleteBoxStateClose}
+                                            width= "10vh"
+                                            height= "3vh"
+                                            padding="1vh 1vh"
+                                            display='flex'
+                                            alignItems='center'
+                                            justifyContent='center'
+                                            cursor="pointer"
+                                            fontSize= "2vh"
+                                            fontWeight= "bold"
+                                            backgroundColor="rgba(255, 0, 0, 0.8)"
+                                            border= ".3vh black solid"
+                                            borderBottom=".3vh black solid"
+                                            borderRadius="1vh"
+                                            transition= ".2s"
+                                            children="Não"
+                                            enter="rgba(255, 0, 0, 0.8)"
+                                            leave="rgba(255, 0, 0, 0.3)"
+                                        />
+                                        </div>
+                                    </div>
+
                                 </div>    
-                            </div>
+                            </div>    
                         </div>
                         ))}
                                             
@@ -510,10 +608,10 @@ console.log(centroDeTreino)
         </div>
 
         <div style={{display: containerEditMode ? "flex" : "none"}} className="container-edicao">
-            <div ref={containerRef} className={boxEditMode ? "content-edicao-on" : "content-edicao-off"}>
-                <span className='title-container-edit' >{titleAddOrUpdate}</span>
-                <img className='editBC' src={editUSER}></img>
-                <span className='subtitle-container-edit' >Dados</span>
+            <div ref={containerRef} className={boxEditMode ? classUpdAddContent : "content-edicao-off"}>
+                <span className={classUpdAddTitle} >{titleAddOrUpdate}</span>
+                <img className='editBC' src={addOrUpdate ? editUSER : addUSerIcon}></img>
+                <span className={classUpdAddSubTitle} >Dados</span>
 
                 <div className="button-label-editUser">
                     <label className="labelFocused" htmlFor='nome'>Nome Completo</label>
@@ -613,7 +711,7 @@ console.log(centroDeTreino)
 
                 <div className="button-label-editUser">
                     <label className="labelFocused" htmlFor='centrodetreino'>Cor da faixa</label>
-                    <select value={faixa} onChange={(e) => setFaixa(e.target.value)} className='ct-box-alter' name="faixa" id="ct">
+                    <select value={faixa} onChange={(e) => setFaixa(parseInt(e.target.value))} className='ct-box-alter' name="faixa" id="ct">
                         <option value="0" hidden></option>
                         <option value="99" disabled>*Selecione a faixa do participante</option>
                         <option value="1">Branca</option>
@@ -636,7 +734,7 @@ console.log(centroDeTreino)
                     </select>
                 </div>
 
-                <span className='subtitle-container-edit' >Endereço</span>
+                <span className={classUpdAddSubTitle} >Endereço</span>
                 <div className="button-label-editUser">
                     <label className="labelFocused" htmlFor='cidade'>Cidade</label>
                     <MyInput
@@ -730,14 +828,14 @@ console.log(centroDeTreino)
                     cursor="pointer"
                     fontSize= "2.5vh"
                     fontWeight= "bold"
-                    backgroundColor="rgba(0, 255, 0, 0.8)"
+                    backgroundColor="transparent"
                     border= ".3vh black solid"
                     borderBottom= ".3vh black solid"
                     borderRadius="1vh"
                     transition= ".5s"
-                    children="Salvar alterações"
-                    enter="rgba(0, 255, 0, 0.8)"
-                    leave="rgba(0, 255, 0, 0.3)"
+                    children={buttonActionAddOrUpdate}
+                    enter={colorButton ? "rgb(53, 94, 255, 0.8)" : "rgb(130, 255, 80)"}
+                    leave={colorButton ? "rgb(53, 94, 255, 0.5)" : "rgb(130, 255, 80, 0.5)"}
                     />
 
                     <MyButton
@@ -748,7 +846,7 @@ console.log(centroDeTreino)
                     cursor="pointer"
                     fontSize= "2.5vh"
                     fontWeight= "bold"
-                    backgroundColor="rgba(255, 0, 0, 0.8)"
+                    backgroundColor="transparent"
                     border= ".3vh black solid"
                     borderBottom=".3vh black solid"
                     borderRadius="1vh"
@@ -761,8 +859,8 @@ console.log(centroDeTreino)
             </div>
         </div>
 
-        <div className={boxForCrud ? "box-postput" : "box-postput-hidden"}>
-            <span>Alteração realizada com sucesso</span>
+        <div className={boxForCrud ? actionCrudColor : "box-postput-hidden"}>
+            <span>{textForPostAndPut}</span>
         </div>
 
     </div>
