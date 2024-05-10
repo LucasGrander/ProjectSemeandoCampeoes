@@ -42,7 +42,7 @@ function Login (){
         }
         else{
             setLoginModeAluno(false)
-            setMensageAluno(`Nome de usuário ou senha incorreto.`)
+            setMensageAluno(`Nome de usuário ou senha incorretos.`)
             setUserAluno("")
             setPasswordAluno("")
             setFocusUserAluno(false)
@@ -100,44 +100,38 @@ function Login (){
     const [clasnameProfessor, setClassnameProfessor] = useState(true)
 
     const handleMensageShowedProfessor = async () => {
-        setBoxModeProfessor(true)
-        const validation = await axios.post("http://localhost:8080/users/auth",{usuario: userProfessor, senha: passwordProfessor})
-        
-        if(validation.status == 200){
-            setLoginModeProfessor(true)
-            setMensageProfessor(`Seja bem vindo, ${userProfessor}`)
-            
-            setTimeout(() => {
-                setOverlay(true)
-                setUserProfessor("")
-                setPasswordProfessor("")
-                setTimeout(()=>{
-                    window.location.href = '/login/informações-acessoProfessor'
-        
-                },1500)
-            }, 2000)
-        }
-        else{
-            setLoginModeProfessor(false)
-            setMensageProfessor(`Nome de usuário ou senha incorreto.`)
-            setUserProfessor("")
-            setPasswordProfessor("")
-            setFocusUserProfessor(false)
-            setFocusPassWProfessor(false)
-            setClassnameProfessor(false)
-            setTimeout(() => {
-                setClassnameProfessor(true)
-            }, 2000)
-        }
-        console.log(validation)
-        if(boxModeProfessor){
-            setBoxModeProfessor(true)
-        }
-        else{
-            setTimeout(() => {
-                setBoxModeProfessor(false)
-            }, 2000)
-        }
+            const validation = await axios.post("http://localhost:8080/users/authProfessor", { usuario: userProfessor, senha: passwordProfessor })
+            if (validation.status === 200) {
+                if (validation.data.length == 1) { 
+                    setBoxModeProfessor(true)
+                    setLoginModeProfessor(true)
+                    setMensageProfessor(`Seja bem vindo, ${userProfessor}`)
+    
+                    setTimeout(() => {
+                        setOverlay(true)
+                        setUserProfessor("")
+                        setPasswordProfessor("")
+                        setTimeout(() => {
+                            window.location.href = '/login/informações-acessoProfessor';
+                        }, 1500);
+                    }, 2000);
+                } else if(validation.data.length == 0) {
+                    setBoxModeProfessor(true)
+                    setLoginModeProfessor(false)
+                    setMensageProfessor(`Nome de usuário ou senha incorretos.`)
+                    setUserProfessor("")
+                    setPasswordProfessor("")
+                    setFocusUserProfessor(false)
+                    setFocusPassWProfessor(false)
+                    setClassnameProfessor(false)
+                    setTimeout(() => {
+                    setClassnameProfessor(true)
+                    }, 2000)
+                }
+            }
+        setTimeout(() => {
+            setBoxModeProfessor(false)
+        }, 2000)
     }
 
     const handleFocusUserProfessor = () => {
@@ -170,10 +164,28 @@ function Login (){
     const [activeLogin, setActiveLogin] = useState(true)
     const handleOnClickSouAluno = () =>{
         setActiveLogin(true)
+        setUserAluno("")
+        setPasswordAluno("")
+        setUserProfessor("")
+        setPasswordProfessor("")
+
+        setFocusPassWAluno(false)
+        setFocusUserAluno(false)
+        setFocusPassWProfessor(false)
+        setFocusUserProfessor(false)
     }
 
     const handleOnClickSouProfessor = () =>{
         setActiveLogin(false)
+        setUserAluno("")
+        setPasswordAluno("")
+        setUserProfessor("")
+        setPasswordProfessor("")
+
+        setFocusPassWAluno(false)
+        setFocusUserAluno(false)
+        setFocusPassWProfessor(false)
+        setFocusUserProfessor(false)
     }
 
     const [mouseOnProf, setMouseOnProf] = useState(false)

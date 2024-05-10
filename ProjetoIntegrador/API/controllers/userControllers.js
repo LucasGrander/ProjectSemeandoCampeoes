@@ -178,13 +178,15 @@ export const deleteUsers = (req, res) => {
     })
 }
 
-//verificar isso na aula
+
+// -----------------------------------    VERIFICAÇÃO DADOS LOGIN      ------------------------------------------------------------
+
 export const verifyLoginProfessor = (req, res) => {
     const { usuario, senha } = req.body
 
     const sqlLoginProfessor = `select * from loginprofessor where usuario = ? and senha = ?`
     db.query(sqlLoginProfessor, [usuario, senha], function(err, data) {
-        if(data <= 0){
+        if(err){
             console.log("Erro ao adquerir dados de login")
             return res.status(500).json(err)
         }else{
