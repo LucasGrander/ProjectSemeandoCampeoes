@@ -9,7 +9,7 @@ router.post("/", addUsers)
 router.put("/", updateUsers)
 router.delete("/", deleteUsers)
 
-// verificar isso na aula
-router.post("/", verifyLoginProfessor)
+// ROTA DE AUTENTICAÇÃO
+router.post("/auth", verifyLoginProfessor)
 
 export default router
