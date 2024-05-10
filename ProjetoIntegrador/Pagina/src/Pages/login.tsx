@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState } from "react"
 import './login.css'
-// import { useNavigate } from "react-router-dom";
-import MyInput from "../components/MyInput";
-import LogoSemeandoCampeoes from "../assets/LogoSemeandoCampeoes.png";
-import MyButton from "../components/MyButton";
+import MyInput from "../components/MyInput"
+import LogoSemeandoCampeoes from "../assets/LogoSemeandoCampeoes.png"
+import MyButton from "../components/MyButton"
 import blockICON from '../assets/lockIcon.svg'
 import userICON from '../assets/userIconLogin.svg'
 import designLogin from '../assets/designForLogin.svg'
@@ -22,6 +21,8 @@ function Login (){
     const [focusUserAluno, setFocusUserAluno] = useState(false)
     const [focusPassWAluno, setFocusPassWAluno] = useState(false)
     const [clasnameAluno, setClassnameAluno] = useState(true)
+
+
 
     const handleMensageShowedAluno = () => {
         setBoxModeAluno(true)
@@ -50,7 +51,7 @@ function Login (){
 
             setTimeout(() => {
                 setClassnameAluno(true)
-            }, 2000);
+            }, 2000)
         }
 
         if(boxModeAluno){
@@ -123,7 +124,7 @@ function Login (){
             setClassnameProfessor(false)
             setTimeout(() => {
                 setClassnameProfessor(true)
-            }, 2000);
+            }, 2000)
         }
 
         if(boxModeProfessor){
@@ -163,7 +164,7 @@ function Login (){
     
     // center da página (alteração de container-login)
     
-    const [activeLogin, setActiveLogin] = useState(true);
+    const [activeLogin, setActiveLogin] = useState(true)
     const handleOnClickSouAluno = () =>{
         setActiveLogin(true)
     }

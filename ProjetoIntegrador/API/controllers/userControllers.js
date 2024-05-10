@@ -85,7 +85,7 @@ c.nome_cidade
 // -----------------------------------    ADD USER      ------------------------------------------------------------
 
 export const addUsers = (req, res) => {
-    const { nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, id_faixa, rua, numero, bairro, nome_cidade } = req.body
+        const { nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, id_faixa, rua, numero, bairro, nome_cidade } = req.body
 
     const sqlCidade = `insert into cidade (nome_cidade) values (?)`
     db.query(sqlCidade, [nome_cidade], function(err, resultCidade) {
@@ -96,7 +96,7 @@ export const addUsers = (req, res) => {
 
         const cidadeId = resultCidade.insertId
 
-        const sqlEndereco = `insert into endereco (id_cidade, rua, numero, bairro) values (?, ?, ?, ?)`;
+        const sqlEndereco = `insert into endereco (id_cidade, rua, numero, bairro) values (?, ?, ?, ?)`
         db.query(sqlEndereco, [cidadeId, rua, numero, bairro], function(err, resultEndereco) {
             if (err) { 
                 console.log("Erro ao inserir na tabela endereco:", err)
@@ -174,6 +174,19 @@ export const deleteUsers = (req, res) => {
         else{
             console.log("Dados do usuário remo com sucesso")
             return res.status(200).json(data)
+        }
+    })
+}
+
+//verificar isso na aula
+export const verifyLoginProfessor = (db, req, res) => {
+    const { usuario, senha } = req.body
+
+    const sqlLoginProfessor = `select * from loginprofessor where usuario = ? and senha = ?`
+    db.query(sqlLoginProfessor, [usuario, senha], function(err) {
+        if(err){
+            console.log("Erro ao adquerir dados de login")
+            return res.status(500).json(err)
         }
     })
 }

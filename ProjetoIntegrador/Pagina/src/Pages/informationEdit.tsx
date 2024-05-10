@@ -401,16 +401,6 @@ const [colorButton, setColorButton] = useState(false)
     setBairro("")
     }
 
-    const handleDeleteBoxStateClose = () => {
-        setBoxForCrud(false)
-
-        setTimeout(() => {
-        setBoxForCrud(true)
-        setTextForPostAndPut(`Ação cancelada`)
-        setActionCrudColor("box-postput-removed")
-        }, 100);
-    }
-
   const handleDeleteInfos = async (id : number) => {
     await axios.delete(`http://localhost:8080/users?id=${id}`)
     handleGetInfos()
