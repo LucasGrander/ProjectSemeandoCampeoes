@@ -19,6 +19,7 @@ import LogoInstagram from "../assets/instagram.svg"
 import LogoFacebook from "../assets/facebook.svg"
 import LogoWhatszap from '../assets/whatsapp.svg'
 import closePage from "../assets/closePage.svg"
+import axios from 'axios'
 
 
 const Cadaster = () => {
@@ -48,8 +49,7 @@ const Cadaster = () => {
             setOverlay(false)
         }, 2000)
     }
-
-
+    
     // *************************** Validação de label --- INFOS PESSOAIS ********************************
     //nome
     const [focusNome, setFocusNome] = useState(false)
