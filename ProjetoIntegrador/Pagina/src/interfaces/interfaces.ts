@@ -32,3 +32,5 @@ export interface Endereco{
 export interface Cidade{
     nome_cidade: string
 }
+
+
