@@ -4,13 +4,13 @@ export const db = mysql.createConnection({
     host:"localhost",
     port: "3306",
     user: "root",
-    password:"root",
+    password:"admin",
     database: "semeando_campeoes"
 })
 
 db.connect((err) => {
     if(err){
-        console.log(`Erro ao tenttar se conectar com o banco de dados`)
+        console.log(`Erro ao tentar se conectar com o banco de dados`)
         return
     }
     else{
