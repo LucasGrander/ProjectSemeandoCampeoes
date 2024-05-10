@@ -172,7 +172,7 @@ export const deleteUsers = (req, res) => {
             return res.status(500).json(err)
         }
         else{
-            console.log("Dados do usuário remo com sucesso")
+            console.log("Dados do usuário removidos com sucesso")
             return res.status(200).json(data)
         }
     })
@@ -184,11 +184,11 @@ export const verifyLoginProfessor = (req, res) => {
 
     const sqlLoginProfessor = `select * from loginprofessor where usuario = ? and senha = ?`
     db.query(sqlLoginProfessor, [usuario, senha], function(err, data) {
-        if(err){
+        if(data <= 0){
             console.log("Erro ao adquerir dados de login")
             return res.status(500).json(err)
         }else{
-            console.log("Dados do usuário remo com sucesso")
+            console.log("Dados de login adquiridos com sucesso")
             return res.status(200).json(data)
         }
     })

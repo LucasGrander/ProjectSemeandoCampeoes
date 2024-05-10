@@ -9,6 +9,7 @@ import designLogin from '../assets/designForLogin.svg'
 import stickmanLogin from '../assets/vetor-JiuJitsu-fight.png'
 import stickmanLogin2 from '../assets/vetor-JiuJitsu-fight-2.png'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
+import axios from "axios"
 
 function Login (){
 
@@ -98,9 +99,11 @@ function Login (){
     const [focusPassWProfessor, setFocusPassWProfessor] = useState(false)
     const [clasnameProfessor, setClassnameProfessor] = useState(true)
 
-    const handleMensageShowedProfessor = () => {
+    const handleMensageShowedProfessor = async () => {
         setBoxModeProfessor(true)
-        if(userProfessor == "Ricardo" && passwordProfessor == "123"){
+        const validation = await axios.post("http://localhost:8080/users/auth",{usuario: userProfessor, senha: passwordProfessor})
+        
+        if(validation.status == 200){
             setLoginModeProfessor(true)
             setMensageProfessor(`Seja bem vindo, ${userProfessor}`)
             
@@ -126,14 +129,14 @@ function Login (){
                 setClassnameProfessor(true)
             }, 2000)
         }
-
+        console.log(validation)
         if(boxModeProfessor){
             setBoxModeProfessor(true)
         }
         else{
-        setTimeout(() => {
-            setBoxModeProfessor(false)
-        }, 2000)
+            setTimeout(() => {
+                setBoxModeProfessor(false)
+            }, 2000)
         }
     }
 
