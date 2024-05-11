@@ -195,3 +195,21 @@ export const verifyLoginProfessor = (req, res) => {
         }
     })
 }
+
+
+// -----------------------------------    VERIFICAÇÃO DADOS LOGIN      ------------------------------------------------------------
+
+export const verifyLoginAluno = (req, res) => {
+    const { usuario, senha } = req.body
+
+    const sqlLoginProfessor = `select * from loginaluno where usuario = ? and senha = ?`
+    db.query(sqlLoginProfessor, [usuario, senha], function(err, data) {
+        if(err){
+            console.log("Erro ao adquerir dados de login")
+            return res.status(500).json(err)
+        }else{
+            console.log("Dados de login adquiridos com sucesso")
+            return res.status(200).json(data)
+        }
+    })
+}

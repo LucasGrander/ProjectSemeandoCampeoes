@@ -1,5 +1,5 @@
 import express from 'express'
-import { addUsers, deleteUsers, getUsers, updateUsers, verifyLoginProfessor } from '../controllers/userControllers.js';
+import { addUsers, deleteUsers, getUsers, updateUsers, verifyLoginAluno, verifyLoginProfessor } from '../controllers/userControllers.js';
 
 
 const router = express.Router();
@@ -11,5 +11,6 @@ router.delete("/", deleteUsers)
 
 // ROTA DE AUTENTICAÇÃO
 router.post("/authProfessor", verifyLoginProfessor)
+router.post("/authAluno", verifyLoginAluno)
 
 export default router

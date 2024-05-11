@@ -25,34 +25,37 @@ function Login (){
 
 
 
-    const handleMensageShowedAluno = () => {
+    const handleMensageShowedAluno = async () => {
         setBoxModeAluno(true)
-        if(userAluno == "Lucas" && passwordAluno == "123"){
-            setLoginModeAluno(true)
-            setMensageAluno(`Seja bem vindo, ${userAluno}`)
-            
-            setTimeout(() => {
-                setOverlay(true)
+        const validationAluno = await axios.post("http://localhost:8080/users/authAluno", { usuario: userAluno, senha: passwordAluno })
+        if(validationAluno.status == 200){""
+            if(validationAluno.data.length == 1){
+                setLoginModeAluno(true)
+                setMensageAluno(`Seja bem vindo, ${userAluno}`)
+                
+                setTimeout(() => {
+                    setOverlay(true)
+                    setUserAluno("")
+                    setPasswordAluno("")
+                    setTimeout(()=>{
+                        window.location.href = '/login/informações-acessoAluno'
+                    },1500)
+                }, 2000)
+            }
+            else if(validationAluno.data.length == 0){
+                setLoginModeAluno(false)
+                setMensageAluno(`Nome de usuário ou senha incorretos.`)
                 setUserAluno("")
                 setPasswordAluno("")
-                setTimeout(()=>{
-                    window.location.href = '/login/informações-acessoAluno'
-                },1500)
-            }, 2000)
-        }
-        else{
-            setLoginModeAluno(false)
-            setMensageAluno(`Nome de usuário ou senha incorretos.`)
-            setUserAluno("")
-            setPasswordAluno("")
-            setFocusUserAluno(false)
-            setFocusPassWAluno(false)
+                setFocusUserAluno(false)
+                setFocusPassWAluno(false)
 
-            setClassnameAluno(false)
+                setClassnameAluno(false)
 
-            setTimeout(() => {
-                setClassnameAluno(true)
-            }, 2000)
+                setTimeout(() => {
+                    setClassnameAluno(true)
+                }, 2000)
+            }
         }
 
         if(boxModeAluno){
@@ -100,22 +103,22 @@ function Login (){
     const [clasnameProfessor, setClassnameProfessor] = useState(true)
 
     const handleMensageShowedProfessor = async () => {
-            const validation = await axios.post("http://localhost:8080/users/authProfessor", { usuario: userProfessor, senha: passwordProfessor })
-            if (validation.status === 200) {
-                if (validation.data.length == 1) { 
+            const validationProfessor = await axios.post("http://localhost:8080/users/authProfessor", { usuario: userProfessor, senha: passwordProfessor })
+            if (validationProfessor.status === 200) {
+                if (validationProfessor.data.length == 1) { 
                     setBoxModeProfessor(true)
                     setLoginModeProfessor(true)
                     setMensageProfessor(`Seja bem vindo, ${userProfessor}`)
     
                     setTimeout(() => {
-                        setOverlay(true)
+                        setOverlay(true)    
                         setUserProfessor("")
                         setPasswordProfessor("")
                         setTimeout(() => {
                             window.location.href = '/login/informações-acessoProfessor';
                         }, 1500);
                     }, 2000);
-                } else if(validation.data.length == 0) {
+                } else if(validationProfessor.data.length == 0) {
                     setBoxModeProfessor(true)
                     setLoginModeProfessor(false)
                     setMensageProfessor(`Nome de usuário ou senha incorretos.`)
