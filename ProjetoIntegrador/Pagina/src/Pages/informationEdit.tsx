@@ -775,14 +775,36 @@ const [colorButton, setColorButton] = useState(false)
                     />
                 </div>
 
-                <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='rua'>Rua</label>
+                <div className="container-comp-num">
+                    <div className="button-label-rua">
+                        <label className="labelFocused" htmlFor='rua'>Rua</label>
+                        <MyInput
+                            id="rua"
+                            value={rua.length > 0 ? rua : ""}
+                            onChange={(e) => setRua(e.target.value)}
+                            type='text'
+                            width= "90%"
+                            height= "7vh"
+                            padding="0vh 3vh 0vh 2.5vh"
+                            fontSize= "2.4vh"
+                            border= "solid .3vh black"
+                            borderBottom="solid .3vh black"
+                            borderRadius='.6vh'
+                            backgroundColor="transparent"
+                            transition= ".4s"
+                            enter= "transparent"
+                            leave= "transparent"
+                        />
+                    </div>
+
+                    <div className="button-label-numcasa">
+                    <label className="labelFocused" htmlFor='numCasa'>Número</label>
                     <MyInput
-                        id="rua"
-                        value={rua.length > 0 ? rua : ""}
-                        onChange={(e) => setRua(e.target.value)}
+                        id="numCasa"
+                        value={numCasa.length > 0 ? numCasa : ""}
+                        onChange={(e) => setNumCasa(e.target.value)}
                         type='text'
-                        width= "90%"
+                        width= "80%"
                         height= "7vh"
                         padding="0vh 3vh 0vh 2.5vh"
                         fontSize= "2.4vh"
@@ -795,26 +817,6 @@ const [colorButton, setColorButton] = useState(false)
                         leave= "transparent"
                     />
                 </div>
-
-                <div className="button-label-editUser">
-                    <label className="labelFocused" htmlFor='numCasa'>Numero da residência</label>
-                    <MyInput
-                        id="numCasa"
-                        value={numCasa.length > 0 ? numCasa : ""}
-                        onChange={(e) => setNumCasa(e.target.value)}
-                        type='text'
-                        width= "90%"
-                        height= "7vh"
-                        padding="0vh 3vh 0vh 2.5vh"
-                        fontSize= "2.4vh"
-                        border= "solid .3vh black"
-                        borderBottom="solid .3vh black"
-                        borderRadius='.6vh'
-                        backgroundColor="transparent"
-                        transition= ".4s"
-                        enter= "transparent"
-                        leave= "transparent"
-                    />
                 </div>
 
                 <div className="save-cancel">

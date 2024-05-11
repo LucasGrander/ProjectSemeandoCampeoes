@@ -82,7 +82,7 @@ c.nome_cidade
     })
 }
 
-// -----------------------------------    ADD USER      ------------------------------------------------------------
+// -----------------------------------    ADD PARTICIPANTE      ------------------------------------------------------------
 
 export const addUsers = (req, res) => {
         const { nome, data_de_nascimento, telefone, responsavel, id_centro_de_treinamento, id_faixa, rua, numero, bairro, nome_cidade } = req.body
@@ -119,7 +119,7 @@ export const addUsers = (req, res) => {
     })
 }
 
-// -----------------------------------    UPDATE USER      ------------------------------------------------------------
+// -----------------------------------    UPDATE PARTICIPANTE      ------------------------------------------------------------
 
 export const updateUsers = (req, res) => {
     const sqlPessoa =
@@ -159,7 +159,7 @@ export const updateUsers = (req, res) => {
 
 
 
-// -----------------------------------    REMOVE USER      ------------------------------------------------------------
+// -----------------------------------    REMOVE PARTICIPANTE     ------------------------------------------------------------
 
 export const deleteUsers = (req, res) => {
     const sql = "delete from participante where id = ?"
@@ -173,42 +173,6 @@ export const deleteUsers = (req, res) => {
         }
         else{
             console.log("Dados do usuário removidos com sucesso")
-            return res.status(200).json(data)
-        }
-    })
-}
-
-
-// -----------------------------------    VERIFICAÇÃO DADOS LOGIN      ------------------------------------------------------------
-
-export const verifyLoginProfessor = (req, res) => {
-    const { usuario, senha } = req.body
-
-    const sqlLoginProfessor = `select * from loginprofessor where usuario = ? and senha = ?`
-    db.query(sqlLoginProfessor, [usuario, senha], function(err, data) {
-        if(err){
-            console.log("Erro ao adquerir dados de login")
-            return res.status(500).json(err)
-        }else{
-            console.log("Dados de login adquiridos com sucesso")
-            return res.status(200).json(data)
-        }
-    })
-}
-
-
-// -----------------------------------    VERIFICAÇÃO DADOS LOGIN      ------------------------------------------------------------
-
-export const verifyLoginAluno = (req, res) => {
-    const { usuario, senha } = req.body
-
-    const sqlLoginProfessor = `select * from loginaluno where usuario = ? and senha = ?`
-    db.query(sqlLoginProfessor, [usuario, senha], function(err, data) {
-        if(err){
-            console.log("Erro ao adquerir dados de login")
-            return res.status(500).json(err)
-        }else{
-            console.log("Dados de login adquiridos com sucesso")
             return res.status(200).json(data)
         }
     })

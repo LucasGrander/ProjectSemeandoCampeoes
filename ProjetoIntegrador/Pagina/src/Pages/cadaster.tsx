@@ -13,7 +13,6 @@ import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import cityICON from '../assets/city.svg'
 import streetICON from '../assets/street.svg'
 import neighICON from '../assets/neigh.svg'
-import complementICON from '../assets/complemento.svg'
 import numResidICON from '../assets/numResid.svg'
 import LogoInstagram from "../assets/instagram.svg"
 import LogoFacebook from "../assets/facebook.svg"
@@ -69,6 +68,9 @@ const Cadaster = () => {
 
     // data de nascimento
     const [valueDate, setValueDate] = useState("")
+
+    // telefone
+    const [valueTelefone, setValueTelefone] = useState("")
 
     //nome do responsável
     const [focusNomeResp, setFocusNomeResp] = useState(false)
@@ -134,22 +136,8 @@ const Cadaster = () => {
             setFocusRua(true)
         }
     }
-    //complemento
-    const [focusComplemento, setFocusComplemento] = useState(false)
-    const [valueComplemento, setValueComplemento] = useState("")
 
-    const handleFocusedComplemento = () => {
-        setFocusComplemento(true)
-    }
-    const handleNotFocusedComplemento = () => {
-        if(valueComplemento.trim() == ""){
-            setFocusComplemento(false)
-        }
-        else{
-            setFocusComplemento(true)
-        }
-    }
-    //complemento
+    //numero da residência
     const [focusNumRes, setFocusNumRes] = useState(false)
     const [valueNumRes, setValueNumRes] = useState("")
 
@@ -165,20 +153,34 @@ const Cadaster = () => {
         }
     }
 
-    //select box do centro de treinamento
-    const [focusSelectBox, setFocusSelectBox] = useState(false)
-    const [valueSelectBox, setvalueSelectBox] = useState("")
+    //select box do centro de treinamento e faixa
+    const [focusSelectBoxCT, setFocusSelectBoxCT] = useState(false)
+    const [valueSelectBoxCT, setvalueSelectBoxCT] = useState("")
+    const [focusSelectBoxFaixa, setFocusSelectBoxFaixa] = useState(false)
+    const [valueSelectBoxFaixa, setvalueSelectBoxFaixa] = useState("")
 
-    const handleFocusedSelectBox = () => {
-        setFocusSelectBox(true)
-    }
-    const handleNotFocusedSelectBox = () => {
-        if(valueSelectBox.trim() == ""){
-            setFocusSelectBox(false)
+    const handleNotFocusedSelectBoxCT = () => {
+        if(valueSelectBoxCT.trim() == ""){
+            setFocusSelectBoxCT(false)
         }
         else{
-            setFocusSelectBox(true)
+            setFocusSelectBoxCT(true)
         }
+    }
+    const handleFocusedSelectBoxCT = () => {
+        setFocusSelectBoxCT(true)
+    }
+
+    const handleNotFocusedSelectBoxFaixa = () => {
+        if(valueSelectBoxFaixa.trim() == ""){
+            setFocusSelectBoxFaixa(false)
+        }
+        else{
+            setFocusSelectBoxFaixa(true)
+        }
+    }
+    const handleFocusedSelectBoxFaixa = () => {
+        setFocusSelectBoxFaixa(true)
     }
 
     // ********************** verificação se todos os inputs estão com algum value **************************
@@ -186,7 +188,7 @@ const Cadaster = () => {
     const [eventButton, setEventButton] = useState(false)
 
     const handleCheckEventButton = () => {
-        if(valueNome.trim() != "" && valueDate.trim() != "" && valueCity.trim() != "" && valueBairro.trim() != "" && valueRua.trim() != "" && valueComplemento.trim() != "" && valueNumRes.trim() != "" && valueSelectBox != ""){
+        if(valueNome.trim() != "" && valueDate.trim() != "" && valueCity.trim() != "" && valueBairro.trim() != "" && valueRua.trim() != "" && valueNumRes.trim() != "" && valueSelectBoxCT != "" && valueSelectBoxFaixa != ""){
             setEventButton(true)
             setMsgInputs(false)
         }
@@ -206,6 +208,7 @@ const Cadaster = () => {
     const [popUpBox, setPopUpBox] = useState(false)
 
     const handleOnClickSendCadaster = () => {
+        handleSendInfosToDatabase()
         setTimeout(()=> {
             setPopUp(true)
             setPopUpBox(true)
@@ -228,15 +231,21 @@ const Cadaster = () => {
             setFocusBairro(false)
             setValueRua("")
             setFocusRua(false)
-            setValueComplemento("")
-            setFocusComplemento(false)
             setValueNumRes("")
             setFocusNumRes(false)
-            setvalueSelectBox("")
-            setFocusSelectBox(false)
+            setvalueSelectBoxCT("")
+            setFocusSelectBoxCT(false)
+            setvalueSelectBoxFaixa("")
+            setFocusSelectBoxFaixa(false)
+            setValueTelefone("")
+
         }, 1100);
     }
 
+    const handleSendInfosToDatabase = async () => {
+        await axios.post("http://localhost:8080/users/queue", {nome: valueNome, data_de_nascimento: valueDate, telefone: valueTelefone, responsavel: valueNomeResp, id_centro_de_treinamento: valueSelectBoxCT, id_faixa: valueSelectBoxFaixa, rua: valueRua, numero: valueNumRes, bairro: valueBairro, nome_cidade: valueCity})
+    }
+    
     return(
         <div onMouseMove={handleCheckEventButton} className="page-cadaster">
             <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
@@ -320,7 +329,8 @@ const Cadaster = () => {
                             <div className="button-label-container">
                             <label className={"labelFocusedTelefone"} htmlFor='telefone'>Número de telefone</label>
                                 <MyPhoneButton
-
+                                    value={valueTelefone}
+                                    onChange={(value) => setValueTelefone(value)}
                                 />
                                     <img src={tel}></img>
                             </div>
@@ -401,42 +411,17 @@ const Cadaster = () => {
                                 <img src={neighICON}></img>
                             </div>
 
-                            <div className="button-label-container">
-                                <label className={focusRua ? "labelFocusedRua" : "labelNotFocusedRua"} htmlFor='rua'>Rua</label>
-                                <MyInput
-                                    id="rua"
-                                    value={valueRua}
-                                    onChange={(e) => setValueRua(e.target.value)}
-                                    onFocus={handleFocusedRua}
-                                    onBlur={handleNotFocusedRua}
-                                    className={focusRua ? "focusedRua" : "notFocusedRua"}
-                                    type='text'
-                                    width= "90%"
-                                    height= "100%"
-                                    padding="0vh 8vh 0vh 2.5vh"
-                                    fontSize= "2.4vh"
-                                    border= "solid .3vh black"
-                                    borderBottom="solid .3vh black"
-                                    borderRadius='.6vh'
-                                    backgroundColor="transparent"
-                                    transition= ".4s"
-                                    enter= "transparent"
-                                    leave= "transparent"
-                                />
-                                <img src={streetICON}></img>
-                            </div>
-
                             <div className="container-comp-num">
                                 <div className="button-label-container-comp">
                                     <div className="complemento"></div>
-                                    <label className={focusComplemento ? "labelFocusedComplemento" : "labelNotFocusedComplemento"} htmlFor='complemento'>Complemento</label>
+                                    <label className={focusRua ? "labelFocusedRua" : "labelNotFocusedRua"} htmlFor='rua'>Rua</label>
                                     <MyInput
-                                        id="complemento"
-                                        value={valueComplemento}
-                                        onChange={(e) => setValueComplemento(e.target.value)}
-                                        onFocus={handleFocusedComplemento}
-                                        onBlur={handleNotFocusedComplemento}
-                                        className={focusComplemento ? "focusedComplemento" : "notFocusedComplemento"}
+                                        id="rua"
+                                        value={valueRua}
+                                        onChange={(e) => setValueRua(e.target.value)}
+                                        onFocus={handleFocusedRua}
+                                        onBlur={handleNotFocusedRua}
+                                        className={focusRua ? "focusedRua" : "notFocusedRua"}
                                         type='text'
                                         width= "90%"
                                         height= "100%"
@@ -449,9 +434,8 @@ const Cadaster = () => {
                                         transition= ".4s"
                                         enter= "transparent"
                                         leave= "transparent"
-                                        ph={focusComplemento ? "Ex: Casa, apartamento..." : ""}
                                     />
-                                    <img src={complementICON}></img>
+                                    <img src={streetICON}></img>
                                 </div>
 
                                 <div className="button-label-container-num">
@@ -484,14 +468,39 @@ const Cadaster = () => {
                             <span className='title-info-ct'>Escolha um local de treino:</span>
 
                             <div className="button-label-container">
-                                <label className={focusSelectBox ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='ct'>Centro de treinamento</label>
-                                <select value={valueSelectBox} onChange={(e) => setvalueSelectBox(e.target.value)} onFocus={handleFocusedSelectBox} onBlur={handleNotFocusedSelectBox} className='ct-box-pick' name="ct" id="ct">
+                                <label className={focusSelectBoxCT ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='ct'>Centro de treinamento</label>
+                                <select value={valueSelectBoxCT} onChange={(e) => setvalueSelectBoxCT(e.target.value)} onFocus={handleFocusedSelectBoxCT} onBlur={handleNotFocusedSelectBoxCT} className='ct-box-pick' name="ct" id="ct">
                                     <option value="0" hidden></option>
                                     <option value="5" disabled>*Selecione um centro de treinamento:</option>
                                     <option value="1">Centro de treinamento  -  Centro </option>
                                     <option value="2">Centro de treinamento  -  Lar Paraná</option>
                                     <option value="3">Centro de treinamento  -  Iretama </option>
                                     <option value="4">Centro de treinamento  -  ??? </option>
+                                </select>
+                            </div>
+
+                            <div className="button-label-container">
+                                <label className={focusSelectBoxFaixa ? "labelFocusedNome" : "labelNotFocusedNome"} htmlFor='faixa'>Cor da faixa</label>
+                                <select value={valueSelectBoxFaixa} onChange={(e) => setvalueSelectBoxFaixa(e.target.value)} onFocus={handleFocusedSelectBoxFaixa} onBlur={handleNotFocusedSelectBoxFaixa}className='ct-box-pick' name="faixa" id="faixa">
+                                    <option value="0" hidden></option>
+                                    <option value="99" disabled>*Selecione a faixa do participante</option>
+                                    <option value="1">Branca</option>
+                                    <option value="2">Cinza/Branca</option>
+                                    <option value="3">Cinza</option>
+                                    <option value="4">Cinza/Preta</option>
+                                    <option value="5">Amarela/Branca</option>
+                                    <option value="6">Amarela</option>
+                                    <option value="7">Amarela/Preta</option>
+                                    <option value="8">Laranja/Branca</option>
+                                    <option value="9">Laranja</option>
+                                    <option value="10">Laranja/Preta</option>
+                                    <option value="11">Verde/Branca</option>
+                                    <option value="12">Verde</option>
+                                    <option value="13">Verde/Preta</option>
+                                    <option value="14">Azul</option>
+                                    <option value="15">Roxa</option>
+                                    <option value="16">Marrom</option>
+                                    <option value="17">Preta</option>
                                 </select>
                             </div>
 
@@ -560,17 +569,37 @@ const Cadaster = () => {
                                 <li><strong>Cidade: </strong>{valueCity}</li>
                                 <li><strong>Bairro: </strong> {valueBairro}</li>
                                 <li><strong>Rua: </strong> {valueRua}</li>
-                                <li><strong>Complemento: </strong> {valueComplemento}</li>
                                 <li><strong>Número da residência: </strong> {valueNumRes}</li>
                                 <br />
                                 <span>Local de treino escolhido</span>
 
                                 <li>
                                     <strong>Centro de treinamento: </strong>
-                                    {valueSelectBox == '1' && "Centro de treinamento - Centro"}
-                                    {valueSelectBox == '2' && "Centro de treinamento - Lar Parana"}
-                                    {valueSelectBox == '3' && "Centro de treinamento - Iretama"}
-                                    {valueSelectBox == '4' && "Centro de treinamento - ???"}
+                                    {valueSelectBoxCT == '1' && "Centro de treinamento - Centro"}
+                                    {valueSelectBoxCT == '2' && "Centro de treinamento - Lar Parana"}
+                                    {valueSelectBoxCT == '3' && "Centro de treinamento - Iretama"}
+                                    {valueSelectBoxCT == '4' && "Centro de treinamento - ???"}
+                                </li>
+
+                                <li>
+                                    <strong>Faixa: </strong>
+                                    {valueSelectBoxFaixa == '1' && "Branca"}
+                                    {valueSelectBoxFaixa == '2' && "Cinza/Branca"}
+                                    {valueSelectBoxFaixa == '3' && "Cinza"}
+                                    {valueSelectBoxFaixa == '4' && "Cinza/Preta"}
+                                    {valueSelectBoxFaixa == '5' && "Amarela/Branca"}
+                                    {valueSelectBoxFaixa == '6' && "Amarela"}
+                                    {valueSelectBoxFaixa == '7' && "Amarela/Preta"}
+                                    {valueSelectBoxFaixa == '8' && "Laranja/Branca"}
+                                    {valueSelectBoxFaixa == '9' && "Laranja"}
+                                    {valueSelectBoxFaixa == '10' && "Laranja/Preta"}
+                                    {valueSelectBoxFaixa == '11' && "Verde/Branca"}
+                                    {valueSelectBoxFaixa == '12' && "Verde"}
+                                    {valueSelectBoxFaixa == '13' && "Verde/Preta"}
+                                    {valueSelectBoxFaixa == '14' && "Azul"}
+                                    {valueSelectBoxFaixa == '15' && "Roxa"}
+                                    {valueSelectBoxFaixa == '16' && "Marrom"}
+                                    {valueSelectBoxFaixa == '17' && "Preta"}
                                 </li>
 
                             </ul>
