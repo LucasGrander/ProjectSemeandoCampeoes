@@ -430,7 +430,8 @@
     align-items: center;
     justify-content: center;
     width: auto;
-
+    
+    cursor: pointer;
     z-index: 1;
 }
 
