@@ -119,25 +119,30 @@ const Home = () => {
             </MyButton>
 
             <MyButton
-                onClick={handleOnClickParticipe}
-                width="30vh"
-                height="6vh"
-                cursor="pointer"
-                display="flex"
-                justifyContent="space-evenly"
-                alignItems="center"
-                border="solid .3vh black"
-                borderBottom="solid .7vh black"
-                borderRadius=".4vh"
-                fontSize="2.5vh"
-                fontWeight="700"
-                transition=".3s"
-                boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
-                enter="rgba(150, 150, 150, 0.5)"
-                leave="white"
-                >
-                    Seja aluno!<img src={HandShake} alt='aperto de mãos' />
+                    onClick={handleOnClickParticipe}
+                    width="30vh"
+                    height="6vh"
+                    cursor="pointer"
+                    display="flex"
+                    justifyContent="space-evenly"
+                    alignItems="center"
+                    border="solid .3vh black"
+                    borderBottom="solid .7vh black"
+                    borderRadius=".4vh"
+                    fontSize="2.5vh"
+                    fontWeight="700"
+                    transition=".3s"
+                    boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
+                    enter="rgba(150, 150, 150, 0.5)"
+                    leave="white"
+                    zIndex='1'
+                    >
+                        Seja aluno!<img src={HandShake} alt='aperto de mãos' />
             </MyButton>
+
+            <div className="animation-highlight">
+                
+            </div>
             </nav>
 
             <div className="container-home">

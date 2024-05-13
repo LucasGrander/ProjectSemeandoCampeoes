@@ -259,3 +259,36 @@ nav button:hover img{
         transform: rotate(360deg);
     }
 }
+
+.animation-highlight{
+    width: 30vh;
+    height: 6vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    right: 59.5vh;
+
+    border-radius: .4vh;
+    animation: participeHighlightBorder 900ms infinite normal;
+}
+
+@keyframes participeHighlightBorder {
+    0%{
+        height: 6vh;
+        transform: scale(1);
+        border: .3vh solid rgba(0, 0, 0, 0.443);
+    }
+    70%{
+        height: 7vh;
+        transform: scale(1.1);
+        border: .3vh solid rgba(0, 0, 0, 0.405);
+    }
+    100%{
+        height: 7vh;
+        transform: scale(1.1);
+        border: .3vh solid rgba(0, 0, 0, 0.05);
+    }
+}

@@ -1,7 +1,7 @@
 import './informationEdit.css'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import { Participante } from '../interfaces/interfaces'
 
@@ -284,11 +284,14 @@ const [boxEditModeToAdd, setBoxEditModeToAdd] = useState(false)
 const [colorButton, setColorButton] = useState(false)
 
 
-  const handleGetInfos = async () => {
-    const res = await axios.get("http://localhost:8080/users")
-
-    setParticipants(res.data)
+const handleGetInfos = async () => {
+      const res = await axios.get("http://localhost:8080/users");
+      setParticipants(res.data);
   }
+
+  useEffect(() => {
+    handleGetInfos();
+  }, [])
 
   const handleUpdateInfos = async () => {
     if(activeId < 0){
