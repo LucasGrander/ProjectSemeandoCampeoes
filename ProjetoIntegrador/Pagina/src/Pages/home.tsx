@@ -14,6 +14,8 @@ import Historico from '../components/Historico'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import Footer from '../components/Footer'
 
+
+
 //exemplos de componentes a serem criados
   
   
