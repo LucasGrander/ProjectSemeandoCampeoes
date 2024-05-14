@@ -298,7 +298,7 @@ const [participants, setParticipants] = useState<Participante[]>([])
 
                         </div>
 
-                    <div className="input-pesquisa">
+                    <div className="input-pesquisa-see">
                         <div style={{display: todosFilter ? "flex" : "none", pointerEvents: "none"}}  className="filter-fixed">
                             <span>Todos</span>
                             <img src={lockICON}></img>
