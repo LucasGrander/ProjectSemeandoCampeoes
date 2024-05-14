@@ -42,7 +42,7 @@ const Instrutores = ({id}: Props) => {
             <div className="box-info">
                 <span>Ricardo Maciel Batista</span>
                 <p className='desc-breve' >Faixa Preta de Jiu Jitsu, Faixa azul de Judô, com Bacharelado e Licenciatura em Educação Física</p>
-                <p className='desc-instrutor'>Instrutor certificado pela Gracie Barra BJJ, Multiplicador institucional de Atendimento Pré-Hospitalar (APH) Tático pela Polícia Militar do Parana, APH/MARC 1 pela Polícia Civil do Paraná e Polícia Rodoviária Federal, técnico auxiliar de Wrestlling.</p>
+                <p className='desc-instrutor'>Professor e coordenador do PSC, instrutor certificado pela Gracie Barra BJJ, Multiplicador institucional de Atendimento Pré-Hospitalar (APH) Tático pela Polícia Militar do Parana, APH/MARC 1 pela Polícia Civil do Paraná e Polícia Rodoviária Federal, técnico auxiliar de Wrestlling.</p>
                 <div className="redes-sociais-instrutor">
                     <a target='_blank' href='https://www.instagram.com/rmbradock/'><img src={instaLOGO}></img></a> 
                     <a target='_blank' href='https://www.youtube.com/@ricardobatista5534'><img src={youtubeLOGO}></img></a> 

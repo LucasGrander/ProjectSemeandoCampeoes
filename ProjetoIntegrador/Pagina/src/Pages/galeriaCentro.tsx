@@ -1,9 +1,16 @@
 import './galeriaCentro.css'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
-import teste from '../assets/PSCLP.jpeg'
 import { useState } from 'react'
 import returnIcon from '../assets/returnIcon.svg'
+import CTCT1 from '../assets/CTCT1.jpg'
+import CTCT2 from '../assets/CTCT2.jpg'
+import CTCT3 from '../assets/CTCT3.jpg'
+import CTCT4 from '../assets/CTCT4.jpg'
+import CTCT5 from '../assets/CTCT5.jpg'
+import CTCT6 from '../assets/CTCT6.jpg'
+import CTCT7 from '../assets/CTCT7.jpg'
+import CTCT8 from '../assets/CTCT8.jpg'
 
 const GaleriaCentro = () => {
 
@@ -61,34 +68,34 @@ const GaleriaCentro = () => {
               </div>
             </div>
             <div className="box">
-              <img src={teste}></img>
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT1}></img></a>
             </div>
             <div className="box">
-              <img src={teste}></img>
-            </div>
-          </div>
-
-          <div className="content-tripple">
-            <div className="box">
-              {/* <img src={''}></img> */}
-            </div>
-            <div className="box">
-              {/* <img src={''}></img> */}
-            </div>
-            <div className="box">
-              {/* <img src={''}></img> */}
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT2}></img></a>
             </div>
           </div>
 
           <div className="content-tripple">
             <div className="box">
-              {/* <img src={''}></img> */}
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT3}></img></a>
             </div>
             <div className="box">
-              {/* <img src={''}></img> */}
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT4}></img></a>
             </div>
             <div className="box">
-              {/* <img src={''}></img> */}
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT5}></img></a>
+            </div>
+          </div>
+
+          <div className="content-tripple">
+            <div className="box">
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT6}></img></a>
+            </div>
+            <div className="box">
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT7}></img></a>
+            </div>
+            <div className="box">
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT8}></img></a>
             </div>
           </div>
 

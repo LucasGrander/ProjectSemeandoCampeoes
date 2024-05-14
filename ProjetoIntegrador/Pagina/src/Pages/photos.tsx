@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './photos.css'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
-import ImagemTemporaria from '../assets/temporaria-image.jpg'
 import PSCC from '../assets/PSCC.jpeg'
 import PSCLP from '../assets/PSCLP.jpeg'
 import Icopa from '../assets/Icopa.png'
@@ -16,6 +15,7 @@ import medalha from '../assets/medal.svg'
 import iconCamPhotos from '../assets/icon-camera-photo.svg'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import Footer from '../components/Footer'
+import CTIretama from '../assets/CTIretama11.jpg'
 
 
 const Photos = () => {
@@ -107,7 +107,7 @@ const Photos = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = 'http://www.facebook.com/share/owa7o2zN42ZJePRk/?'
+            window.location.href = 'https://www.facebook.com/media/set/?set=a.884445603684264&type=3'
         }, 1500)
 
         setTimeout(() => {
@@ -180,7 +180,7 @@ const Photos = () => {
                 </div>
 
                 <div className="box-ct">
-                        <img className='bg-box-cards' src={ImagemTemporaria} alt='imagem do ct'></img>
+                        <img className='bg-box-cards' src={CTIretama} alt='imagem do ct'></img>
                     <div className="name-ct">
                         <div className="infos-card-galeria">
                             <span>CT Iretama</span>

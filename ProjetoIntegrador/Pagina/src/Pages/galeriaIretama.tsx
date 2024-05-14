@@ -1,9 +1,16 @@
 import './galeriaIretama.css'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
-import teste from '../assets/PSCC.jpeg'
 import { useState } from 'react'
 import returnIcon from '../assets/returnIcon.svg'
+import CTI from '../assets/CTIretama.jpg'
+import CTI1 from '../assets/CTIretama3.jpg'
+import CTI2 from '../assets/CTIretama4.jpg'
+import CTI3 from '../assets/CTIretama8.jpg'
+import CTI4 from '../assets/CTIretama10.jpg'
+import CTI5 from '../assets/CTIretama5.jpg'
+import CTI6 from '../assets/CTIretama6.jpg'
+import CTI7 from '../assets/CTIretama7.jpg'
 
 const GaleriaIretama = () => {
   const [overlay, setOverlay] = useState (false)
@@ -60,34 +67,34 @@ const GaleriaIretama = () => {
                 </div>
               </div>
               <div className="box">
-                <img src={teste}></img>
+                <img src={CTI}></img>
               </div>
               <div className="box">
-                <img src={teste}></img>
+                <img src={CTI1}></img>
               </div>
           </div>
 
           <div className="content-tripple">
             <div className="box">
-              {/* <img src={''}></img> */}
+            <img src={CTI2}></img>
             </div>
             <div className="box">
-              {/* <img src={''}></img> */}
+            <img src={CTI3}></img>
             </div>
             <div className="box">
-              {/* <img src={''}></img> */}
+            <img src={CTI4}></img>
             </div>
           </div>
 
           <div className="content-tripple">
             <div className="box">
-              {/* <img src={''}></img> */}
+            <img src={CTI5}></img>
             </div>
             <div className="box">
-              {/* <img src={''}></img> */}
+            <img src={CTI6}></img>
             </div>
             <div className="box">
-              {/* <img src={''}></img> */}
+            <img src={CTI7}></img>
             </div>
           </div>
 
