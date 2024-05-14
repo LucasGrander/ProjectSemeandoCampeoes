@@ -67,7 +67,8 @@ c.nome_cidade
  join cidade c 
  	on e.id_cidade = c.id
  join faixa f
- 	on p.id_faixa = f.id 
+ 	on p.id_faixa = f.id
+order by p.nome
 `
 
     db.query (sql, (err, data)=> {
