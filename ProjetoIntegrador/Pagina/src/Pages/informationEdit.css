@@ -1,4 +1,4 @@
-.page-infos-edit{
+.page-infos-see{
     width: 100%;
     height: 100vh;
     position: relative;
@@ -9,7 +9,7 @@
 }
 
 
-.page-infos-edit header{
+.page-infos-see header{
     width: 100%;
     height: 18vh;
     z-index: 1;
@@ -21,14 +21,14 @@
     border-bottom: solid .8vh rgb(255, 0, 0);
 }
 
-.page-infos-edit header .logo{
+.page-infos-see header .logo{
     width: 15%;
     display: flex;
     justify-content: start;
     align-items: center;
 }
 
-.page-infos-edit header .logo img{
+.page-infos-see header .logo img{
     width: 16vh;
     height: 90%;
     margin-left: 9vh;
@@ -36,7 +36,7 @@
     border: solid .2vh white;
 }
 
-.page-infos-edit header .title{
+.page-infos-see header .title{
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -64,14 +64,14 @@
     position: fixed;
 }
 
-.page-infos-edit .overlay .loading-logo{
+.page-infos-see .overlay .loading-logo{
     width: 23vh;
     height: 23vh;
 
     animation: rotateLogoLoading 1s infinite;
 }
 
-.page-infos-edit .overlay .loading-top{
+.page-infos-see .overlay .loading-top{
     position: absolute;
 
     width: 29vh;
@@ -91,7 +91,7 @@
 
 /* LAYOUT DA PÁGINA DE EDIÇÃO */
 
-.page-infos-edit .container-edit-infos{
+.page-infos-see .container-edit-infos{
     width: 100%;
     height: 100vh;
 
@@ -100,7 +100,7 @@
     justify-content: center;
 }
 
-.page-infos-edit .container-edit-infos .box-edit-infos{
+.page-infos-see .container-edit-infos .box-edit-infos{
     width: 95%;
     height: 80vh;
     padding: 3vh;
@@ -117,7 +117,7 @@
     overflow: hidden;
 }
 
-.page-infos-edit .container-edit-infos .box-edit-infos .box-nav{
+.page-infos-see .container-edit-infos .box-edit-infos .box-nav{
     width: 100%;
     height: 10%;
 
