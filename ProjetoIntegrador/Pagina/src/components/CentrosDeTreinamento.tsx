@@ -1,10 +1,10 @@
 import './CentrosDeTreinamento.css'
-import AnyIMG from '../assets/react.svg'
 import PSCC from '../assets/PSCC.jpeg'
 import PSCLP from '../assets/PSCLP.jpeg'
 import PSC from '../assets/LogoSemeandoCampeoes.png'
 import instaLOGO from '../assets/instagram.svg'
 import whatsLOGO from '../assets/whatsapp.svg'
+import CTIretama from '../assets/CTIretama11.jpg'
 
 interface Props{
     id?: string;
@@ -50,7 +50,7 @@ const CentrosDeTreinamento = ({id}: Props) => {
 
             <div className="boxes">
                 <div className="imag-ct">
-                    <img src={AnyIMG} alt='imagem do ct'></img>
+                    <img src={CTIretama} alt='imagem do ct'></img>
                 </div>
                 <div className="adress">
                     <h2>CT Iretama</h2>

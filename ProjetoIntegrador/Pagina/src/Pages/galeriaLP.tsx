@@ -1,9 +1,16 @@
 import './galeriaLP.css'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
-import teste from '../assets/Icopa.png'
 import { useState } from 'react'
 import returnIcon from '../assets/returnIcon.svg'
+import CTLP1 from '../assets/CTLP1.jpg'
+import CTLP2 from '../assets/CTLP2.jpg'
+import CTLP3 from '../assets/CTLP3.jpg'
+import CTLP4 from '../assets/CTLP4.jpg'
+import CTLP5 from '../assets/CTCT5.jpg'
+import CTLP6 from '../assets/CTLP6.jpg'
+import CTLP7 from '../assets/CTLP7.jpg'
+import CTLP8 from '../assets/CTCT8.jpg'
 
 const GaleriaLP = () => {
   const [overlay, setOverlay] = useState (false)
@@ -60,34 +67,34 @@ const GaleriaLP = () => {
                 </div>
               </div>
             <div className="box">
-              <img src={teste}></img>
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTLP1}></img></a>
             </div>
             <div className="box">
-              <img src={teste}></img>
-            </div>
-          </div>
-
-          <div className="content-tripple">
-            <div className="box">
-              {/* <img src={''}></img> */}
-            </div>
-            <div className="box">
-              {/* <img src={''}></img> */}
-            </div>
-            <div className="box">
-              {/* <img src={''}></img> */}
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTLP2}></img></a>
             </div>
           </div>
 
           <div className="content-tripple">
             <div className="box">
-              {/* <img src={''}></img> */}
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTLP3}></img></a>
             </div>
             <div className="box">
-              {/* <img src={''}></img> */}
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTLP4}></img></a>
             </div>
             <div className="box">
-              {/* <img src={''}></img> */}
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTLP5}></img></a>
+            </div>
+          </div>
+
+          <div className="content-tripple">
+            <div className="box">
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTLP6}></img></a>
+            </div>
+            <div className="box">
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTLP7}></img></a>
+            </div>
+            <div className="box">
+              <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTLP8}></img></a>
             </div>
           </div>
 
