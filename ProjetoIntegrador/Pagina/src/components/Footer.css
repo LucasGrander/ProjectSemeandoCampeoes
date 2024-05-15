@@ -88,7 +88,11 @@ footer .box-patrocinios .logo-patrocinios{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5vh;
+
+    width: 100%;
+    padding: 0vh 2vh;
+
+    gap: 3vh;
 }
 
 footer .box-patrocinios .logo-patrocinios img{

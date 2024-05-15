@@ -71,6 +71,7 @@ const informationEdit = () => {
         }
         else if(selectedFilter.toLocaleLowerCase() == "cinza"){
             setEstadoCinza(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "amarela"){
             setEstadoAmarela(true)
@@ -303,14 +304,12 @@ const [colorButton, setColorButton] = useState(false)
 
 
  const filterToApply: {nome: String, cor_da_faixa: String[], centro_de_treino: String[]} = {
-    nome:filterNome,
-    cor_da_faixa:filterFaixa,
-    centro_de_treino:filterCentroDeTreino
-  }
+    nome: filterNome,
+    cor_da_faixa: filterFaixa,
+    centro_de_treino: filterCentroDeTreino
+  } 
 
-     console.log(filterToApply.nome.length)
-     console.log(filterToApply.cor_da_faixa.length)
-    console.log(filterToApply.centro_de_treino.length)
+//   filterToApply.cor_da_faixa.push([filterFaixa])
 
 const handleGetInfos = async () => {
     if(filterToApply.nome.length == 0 && filterToApply.cor_da_faixa.length == 0 && filterToApply.centro_de_treino.length == 0){
@@ -327,9 +326,13 @@ const handleGetInfos = async () => {
     handleGetInfos()
   }, [])
 
-useEffect(() => {
-     handleGetInfos()
-   }, [filterToApply])
+  useEffect(() => {
+    handleGetInfos()
+  }, [filterFaixa.length, filterCentroDeTreino.length, filterNome.length])
+
+  console.log(filterFaixa)
+  console.log(filterCentroDeTreino)
+
 
 
   const handleUpdateInfos = async () => {
