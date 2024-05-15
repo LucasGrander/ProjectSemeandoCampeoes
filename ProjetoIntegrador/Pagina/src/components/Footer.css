@@ -13,7 +13,6 @@ footer .content-footer{
     height: 13vh;
     gap: 2vh;
     font-size: 2.5vh ;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,11 +22,9 @@ footer .content-footer .sa-box{
     width: 100%;
     height: 13vh;
     margin-left: 10vh;
-
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    position: absolute;
 }
 
 footer .content-footer .sa-box .prefeitura-img{
@@ -47,7 +44,14 @@ footer .content-footer .sb-box{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    position: absolute;
+}
+footer .content-footer .sc-box{
+    width: 100%;
+    height: 15vh;
+    gap: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer .content-footer .sb-box .fecam-img{
@@ -70,6 +74,7 @@ footer .content-footer img{
 
 .copy{
     font-size:1.5vh;
+    margin-top: 2vh;
 }
 
 footer .box-patrocinios{
@@ -91,6 +96,11 @@ footer .box-patrocinios .logo-patrocinios{
 
     width: 100%;
     padding: 0vh 2vh;
+
+
+    width: 100%;
+    padding: 0vh 2vh;
+
 
     gap: 3vh;
 }
