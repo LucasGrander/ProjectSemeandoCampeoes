@@ -41,14 +41,48 @@ export const filterParticipantes = (req, res) => {
 
     // Filtrar cor de faixa -->
     if (req.query.cor_da_faixa) {
-        comboFilters += " and f.cor_da_faixa like ?"
-        params.push(`%${req.query.cor_da_faixa}%`)
+        // console.log(req.query.cor_da_faixa[0])
+        // console.log(req.query.cor_da_faixa[1])
+        // console.log(req.query.cor_da_faixa.length)
+
+        if (req.query.cor_da_faixa.length > 1) {
+            comboFilters += ` and f.cor_da_faixa like '%${req.query.cor_da_faixa[0]}%'`
+
+            params.push(`%${req.query.cor_da_faixa[0]}%`)
+    
+            for (var i = 1; i < req.query.cor_da_faixa.length; i++) {
+                // console.log(req.query.cor_da_faixa[i])
+    
+                params.push(`%${req.query.cor_da_faixa[i]}%`)
+    
+                comboFilters += ` or f.cor_da_faixa like '${req.query.cor_da_faixa[i]}'`
+            }
+        } else {
+            comboFilters += ` and f.cor_da_faixa like '%${req.query.cor_da_faixa[0]}%'`
+            params.push(`%${req.query.cor_da_faixa[0]}%`)
+        }
+
+        // console.log(comboFilters)
     }
 
     // Filtrar centro de treinamento -->
     if (req.query.centro_de_treino) {
-        comboFilters += " and ct.nome = ?"
-        params.push(req.query.centro_de_treino)
+        if (req.query.centro_de_treino.length > 1) {
+            comboFilters += ` and ct.nome like '%${req.query.centro_de_treino[0]}%'`
+
+            params.push(`%${req.query.centro_de_treino[0]}%`)
+    
+            for (var i = 1; i < req.query.centro_de_treino.length; i++) {
+                // console.log(req.query.cor_da_faixa[i])
+    
+                params.push(`%${req.query.centro_de_treino[i]}%`)
+    
+                comboFilters += ` or ct.nome like '${req.query.centro_de_treino[i]}'`
+            }
+        } else {
+            comboFilters += ` and ct.nome like '%${req.query.centro_de_treino[0]}%'`
+            params.push(`%${req.query.centro_de_treino[0]}%`)
+        }
     }
 
     db.query(comboFilters, params, (err, data) => {
