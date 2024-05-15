@@ -57,77 +57,84 @@ const informationEdit = () => {
     const [estadoPreta, setEstadoPreta] = useState(false)
 
     // verficar o tipo de seleção dos diversos
-    const [estadoA_Z, setEstadoA_Z] = useState(false)
-    const [estadoZ_A, setEstadoZ_A] = useState(false)
-    const [estadoMaior18, setEstadoMaior18] = useState(false)
-    const [estadoMenor18, setEstadoMenor18] = useState(false)
-
-    // verficar o tipo de seleção dos diversos
     const [estadoCtLarParana, setEstadoCtLarParana] = useState(false)
     const [estadoCtCentro, setEstadoCtCentro] = useState(false)
     const [estadoCt, setEstadoCt] = useState(false)
     const [estadoCtIretama, setEstadoCtIretama] = useState(false)
-    
+
     const handleSetFilter = (selectedFilter: string) => {
         setVariosFiltros([...variosFiltros, selectedFilter])
         
         if(selectedFilter.toLocaleLowerCase() == "branca"){
             setEstadoBranca(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "cinza"){
             setEstadoCinza(true)
         }
         else if(selectedFilter.toLocaleLowerCase() == "amarela"){
             setEstadoAmarela(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "laranja"){
             setEstadoLaranja(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "verde"){
             setEstadoVerde(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "azul"){
             setEstadoAzul(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "roxa"){
             setEstadoRoxa(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "marrom"){
             setEstadoMarrom(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "preta"){
             setEstadoPreta(true)
-        }
-        else if(selectedFilter.toLocaleLowerCase() == "a-z"){
-            setEstadoA_Z(true)
-        }
-        else if(selectedFilter.toLocaleLowerCase() == "z-a"){
-            setEstadoZ_A(true)
-        }
-        else if(selectedFilter.toLocaleLowerCase() == ">18"){
-            setEstadoMaior18(true)
-        }
-        else if(selectedFilter.toLocaleLowerCase() == "<18"){
-            setEstadoMenor18(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "ct lar paraná"){
             setEstadoCtLarParana(true)
+            setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
         else if(selectedFilter.toLocaleLowerCase() == "ct centro"){
             setEstadoCtCentro(true)
+            setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
         else if(selectedFilter.toLocaleLowerCase() == "ct ???"){
             setEstadoCt(true)
+            setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
         else if(selectedFilter.toLocaleLowerCase() == "ct iretama"){
             setEstadoCtIretama(true)
+            setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
     }
 
+    const toClearInputFilter = () => {
+        setFilterNome("")
+    }
+
     const handleRemoverFiltro = (index: number, filtro: any) => {
+        //remover o filtro da array que controle o front-end
         const atualizaFiltros = [...variosFiltros]
         atualizaFiltros.splice(index, 1)
         setVariosFiltros(atualizaFiltros)
+
+        //remover filtro(faixa) do array que controla o banco de dados
+        const indiceToRemoveFx = filterFaixa.indexOf(filtro)
+            filterFaixa.splice(indiceToRemoveFx, 1)
+
+        //remover filtro(faixa) do array que controla o banco de dados
+        const indiceToRemoveCt = filterCentroDeTreino.indexOf(filtro)
+        filterCentroDeTreino.splice(indiceToRemoveCt, 1)
 
         if(filtro.toLowerCase() == "branca"){
             setEstadoBranca(false)
@@ -156,18 +163,6 @@ const informationEdit = () => {
         else if(filtro.toLocaleLowerCase() == "preta"){
             setEstadoPreta(false)
         }
-        else if(filtro.toLocaleLowerCase() == "a-z"){
-            setEstadoA_Z(false)
-        }
-        else if(filtro.toLocaleLowerCase() == "z-a"){
-            setEstadoZ_A(false)
-        }
-        else if(filtro.toLocaleLowerCase() == ">18"){
-            setEstadoMaior18(false)
-        }
-        else if(filtro.toLocaleLowerCase() == "<18"){
-            setEstadoMenor18(false)
-        }
         else if(filtro.toLocaleLowerCase() == "ct lar paraná"){
             setEstadoCtLarParana(false)
         }
@@ -186,8 +181,10 @@ const informationEdit = () => {
     const [longName, setLongName] = useState(false)
     
     const handleFilterTodos = () => {
-        if(variosFiltros.length < 1){
+        checkInputFilterLenght()
+        if(variosFiltros.length < 1 && filterNome == ""){
             setTodosFilter(true)
+            setInputFilter(false)
         }
         else{
             setTodosFilter(false)
@@ -200,6 +197,19 @@ const informationEdit = () => {
             setLongName(false)
         }
     }
+
+    const [inputFilter, setInputFilter] = useState(false)
+
+     const checkInputFilterLenght = () => {
+         if(filterNome != ""){
+             setInputFilter(true)
+             setTodosFilter(false)
+         }
+         else{
+             setInputFilter(false)
+             setTodosFilter(true)
+         }
+     }
 
     const handleCloseDropOnBlur = () => {
         if(dropdown){
@@ -284,14 +294,43 @@ const [boxEditModeToAdd, setBoxEditModeToAdd] = useState(false)
 const [colorButton, setColorButton] = useState(false)
 
 
+
+
+ // armazenar filtros de busca para os participantes
+ const [filterNome, setFilterNome] = useState("")
+ const [filterFaixa, setFilterFaixa] = useState<string[]>([])
+ const [filterCentroDeTreino, setFilterCentroDeTreino] = useState<string[]>([])
+
+
+ const filterToApply: {nome: String, cor_da_faixa: String[], centro_de_treino: String[]} = {
+    nome:filterNome,
+    cor_da_faixa:filterFaixa,
+    centro_de_treino:filterCentroDeTreino
+  }
+
+     console.log(filterToApply.nome.length)
+     console.log(filterToApply.cor_da_faixa.length)
+    console.log(filterToApply.centro_de_treino.length)
+
 const handleGetInfos = async () => {
-      const res = await axios.get("http://localhost:8080/users");
-      setParticipants(res.data);
+    if(filterToApply.nome.length == 0 && filterToApply.cor_da_faixa.length == 0 && filterToApply.centro_de_treino.length == 0){
+      const res = await axios.get("http://localhost:8080/users")
+      setParticipants(res.data)
+    }
+    else{
+        const res = await axios.get("http://localhost:8080/users/filter", {params: filterToApply})
+        setParticipants(res.data)
+    }
   }
 
   useEffect(() => {
-    handleGetInfos();
+    handleGetInfos()
   }, [])
+
+useEffect(() => {
+     handleGetInfos()
+   }, [filterToApply])
+
 
   const handleUpdateInfos = async () => {
     if(activeId < 0){
@@ -413,12 +452,11 @@ const handleGetInfos = async () => {
         setBoxForCrud(true)
         setTextForPostAndPut(`Participante removido!`)
         setActionCrudColor("box-postput-removed")
-    }, 100);
+    }, 100)
   }
 
   const [textForPostAndPut, setTextForPostAndPut] = useState("")
   const [boxForCrud, setBoxForCrud] = useState(false)
-    
     
     return(
     <div  onMouseMove={handleFilterTodos} className="page-infos-edit">
@@ -483,6 +521,27 @@ const handleGetInfos = async () => {
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT Iretama")} className={estadoCtIretama ? "item-drop-selected" : "item-drop"} >CT - Iretama</span>
                             </div>
 
+                            <div style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} className="dropdown-search">
+                            <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" ,pointerEvents: dropdown ? "all" : "none", transition: ".1s"}}  className='title-drop' >Pesquisar nome</span>
+                                <MyInput
+                                    id="filterNome"
+                                    value={filterNome}
+                                    onChange={(e) => setFilterNome(e.target.value)}
+                                    type='text'
+                                    width= "100%"
+                                    height= "6vh"
+                                    padding="0vh 3vh 0vh 2.5vh"
+                                    fontSize= "2.4vh"
+                                    border= "solid .4vh black"
+                                    borderBottom="solid .4vh black"
+                                    borderRadius='.6vh'
+                                    backgroundColor="white"
+                                    transition= ".4s"
+                                    enter= "white"
+                                    leave= "white"
+                                    ph='Nome do participante'
+                                />
+                            </div>
                         </div>
                     
 
@@ -491,6 +550,12 @@ const handleGetInfos = async () => {
                             <span>Todos</span>
                             <img src={lockICON}></img>
                         </div>
+
+                        <div onClick={toClearInputFilter} style={{display: inputFilter ? "flex" : "none"}}  className={longName ? "filter-picked-long" : "filter-picked"}>
+                            <span>{filterNome}</span>
+                            <img src={closeX}></img>
+                        </div>
+                        
                         {variosFiltros.map((filtro, index) => (
                         <div onClick={() => handleRemoverFiltro(index, filtro)} key={index} className={longName ? "filter-picked-long" : "filter-picked"}>
                             <span>{filtro}</span>
@@ -509,14 +574,14 @@ const handleGetInfos = async () => {
                         
                         {participants.map((participante)=> (
                         <div className="adaptive-infos-overlay" key={participante.id}>
-                            <div className={showInfosIntegrante ? "container-integrante-active" : "container-integrante-inative"} style={{opacity: dropdown ? ".1" : "1"}} >
-                                <div onClick={() =>handleShowInfosIntegrante(participante.id)} className="box-integrante">
+                            <div className="container-integrante-active-edit" style={{opacity: dropdown ? ".1" : "1"}} >
+                                <div onClick={() => handleShowInfosIntegrante(participante.id)} className="box-integrante">
                                     <span>{participante.nome}  <span className='faixa-box-integ' >({participante.cor_da_faixa})</span></span>
                                     <img style={{transform: showInfosIntegrante[participante.id] ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>
                                 </div>
                             </div>
 
-                            <div className={showInfosIntegrante[participante.id] ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
+                            <div className={showInfosIntegrante[participante.id] ? "container-integrante-infos-opened" : "container-integrante-infos-closed"} style={{visibility: dropdown ? "hidden": "visible"}}>
                                 <div className="icons-edit-remove">
                                     <img onClick={() => handleSelectInfos(participante.id)} className={boxEditMode ? 'edit-iconFocus' :'edit-icon'} src={editUSER}></img>
                                     <img onClick={() => handleDeleteBoxState(participante.id)} className={deleteBoxMode[participante.id] ? 'remove-iconFocus' :'remove-icon'} src={removeUSER}></img>

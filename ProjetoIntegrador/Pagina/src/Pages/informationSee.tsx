@@ -52,12 +52,6 @@ const informationSee = () => {
     const [estadoPreta, setEstadoPreta] = useState(false)
 
     // verficar o tipo de seleção dos diversos
-    const [estadoA_Z, setEstadoA_Z] = useState(false)
-    const [estadoZ_A, setEstadoZ_A] = useState(false)
-    const [estadoMaior18, setEstadoMaior18] = useState(false)
-    const [estadoMenor18, setEstadoMenor18] = useState(false)
-
-    // verficar o tipo de seleção dos diversos
     const [estadoCtLarParana, setEstadoCtLarParana] = useState(false)
     const [estadoCtCentro, setEstadoCtCentro] = useState(false)
     const [estadoCt, setEstadoCt] = useState(false)
@@ -92,18 +86,6 @@ const informationSee = () => {
         }
         else if(selectedFilter.toLocaleLowerCase() == "preta"){
             setEstadoPreta(true)
-        }
-        else if(selectedFilter.toLocaleLowerCase() == "a-z"){
-            setEstadoA_Z(true)
-        }
-        else if(selectedFilter.toLocaleLowerCase() == "z-a"){
-            setEstadoZ_A(true)
-        }
-        else if(selectedFilter.toLocaleLowerCase() == ">18"){
-            setEstadoMaior18(true)
-        }
-        else if(selectedFilter.toLocaleLowerCase() == "<18"){
-            setEstadoMenor18(true)
         }
         else if(selectedFilter.toLocaleLowerCase() == "ct lar paraná"){
             setEstadoCtLarParana(true)
@@ -150,18 +132,6 @@ const informationSee = () => {
         }
         else if(filtro.toLocaleLowerCase() == "preta"){
             setEstadoPreta(false)
-        }
-        else if(filtro.toLocaleLowerCase() == "a-z"){
-            setEstadoA_Z(false)
-        }
-        else if(filtro.toLocaleLowerCase() == "z-a"){
-            setEstadoZ_A(false)
-        }
-        else if(filtro.toLocaleLowerCase() == ">18"){
-            setEstadoMaior18(false)
-        }
-        else if(filtro.toLocaleLowerCase() == "<18"){
-            setEstadoMenor18(false)
         }
         else if(filtro.toLocaleLowerCase() == "ct lar paraná"){
             setEstadoCtLarParana(false)
@@ -220,7 +190,7 @@ const [participants, setParticipants] = useState<Participante[]>([])
   }
 
   useEffect(() => {
-    handleGetInfos
+    handleGetInfos()
   })
 
 
@@ -309,7 +279,7 @@ const [participants, setParticipants] = useState<Participante[]>([])
                         
                         {participants.map((participante)=> (
                         <div className="adaptive-infos-overlay" key={participante.id}>
-                            <div className={showInfosIntegrante ? "container-integrante-active" : "container-integrante-inative"} style={{opacity: dropdown ? ".1" : "1"}} >
+                            <div className="container-integrante-active-see" style={{opacity: dropdown ? ".1" : "1"}} >
                                 <div onClick={() =>handleShowInfosIntegrante(participante.id)} className="box-integrante">
                                     <span>{participante.nome}  <span className='faixa-box-integ' >({participante.cor_da_faixa})</span></span>
                                     <img style={{transform: showInfosIntegrante[participante.id] ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>

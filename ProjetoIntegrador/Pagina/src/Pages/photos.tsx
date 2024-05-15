@@ -70,45 +70,53 @@ const Photos = () => {
             setOverlay(false)
         }, 2000)
     }
+
+    //copa 1
     const handleOnClickICopa = () => {
         setOverlay(true)
     
         setTimeout(() => {
             window.location.href = 'http://www.facebook.com/share/nVK8sAoGN9JVHH4i/?'
-        }, 1500)
+        }, 500)
 
         setTimeout(() => {
             setOverlay(false)
         }, 2000)
     }
+
+    //copa 2
     const handleOnClickIICopa = () => {
         setOverlay(true)
     
         setTimeout(() => {
             window.location.href = 'https://resenhacm.com.br/criancas-e-adolescentes-participam-de-graduacao-anual-e-da-segunda-copa-semeando-campeoes/'
-        }, 1500)
+        }, 500)
 
         setTimeout(() => {
             setOverlay(false)
         }, 2000)
     }
+
+    //copa 3
     const handleOnClickIIICopa = () => {
         setOverlay(true)
     
         setTimeout(() => {
             window.location.href = 'http://www.facebook.com/share/pjo4A11NkWZsMAaB/?'
-        }, 1500)
+        }, 500)
 
         setTimeout(() => {
             setOverlay(false)
         }, 2000)
     }
+
+    //copa 4
     const handleOnClickIVCopa = () => {
         setOverlay(true)
     
         setTimeout(() => {
             window.location.href = 'https://www.facebook.com/media/set/?set=a.884445603684264&type=3'
-        }, 1500)
+        }, 500)
 
         setTimeout(() => {
             setOverlay(false)
@@ -217,7 +225,7 @@ const Photos = () => {
                                 <p>2019</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a onClick={handleOnClickICopa}><img src={galeryICON}></img></a> 
+                                <a href='http://www.facebook.com/share/nVK8sAoGN9JVHH4i/?' target='_blank'><img src={galeryICON}></img></a> 
                             </div>
                         </div>
                     </div>
@@ -235,7 +243,7 @@ const Photos = () => {
                                 <p>2021</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a onClick={handleOnClickIICopa}><img src={galeryICON}></img></a> 
+                                <a href='https://resenhacm.com.br/criancas-e-adolescentes-participam-de-graduacao-anual-e-da-segunda-copa-semeando-campeoes/' target='_blank' ><img src={galeryICON}></img></a> 
                             </div>
                         </div>
                     </div>
@@ -253,7 +261,7 @@ const Photos = () => {
                                 <p>2023</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a onClick={handleOnClickIIICopa}><img src={galeryICON}></img></a> 
+                                <a href='http://www.facebook.com/share/pjo4A11NkWZsMAaB/' target='_blank' ><img src={galeryICON}></img></a> 
                             </div>
                         </div>
                     </div>
@@ -271,7 +279,7 @@ const Photos = () => {
                                 <p>2024</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a onClick={handleOnClickIVCopa}><img src={galeryICON}></img></a> 
+                                <a href='https://www.facebook.com/media/set/?set=a.884445603684264&type=3' target='_blank' ><img src={galeryICON}></img></a> 
                             </div>
                         </div>
                     </div>
