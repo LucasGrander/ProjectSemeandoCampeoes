@@ -17,40 +17,46 @@ const Footer = () => {
     <footer>
         
         <div className='content-footer'>
-          <div className="sa-box">
-                <img className='prefeitura-img' src={PrefetuiraLogo} alt='logo Prefeitura de Campo Mourão'></img>
-                <div className='texto'>
-                <a><h6>Município de</h6></a>
-                <a> <h5>Campo Mourão</h5></a>
-                </div>
-          </div>
-            <div className="icon">
-                <img src={LogoSemeandoCampeoes} alt='logo Semeando Campeões'></img>
+            
+            <div className="sa-box">
+              <a href="https://campomourao.atende.net/subportal/fundacao-de-esportes" target="_blank" ><img className='prefeitura-img' src={PrefetuiraLogo} alt='logo Prefeitura de Campo Mourão'></img></a>
+                  <div className='texto'>
+                    <a><h6>Município de</h6></a>
+                    <a> <h5>Campo Mourão</h5></a>
+                  </div>
             </div>
-            <div className="text">
-              <div>
-                  <span>Semeando Campeões</span>
+            
+            <div className='sc-box'>
+              <div className="icon">
+                  <img src={LogoSemeandoCampeoes} alt='logo Semeando Campeões'></img>
               </div>
-              <div className='copy'>
-                Todos os direitos reservados © 2024 Lucas Grander & Ricardo M. Batista.
+              <div className="text">
+                <div>
+                    <span>Semeando Campeões</span>
+                </div>
+                <div className='copy'>
+                  Todos os direitos reservados © 2024 Lucas Grander & Ricardo M. Batista.
+                </div>
               </div>
-              </div>
+            </div>
+
             <div className="sb-box">
-                <img className='fecam-img' src={FecamLogo} alt='logo Prefeitura de Campo Mourão'></img>
-          </div>
+              <a href="https://www.instagram.com/fecam_esportes?igsh=a2F2d3gxZHNpanB2" target="_blank" ><img className='fecam-img' src={FecamLogo} alt='logo FECAM'></img></a>
+            </div>
+
         </div>
         <div className='box-patrocinios'>
           <span>PATROCÍNIOS</span>
           <div className='logo-patrocinios'>
-            <img className='boloisa' src={Boloisa} alt='logo Boloisa Bolos'></img>
-            <img className='cairo' src={Cairo} alt='logo Mecanica Cairo'></img>
-            <img className='fabri' src={Fabri} alt='logo Fabri contabilidade'></img>
-            <img className='glamour' src={Glamour} alt='logo Salão Glamour'></img>
-            <img className='jc' src={JC} alt='logo JC alarmes'></img>
-            <img className='pib' src={PIB} alt='logo Igreja Batista'></img>
-            <img className='plenitude' src={Plenitude} alt='logo Plenitude Colchoes'></img>
-            <img className='pousada' src={Pousada} alt='logo Pousada Parque das Gabirobas'></img>
-            <img className='vanessa' src={Vanessa} alt='logo Vanessa Tapware'></img>
+            <a href="https://www.instagram.com/boloisacm?igsh=MTB3azU1amV4MnJzdA==" target="_blank" ><img className='boloisa' src={Boloisa} alt='logo Boloisa Bolos'></img></a>
+            <a href="https://www.instagram.com/macedocairoleandro?igsh=d2EyZDdjbnZydnoy" target="_blank" ><img className='cairo' src={Cairo} alt='logo Mecanica Cairo'></img></a>
+            <a href="https://www.instagram.com/fabri_imobiliaria?igsh=MW9pZ3h4N29vN2l6aQ==" target="_blank" ><img className='fabri' src={Fabri} alt='logo Fabri contabilidade'></img></a>
+            <a href="https://www.instagram.com/mayarazaramella?igsh=MXE1YzBjb283bGJpdA==" target="_blank" ><img className='glamour' src={Glamour} alt='logo Salão Glamour'></img></a>
+            <a href="https://www.instagram.com/jc.seg.eletronica?igsh=Z3puOXQzNG14ejU2" target="_blank" ><img className='jc' src={JC} alt='logo JC alarmes'></img></a>
+            <a href="https://www.instagram.com/pibcm_oficial?igsh=NTNwYTdlMnNvOTF1" target="_blank" ><img className='pib' src={PIB} alt='logo Igreja Batista'></img></a>
+            <a href="https://www.instagram.com/plenitudesaudeebemestar?igsh=a3N4cG9jNm45OWk5" target="_blank" ><img className='plenitude' src={Plenitude} alt='logo Plenitude Colchoes'></img></a>
+            <a href="https://www.instagram.com/pousadagabirobas?igsh=ajRnZDNlM3Z0Zzd6" target="_blank" ><img className='pousada' src={Pousada} alt='logo Pousada Parque das Gabirobas'></img></a>
+            <a href="https://www.instagram.com/tupperware_vanessacm?igsh=YW9yNnpka3Bwd2Ex" target="_blank" ><img className='vanessa' src={Vanessa} alt='logo Vanessa Tapware'></img></a>
           </div>
         </div>
     </footer>
