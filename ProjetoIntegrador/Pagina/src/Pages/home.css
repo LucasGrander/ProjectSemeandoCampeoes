@@ -169,6 +169,7 @@ nav button:hover img{
     height: 6vh;
 
     position: relative;
+    z-index: 1;
 }
 
 .animation-highlight{
@@ -184,6 +185,7 @@ nav button:hover img{
 
     border-radius: .4vh;
     animation: participeHighlightBorder 800ms infinite normal;
+    z-index: -1;
 }
 
 .btn1{
