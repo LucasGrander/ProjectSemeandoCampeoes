@@ -139,12 +139,13 @@ header .login-acess img:hover{
 nav{
     width: 100%;
     height: 10vh;
-    gap: 15vh;
-    margin-top: 2vh ;
     
     display: flex;
     align-items: center;
     justify-content: center;
+
+    gap: 15vh;
+    margin-top: 2vh;
 }
 
 nav button img{
@@ -156,6 +157,33 @@ nav button img{
 nav button:hover img{
     animation: Vibration .5s ease infinite alternate;
     transition: .5s;
+}
+
+.btn-galeria-de-fotos{
+    width: 30vh;
+    height: 6vh;
+}
+
+.btn-faca-parte{
+    width: 30vh;
+    height: 6vh;
+
+    position: relative;
+}
+
+.animation-highlight{
+    width: 30vh;
+    height: 6vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: -.3vh;
+
+    border-radius: .4vh;
+    animation: participeHighlightBorder 800ms infinite normal;
 }
 
 .btn1{
@@ -260,20 +288,7 @@ nav button:hover img{
     }
 }
 
-.animation-highlight{
-    width: 30vh;
-    height: 6vh;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    position: absolute;
-    right: 64.5vh;
-
-    border-radius: .4vh;
-    animation: participeHighlightBorder 900ms infinite normal;
-}
 
 @keyframes participeHighlightBorder {
     0%{

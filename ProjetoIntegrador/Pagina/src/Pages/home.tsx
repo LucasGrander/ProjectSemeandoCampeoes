@@ -13,14 +13,7 @@ import CentrosDeTreinamento from '../components/CentrosDeTreinamento'
 import Historico from '../components/Historico'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import Footer from '../components/Footer'
-
-
-
-
-//exemplos de componentes a serem criados
   
-  
-
 const Home = () => {
     const [content, setContent] = useState('cts')
     
@@ -100,52 +93,56 @@ const Home = () => {
                 </div>
             </header>
             <nav>
-            <MyButton
-                onClick={handleOnClickFotos}
-                width="30vh"
-                height="6vh"
-                cursor="pointer"
-                display="flex"
-                justifyContent="space-evenly"
-                alignItems="center"
-                border="solid .3vh black"
-                borderBottom="solid .7vh black"
-                borderRadius=".4vh"
-                fontSize="2.5vh"
-                fontWeight="700"
-                transition=".3s"
-                boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
-                enter="rgba(150, 150, 150, 0.5)"
-                leave="white"
-                >
-                    Galeria de fotos <img src={Camera} alt='camera de foto' />
-            </MyButton>
-
-            <MyButton
-                    onClick={handleOnClickParticipe}
-                    width="30vh"
-                    height="6vh"
-                    cursor="pointer"
-                    display="flex"
-                    justifyContent="space-evenly"
-                    alignItems="center"
-                    border="solid .3vh black"
-                    borderBottom="solid .7vh black"
-                    borderRadius=".4vh"
-                    fontSize="2.5vh"
-                    fontWeight="700"
-                    transition=".3s"
-                    boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
-                    enter="rgba(150, 150, 150, 0.5)"
-                    leave="white"
-                    zIndex='1'
-                    >
-                        Seja aluno!<img src={HandShake} alt='aperto de mãos' />
-            </MyButton>
-
-            <div className="animation-highlight">
+                <div className="btn-galeria-de-fotos">
+                    <MyButton
+                        onClick={handleOnClickFotos}
+                        width="100%"
+                        height="100%"
+                        cursor="pointer"
+                        display="flex"
+                        justifyContent="space-evenly"
+                        alignItems="center"
+                        border="solid .3vh black"
+                        borderBottom="solid .7vh black"
+                        borderRadius=".4vh"
+                        fontSize="2.5vh"
+                        fontWeight="700"
+                        transition=".3s"
+                        boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
+                        enter="rgba(150, 150, 150, 0.5)"
+                        leave="white"
+                        >
+                            Galeria de fotos <img src={Camera} alt='camera fotografica' />
+                    </MyButton>
+                </div>
                 
-            </div>
+                <div className="btn-faca-parte">
+                    <MyButton
+                        onClick={handleOnClickParticipe}
+                        width="100%"
+                        height="100%"
+                        cursor="pointer"
+                        display="flex"
+                        justifyContent="space-evenly"
+                        alignItems="center"
+                        border="solid .3vh black"
+                        borderBottom="solid .7vh black"
+                        borderRadius=".4vh"
+                        fontSize="2.5vh"
+                        fontWeight="700"
+                        transition=".3s"
+                        boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
+                        enter="rgba(150, 150, 150, 0.5)"
+                        leave="white"
+                        zIndex='1'
+                        >
+                            Seja aluno!<img src={HandShake} alt='aperto de mãos' />
+                    </MyButton>
+
+                    <div className="animation-highlight">
+                        {/* somente animação ao redor do botão */}
+                    </div>
+                </div>
             </nav>
 
             <div className="container-home">
