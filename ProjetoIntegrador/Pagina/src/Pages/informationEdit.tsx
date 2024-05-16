@@ -294,6 +294,9 @@ const [classUpdAddSubTitle, setClassUpdAddSubTitle] = useState("")
 const [boxEditModeToAdd, setBoxEditModeToAdd] = useState(false)
 const [colorButton, setColorButton] = useState(false)
 
+// loading infos 
+const [loadingInfo, setLoadingInfo] = useState(false)
+
 
 
 
@@ -315,10 +318,22 @@ const handleGetInfos = async () => {
     if(filterToApply.nome.length == 0 && filterToApply.cor_da_faixa.length == 0 && filterToApply.centro_de_treino.length == 0){
       const res = await axios.get("http://localhost:8080/users")
       setParticipants(res.data)
+
+      setLoadingInfo(true)
+
+        setTimeout(() => {
+            setLoadingInfo(false)
+        }, 2000);
     }
     else{
         const res = await axios.get("http://localhost:8080/users/filter", {params: filterToApply})
         setParticipants(res.data)
+
+        setLoadingInfo(true)
+
+        setTimeout(() => {
+            setLoadingInfo(false)
+        }, 1000);
     }
   }
 
@@ -329,11 +344,6 @@ const handleGetInfos = async () => {
   useEffect(() => {
     handleGetInfos()
   }, [filterFaixa.length, filterCentroDeTreino.length, filterNome.length])
-
-  console.log(filterFaixa)
-  console.log(filterCentroDeTreino)
-
-
 
   const handleUpdateInfos = async () => {
     if(activeId < 0){
@@ -573,18 +583,19 @@ const handleGetInfos = async () => {
                     </div>
                 </div>
                 
-                <div className="table-result-pesquisa">
+                <div style={{overflow: loadingInfo ? "hidden" : "auto"}} className="table-result-pesquisa">
                         
                         {participants.map((participante)=> (
                         <div className="adaptive-infos-overlay" key={participante.id}>
                             <div className="container-integrante-active-edit" style={{opacity: dropdown ? ".1" : "1"}} >
-                                <div onClick={() => handleShowInfosIntegrante(participante.id)} className="box-integrante">
+                                <div onClick={() => handleShowInfosIntegrante(participante.id)} className={loadingInfo ? "box-integrante-loading" : "box-integrante"}>
+                                    <div style={{display: loadingInfo ? "flex" : "none"}} className="loading"></div>
                                     <span>{participante.nome}  <span className='faixa-box-integ' >({participante.cor_da_faixa})</span></span>
                                     <img style={{transform: showInfosIntegrante[participante.id] ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>
                                 </div>
                             </div>
 
-                            <div className={showInfosIntegrante[participante.id] ? "container-integrante-infos-opened" : "container-integrante-infos-closed"} style={{visibility: dropdown ? "hidden": "visible"}}>
+                            <div className={showInfosIntegrante[participante.id] ? "container-integrante-infos-opened" : "container-integrante-infos-closed"} style={{visibility: dropdown || loadingInfo ? "hidden": "visible"}}>
                                 <div className="icons-edit-remove">
                                     <img onClick={() => handleSelectInfos(participante.id)} className={boxEditMode ? 'edit-iconFocus' :'edit-icon'} src={editUSER}></img>
                                     <img onClick={() => handleDeleteBoxState(participante.id)} className={deleteBoxMode[participante.id] ? 'remove-iconFocus' :'remove-icon'} src={removeUSER}></img>

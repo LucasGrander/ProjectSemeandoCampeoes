@@ -46,6 +46,7 @@ export const filterParticipantes = (req, res) => {
         // console.log(req.query.cor_da_faixa.length)
 
         if (req.query.cor_da_faixa.length > 1) {
+            console.log(req.query.cor_da_faixa.length)
             comboFilters += ` and f.cor_da_faixa like '%${req.query.cor_da_faixa[0]}%'`
 
             params.push(`%${req.query.cor_da_faixa[0]}%`)
@@ -55,15 +56,20 @@ export const filterParticipantes = (req, res) => {
     
                 params.push(`%${req.query.cor_da_faixa[i]}%`)
     
-                comboFilters += ` or f.cor_da_faixa like '${req.query.cor_da_faixa[i]}'`
+                comboFilters += ` or f.cor_da_faixa like '%${req.query.cor_da_faixa[i]}%'`
             }
-        } else {
+        } else if(req.query.cor_da_faixa.length == 1){
             comboFilters += ` and f.cor_da_faixa like '%${req.query.cor_da_faixa[0]}%'`
             params.push(`%${req.query.cor_da_faixa[0]}%`)
         }
+        else{
+            comboFilters += ` and f.cor_da_faixa like '%%'`
+            params.push(`%${req.query.cor_da_faixa[0]}%`)
 
-        // console.log(comboFilters)
+        console.log(comboFilters)
+        
     }
+}
 
     // Filtrar centro de treinamento -->
     if (req.query.centro_de_treino) {
@@ -79,10 +85,15 @@ export const filterParticipantes = (req, res) => {
     
                 comboFilters += ` or ct.nome like '${req.query.centro_de_treino[i]}'`
             }
-        } else {
+        } else if(req.query.centro_de_treino.length == 1){
             comboFilters += ` and ct.nome like '%${req.query.centro_de_treino[0]}%'`
             params.push(`%${req.query.centro_de_treino[0]}%`)
         }
+        else{
+            comboFilters += ` and ct.nome like '%%'`
+            params.push(`%${req.query.centro_de_treino[0]}%`)
+        }
+        console.log(comboFilters)
     }
 
     db.query(comboFilters, params, (err, data) => {
