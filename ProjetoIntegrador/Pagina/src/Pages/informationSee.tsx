@@ -3,7 +3,6 @@ import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import axios from 'axios'
 import { Participante } from '../interfaces/interfaces'
-
 import filterICON from '../assets/filterICON.svg'
 import closeX from '../assets/closePage.svg'
 import lockICON from '../assets/lockIcon.svg'
@@ -57,54 +56,83 @@ const informationSee = () => {
     const [estadoCt, setEstadoCt] = useState(false)
     const [estadoCtIretama, setEstadoCtIretama] = useState(false)
     
+    // loading infos 
+    const [loadingInfo, setLoadingInfo] = useState(false)
+
     const handleSetFilter = (selectedFilter: string) => {
         setVariosFiltros([...variosFiltros, selectedFilter])
         
         if(selectedFilter.toLocaleLowerCase() == "branca"){
             setEstadoBranca(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "cinza"){
             setEstadoCinza(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "amarela"){
             setEstadoAmarela(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "laranja"){
             setEstadoLaranja(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "verde"){
             setEstadoVerde(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "azul"){
             setEstadoAzul(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "roxa"){
             setEstadoRoxa(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "marrom"){
             setEstadoMarrom(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "preta"){
             setEstadoPreta(true)
+            setFilterFaixa([...filterFaixa, selectedFilter])
         }
         else if(selectedFilter.toLocaleLowerCase() == "ct lar paraná"){
             setEstadoCtLarParana(true)
+            setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
         else if(selectedFilter.toLocaleLowerCase() == "ct centro"){
             setEstadoCtCentro(true)
+            setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
         else if(selectedFilter.toLocaleLowerCase() == "ct ???"){
             setEstadoCt(true)
+            setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
         else if(selectedFilter.toLocaleLowerCase() == "ct iretama"){
             setEstadoCtIretama(true)
+            setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
+    }
+const [inputFilter, setInputFilter] = useState(false)
+    const toClearInputFilter = () => {
+        setFilterNome("")
     }
 
     const handleRemoverFiltro = (index: number, filtro: any) => {
+        //remover o filtro da array que controle o front-end
         const atualizaFiltros = [...variosFiltros]
         atualizaFiltros.splice(index, 1)
         setVariosFiltros(atualizaFiltros)
+
+        //remover filtro(faixa) do array que controla o banco de dados
+        const indiceToRemoveFx = filterFaixa.indexOf(filtro)
+            filterFaixa.splice(indiceToRemoveFx, 1)
+
+        //remover filtro(faixa) do array que controla o banco de dados
+        const indiceToRemoveCt = filterCentroDeTreino.indexOf(filtro)
+        filterCentroDeTreino.splice(indiceToRemoveCt, 1)
 
         if(filtro.toLowerCase() == "branca"){
             setEstadoBranca(false)
@@ -151,8 +179,10 @@ const informationSee = () => {
     const [longName, setLongName] = useState(false)
     
     const handleFilterTodos = () => {
-        if(variosFiltros.length < 1){
+        checkInputFilterLenght()
+        if(variosFiltros.length < 1 && filterNome == ""){
             setTodosFilter(true)
+            setInputFilter(false)
         }
         else{
             setTodosFilter(false)
@@ -165,6 +195,17 @@ const informationSee = () => {
             setLongName(false)
         }
     }
+
+     const checkInputFilterLenght = () => {
+         if(filterNome != ""){
+             setInputFilter(true)
+             setTodosFilter(false)
+         }
+         else{
+             setInputFilter(false)
+             setTodosFilter(true)
+         }
+     }
 
     const handleCloseDropOnBlur = () => {
         if(dropdown){
@@ -182,17 +223,47 @@ const informationSee = () => {
     }
 
 const [participants, setParticipants] = useState<Participante[]>([])
+const [filterNome, setFilterNome] = useState("")
+const [filterFaixa, setFilterFaixa] = useState<string[]>([])
+const [filterCentroDeTreino, setFilterCentroDeTreino] = useState<string[]>([])
 
-  const handleGetInfos = async () => {
-    const res = await axios.get("http://localhost:8080/users")
 
-    setParticipants(res.data)
-  }
+const filterToApply: {nome: String, cor_da_faixa: String[], centro_de_treino: String[]} = {
+   nome: filterNome,
+   cor_da_faixa: filterFaixa,
+   centro_de_treino: filterCentroDeTreino
+ } 
 
-  useEffect(() => {
-    handleGetInfos()
-  })
+const handleGetInfos = async () => {
+   if(filterToApply.nome.length == 0 && filterToApply.cor_da_faixa.length == 0 && filterToApply.centro_de_treino.length == 0){
+     const res = await axios.get("http://localhost:8080/users")
+     setParticipants(res.data)
 
+     setLoadingInfo(true)
+
+       setTimeout(() => {
+           setLoadingInfo(false)
+       }, 2000);
+   }
+   else{
+       const res = await axios.get("http://localhost:8080/users/filter", {params: filterToApply})
+       setParticipants(res.data)
+
+       setLoadingInfo(true)
+
+       setTimeout(() => {
+           setLoadingInfo(false)
+       }, 1000);
+   }
+ }
+
+ useEffect(() => {
+   handleGetInfos()
+ }, [])
+
+ useEffect(() => {
+   handleGetInfos()
+ }, [filterFaixa.length, filterCentroDeTreino.length, filterNome.length])
 
     return(
     <div  onMouseMove={handleFilterTodos} className="page-infos-see">
@@ -256,11 +327,17 @@ const [participants, setParticipants] = useState<Participante[]>([])
 
                         </div>
 
-                    <div className="input-pesquisa-see">
+                        <div className="input-pesquisa-see">
                         <div style={{display: todosFilter ? "flex" : "none", pointerEvents: "none"}}  className="filter-fixed">
                             <span>Todos</span>
                             <img src={lockICON}></img>
                         </div>
+
+                        <div onClick={toClearInputFilter} style={{display: inputFilter ? "flex" : "none"}}  className={longName ? "filter-picked-long" : "filter-picked"}>
+                            <span>{filterNome}</span>
+                            <img src={closeX}></img>
+                        </div>
+                        
                         {variosFiltros.map((filtro, index) => (
                         <div onClick={() => handleRemoverFiltro(index, filtro)} key={index} className={longName ? "filter-picked-long" : "filter-picked"}>
                             <span>{filtro}</span>
@@ -275,18 +352,19 @@ const [participants, setParticipants] = useState<Participante[]>([])
                     </div>
                 </div>
                 
-                <div className="table-result-pesquisa">
+                <div style={{overflow: loadingInfo ? "hidden" : "auto"}} className="table-result-pesquisa">
                         
                         {participants.map((participante)=> (
-                        <div className="adaptive-infos-overlay" key={participante.id}>
-                            <div className="container-integrante-active-see" style={{opacity: dropdown ? ".1" : "1"}} >
-                                <div onClick={() =>handleShowInfosIntegrante(participante.id)} className="box-integrante">
+                        <div  className="adaptive-infos-overlay" key={participante.id}>
+                            <div  className="container-integrante-active-see" style={{opacity: dropdown ? ".1" : "1", border: showInfosIntegrante[participante.id] ? ".5vh solid black" : "0vh solid black"}} >
+                                <div onClick={() =>handleShowInfosIntegrante(participante.id)} className={loadingInfo ? "box-integrante-loading" : "box-integrante"}>
+                                    <div style={{display: loadingInfo ? "flex" : "none"}} className="loading"></div>
                                     <span>{participante.nome}  <span className='faixa-box-integ' >({participante.cor_da_faixa})</span></span>
                                     <img style={{transform: showInfosIntegrante[participante.id] ? "rotate(180deg)" : "rotate(0deg)", transition: ".7s"}} src={dropdownCloseOpenICON}></img>
                                 </div>
                             </div>
 
-                            <div className={showInfosIntegrante[participante.id] ? "container-integrante-infos-opened" : "container-integrante-infos-closed"}>
+                            <div className={showInfosIntegrante[participante.id] ? "container-integrante-infos-opened" : "container-integrante-infos-closed"} style={{visibility: dropdown || loadingInfo ? "hidden": "visible"}}>
 
                                 <div className="infos-integ">
                                     <span className="title-infos-integ">Dados</span>

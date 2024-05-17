@@ -587,7 +587,7 @@ const handleGetInfos = async () => {
                         
                         {participants.map((participante)=> (
                         <div className="adaptive-infos-overlay" key={participante.id}>
-                            <div className="container-integrante-active-edit" style={{opacity: dropdown ? ".1" : "1"}} >
+                            <div className="container-integrante-active-edit" style={{opacity: dropdown ? ".1" : "1", border: showInfosIntegrante[participante.id] ? ".5vh solid black" : "0vh solid black"}} >
                                 <div onClick={() => handleShowInfosIntegrante(participante.id)} className={loadingInfo ? "box-integrante-loading" : "box-integrante"}>
                                     <div style={{display: loadingInfo ? "flex" : "none"}} className="loading"></div>
                                     <span>{participante.nome}  <span className='faixa-box-integ' >({participante.cor_da_faixa})</span></span>

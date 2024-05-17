@@ -47,24 +47,24 @@ export const filterParticipantes = (req, res) => {
 
         if (req.query.cor_da_faixa.length > 1) {
             console.log(req.query.cor_da_faixa.length)
-            comboFilters += ` and f.cor_da_faixa like '%${req.query.cor_da_faixa[0]}%'`
+            comboFilters += ` and f.cor_da_faixa like '${req.query.cor_da_faixa[0]}%'`
 
-            params.push(`%${req.query.cor_da_faixa[0]}%`)
+            params.push(`${req.query.cor_da_faixa[0]}%`)
     
             for (var i = 1; i < req.query.cor_da_faixa.length; i++) {
                 // console.log(req.query.cor_da_faixa[i])
     
-                params.push(`%${req.query.cor_da_faixa[i]}%`)
+                params.push(`${req.query.cor_da_faixa[i]}%`)
     
-                comboFilters += ` or f.cor_da_faixa like '%${req.query.cor_da_faixa[i]}%'`
+                comboFilters += ` or f.cor_da_faixa like '${req.query.cor_da_faixa[i]}%'`
             }
         } else if(req.query.cor_da_faixa.length == 1){
-            comboFilters += ` and f.cor_da_faixa like '%${req.query.cor_da_faixa[0]}%'`
-            params.push(`%${req.query.cor_da_faixa[0]}%`)
+            comboFilters += ` and f.cor_da_faixa like '${req.query.cor_da_faixa[0]}%'`
+            params.push(`${req.query.cor_da_faixa[0]}%`)
         }
         else{
             comboFilters += ` and f.cor_da_faixa like '%%'`
-            params.push(`%${req.query.cor_da_faixa[0]}%`)
+            params.push(`${req.query.cor_da_faixa[0]}%`)
 
         console.log(comboFilters)
         
