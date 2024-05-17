@@ -367,7 +367,7 @@ const handleGetInfos = async () => {
             setNomeCidade("")
             setBoxForCrud(true)
             setActionCrudColor("box-postput-added")
-            setTextForPostAndPut(`Novo participante adiconado: ${nomePessoa}`)
+            setTextForPostAndPut(`Novo participante adicionado: ${nomePessoa}`)
             setBoxEditModeToAdd(false)
         }, 300)
 

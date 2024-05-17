@@ -10,7 +10,7 @@ footer{
 
 footer .content-footer{
     width: 100%;
-    height: 13vh;
+    height: 17vh;
     gap: 2vh;
     font-size: 2.5vh ;
     display: flex;
@@ -20,44 +20,47 @@ footer .content-footer{
 
 footer .content-footer .sa-box{
     width: 100%;
-    height: 13vh;
-    margin-left: 10vh;
+    height: 100%;
+    margin-left: 5vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
 footer .content-footer .sa-box .prefeitura-img{
-    width: 15vh;
-    height: 13vh;
+    width: 16vh;
+    height: 100%;
 }
 footer .content-footer .sa-box .texto{
-    color: rgb(18, 124, 18);
-    text-align: center;
-    text-shadow: 0.7px 0.7px 1px rgba(255, 255, 255, 0.726);
+    color: rgb(17, 134, 17);
+    text-align: start;
+    text-shadow: 0.7px 0.7px 1px rgb(235, 250, 29);
+    font-size: 3.5vh;
+    letter-spacing: .2vh;
 }
 
 footer .content-footer .sb-box{
     width: 100%;
-    height: 13vh;
-    margin-right: 10vh;
+    height: 100%;
+    margin-right: 5vh;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 footer .content-footer .sc-box{
     width: 100%;
-    height: 15vh;
+    height: 100%;
     gap: 2vh;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 footer .content-footer .sb-box .fecam-img{
     border-radius: 50%;
-    width: 11vh;
-    height: 10vh;
+    width: 15VH;
+    height: 15vh;
 }
 footer .content-footer .icon{
     width: 10vh;
@@ -71,12 +74,18 @@ footer .content-footer img{
     height: 10vh;
 }
 
-
 .copy{
     font-size:1.5vh;
-    margin-top: 2vh;
 }
 
+.text span{
+    font-size: 4vh;
+    font-weight: 500;
+    letter-spacing: .1vh;
+}
+.text{
+    text-align: center;
+}
 footer .box-patrocinios{
     display: flex;
     flex-direction: column;
