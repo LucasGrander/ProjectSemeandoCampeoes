@@ -124,3 +124,78 @@ footer .box-patrocinios .logo-patrocinios .cairo{
     width: 22vh;
     height: 17vh;
 }
+@media (max-width: 1200px) {
+    footer .box-patrocinios .logo-patrocinios img,
+    footer .box-patrocinios .logo-patrocinios .cairo {
+        width: 14vh;
+        height: 14vh;
+    }
+}
+@media (max-width: 768px) {
+    footer .content-footer {
+        flex-direction: column;
+        height: auto;
+        gap: 1vh;
+    }
+
+    footer .content-footer .sa-box, 
+    footer .content-footer .sb-box, 
+    footer .content-footer .sc-box {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    footer .content-footer .sa-box .texto,
+    footer .content-footer .sb-box .fecam-img,
+    footer .content-footer .icon {
+        font-size: 2vh;
+        width: 8vh;
+        height: 8vh;
+    }
+
+    .text span {
+        font-size: 3vh;
+    }
+
+    footer .box-patrocinios .logo-patrocinios img,
+    footer .box-patrocinios .logo-patrocinios .cairo {
+        width: 14vh;
+        height: 14vh;
+    }
+}
+
+/* Media Queries para Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    footer .content-footer {
+        flex-direction: column;
+        height: auto;
+        gap: 1.5vh;
+    }
+
+    footer .content-footer .sa-box, 
+    footer .content-footer .sb-box, 
+    footer .content-footer .sc-box {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    footer .content-footer .sa-box .texto,
+    footer .content-footer .sb-box .fecam-img,
+    footer .content-footer .icon {
+        font-size: 2.5vh;
+        width: 10vh;
+        height: 10vh;
+    }
+
+    .text span {
+        font-size: 3.5vh;
+    }
+
+    footer .box-patrocinios .logo-patrocinios img,
+    footer .box-patrocinios .logo-patrocinios .cairo {
+        width: 16vh;
+        height: 16vh;
+    }
+}
