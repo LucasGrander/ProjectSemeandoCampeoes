@@ -1,5 +1,8 @@
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
-import PrefetuiraLogo from '../assets/Logo-CM-Prefeitura2.png'
+import PrefetuiraLogo from '../assets/Logo-CM-Prefeitura.png'
+import PrefeituraLogo2 from '../assets/Logo-CM-Prefeitura2.png'
+import PrefeituraLogo3 from '../assets/Logo-CM-Prefeitura3.png'
+import BrasaoPMCM from '../assets/BrasaoCM.png'
 import FecamLogo from '../assets/Logo-FECAM2.png'
 import './Footer.css'
 import Boloisa from '../assets/PBoloisa.jpeg'
@@ -19,20 +22,20 @@ const Footer = () => {
         <div className='content-footer'>
             
             <div className="sa-box">
-              <a href="https://campomourao.atende.net/subportal/fundacao-de-esportes" target="_blank" ><img className='prefeitura-img' src={PrefetuiraLogo} alt='logo Prefeitura de Campo Mourão'></img></a>
+              <a href="https://campomourao.atende.net/subportal/fundacao-de-esportes" target="_blank" ><img className='prefeitura-img' src={PrefeituraLogo3} alt='logo Prefeitura de Campo Mourão'></img></a>
                   <div className='texto'>
                     <a><h6>Município de</h6></a>
-                    <a> <h5>Campo Mourão</h5></a>
+                    <a> <h5>CAMPO MOURÃO</h5></a>
                   </div>
             </div>
             
             <div className='sc-box'>
-              <div className="icon">
+              {/* <div className="icon">
                   <img src={LogoSemeandoCampeoes} alt='logo Semeando Campeões'></img>
-              </div>
+              </div> */}
               <div className="text">
                 <div>
-                    <span>Semeando Campeões</span>
+                    <span>SEMEANDO CAMPEÕES</span>
                 </div>
                 <div className='copy'>
                   Todos os direitos reservados © 2024 Lucas Grander & Ricardo M. Batista.
