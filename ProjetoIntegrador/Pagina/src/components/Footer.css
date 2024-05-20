@@ -125,10 +125,45 @@ footer .box-patrocinios .logo-patrocinios .cairo{
     height: 17vh;
 }
 @media (max-width: 1200px) {
+    footer .content-footer {
+        height: auto;
+        gap: 1vh;
+        font-size: 1vh; /* Ajuste do tamanho da fonte */
+    }
+
+    footer .content-footer .sa-box,
+    footer .content-footer .sb-box,
+    footer .content-footer .sc-box {
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+    }
+
+    footer .content-footer .sa-box .prefeitura-img,
+    footer .content-footer .sb-box .fecam-img,
+    footer .content-footer img {
+        width: 12vh; /* Ajuste do tamanho das imagens */
+        height: 12vh;
+    }
+
+    footer .content-footer .sa-box .texto {
+        font-size: 2vh; /* Ajuste do tamanho do texto */
+    }
+    footer .content-footer .text{
+        font-size: 2vh; /* Ajuste do tamanho do texto */
+    }
+    footer .box-patrocinios .logo-patrocinios {
+        display:grid;
+        grid-template-columns: repeat(5, 2fr); /* 3 colunas */
+        align-items: center;
+        justify-items: center;
+        gap: 1vh;
+    }
+
     footer .box-patrocinios .logo-patrocinios img,
     footer .box-patrocinios .logo-patrocinios .cairo {
-        width: 14vh;
-        height: 14vh;
+        width: 15vh; /* Ajuste do tamanho das imagens */
+        height: 15vh;
     }
 }
 @media (max-width: 768px) {
@@ -136,66 +171,83 @@ footer .box-patrocinios .logo-patrocinios .cairo{
         flex-direction: column;
         height: auto;
         gap: 1vh;
+        font-size: 2vh; /* Ajuste do tamanho da fonte */
     }
 
-    footer .content-footer .sa-box, 
-    footer .content-footer .sb-box, 
+    footer .content-footer .sa-box,
+    footer .content-footer .sb-box,
     footer .content-footer .sc-box {
-        margin-left: 0;
-        margin-right: 0;
+        width: 100%;
+        margin: 0;
         justify-content: center;
     }
 
-    footer .content-footer .sa-box .texto,
+    footer .content-footer .sa-box .prefeitura-img,
     footer .content-footer .sb-box .fecam-img,
-    footer .content-footer .icon {
-        font-size: 2vh;
-        width: 8vh;
-        height: 8vh;
+    footer .content-footer img {
+        width: 12vh; /* Ajuste do tamanho das imagens */
+        height: 12vh;
     }
 
-    .text span {
-        font-size: 3vh;
+    footer .content-footer .sa-box .texto {
+        font-size: 2.5vh; /* Ajuste do tamanho do texto */
+    }
+
+    footer .box-patrocinios .logo-patrocinios {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+        align-items: center;
+        justify-items: center;
+        gap: 1vh;
     }
 
     footer .box-patrocinios .logo-patrocinios img,
     footer .box-patrocinios .logo-patrocinios .cairo {
-        width: 14vh;
-        height: 14vh;
+        width: 15vh; /* Ajuste do tamanho das imagens */
+        height: 15vh;
     }
 }
 
-/* Media Queries para Tablets */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Media Query para dispositivos com largura máxima de 480px (celulares pequenos) */
+@media (max-width: 480px) {
     footer .content-footer {
-        flex-direction: column;
-        height: auto;
-        gap: 1.5vh;
+        font-size: 1.5vh; /* Ajuste do tamanho da fonte */
     }
 
-    footer .content-footer .sa-box, 
-    footer .content-footer .sb-box, 
-    footer .content-footer .sc-box {
-        margin-left: 0;
-        margin-right: 0;
-        justify-content: center;
-    }
-
-    footer .content-footer .sa-box .texto,
+    footer .content-footer .sa-box .prefeitura-img,
     footer .content-footer .sb-box .fecam-img,
-    footer .content-footer .icon {
-        font-size: 2.5vh;
-        width: 10vh;
+    footer .content-footer img {
+        width: 10vh; /* Ajuste do tamanho das imagens */
         height: 10vh;
     }
 
-    .text span {
-        font-size: 3.5vh;
+    footer .content-footer .sa-box .texto {
+        font-size: 2vh; /* Ajuste do tamanho do texto */
+    }
+
+    footer .box-patrocinios .logo-patrocinios {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+        align-items: center;
+        justify-items: center;
+        gap: 1vh;
     }
 
     footer .box-patrocinios .logo-patrocinios img,
     footer .box-patrocinios .logo-patrocinios .cairo {
-        width: 16vh;
-        height: 16vh;
+        width: 12vh; /* Ajuste do tamanho das imagens */
+        height: 12vh;
+    }
+
+    .copy {
+        font-size: 1.2vh; /* Ajuste do tamanho da fonte */
+    }
+
+    .text span {
+        font-size: 3vh; /* Ajuste do tamanho da fonte */
+    }
+
+    footer .box-patrocinios {
+        font-size: 2.5vh; /* Ajuste do tamanho da fonte */
     }
 }

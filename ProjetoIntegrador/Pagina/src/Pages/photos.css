@@ -582,3 +582,84 @@
         transform: rotate(360deg);
     }
 }
+
+@media (max-width: 768px) {
+    .page-photos header .title {
+        height: auto;
+        font-size: 2vh; /* Ajuste do tamanho da fonte */
+    }
+    .page-photos .container-photos .box-ct,
+    .page-photos .container-photos2 .box-ct2{
+        height: auto;
+        width: auto;
+    }
+    .container-photos .box-ct .name-ct .infos-card-galeria span{
+        letter-spacing: .1vh ;
+        font-size: 1.5vh;
+        font-weight: 800;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-photos header .logo img{
+        width: 12vh;
+        height: 12vh;
+    }
+    .page-photos header .title {
+        height: auto;
+        font-size: 1.vh; /* Ajuste do tamanho da fonte */
+    }
+    .page-photos header .title .subtitle{
+        height: auto;
+        font-size: 2vh; /* Ajuste do tamanho da fonte */
+    }
+    .page-photos .container-photos .box-ct,
+    .page-photos .container-photos2 .box-ct2{
+        height: auto;
+        width: auto;
+    }
+    .container-photos .box-ct .name-ct .infos-card-galeria span{
+        letter-spacing: .1vh ;
+        font-size: 2vh;
+        font-weight: 800;
+        align-items: center;
+    }
+    .container-photos .box-ct .name-ct .icons-card-galeria .att-photos-time{
+        display: none;
+    }
+}
+@media (max-width: 380px) {
+    .page-photos header .logo img{
+        width: 9vh;
+        height: 9vh;
+    }
+    .page-photos header .title {
+        height: auto;
+        font-size: .9vh; /* Ajuste do tamanho da fonte */
+    }
+    .page-photos header .title .subtitle{
+        height: auto;
+        font-size: 2vh; /* Ajuste do tamanho da fonte */
+    }
+    .page-photos .container-photos .box-ct,
+    .page-photos .container-photos2 .box-ct2{
+        height: auto;
+        width: auto;
+    }
+    .container-photos .box-ct .name-ct .infos-card-galeria span{
+        letter-spacing: .1vh ;
+        font-size: 1.5vh;
+        font-weight: 800;
+        align-items: center;
+    }
+    .container-photos .box-ct .name-ct .att-photos-time p{
+        display: none;
+    }
+    .container-photos .box-ct .name-ct .icon-card-galeria{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
