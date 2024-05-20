@@ -92,6 +92,13 @@ const Home = () => {
                     <img onClick={handleOnClickLogin} src={UserLogin} alt="user login"></img>
                 </div>
             </header>
+
+            <div className="redes-sociais-nav">
+                <a href="https://www.instagram.com/semeando.campeoes/" target="_blank" ><img src={LogoInstagram} alt="logo do instagram"></img></a>
+                <a href="https://www.facebook.com/semeandocampeoes/" target="_blank" ><img src={LogoFacebook} alt="logo do facebook"></img></a>
+                <a href="https://www.youtube.com/@semeandocampeoes7001" target="_blank" ><img className='youtube' src={LogoYoutube} alt="logo do youtube"></img></a>
+            </div>
+
             <nav>
                 <div className="btn-galeria-de-fotos">
                     <MyButton
@@ -153,7 +160,7 @@ const Home = () => {
                 <MyButton
                     onClick={() => setContent("instrutores")}
                     className={ content == "instrutores" ? "active" : "inative" }
-                    width= "25%"
+                    width= "30%"
                     height= "5.5vh"
                     cursor= "pointer"
                     fontSize= "2.75vh"
@@ -170,8 +177,8 @@ const Home = () => {
 
                 <MyButton
                     onClick={() => setContent("cts")}
-                    className={ content == "cts" ? "active" : "inative" }
-                    width= "25%"
+                    className={ content == "cts" ? "activect" : "inativect" }
+                    width= "40%"
                     height= "5.5vh"
                     cursor= "pointer"
                     fontSize= "2.75vh"
@@ -189,7 +196,7 @@ const Home = () => {
                 <MyButton
                     onClick={() => setContent("histórico")}
                     className={ content == "histórico" ? "active" : "inative" }
-                    width= "25%"
+                    width= "30%"
                     height= "5.5vh"
                     cursor= "pointer"
                     fontSize= "2.75vh"

@@ -18,6 +18,7 @@
     justify-content: space-around;
     margin-top: 4vh;
     margin-bottom: 6vh;
+    gap: 2vh;
 }
 
 .content .box span{
@@ -32,13 +33,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: auto;
+    width: 30vh;
+    height: 30vh;
 }
 
 .content .box .box-img img{
-    width: 30vh;
-    height: 30vh;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     box-shadow: 0vh .4vh .9vh rgba(0, 0, 0, 0.9);
 }
@@ -115,4 +116,26 @@
 
     width: 3.5vh;
     height: 3.5vh;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .content .box .box-info span{
+        font-size: 4vh;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .content .box{
+        flex-direction: column;
+    }
+    .content .box .box-info img{
+        float: inline-start;
+    }
+    .content .box .box-info span{
+        font-size: 3vh;
+    }
+
+    .content .box .box-info .redes-sociais-instrutor{
+        width: 40%;
+    }
 }
