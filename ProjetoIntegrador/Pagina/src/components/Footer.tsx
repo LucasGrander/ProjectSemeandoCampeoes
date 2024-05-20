@@ -22,11 +22,15 @@ const Footer = () => {
         <div className='content-footer'>
             
             <div className="sa-box">
-              <a href="https://campomourao.atende.net/subportal/fundacao-de-esportes" target="_blank" ><img className='prefeitura-img' src={PrefeituraLogo3} alt='logo Prefeitura de Campo Mourão'></img></a>
+              <div className="prefeitura-all">
+                <a href="https://campomourao.atende.net/subportal/fundacao-de-esportes" target="_blank" ><img className='prefeitura-img' src={PrefeituraLogo3} alt='logo Prefeitura de Campo Mourão'></img></a>
                   <div className='texto'>
-                    <a><h6>Município de</h6></a>
-                    <a> <h5>CAMPO MOURÃO</h5></a>
-                  </div>
+                  <a><h6>Município de</h6></a>
+                  <a> <h5>CAMPO MOURÃO</h5></a>
+                </div>
+              </div>
+
+                  <a href="https://www.instagram.com/fecam_esportes?igsh=a2F2d3gxZHNpanB2" target="_blank" ><img className='fecam-img' src={FecamLogo} alt='logo FECAM'></img></a>
             </div>
             
             <div className='sc-box'>
