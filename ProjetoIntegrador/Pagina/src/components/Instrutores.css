@@ -139,3 +139,23 @@
         width: 40%;
     }
 }
+
+@media (max-width: 481px) {
+    .content .box{
+        flex-direction: column;
+    }
+    .content .box .box-info img{
+        float: inline-start;
+    }
+    .content .box .box-info span{
+        font-size: 3vh;
+    }
+
+    .content .box .box-info .desc-instrutor{
+        text-align: center;
+    }
+
+    .content .box .box-info .redes-sociais-instrutor{
+        width: 50%;
+    }
+}

@@ -210,6 +210,10 @@ footer .box-patrocinios .logo-patrocinios .cairo{
         font-size: 2vh; /* Ajuste do tamanho da fonte */
     }
 
+    footer .content-footer .sa-box {
+        gap: 30%;
+    }
+
     footer .content-footer .sa-box,
     footer .content-footer .sc-box {
         width: 100%;
@@ -261,8 +265,12 @@ footer .box-patrocinios .logo-patrocinios .cairo{
         font-size: 1.5vh; /* Ajuste do tamanho da fonte */
     }
 
+    footer .content-footer .sa-box {
+        gap: 20%;
+    }
+
     footer .content-footer .sa-box .prefeitura-img,
-    footer .content-footer .sb-box .fecam-img,
+    footer .content-footer .sa-box .fecam-img,
     footer .content-footer img {
         width: 10vh; /* Ajuste do tamanho das imagens */
         height: 10vh;

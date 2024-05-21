@@ -47,7 +47,7 @@ header{
 
     display: flex;
     justify-content: space-between;
-    align-self: center;
+    align-items: center;
     
     background-color: black;
     border-bottom: rgb(255, 0, 0) solid .8vh;
@@ -163,7 +163,7 @@ header .login-acess img:hover{
 
 
 nav{
-    width: 100%;
+    width: 90%;
     height: 10vh;
     
     display: flex;
@@ -407,12 +407,69 @@ nav button:hover img{
         justify-content: center;
         align-items: center;
     
-        width: 30%;
+        width: 100%;
         gap: 11vh;
     }
 
     header .login-acess{
         margin-right: 4vh;
+    }
+
+    .redes-sociais-nav{
+        display: flex;
+    }
+
+    nav{
+        gap: 3vh;
+    }
+
+    .info-button{
+        gap: 5vh;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 15vh;
+        height: 15vh;
+        font-size: 2vh;
+        color: white;
+    }
+    header .title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7vh;
+        color: white;
+    }
+    header .redes-sociais{
+        display: none;
+    }
+
+    .redes-sociais-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        width: 100%;
+        gap: 7vh;
+    }
+    .redes-sociais-nav img{
+        width: 7vh;
+        height: 7vh;
+    }
+
+    header .login-acess{
+        margin-right: 2vh;
+    }
+
+    header .login-acess img{
+        width: 6vh;
+        height: 6vh;
     }
 
     .redes-sociais-nav{

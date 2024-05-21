@@ -102,6 +102,7 @@ const Home = () => {
             <nav>
                 <div className="btn-galeria-de-fotos">
                     <MyButton
+                        className='galeria-query'
                         onClick={handleOnClickFotos}
                         width="100%"
                         height="100%"
@@ -125,6 +126,7 @@ const Home = () => {
                 
                 <div className="btn-faca-parte">
                     <MyButton
+                        className='participe-query'
                         onClick={handleOnClickParticipe}
                         width="100%"
                         height="100%"
