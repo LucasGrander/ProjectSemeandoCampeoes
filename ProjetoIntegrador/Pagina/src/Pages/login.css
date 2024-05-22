@@ -27,6 +27,7 @@
 
 .page-login header .logo{
     width: 15%;
+    height: 100%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -149,6 +150,7 @@
     font-size: 1.9vh;
     color: rgb(0, 0, 0);
     background-color: white;
+    border-radius: 50%;
     padding: 0vh 2vh 0vh 2vh;
     transition: .3s;
 }
@@ -492,4 +494,82 @@
     100%{
         transform: rotate(360deg);
     }
+}
+
+@media (min-width: 1025px) and (max-width: 1350px) {
+    .page-login header .logo img{
+        margin-left: 6vh;
+    }
+
+    .page-login header .title{
+        width: 75%;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .page-login header .logo img{
+        margin-left: 6vh;
+    }
+
+    .page-login header .title{
+        width: 65%;
+    }
+
+    .center-login-page .top .container-change-button{
+        width: 30vh;
+    }
+
+    .center-login-page .top .container-change-button .left, .center-login-page .top .container-change-button .right{
+        text-align: center;
+
+    }
+
+    .center-login-page .top .container-change-button .change-circle{
+        width: 70%;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .page-login header .logo img{
+        margin-left: 2vh;
+    }
+
+    .page-login header .title{
+        width: 70%;
+        font-size: 3vh;
+    }
+
+    .page-login{
+        height: 200vh;
+        overflow-y: auto;
+    }
+
+    .page-login .container-login .login-professores{
+        width: 70%;
+        height: 400vh;
+        border-radius: 3vh;
+    }
+
+    .page-login .container-login .login-alunos{
+        width: 70%;
+        height: 400vh;
+        border-radius: 3vh;
+    }
+
+    .page-login .container-login{
+        flex-direction: column;
+        padding: 5vh 0vh;
+    }
+
+    .center-login-page .bottom .container-stickman,
+    .center-login-page .bottom {
+        display: none;
+    }
+}
+
+
+@media (max-width: 480px) {
+    
 }
