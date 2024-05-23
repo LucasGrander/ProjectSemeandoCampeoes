@@ -36,7 +36,7 @@
 }
 
 .page-photos header .logo img{
-    width: 100%;
+    width: 16vh;
     height: 90%;
     margin-left: 4vh;
     border-radius: 50%;
@@ -44,7 +44,7 @@
 }
 
 .page-photos header .title{
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: start;
