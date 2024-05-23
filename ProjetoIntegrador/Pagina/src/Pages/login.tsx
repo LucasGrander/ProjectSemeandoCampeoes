@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import './login.css'
 import MyInput from "../components/MyInput"
 import LogoSemeandoCampeoes from "../assets/LogoSemeandoCampeoes.png"
@@ -176,10 +176,22 @@ function Login (){
         setFocusUserAluno(false)
         setFocusPassWProfessor(false)
         setFocusUserProfessor(false)
+    }
+    const handleOnClickSouAlunoQuery = () =>{
+        setActiveLogin(true)
+        setUserAluno("")
+        setPasswordAluno("")
+        setUserProfessor("")
+        setPasswordProfessor("")
+
+        setFocusPassWAluno(false)
+        setFocusUserAluno(false)
+        setFocusPassWProfessor(false)
+        setFocusUserProfessor(false)
 
         setTimeout(() => {
             handleRedirectToAluno()
-        }, 200);
+        }, 100);
     }
 
     const handleOnClickSouProfessor = () =>{
@@ -193,10 +205,23 @@ function Login (){
         setFocusUserAluno(false)
         setFocusPassWProfessor(false)
         setFocusUserProfessor(false)
+    }
+
+    const handleOnClickSouProfessorQuery = () =>{
+        setActiveLogin(false)
+        setUserAluno("")
+        setPasswordAluno("")
+        setUserProfessor("")
+        setPasswordProfessor("")
+
+        setFocusPassWAluno(false)
+        setFocusUserAluno(false)
+        setFocusPassWProfessor(false)
+        setFocusUserProfessor(false)
         
         setTimeout(() => {
             handleRedirectToProf()
-        }, 200);
+        }, 100);
     }
 
     const [mouseOnProf, setMouseOnProf] = useState(false)
@@ -242,22 +267,29 @@ function Login (){
     }
 
     const redirectProfessor = useRef<HTMLDivElement>(null)
-
     const handleRedirectToProf = () => {
         if(redirectProfessor.current){
             redirectProfessor.current.scrollIntoView({behavior: "smooth"})
         }
-
     }
 
     const redirectAluno = useRef<HTMLDivElement>(null)
-
     const handleRedirectToAluno = () => {
         if(redirectAluno.current){
             redirectAluno.current.scrollIntoView({behavior: "smooth"})
         }
-
     }
+
+    const autoRedirectMobile = useRef<HTMLDivElement>(null)
+    const handleRedirectMobile = () => {
+        if(autoRedirectMobile.current){
+            autoRedirectMobile.current.scrollIntoView({behavior: "smooth"})
+        }
+    }
+
+    useEffect(() => {
+        handleRedirectMobile()
+    }, [])
 
 return (
     <>
@@ -356,7 +388,6 @@ return (
 
 
             <div className="center-login-page">
-
                 <div className="top">
                     <div className="container-change-button">
                         <div onClick={handleOnClickSouProfessor} onMouseEnter={handleOnEnterLoginCenterProf} onMouseLeave={handleOnLeaveLoginCenterProf} style={{cursor: "pointer", transform: mouseOnProf ? "scale(1.03)" : "scale(1.0)"}} className="left">
@@ -381,12 +412,32 @@ return (
                         <img style={{opacity: activeLogin ? "0" : "1", transition: "1s"}} src={stickmanLogin2}></img>
                     </div>
                 </div>
+
+
+                {/* editar a query da página: */}
+                <div ref={autoRedirectMobile} className="top-query">
+                    <div className="container-change-button">
+                        <div onClick={handleOnClickSouProfessorQuery} onMouseEnter={handleOnEnterLoginCenterProf} onMouseLeave={handleOnLeaveLoginCenterProf} style={{cursor: "pointer", transform: mouseOnProf ? "scale(1.03)" : "scale(1.0)"}} className="left">
+                                <span style={{color: activeLogin ? "black" : "white", transition: "1s"}} >Sou professor</span>
+                        </div>
+
+                        <div onClick={handleOnClickSouAlunoQuery} onMouseEnter={handleOnEnterLoginCenterAluno} onMouseLeave={handleOnLeaveLoginCenterAluno} style={{cursor: "pointer", transform: mouseOnAluno ? "scale(1.03)" : "scale(1.0)"}} className="right">
+                            <span style={{color: activeLogin ? "white" : "black", transition: "1s"}}>Sou aluno</span>
+                        </div>
+                        
+                        <div style={{transform: activeLogin ? "translateX(12vh)" : "translateX(-11.5vh)", transition: ".6s ease-in-out"}} id="change-circle" className="change-circle">
+                        </div>
+                    </div>
+                    <div className="redirect-login">
+                    <span className='question'>Não é aluno?<a onClick={handleOnClickParticipe} >Faça parte!</a></span>
+                </div>
+                </div>
             </div>
 
 
 
 
-            <div style={{pointerEvents: activeLogin ? "all" : "none", filter: activeLogin ? "grayscale(0%)" : "grayscale(100%)", opacity: activeLogin ? "1" : ".2", transition: "1s"}} className="login-alunos">
+            <div ref={redirectAluno} style={{pointerEvents: activeLogin ? "all" : "none", filter: activeLogin ? "grayscale(0%)" : "grayscale(100%)", opacity: activeLogin ? "1" : ".2", transition: "1s"}} className="login-alunos">
                     <img className="design-type-wifi-top" src={designLogin}></img>
                     <img className="design-type-wifi-bottom" src={designLogin}></img>
                     <span>Aluno</span>

@@ -224,6 +224,10 @@
 }
 
 .page-cadaster .container-cadaster .content-cadaster .title-cadaster{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    flex-direction: column;
     color: rgba(0, 0, 0, 0.365);
     -webkit-text-stroke: .3vh black;
     text-shadow: .2vh .3vh 0vh rgba(0, 0, 0, 0.5);
