@@ -13,6 +13,7 @@ import CentrosDeTreinamento from '../components/CentrosDeTreinamento'
 import Historico from '../components/Historico'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import Footer from '../components/Footer'
+import NL from '../assets/NL.jpg'
   
 const Home = () => {
     const [content, setContent] = useState('cts')
@@ -66,6 +67,18 @@ const Home = () => {
         setTimeout(() => {
             setOverlay(false)
         }, 2000)
+    }
+    const handleOnClickNews = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/newslatter'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+        
     }
 
 
@@ -152,6 +165,34 @@ const Home = () => {
                         {/* somente animação ao redor do botão */}
                     </div>
                 </div>
+                <div className="btn-newslatter">
+                    <MyButton
+                        className='newslatter-query'
+                        onClick={handleOnClickNews}
+                        width="100%"
+                        height="100%"
+                        cursor="pointer"
+                        display="flex"
+                        justifyContent="space-evenly"
+                        alignItems="center"
+                        border="solid .3vh black"
+                        borderBottom="solid .7vh black"
+                        borderRadius=".4vh"
+                        fontSize="2.5vh"
+                        fontWeight="700"
+                        transition=".3s"
+                        boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
+                        enter="rgba(150, 150, 150, 0.5)"
+                        leave="white"
+                        zIndex='1'
+                        >
+                            Boletim informativo<img src={NL} alt='aperto de mãos' />
+                    </MyButton>
+
+                    <div className="animation-highlight">
+                        {/* somente animação ao redor do botão */}
+                    </div>
+                </div>
             </nav>
 
             <div className="container-home">
@@ -217,6 +258,7 @@ const Home = () => {
                 {content === 'instrutores' && <Instrutores id={content == "instrutores" ? "active" : "inative"} />}
                 {content === 'cts' && <CentrosDeTreinamento id={content == "cts" ? "active" : "inative"} />}
                 {content === 'histórico' && <Historico id={content == "histórico" ? "active" : "inative"} />}
+
                 </div>
             </div>
             <Footer />
