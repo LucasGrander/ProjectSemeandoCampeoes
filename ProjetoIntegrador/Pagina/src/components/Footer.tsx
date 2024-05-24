@@ -1,8 +1,4 @@
-import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
-import PrefetuiraLogo from '../assets/Logo-CM-Prefeitura.png'
-import PrefeituraLogo2 from '../assets/Logo-CM-Prefeitura2.png'
 import PrefeituraLogo3 from '../assets/Logo-CM-Prefeitura3.png'
-import BrasaoPMCM from '../assets/BrasaoCM.png'
 import FecamLogo from '../assets/Logo-FECAM2.png'
 import './Footer.css'
 import Boloisa from '../assets/PBoloisa.jpeg'
