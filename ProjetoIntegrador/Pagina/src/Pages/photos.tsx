@@ -71,57 +71,6 @@ const Photos = () => {
         }, 2000)
     }
 
-    //copa 1
-    const handleOnClickICopa = () => {
-        setOverlay(true)
-    
-        setTimeout(() => {
-            window.location.href = 'http://www.facebook.com/share/nVK8sAoGN9JVHH4i/?'
-        }, 500)
-
-        setTimeout(() => {
-            setOverlay(false)
-        }, 2000)
-    }
-
-    //copa 2
-    const handleOnClickIICopa = () => {
-        setOverlay(true)
-    
-        setTimeout(() => {
-            window.location.href = 'https://resenhacm.com.br/criancas-e-adolescentes-participam-de-graduacao-anual-e-da-segunda-copa-semeando-campeoes/'
-        }, 500)
-
-        setTimeout(() => {
-            setOverlay(false)
-        }, 2000)
-    }
-
-    //copa 3
-    const handleOnClickIIICopa = () => {
-        setOverlay(true)
-    
-        setTimeout(() => {
-            window.location.href = 'http://www.facebook.com/share/pjo4A11NkWZsMAaB/?'
-        }, 500)
-
-        setTimeout(() => {
-            setOverlay(false)
-        }, 2000)
-    }
-
-    //copa 4
-    const handleOnClickIVCopa = () => {
-        setOverlay(true)
-    
-        setTimeout(() => {
-            window.location.href = 'https://www.facebook.com/media/set/?set=a.884445603684264&type=3'
-        }, 500)
-
-        setTimeout(() => {
-            setOverlay(false)
-        }, 2000)
-    }
     return(
     <div className="page-photos">
         <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
