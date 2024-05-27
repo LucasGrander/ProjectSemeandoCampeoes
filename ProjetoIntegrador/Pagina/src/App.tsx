@@ -9,6 +9,7 @@ import Photos from './Pages/photos'
 import InformationEdit from './Pages/informationEdit'
 import InformationSee from './Pages/informationSee'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NewsLatter from './Pages/NewsLatter'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
             <Route path= "/galeria-de-fotos/Galeria-LarParana" element = {<GaleriaLP />}/>
             <Route path= "/login/informações-acessoProfessor" element = {<InformationEdit />}/>
             <Route path= "/login/informações-acessoAluno" element = {<InformationSee />}/>
+            <Route path= "newsLatter" element = {<NewsLatter />}/>
         </Routes>
     </BrowserRouter>
   )
