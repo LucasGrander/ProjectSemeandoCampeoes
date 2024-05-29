@@ -68,11 +68,11 @@ const Home = () => {
             setOverlay(false)
         }, 2000)
     }
-    const handleOnClickNews = () => {
+    const handleOnClickNewsLatter = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/newslatter'
+            window.location.href = '/newsLatter'
         }, 1500)
 
         setTimeout(() => {
@@ -165,10 +165,10 @@ const Home = () => {
                         {/* somente animação ao redor do botão */}
                     </div>
                 </div>
-                <div className="btn-newslatter">
+                <div className="btn-news">
                     <MyButton
-                        className='newslatter-query'
-                        onClick={handleOnClickNews}
+                        className='newsLatter-query'
+                        onClick={handleOnClickNewsLatter}
                         width="100%"
                         height="100%"
                         cursor="pointer"
