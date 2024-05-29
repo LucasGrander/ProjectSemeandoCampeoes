@@ -19,8 +19,7 @@ const NewsLatter = ({id}: Props) => {
               apoiadores do evento e do judô mourãoense de 2024.<br></br>
               As categorias sub-13, sub-15, sub-21 e veterano competem no sábado (25), das 8h às 18h, enquanto o Torneio Regional de Judô – 04 anos acima, será realizado no domingo (26), das 8h às 14h, 
               ambos no Ginásio de Esportes Belin Carolo, em anexo a Universidade Tecnológica Federal do Paraná (UFPR) – Campus de Campo Mourão.
-              <h5>link das imagens: <a target='_blank'  href="https://resenhacm.com.br/campo-mourao-recebe-campeonato-paranaense-de-judo-neste-final-de-semana-no-ginasio-da-utfpr/">site resenha CM</a>
- </h5>
+              <h5>link das imagens: <a target='_blank'  href="https://resenhacm.com.br/campo-mourao-recebe-campeonato-paranaense-de-judo-neste-final-de-semana-no-ginasio-da-utfpr/">site resenha CM</a></h5>
                 <h5>Postagem 27/05/2024</h5>
                           
               <h2>Treinão solidário</h2>
