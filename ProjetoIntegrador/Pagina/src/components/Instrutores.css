@@ -12,7 +12,7 @@
 }
 
 .content .box{
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -66,7 +66,7 @@
 
 .content .box .box-info .desc-instrutor{
     text-align: justify;
-    margin-top: 2vh;
+    margin-top: 1vh;
     font-size: 2.5vh;
 }
 
@@ -128,9 +128,6 @@
     .content .box{
         flex-direction: column;
     }
-    .content .box .box-info img{
-        float: inline-start;
-    }
     .content .box .box-info span{
         font-size: 3vh;
     }
@@ -144,9 +141,6 @@
     .content .box{
         flex-direction: column;
     }
-    .content .box .box-info img{
-        float: inline-start;
-    }
     .content .box .box-info span{
         font-size: 3vh;
     }
@@ -156,6 +150,6 @@
     }
 
     .content .box .box-info .redes-sociais-instrutor{
-        width: 50%;
+        width: 45%;
     }
 }

@@ -25,7 +25,7 @@ const CentrosDeTreinamento = ({id}: Props) => {
                     <span>Rua São Josafat, 1778</span>
                     <span>Centro, Campo Mourão - PR,</span>
                     <span>87302-170</span>
-                    <br />
+                    
                     <span><strong>Treinos:</strong></span>
                     <span>Terças e quintas: 19h</span>
                     <span>Sábados: 16h</span>
@@ -42,7 +42,7 @@ const CentrosDeTreinamento = ({id}: Props) => {
                     <span>Rua Duque de Caxias,</span>
                     <span>Jardim Lar Paraná, Campo Mourão - PR,</span>
                     <span>87305-120</span>
-                    <br />
+                    
                     <span><strong>Treinos:</strong></span>
                     <span>Segundas, quartas e sextas: 18h20</span>
                 </div>
@@ -58,7 +58,7 @@ const CentrosDeTreinamento = ({id}: Props) => {
                     <span>Rua Otaviano Felix, 0000</span>
                     <span>Centro, Iretama - PR,</span>
                     <span>87280-000</span>
-                    <br />
+                    
                     <span><strong>Treinos:</strong></span>
                     <span>dias aqui</span>
                 </div>
