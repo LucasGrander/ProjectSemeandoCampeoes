@@ -5,10 +5,27 @@
 }
 .content-history{
     width: 100%;
-    height: auto;
+    min-height: 100vh;
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
+}
+.content-history header .title{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     justify-content: center;
+    letter-spacing: 1vh;
+    word-spacing: 1vh;
+    font-size: 3.5vh;
+    color: white;
+    text-shadow: 0.2vh 0.2vh .2vh rgba(255, 255, 255, 0.272);  
+}
+.content-history footer{
+    width: 100%;
+    display: flex;
 }
 .content-history .box-history{
     width: 80%;

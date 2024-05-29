@@ -197,6 +197,10 @@ nav button:hover img{
     position: relative;
     z-index: 1;
 }
+.btn-news{
+    width: 30vh;
+    height: 6vh;
+}
 
 .btn-news{
     width: 30vh;
