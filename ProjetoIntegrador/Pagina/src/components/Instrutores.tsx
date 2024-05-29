@@ -2,8 +2,7 @@ import './Instrutores.css'
 import DionatanIMG from '../assets/FotoDionatan.png'
 import RicardoIMG from '../assets/FotoRicardo.png'
 import DanielIMG from '../assets/Daniel.jpg'
-import PSC from '../assets/LogoSemeandoCampeoes.png'
-
+import DiegoIMG from '../assets/DiegoGBI.jpeg'
 import instaLOGO from '../assets/instagram.svg'
 import faceLOGO from '../assets/facebook.svg'
 import youtubeLOGO from '../assets/youtube.svg'
@@ -68,7 +67,7 @@ const Instrutores = ({id}: Props) => {
         </div>
         <div className="box">
             <div className="box-img">
-                <img className='Diego' src={PSC} alt='foto tal'></img>
+                <img className='Diego' src={DiegoIMG} alt='foto tal'></img>
             </div>
             <div className="box-info">
                 <span>Diego Antonio de Oliveira Ribeiro</span>
