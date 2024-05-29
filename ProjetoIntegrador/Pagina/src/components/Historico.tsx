@@ -51,7 +51,8 @@ const Historico = ({id}: Props) => {
               Total de medalhas em 2019:<br></br>
               Ouro 08<br></br>
               Prata 10<br></br>
-              Bronze 13<br></br> 
+              Bronze 13<br></br>
+              Soma: 31<br></br> 
 
               <h2>Atividades em 2020:</h2>
               Treino infantil as segundas e quartas as 18h30 e defesa pessoal para mulheres as 20h30 nas dependências do EMMoL de janeiro a março quando as atividades foram suspensas devido a pandemia de COVID-19.<br></br>
@@ -63,6 +64,7 @@ const Historico = ({id}: Props) => {
               Em 19 de dezembro o PSC mobilizou 12 alunos para a II Copa Kids Semeando Campeões – modalidade Kata, resultando em 03 troféus:<br></br>
               Campeão: 01<br></br>
               Terceiro Colocado: 01<br></br>
+              Soma: 02<br></br>
 
               <h2>Atividades em 2021:</h2>
               Em 27 de janeiro o PSC firmou parceria com a Primeira Igreja Batista de Campo Mourão, sendo ministradas as aulas no salão de eventos da PIB, nas segundas e quartas as 19h30.<br></br>
@@ -76,6 +78,7 @@ const Historico = ({id}: Props) => {
               Ouro: 02<br></br>
               Prata: 02<br></br>
               Bronze: 01<br></br>
+              Soma: 05<br></br>
 
               <h2>Atividades em 2022:</h2>
               Em 11 de janeiro as aulas passaram a ser ministradas as terças e quintas as 19h.<br></br>
@@ -109,35 +112,40 @@ const Historico = ({id}: Props) => {
               Ouro 16<br></br>
               Prata 15<br></br>
               Bronze 14<br></br> 
+              Soma: 45<br></br>
 
               <h2>Atividades em 2023:</h2>
               Reinicio das aulas em 17 de janeiro.<br></br>
               Em 04 de fevereiro participamos do “desafio dos veteranos” de Judô, realizado nas dependências do Dojo Uchoa.<br></br>
               Em 25 de março foi realizada a graduação semestral no parque do lago, sendo realizadas diversas atividades e brincadeiras com os alunos.<br></br>
               Em 30 de março foi ministrada instrução de defesa pessoal e uso de tonfa para os atiradores do TG 05-19 de Campo Mourão.<br></br>
-              Em 16 de abril o PSC leva 17 atletas para a 10ª <a target='_blank'  href = "https://resenhacm.com.br/projeto-social-semeando-campeoes-e-destaque-com-12-medalhas-na-10a-copa-da-amizade-em-umuarama/?fbclid=IwAR2UnXHbTqZPJ_s2_6qbAkCnpsfZzYY1wo02na2w5ToFa_pEZe-HUdT2rn0">Copa da Amizade</a> em Umuarama.<br></br>
+              Em 16 de abril o PSC leva 17 atletas para a 10ª <a target='_blank'  href = "https://resenhacm.com.br/projeto-social-semeando-campeoes-e-destaque-com-12-medalhas-na-10a-copa-da-amizade-em-umuarama/?fbclid=IwAR2UnXHbTqZPJ_s2_6qbAkCnpsfZzYY1wo02na2w5ToFa_pEZe-HUdT2rn0">Copa da Amizade</a> 
+              em Umuarama, resultando em 12 medalhas.<br></br>
               Em 30 de abril o PSC organiza um “I treinão” de Jiu Jitsu, em parceria com a Gracie Barra/Dojo Uchoa, reunindo todas as equipes de JiuJitsu de Campo Mourão, equipes de Mamborê e Iretama.<br></br>
+              Em 19 de agosto o PSC participou com 05 alunos do I Gorilla Grip em Maringa resultando em 05 medalhas.<br></br>
               Em 16 de maio realizada visita o Tiro de Guerra de Campo Mourão, onde os alunos do PSC conheceram as instalações e conversaram com o comandante e instrutores do TG 05-19. <br></br>
+              Em 01 de outubro o PSC levou 07 alunos para participar da I Copa Champions de Jiu Jitsu em Maringa, resultando em 07 medalhas.<br></br>
               Em 13 de dezembro houve o encerramento do ano letivo com um evento de Jiu Jitsu sem kimono (GP Semeando Campeões) onde os atletas foram divididos em 4 categorias em formato de “Grand Prix”, participando atletas da Gracie Barra, Norte BJJ e o PSC, entrega de prêmios aos melhores do ano e confraternização.<br></br>
-              Em 16 de dezembro foi realizada a <a target='_blank'  href="https://resenhacm.com.br/sucesso-iv-copa-kids-de-jiu-jitsu-semeando-campeoes-reuniu-mais-de-100-atletas/">meios de comunicações</a>. Durante o evento foram arrecadadas doações de água de coco, café e alimentos para a Santa Casa de Campo Mourão.<br></br>
+              Em 16 de dezembro foi realizada a <a target='_blank'  href="https://resenhacm.com.br/sucesso-iv-copa-kids-de-jiu-jitsu-semeando-campeoes-reuniu-mais-de-100-atletas/">meios de comunicações</a>. 
+              Durante o evento foram arrecadadas doações de água de coco, café e alimentos para a Santa Casa de Campo Mourão. O PSC participou com 29 atletas, resultando em 30 medalhas.<br></br>
 
               <h2>Competições e Resultados em 2023:</h2>
-              Em 16 de abril, com 17 atletas na 10ª Copa da Amizade Umuarama resultando em 12 medalhas:<br></br>
+              Em 16 de abril, 10ª Copa da Amizade Umuarama:<br></br>
               Ouro: 04<br></br>
               Prata: 04<br></br>
               Bronze: 04<br></br>
-              Em 19 de agosto o PSC participou com 05 alunos do I Gorilla Grip em Maringa resultando em 05 medalhas:<br></br>
+              Em 19 de agosto I Gorilla Grip em Maringa:<br></br>
               Ouro: 03<br></br>
               Prata: 02<br></br>
-              Em 01 de outubro o PSC levou 07 alunos para participar da I Copa Champions de Jiu Jitsu em Maringa, resultando em 07 medalhas:<br></br>
+              Em 01 de outubro I Copa Champions de Jiu Jitsu em Maringa:<br></br>
               Ouro: 03<br></br>
               Prata: 02<br></br>
               Bronze: 02<br></br>
-              Em 13 de dezembro o PSC participou com 06 atletas do GP Semeando Campeões, resultando em 06 medalhas:<br></br>
+              Em 13 de dezembro GP Semeando Campeões:<br></br>
               Ouro: 03<br></br>
               Prata: 02<br></br>
               Bronze: 01<br></br>
-              Em 16 de dezembro o PSC participou com 29 atletas na IV Copa Kids Semeando Campeões resultando em 30 medalhas:<br></br>
+              Em 16 de dezembro IV Copa Kids Semeando Campeões:<br></br>
               Ouro: 12<br></br>
               Prata: 11<br></br>
               Bronze: 07<br></br>
@@ -146,29 +154,42 @@ const Historico = ({id}: Props) => {
               Ouro 25<br></br>
               Prata 21<br></br>
               Bronze 14<br></br> 
+              Soma: 60<br></br>
 
               <h2>Atividades em 2024:</h2>
               Reinicio das aulas em 02 de janeiro.<br></br>
               Em 01 de fevereiro o Projeto Social Brothers Jiu Jitsu de Iretama passou a incorporar efetivamento o PSC, sendo renomeado como PSC Iretama, utilizando o brasão comum, o Projeto Brothers teve sua gênese em meados de 2018, empunhando a
               bandeira da justiça social, velando sempre pelos valores éticos, morais e cristãos através do ensino das artes marciais para crianças e adultos. Agregando atletas dos municípios de Roncador e Nova Tebas.<br></br>
-              Em 10 de março a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa.<br></br>
-              Em 03 de Abril o PSC assinou o termo de colaboração da Lei de incentivo ao esporte firmando parceria com a Prefeitura Municipal de Campo Mourão através da fundação de esportes de Campo Mourão (FECAM), sendo liberados R$20.000,00 para o ano de 2024.<br></br>
-              Em 14 de abril a equipe participou da Copa da Amizade 2024 em Umuarama, com o apoio do 11º Batalhão de Polícia Militar do Paraná (Campo Mourão) que forneceu transporte para 16 dos 25 competidores, contando ainda com o apoio da FECAM atraves da Lei de Incentivo ao Esporte.  
-
+              Em 10 de março a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa com 17 atletas, resultando em 16 medalhas.<br></br>
+              Em 03 de abril o PSC assinou o termo de colaboração da Lei de incentivo ao esporte firmando parceria com a Prefeitura Municipal de Campo Mourão através da fundação de esportes de Campo Mourão (FECAM), sendo liberados R$20.000,00 para o ano de 2024.<br></br>
+              Em 14 de abril a equipe participou da Copa da Amizade 2024 em Umuarama, com o apoio do 11º Batalhão de Polícia Militar do Paraná (Campo Mourão) que forneceu transporte 
+              para 16 dos 25 competidores, resultando em 23 medalhas, contando ainda com o apoio da FECAM atraves da Lei de Incentivo ao Esporte.<br></br>  
+              Em 25 de maio a equipe participou do Campeonato Paranaense de Judô - Circuito Paranaense nas categorias sub-15 e veterano com 03 atletas, realizado em Campo Mourão resultando em 03 medalhas:<br></br>
+              Em 26 de maio a equipe participou do Torneio Regional de Judô com 22 atletas, realizado em Campo Mourão resultando em 22 medalhas:<br></br>
+              
               <h2>Competições e Resultados em 2024:</h2>
-              Em 10 de março a equipe participou da VI Copa Champions de Jiu Jitsu em Maringa com 17 atletas, resultando em 16 medalhas:<br></br>
+              Em 10 de março VI Copa Champions de Jiu Jitsu:<br></br>
               Ouro: 06<br></br>
               Prata: 08<br></br>
               Bronze: 02<br></br>
-              Em 14 de abril a equipe participou da Copa da Amizade 2024 com 25 atletas, resultando em 23 medalhas:<br></br>
+              Em 14 de abril Copa da Amizade 2024:<br></br>
               Ouro: 05<br></br>
               Prata: 11<br></br>
               Bronze: 07<br></br>
+              Em 25 de maio Campeonato Paranaense de Judô:<br></br>
+              Ouro: 01<br></br>
+              Bronze: 02<br></br>
+              Em 26 de maio Torneio Regional de Judô:<br></br>
+              Ouro 06<br></br>
+              Prata 04<br></br>
+              Bronze 12<br></br> 
               <br></br>
+
               Total de medalhas em 2024:<br></br>
-              Ouro 11<br></br>
-              Prata 19<br></br>
-              Bronze 09<br></br>
+              Ouro 17<br></br>
+              Prata 23<br></br>
+              Bronze 21<br></br>
+              Soma: 61<br></br>
 
 
               </p>

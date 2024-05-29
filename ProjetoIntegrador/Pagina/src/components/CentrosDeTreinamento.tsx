@@ -1,10 +1,8 @@
 import './CentrosDeTreinamento.css'
 import PSCC from '../assets/PSCC.jpeg'
 import PSCLP from '../assets/PSCLP.jpeg'
-import PSC from '../assets/LogoSemeandoCampeoes.png'
-import instaLOGO from '../assets/instagram.svg'
-import whatsLOGO from '../assets/whatsapp.svg'
 import CTIretama from '../assets/CTIretama11.jpg'
+import CTAL from '../assets/CTAL.jpg'
 
 interface Props{
     id?: string;
@@ -25,7 +23,7 @@ const CentrosDeTreinamento = ({id}: Props) => {
                     <span>Rua São Josafat, 1778</span>
                     <span>Centro, Campo Mourão - PR,</span>
                     <span>87302-170</span>
-                    <br />
+                    
                     <span><strong>Treinos:</strong></span>
                     <span>Terças e quintas: 19h</span>
                     <span>Sábados: 16h</span>
@@ -42,7 +40,7 @@ const CentrosDeTreinamento = ({id}: Props) => {
                     <span>Rua Duque de Caxias,</span>
                     <span>Jardim Lar Paraná, Campo Mourão - PR,</span>
                     <span>87305-120</span>
-                    <br />
+                    
                     <span><strong>Treinos:</strong></span>
                     <span>Segundas, quartas e sextas: 18h20</span>
                 </div>
@@ -58,23 +56,24 @@ const CentrosDeTreinamento = ({id}: Props) => {
                     <span>Rua Otaviano Felix, 0000</span>
                     <span>Centro, Iretama - PR,</span>
                     <span>87280-000</span>
-                    <br />
+                    
                     <span><strong>Treinos:</strong></span>
-                    <span>dias aqui</span>
+                    <span>Terças e quintas: 19h</span>
                 </div>
             </div>
 
             <div className="boxes">
                 <div className="imag-ct">
-                    <img src={PSC} alt='imagem do ct'></img>
+                    <img src={CTAL} alt='imagem do ct'></img>
                 </div>
                 <div className="adress">
-                    <h2>Próximo CT</h2>
-                    <span className='new-ct-contact' >Você tem interesse em um Centro de Treinamento do Projeto?<br /> Entre em contato conosco!</span>
-                    <div className="social-midia-new-ct">
-                        <a target='_blank' href='https://www.instagram.com/rmbradock/'><img src={instaLOGO}></img></a>
-                        <a target='_blank' href='https://api.whatsapp.com/send?phone=5544998130695'><img src={whatsLOGO}></img></a>
-                    </div>
+                    <h2>CT Asa Leste</h2>
+                    <h3>Escola Ivone S Castanharo</h3>
+                    <span>VRua Sanhaco, 720</span>
+                    <span>Jd Tropical I, Campo Mourão - PR, </span>
+                    <span>87.310-190</span>
+                    <span><strong>Treinos:</strong></span>
+                    <span>Terças e quintas: 19h</span>
                 </div>
             </div>
         </div>

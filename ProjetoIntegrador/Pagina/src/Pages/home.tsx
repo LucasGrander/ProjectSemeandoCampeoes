@@ -132,8 +132,9 @@ const Home = () => {
                         boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
                         enter="rgba(150, 150, 150, 0.5)"
                         leave="white"
+                        gap='1vh'
                         >
-                            Galeria de fotos <img src={Camera} alt='camera fotografica' />
+                            Galeria <img src={Camera} alt='camera fotografica' />
                     </MyButton>
                 </div>
                 
@@ -157,14 +158,16 @@ const Home = () => {
                         enter="rgba(150, 150, 150, 0.5)"
                         leave="white"
                         zIndex='1'
+                        gap='1vh'
                         >
-                            Seja aluno!<img src={HandShake} alt='aperto de mãos' />
+                            Seja aluno! <img src={HandShake} alt='aperto de mãos' />
                     </MyButton>
 
                     <div className="animation-highlight">
                         {/* somente animação ao redor do botão */}
                     </div>
                 </div>
+
                 <div className="btn-news">
                     <MyButton
                         className='newsLatter-query'
@@ -178,21 +181,19 @@ const Home = () => {
                         border="solid .3vh black"
                         borderBottom="solid .7vh black"
                         borderRadius=".4vh"
-                        fontSize="2.5vh"
+                        fontSize="2.3vh"
                         fontWeight="700"
                         transition=".3s"
                         boxShadow=".5vh .5vh .5vh rgba(0, 0, 0, 0.9)"
                         enter="rgba(150, 150, 150, 0.5)"
                         leave="white"
                         zIndex='1'
+                        gap='1vh'
                         >
-                            Boletim informativo<img src={NL} alt='aperto de mãos' />
+                            Boletim informativo <img src={NL} alt='jornal de notícias' />
                     </MyButton>
-
-                    <div className="animation-highlight">
-                        {/* somente animação ao redor do botão */}
-                    </div>
                 </div>
+
             </nav>
 
             <div className="container-home">

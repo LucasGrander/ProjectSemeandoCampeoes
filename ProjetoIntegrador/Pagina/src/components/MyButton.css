@@ -55,6 +55,12 @@
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
+    .galeria-query,
+    .participe-query,
+    .newsLatter-query{
+        font-size: 2vh !important;
+        padding: 1vh !important;
+    }
     .active{
         font-size: 2.3vh !important;
     }
@@ -69,12 +75,35 @@
     }   
 }
 
-@media (max-width: 481px) {
+@media (min-width: 370px) and (max-width: 481px) {
 
     .galeria-query,
-    .participe-query{
-        font-size: 2vh !important;
-        padding: 1vh !important;
+    .participe-query,
+    .newsLatter-query{
+        font-size: 1.7vh !important;
+        padding: .8vh !important;
+    }
+    .active{
+        font-size: 1.6vh !important;
+    }
+    .inative{
+        font-size: 1.6vh !important;
+    }   
+    .activect{
+        font-size: 1.5vh !important;
+    }
+    .inativect{
+        font-size:1.5vh !important;
+    }   
+}
+
+@media(max-width: 369px) {
+
+    .galeria-query,
+    .participe-query,
+    .newsLatter-query{
+        font-size: 1.6vh !important;
+        padding: .5vh !important;
     }
     .active{
         font-size: 1.6vh !important;
