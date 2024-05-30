@@ -242,6 +242,15 @@ const informationEdit = () => {
         }
     }
 
+    const [infosQuery, setInfosQuery] = useState([{}])
+
+  const handleChangeInfoQuery = (id: any) => {
+    setInfosQuery(prevState => ({
+        ...prevState,
+        [id]: !prevState[id]
+    }))
+  }
+
     const [boxEditMode, setBoxEditMode] = useState(false)
     const [containerEditMode, setContainerEditMode] = useState(false)
 
@@ -470,6 +479,8 @@ const handleGetInfos = async () => {
 
   const [textForPostAndPut, setTextForPostAndPut] = useState("")
   const [boxForCrud, setBoxForCrud] = useState(false)
+
+  
     
     return(
     <div  onMouseMove={handleFilterTodos} className="page-infos-edit">
@@ -490,15 +501,57 @@ const handleGetInfos = async () => {
             <div className="box-edit-infos">
 
                 <div className="box-nav">
-                    <div className="adding-integrante">
-                        <img className={boxEditModeToAdd ? 'add-iconFocus' :'add-icon'} onClick={handleAddInfos} src={addUSerIcon}></img>
+
+                    <div className="box-search-icon">
+                        <img onClick={handleGetInfos} className='search-icon' src={searchUser}></img>
                     </div>
+
+                    <div className="input-pesquisa">
+                            <div style={{display: todosFilter ? "flex" : "none", pointerEvents: "none"}}  className="filter-fixed">
+                                <span>Todos</span>
+                                <img src={lockICON}></img>
+                            </div>
+
+                            <div onClick={toClearInputFilter} style={{display: inputFilter ? "flex" : "none"}}  className={longName ? "filter-picked-long" : "filter-picked"}>
+                                <span>{filterNome}</span>
+                                <img src={closeX}></img>
+                            </div>
+                            
+                            {variosFiltros.map((filtro, index) => (
+                            <div onClick={() => handleRemoverFiltro(index, filtro)} key={index} className={longName ? "filter-picked-long" : "filter-picked"}>
+                                <span>{filtro}</span>
+                                <img src={closeX}></img>
+                            </div>
+                            ))}
+                        </div>
+                    
+                    
+                    
                     <div onClick={handleOnClickBtnFiltro} className={dropdown ? "btn-filtro-selected" : "btn-filtro"}>
                         <span>Filtros</span>
                         <img className='filter-icon' src={filterICON}></img>
                         <img style={{transform: dropdown ? "rotate(180deg)" : "rotate(0deg)", transition: ".3s"}} className='dropdown-icon' src={dropdownCloseOpenICON}></img>
                     </div>
 
+                    <div className="adding-integrante">
+                        <img className={boxEditModeToAdd ? 'add-iconFocus' :'add-icon'} onClick={handleAddInfos} src={addUSerIcon}></img>
+                    </div>
+
+{/* ----------------------- para mobile --------------------- */}
+
+                    <div className="query-FilterAndAdd">
+                        <div onClick={handleOnClickBtnFiltro} className={dropdown ? "btn-filtro-selected" : "btn-filtro"}>
+                            <span>Filtros</span>
+                            <img className='filter-icon' src={filterICON}></img>
+                            <img style={{transform: dropdown ? "rotate(180deg)" : "rotate(0deg)", transition: ".3s"}} className='dropdown-icon' src={dropdownCloseOpenICON}></img>
+                        </div>
+
+                        <div className="adding-integrante">
+                            <img className={boxEditModeToAdd ? 'add-iconFocus' :'add-icon'} onClick={handleAddInfos} src={addUSerIcon}></img>
+                        </div>
+                    </div>
+                    
+{/* -------------------------------------------------------------------- */}
                         <div style={{pointerEvents: dropdown ? "all" : "none"}} onMouseLeave={handleCloseDropOnBlur} className="dropdown-container-edit">
                             <div className="dropdown-itens-faixa">
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" ,pointerEvents: dropdown ? "all" : "none", transition: ".1s"}}  className='title-drop' >Faixas</span>
@@ -523,7 +576,7 @@ const handleGetInfos = async () => {
                             </div>
 
                             <div className="dropdown-itens-cts">
-                                <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} className='title-drop'>Centros de treinamento</span>
+                                <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} className='title-drop'>CT</span>
 
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT Lar Paraná")} className={estadoCtLarParana ? "item-drop-selected" : "item-drop"} >CT - Lar Paraná</span>
 
@@ -535,7 +588,7 @@ const handleGetInfos = async () => {
                             </div>
 
                             <div style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} className="dropdown-search">
-                            <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" ,pointerEvents: dropdown ? "all" : "none", transition: ".1s"}}  className='title-drop' >Pesquisar nome</span>
+                            <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" ,pointerEvents: dropdown ? "all" : "none", transition: ".1s"}}  className='title-drop' >Pesquisar</span>
                                 <MyInput
                                     id="filterNome"
                                     value={filterNome}
@@ -552,35 +605,13 @@ const handleGetInfos = async () => {
                                     transition= ".4s"
                                     enter= "white"
                                     leave= "white"
-                                    ph='Nome do participante'
+                                    ph='Nome'
                                 />
                             </div>
                         </div>
                     
 
-                    <div className="input-pesquisa">
-                        <div style={{display: todosFilter ? "flex" : "none", pointerEvents: "none"}}  className="filter-fixed">
-                            <span>Todos</span>
-                            <img src={lockICON}></img>
-                        </div>
-
-                        <div onClick={toClearInputFilter} style={{display: inputFilter ? "flex" : "none"}}  className={longName ? "filter-picked-long" : "filter-picked"}>
-                            <span>{filterNome}</span>
-                            <img src={closeX}></img>
-                        </div>
-                        
-                        {variosFiltros.map((filtro, index) => (
-                        <div onClick={() => handleRemoverFiltro(index, filtro)} key={index} className={longName ? "filter-picked-long" : "filter-picked"}>
-                            <span>{filtro}</span>
-                            <img src={closeX}></img>
-                        </div>
-                        ))}
-
-                    </div>
                     
-                    <div className="box-search-icon">
-                        <img onClick={handleGetInfos} className='search-icon' src={searchUser}></img>
-                    </div>
                 </div>
                 
                 <div style={{overflow: loadingInfo ? "hidden" : "auto"}} className="table-result-pesquisa">
@@ -601,21 +632,44 @@ const handleGetInfos = async () => {
                                     <img onClick={() => handleDeleteBoxState(participante.id)} className={deleteBoxMode[participante.id] ? 'remove-iconFocus' :'remove-icon'} src={removeUSER}></img>
                                 </div>
 
-                                <div className="infos-integ">
+{/* ===================== para mobile ============= */}
+                                <div style={{display: infosQuery[participante.id] ? "none" : "flex"}} className="infos-integ-leftQuery">
                                     <span className="title-infos-integ">Dados</span>
                                     <span><strong>Nome Completo: </strong> {participante.nome} </span>
                                     <span><strong>Data de nascimento (aaaa/mm/dd): </strong> {participante.data_de_nascimento.slice(0, 10)} </span>
-                                    <span><strong>Número de telefone: </strong> {participante.telefone} </span>
+                                    <span><strong>Telefone: </strong> {participante.telefone} </span>
                                     <span><strong>Responsável: </strong> {participante.responsavel} </span>
                                     <span><strong>Local de treino: </strong> CT - {participante.centro_de_treinamento} </span>
-                                </div> 
+                                </div>
 
-                                <div className="infos-integ">
-                                <span className="title-infos-integ">Endereço</span>
+                                <div style={{display: infosQuery[participante.id] ? "flex" : "none"}} className="infos-integ-rightQuery">
+                                    <span className="title-infos-integ">Endereço</span>
                                     <span><strong>Cidade: </strong> {participante.nome_cidade} </span>
                                     <span><strong>Bairro: </strong> {participante.bairro} </span>
                                     <span><strong>Rua: </strong> {participante.rua} </span>
                                     <span><strong>Número da residência: </strong> {participante.numero} </span>
+                                </div>
+{/* ===================== ================= ============= */}
+
+{/* ===================== para pc ============= */}
+                                <div className="infos-integ-left">
+                                    <span className="title-infos-integ">Dados</span>
+                                    <span><strong>Nome Completo: </strong> {participante.nome} </span>
+                                    <span><strong>Data de nascimento (aaaa/mm/dd): </strong> {participante.data_de_nascimento.slice(0, 10)} </span>
+                                    <span><strong>Telefone: </strong> {participante.telefone} </span>
+                                    <span><strong>Responsável: </strong> {participante.responsavel} </span>
+                                    <span><strong>Local de treino: </strong> CT - {participante.centro_de_treinamento} </span>
+                                </div>
+
+                                <div className="infos-integ-right">
+                                    <span className="title-infos-integ">Endereço</span>
+                                    <span><strong>Cidade: </strong> {participante.nome_cidade} </span>
+                                    <span><strong>Bairro: </strong> {participante.bairro} </span>
+                                    <span><strong>Rua: </strong> {participante.rua} </span>
+                                    <span><strong>Número da residência: </strong> {participante.numero} </span>
+                                </div>
+{/* ===================== ================= ============= */}
+
 
                                     <div style={{opacity: deleteBoxMode[participante.id] ? "1" : "0", pointerEvents: deleteBoxMode[participante.id] ? "all" : "none", transition: ".3s"}} className="confirm-dialog-box">
                                         <div className="confirm-dialog">
@@ -666,8 +720,16 @@ const handleGetInfos = async () => {
                                         </div>
                                     </div>
 
-                                </div>    
-                            </div>    
+                                    <div className="choosedInfoShow">
+                                        <div style={{backgroundColor: infosQuery [participante.id] ? "transparent" : "black", color: infosQuery[participante.id] ? "black" : "white"}} onClick={() =>handleChangeInfoQuery(participante.id)} className="pessoal-box">
+                                            <span>Pessoal</span>
+                                        </div>
+
+                                        <div style={{backgroundColor: infosQuery [participante.id] ? "black" : "transparent", color: infosQuery[participante.id] ? "white" : "black"}} onClick={() =>handleChangeInfoQuery(participante.id)} className="endereco-box">
+                                            <span>Endereço</span>
+                                        </div>
+                                    </div>    
+                            </div> 
                         </div>
                         ))}
                                             

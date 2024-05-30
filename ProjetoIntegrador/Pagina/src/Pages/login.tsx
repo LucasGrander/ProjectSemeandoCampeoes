@@ -165,6 +165,7 @@ function Login (){
     // center da página (alteração de container-login)
     
     const [activeLogin, setActiveLogin] = useState(false)
+
     const handleOnClickSouAluno = () =>{
         setActiveLogin(true)
         setUserAluno("")
@@ -287,9 +288,17 @@ function Login (){
         }
     }
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
     useEffect(() => {
-        handleRedirectMobile()
-    }, [])
+          setWindowWidth(window.innerWidth)
+  }, [])
+
+    useEffect(() => {
+        if(windowWidth < 1100){
+            handleRedirectMobile()
+        }
+    }, [windowWidth])
 
 return (
     <>

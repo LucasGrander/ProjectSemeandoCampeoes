@@ -36,7 +36,7 @@ export const filterParticipantes = (req, res) => {
     // Filtrar nome -->
     if (req.query.nome) {
         comboFilters += " and p.nome like ?"
-        params.push(`${req.query.nome}%`)
+        params.push(`%${req.query.nome}%`)
     }
 
     // Filtrar cor de faixa -->
