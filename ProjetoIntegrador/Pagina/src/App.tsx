@@ -25,7 +25,7 @@ function App() {
             <Route path= "/galeria-de-fotos/Galeria-LarParana" element = {<GaleriaLP />}/>
             <Route path= "/login/informações-acessoProfessor" element = {<InformationEdit />}/>
             <Route path= "/login/informações-acessoAluno" element = {<InformationSee />}/>
-            <Route path= "newsLatter" element = {<NewsLatter />}/>
+            <Route path= "/notícias" element = {<NewsLatter />}/>
         </Routes>
     </BrowserRouter>
   )

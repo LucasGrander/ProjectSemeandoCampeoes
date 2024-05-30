@@ -164,7 +164,7 @@ function Login (){
     
     // center da página (alteração de container-login)
     
-    const [activeLogin, setActiveLogin] = useState(true)
+    const [activeLogin, setActiveLogin] = useState(false)
     const handleOnClickSouAluno = () =>{
         setActiveLogin(true)
         setUserAluno("")
@@ -178,7 +178,7 @@ function Login (){
         setFocusUserProfessor(false)
     }
     const handleOnClickSouAlunoQuery = () =>{
-        setActiveLogin(true)
+        setActiveLogin(false)
         setUserAluno("")
         setPasswordAluno("")
         setUserProfessor("")
@@ -191,7 +191,7 @@ function Login (){
 
         setTimeout(() => {
             handleRedirectToAluno()
-        }, 100);
+        }, 50);
     }
 
     const handleOnClickSouProfessor = () =>{
@@ -208,7 +208,7 @@ function Login (){
     }
 
     const handleOnClickSouProfessorQuery = () =>{
-        setActiveLogin(false)
+        setActiveLogin(true)
         setUserAluno("")
         setPasswordAluno("")
         setUserProfessor("")
@@ -221,7 +221,7 @@ function Login (){
         
         setTimeout(() => {
             handleRedirectToProf()
-        }, 100);
+        }, 50);
     }
 
     const [mouseOnProf, setMouseOnProf] = useState(false)
@@ -282,8 +282,8 @@ function Login (){
 
     const autoRedirectMobile = useRef<HTMLDivElement>(null)
     const handleRedirectMobile = () => {
-        if(autoRedirectMobile.current){
-            autoRedirectMobile.current.scrollIntoView({behavior: "smooth"})
+        if(redirectAluno.current){
+            redirectAluno.current.scrollIntoView({behavior: "instant"})
         }
     }
 
@@ -308,136 +308,7 @@ return (
         </header>
 
         <div className="container-login">
-            <div ref={redirectProfessor} style={{pointerEvents: activeLogin ? "none" : "all", filter: activeLogin ? "grayscale(100%)" : "grayscale(0%)", opacity: activeLogin ? ".2" : "1", transition: "1s"}} className="login-professores">
-                <img className="design-type-wifi-top" src={designLogin}></img>
-                <img className="design-type-wifi-bottom" src={designLogin}></img>
-                <span>Professor</span>
-
-                <div className="user-box-professor">
-                    <label className={focusUserProfessor ? "focusOn" : "focusOff"} htmlFor="userProfessor">Nome de usuário</label>
-                    <MyInput
-                        className={clasnameProfessor ? "" : "loginFail-professor"}
-                        id="userProfessor"
-                        onChange={(e) => setUserProfessor(e.target.value)}
-                        onFocus={handleFocusUserProfessor}
-                        onBlur={handleNotFocusUserProfessor}
-                        value={userProfessor}
-                        type='text'
-                        width= "85%"
-                        height= "100%"
-                        fontSize= "2.4vh"
-                        fontWeight= "500"
-                        border= {loginModeProfessor ? "solid .3vh rgba(0, 255, 0, .7)" : "solid .3vh black"}
-                        borderBottom= ".3vh black solid"
-                        borderRadius="1vh"
-                        padding="0vh 7vh 0vh 2vh"
-                        transition= ".3s"
-                        background-color= "transparent"
-                    />
-                        <img src={userICON}></img>
-                </div>
-                
-                <div className="user-box-professor">
-                <label className={focusPassWProfessor ? "focusOn" : "focusOff"} htmlFor="passwordProf">Senha</label>
-                    <MyInput
-                        className={clasnameProfessor ? "" : "loginFail-professor"}
-                        id="passwordProf"
-                        onChange={(e) => setPasswordProfessor(e.target.value)}
-                        onFocus={handleFocusPassWProfessor}
-                        onBlur={handleNotFocusPassWProfessor}
-                        value={passwordProfessor}
-                        type='password'
-                        width= "85%"
-                        height= "100%"
-                        fontSize= "2.4vh"
-                        fontWeight= "500"
-                        border= {loginModeProfessor ? "solid .3vh rgba(0, 255, 0, .7)" : "solid .3vh black"}
-                        borderBottom= ".3vh black solid"
-                        borderRadius="1vh"
-                        padding="0vh 7vh 0vh 2vh"
-                        transition= ".3s"
-                        backgroundColor= "transparent"
-                    />
-                    <img src={blockICON}></img>
-                </div>
-
-                    <MyButton
-                        onClick={handleMensageShowedProfessor}
-                        width= "45%"
-                        height= "8%"
-                        padding="1vh"
-                        cursor= "pointer"
-                        fontSize= "2.5vh"
-                        fontWeight= "bold"
-                        backgroundColor= "transparent"
-                        border= ".3vh black solid"
-                        borderBottom= ".3vh black solid"
-                        borderRadius="1vh"
-                        transition= ".3s"
-                        children="Enviar"
-                        enter="rgba(0, 0, 0, 0.2)"
-                        leave="rgba(0, 0, 0, 0.3)"  
-                    />
-                    <div  style={{transform: boxModeProfessor ? "translateY(-2vh)" : "translateY(10vh)", transition: ".8s"}} className={loginModeProfessor ? "mensage-submit-correct-professor" : "mensage-submit-incorrect-professor"}>
-                    <span className="submit-msg-professor">
-                        {mensageProfessor}
-                    </span>
-                </div>
-            </div>
-
-
-
-            <div className="center-login-page">
-                <div className="top">
-                    <div className="container-change-button">
-                        <div onClick={handleOnClickSouProfessor} onMouseEnter={handleOnEnterLoginCenterProf} onMouseLeave={handleOnLeaveLoginCenterProf} style={{cursor: "pointer", transform: mouseOnProf ? "scale(1.03)" : "scale(1.0)"}} className="left">
-                                <span style={{color: activeLogin ? "black" : "white", transition: "1s"}} >Sou professor</span>
-                        </div>
-
-                        <div ref={redirectAluno} onClick={handleOnClickSouAluno} onMouseEnter={handleOnEnterLoginCenterAluno} onMouseLeave={handleOnLeaveLoginCenterAluno} style={{cursor: "pointer", transform: mouseOnAluno ? "scale(1.03)" : "scale(1.0)"}} className="right">
-                            <span style={{color: activeLogin ? "white" : "black", transition: "1s"}}>Sou aluno</span>
-                        </div>
-                        
-                        <div style={{transform: activeLogin ? "translateX(12vh)" : "translateX(-11.5vh)", transition: ".6s ease-in-out"}} id="change-circle" className="change-circle">
-                        </div>
-                    </div>
-                    <div className="redirect-login">
-                    <span className='question'>Não é aluno?<a onClick={handleOnClickParticipe} >Faça parte!</a></span>
-                </div>
-                </div>
-
-                <div className="bottom">
-                    <div className="container-stickman">
-                        <img style={{opacity: activeLogin ? "1" : "0" , transition: "1s"}} src={stickmanLogin}></img>
-                        <img style={{opacity: activeLogin ? "0" : "1", transition: "1s"}} src={stickmanLogin2}></img>
-                    </div>
-                </div>
-
-
-                {/* editar a query da página: */}
-                <div ref={autoRedirectMobile} className="top-query">
-                    <div className="container-change-button">
-                        <div onClick={handleOnClickSouProfessorQuery} onMouseEnter={handleOnEnterLoginCenterProf} onMouseLeave={handleOnLeaveLoginCenterProf} style={{cursor: "pointer", transform: mouseOnProf ? "scale(1.03)" : "scale(1.0)"}} className="left">
-                                <span style={{color: activeLogin ? "black" : "white", transition: "1s"}} >Sou professor</span>
-                        </div>
-
-                        <div onClick={handleOnClickSouAlunoQuery} onMouseEnter={handleOnEnterLoginCenterAluno} onMouseLeave={handleOnLeaveLoginCenterAluno} style={{cursor: "pointer", transform: mouseOnAluno ? "scale(1.03)" : "scale(1.0)"}} className="right">
-                            <span style={{color: activeLogin ? "white" : "black", transition: "1s"}}>Sou aluno</span>
-                        </div>
-                        
-                        <div style={{transform: activeLogin ? "translateX(12vh)" : "translateX(-11.5vh)", transition: ".6s ease-in-out"}} id="change-circle" className="change-circle">
-                        </div>
-                    </div>
-                    <div className="redirect-login">
-                    <span className='question'>Não é aluno?<a onClick={handleOnClickParticipe} >Faça parte!</a></span>
-                </div>
-                </div>
-            </div>
-
-
-
-
-            <div ref={redirectAluno} style={{pointerEvents: activeLogin ? "all" : "none", filter: activeLogin ? "grayscale(0%)" : "grayscale(100%)", opacity: activeLogin ? "1" : ".2", transition: "1s"}} className="login-alunos">
+        <div ref={redirectAluno} style={{pointerEvents: activeLogin ? "none" : "all", filter: activeLogin ? "grayscale(100%)" : "grayscale(0%)", opacity: activeLogin ? ".1" : "1", transition: "2s"}} className="login-alunos">
                     <img className="design-type-wifi-top" src={designLogin}></img>
                     <img className="design-type-wifi-bottom" src={designLogin}></img>
                     <span>Aluno</span>
@@ -492,8 +363,8 @@ return (
 
                     <MyButton
                         onClick={handleMensageShowedAluno}
-                        width= "45%"
-                        height= "8%"
+                        width= "60%"
+                        height= "6vh"
                         padding="1vh"
                         cursor= "pointer"
                         fontSize= "2.5vh"
@@ -510,6 +381,130 @@ return (
                 <div  style={{transform: boxModeAluno ? "translateY(-2vh)" : "translateY(10vh)", transition: ".8s"}} className={loginModeAluno ? "mensage-submit-correct-aluno" : "mensage-submit-incorrect-aluno"}>
                     <span className="submit-msg-aluno">
                         {mensageAluno}
+                    </span>
+                </div>
+            </div>
+            
+            <div className="center-login-page">
+                <div className="top">
+                    <div className="container-change-button">
+                        <div onClick={handleOnClickSouProfessor} onMouseEnter={handleOnEnterLoginCenterProf} onMouseLeave={handleOnLeaveLoginCenterProf} style={{cursor: "pointer", transform: mouseOnProf ? "scale(1.03)" : "scale(1.0)"}} className="left">
+                                <span style={{color: activeLogin ? "black" : "white", transition: "1s"}} >Sou Aluno</span>
+                        </div>
+
+                        <div onClick={handleOnClickSouAluno} onMouseEnter={handleOnEnterLoginCenterAluno} onMouseLeave={handleOnLeaveLoginCenterAluno} style={{cursor: "pointer", transform: mouseOnAluno ? "scale(1.03)" : "scale(1.0)"}} className="right">
+                            <span style={{color: activeLogin ? "white" : "black", transition: "1s"}}>Sou Professor</span>
+                        </div>
+                        
+                        <div style={{transform: activeLogin ? "translateX(12vh)" : "translateX(-11.5vh)", transition: ".6s ease-in-out"}} id="change-circle" className="change-circle">
+                        </div>
+                    </div>
+                    <div className="redirect-login">
+                    <span className='question'>Não é aluno?<a onClick={handleOnClickParticipe} >Faça parte!</a></span>
+                </div>
+                </div>
+
+                <div className="bottom">
+                    <div className="container-stickman">
+                        <img style={{opacity: activeLogin ? "1" : "0" , transition: "1s"}} src={stickmanLogin}></img>
+                        <img style={{opacity: activeLogin ? "0" : "1", transition: "1s"}} src={stickmanLogin2}></img>
+                    </div>
+                </div>
+
+
+                {/* editar a query da página: */}
+                <div ref={autoRedirectMobile} className="top-query">
+                    <div className="container-change-button">
+                        <div onClick={handleOnClickSouAlunoQuery} onMouseEnter={handleOnEnterLoginCenterAluno} onMouseLeave={handleOnLeaveLoginCenterAluno} style={{cursor: "pointer", transform: mouseOnProf ? "scale(1.03)" : "scale(1.0)"}} className="left">
+                                <span style={{color: activeLogin ? "black" : "white", transition: "1s"}} >Sou Aluno</span>
+                        </div>
+
+                        <div onClick={handleOnClickSouProfessorQuery} onMouseEnter={handleOnEnterLoginCenterProf} onMouseLeave={handleOnLeaveLoginCenterProf} style={{cursor: "pointer", transform: mouseOnAluno ? "scale(1.03)" : "scale(1.0)"}} className="right">
+                            <span style={{color: activeLogin ? "white" : "black", transition: "1s"}}>Sou Professor</span>
+                        </div>
+                        
+                        <div style={{transform: activeLogin ? "translateX(12vh)" : "translateX(-11.5vh)", transition: ".6s ease-in-out"}} id="change-circle" className="change-circle">
+                        </div>
+                    </div>
+                    <div className="redirect-login">
+                    <span className='question'>Não é aluno?<a onClick={handleOnClickParticipe} >Faça parte!</a></span>
+                </div>
+                </div>
+            </div>
+
+            <div ref={redirectProfessor} style={{pointerEvents: activeLogin ? "all" : "none", filter: activeLogin ? "grayscale(0%)" : "grayscale(100%)", opacity: activeLogin ? "1" : ".1", transition: "2s"}} className="login-professores">
+                <img className="design-type-wifi-top" src={designLogin}></img>
+                <img className="design-type-wifi-bottom" src={designLogin}></img>
+                <span>Professor</span>
+
+                <div className="user-box-professor">
+                    <label className={focusUserProfessor ? "focusOn" : "focusOff"} htmlFor="userProfessor">Nome de usuário</label>
+                    <MyInput
+                        className={clasnameProfessor ? "" : "loginFail-professor"}
+                        id="userProfessor"
+                        onChange={(e) => setUserProfessor(e.target.value)}
+                        onFocus={handleFocusUserProfessor}
+                        onBlur={handleNotFocusUserProfessor}
+                        value={userProfessor}
+                        type='text'
+                        width= "85%"
+                        height= "100%"
+                        fontSize= "2.4vh"
+                        fontWeight= "500"
+                        border= {loginModeProfessor ? "solid .3vh rgba(0, 255, 0, .7)" : "solid .3vh black"}
+                        borderBottom= ".3vh black solid"
+                        borderRadius="1vh"
+                        padding="0vh 7vh 0vh 2vh"
+                        transition= ".3s"
+                        background-color= "transparent"
+                    />
+                        <img src={userICON}></img>
+                </div>
+                
+                <div className="user-box-professor">
+                <label className={focusPassWProfessor ? "focusOn" : "focusOff"} htmlFor="passwordProf">Senha</label>
+                    <MyInput
+                        className={clasnameProfessor ? "" : "loginFail-professor"}
+                        id="passwordProf"
+                        onChange={(e) => setPasswordProfessor(e.target.value)}
+                        onFocus={handleFocusPassWProfessor}
+                        onBlur={handleNotFocusPassWProfessor}
+                        value={passwordProfessor}
+                        type='password'
+                        width= "85%"
+                        height= "100%"
+                        fontSize= "2.4vh"
+                        fontWeight= "500"
+                        border= {loginModeProfessor ? "solid .3vh rgba(0, 255, 0, .7)" : "solid .3vh black"}
+                        borderBottom= ".3vh black solid"
+                        borderRadius="1vh"
+                        padding="0vh 7vh 0vh 2vh"
+                        transition= ".3s"
+                        backgroundColor= "transparent"
+                    />
+                    <img src={blockICON}></img>
+                </div>
+
+                    <MyButton
+                        onClick={handleMensageShowedProfessor}
+                        width= "60%"
+                        height= "6vh"
+                        padding="1vh"
+                        cursor= "pointer"
+                        fontSize= "2.5vh"
+                        fontWeight= "bold"
+                        backgroundColor= "transparent"
+                        border= ".3vh black solid"
+                        borderBottom= ".3vh black solid"
+                        borderRadius="1vh"
+                        transition= ".3s"
+                        children="Enviar"
+                        enter="rgba(0, 0, 0, 0.2)"
+                        leave="rgba(0, 0, 0, 0.3)"  
+                    />
+                    <div  style={{transform: boxModeProfessor ? "translateY(-2vh)" : "translateY(10vh)", transition: ".8s"}} className={loginModeProfessor ? "mensage-submit-correct-professor" : "mensage-submit-incorrect-professor"}>
+                    <span className="submit-msg-professor">
+                        {mensageProfessor}
                     </span>
                 </div>
             </div>

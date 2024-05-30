@@ -9,6 +9,11 @@
     width: 100%;
     height: auto;
     display: flex;
+    position: relative;
+}
+
+.finger{
+    display: none;
 }
 
 .content .box{
@@ -68,6 +73,7 @@
     text-align: justify;
     margin-top: 1vh;
     font-size: 2.5vh;
+    width: 100%;
 }
 
 
@@ -121,9 +127,49 @@
     height: 3.5vh;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@keyframes slippingFinger {
+    0%{
+        top: 20vh;
+        opacity: .8;
+    }
+    30%{
+        opacity: .5; 
+    }
+    100%{
+        transform: translateY(230deg);
+        top: 5vh;
+        opacity: 0.1;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (max-height: 1280px) {
+    .content .box{
+        flex-direction: column;
+    }
+
+    .content .box .box-info {
+        width: 90%;
+        font-size: 4vh;
+    }
+
     .content .box .box-info span{
         font-size: 4vh;
+    }
+
+    .content .box .box-info .redes-sociais-instrutor{
+        width: 30%;
+    }
+
+    .finger{
+        width: 7vh;
+        height: 7vh;
+        display: flex;
+        position: absolute;
+        top: 20vh;
+        right: 2vh;
+        transform: rotateZ(-60deg);
+
+        animation: slippingFinger 2s normal infinite;
     }
 }
 
@@ -131,12 +177,35 @@
     .content .box{
         flex-direction: column;
     }
+
+    .content .box .box-info {
+        width: 90%;
+        align-items: center;
+    }
+    
     .content .box .box-info span{
         font-size: 3vh;
     }
 
+    .content .box .box-info .desc-instrutor{
+        text-align: justify;
+        font-size: 2vh;
+    }
+
     .content .box .box-info .redes-sociais-instrutor{
         width: 40%;
+    }
+
+    .finger{
+        width: 7vh;
+        height: 7vh;
+        display: flex;
+        position: absolute;
+        top: 20vh;
+        right: 1vh;
+        transform: rotateZ(-60deg);
+
+        animation: slippingFinger 2s normal infinite;
     }
 }
 
@@ -144,15 +213,34 @@
     .content .box{
         flex-direction: column;
     }
+
+    .content .box .box-info {
+        width: 90%;
+        align-items: center;
+    }
+    
     .content .box .box-info span{
         font-size: 3vh;
     }
 
     .content .box .box-info .desc-instrutor{
-        text-align: center;
+        text-align: justify;
+        font-size: 2vh;
     }
 
     .content .box .box-info .redes-sociais-instrutor{
         width: 45%;
+    }
+
+    .finger{
+        width: 6vh;
+        height: 6vh;
+        display: flex;
+        position: absolute;
+        top: 20vh;
+        right: 1vh;
+        transform: rotateZ(-60deg);
+
+        animation: slippingFinger 2s normal infinite;
     }
 }

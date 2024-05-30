@@ -120,7 +120,7 @@
 .page-login .container-login .login-professores .user-box-professor,
 .page-login .container-login .login-professores .password-box-professor{
     width: 100%;
-    height: 10%;
+    height: 8vh;
     position: relative;
     
     display: flex;
@@ -348,7 +348,7 @@
 .page-login .container-login .login-alunos .user-box-aluno,
 .page-login .container-login .login-alunos .password-box-aluno{
     width: 100%;
-    height: 10%;
+    height: 8vh;
     position: relative;
     
     display: flex;
@@ -586,42 +586,76 @@
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) and (max-height: 1400px) {
+    .center-login-page .top-query{
+        display: flex;
+    }
+    .center-login-page .top{
+        display: none;
+    }
+    
     .page-login header .logo img{
-        margin-left: 6vh;
+        margin-left: 2vh;
     }
 
     .page-login header .title{
-        width: 65%;
-    }
-
-    .center-login-page .top .container-change-button{
-        width: 30vh;
-    }
-
-    .center-login-page .top .container-change-button .left, .center-login-page .top .container-change-button .right{
-        text-align: center;
-
-    }
-
-    .center-login-page .top .container-change-button .change-circle{
         width: 70%;
+        font-size: 2.8vh;
     }
 
-    .page-login .container-login .login-alunos .user-box-aluno label, .page-login .container-login .login-alunos .password-box-aluno label,
-    .page-login .container-login .login-professores .user-box-professor label, .page-login .container-login .login-professores .password-box-professor label{
-        font-size: 1.5vh;
-        top: 35%;
+    .page-login{
+        height: 180vh;
+        overflow-y: auto;
     }
 
-    .page-login .container-login .login-professores span,
-    .page-login .container-login .login-alunos span{
-        font-size: 3vh;
+    .page-login .container-login .login-professores{
+        width: 85%;
+        height: 100vh;
+        border-radius: 3vh;
     }
 
+    .page-login .container-login .login-alunos{
+        width: 85%;
+        height: 100vh;
+        border-radius: 3vh;
+    }
+
+    .page-login .container-login{
+        flex-direction: column;
+        padding: 5vh 0vh;
+    }
+
+    .center-login-page .bottom .container-stickman,
+    .center-login-page .bottom {
+        display: none;
+    }
     .page-login .container-login .login-alunos .mensage-submit-incorrect-aluno .submit-msg-aluno, .page-login .container-login .login-professores .mensage-submit-incorrect-professor .submit-msg-professor{
         text-align: center;
         font-size: 2.3vh;
+    }
+
+    .center-login-page .top-query{
+        display: flex;
+        width: 100vh;
+    }
+
+    .center-login-page .top-query .redirect-login{
+        width: 100%;
+        text-align: center;
+    }
+
+    .center-login-page .top-query{
+        display: flex;
+        width: 100vh;
+    }
+
+    .center-login-page .top-query .redirect-login{
+        width: 100%;
+        text-align: center;
+    }
+
+    .center-login-page{
+        height: 25%;
     }
 }
 
@@ -644,19 +678,19 @@
     }
 
     .page-login{
-        height: 200vh;
+        height: 180vh;
         overflow-y: auto;
     }
 
     .page-login .container-login .login-professores{
-        width: 55%;
-        height: 400vh;
+        width: 80%;
+        height: 100vh;
         border-radius: 3vh;
     }
 
     .page-login .container-login .login-alunos{
-        width: 55%;
-        height: 400vh;
+        width: 80%;
+        height: 100vh;
         border-radius: 3vh;
     }
 
@@ -673,6 +707,21 @@
         text-align: center;
         font-size: 2.3vh;
     }
+
+    .center-login-page .top-query{
+        display: flex;
+        width: 100vh;
+    }
+
+    .center-login-page .top-query .redirect-login{
+        width: 100%;
+        text-align: center;
+    }
+
+    .center-login-page{
+        height: 20%;
+    }
+
 }
 
 
@@ -682,9 +731,20 @@
         font-size: 2vh;
     }
 
+    .center-login-page{
+        height: 30%;
+    }
+
     .center-login-page .top-query{
         display: flex;
+        width: 100vh;
     }
+
+    .center-login-page .top-query .redirect-login{
+        width: 100%;
+        text-align: center;
+    }
+
     .center-login-page .top{
         display: none;
     }
@@ -698,19 +758,19 @@
     }
 
     .page-login{
-        height: 200vh;
+        height: 180vh;
         overflow-y: auto;
     }
 
     .page-login .container-login .login-professores{
-        width: 70%;
-        height: 300vh;
+        width: 90%;
+        height: 100vh;
         border-radius: 3vh;
     }
 
     .page-login .container-login .login-alunos{
-        width: 70%;
-        height: 300vh;
+        width: 90%;
+        height: 100vh;
         border-radius: 3vh;
     }
 
@@ -729,10 +789,5 @@
     }
     .page-login .container-login .login-alunos span{
         font-size: 4vh;
-    }
-
-    .center-login-page .top .redirect-login{
-        width: 100vh;
-        text-align: center;
     }
 }

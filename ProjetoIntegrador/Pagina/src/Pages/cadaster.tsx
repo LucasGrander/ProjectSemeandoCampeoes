@@ -18,6 +18,7 @@ import LogoInstagram from "../assets/instagram.svg"
 import LogoFacebook from "../assets/facebook.svg"
 import LogoWhatszap from '../assets/whatsapp.svg'
 import closePage from "../assets/closePage.svg"
+import infoIcon from "../assets/informationIcon.svg"
 import axios from 'axios'
 
 
@@ -206,6 +207,16 @@ const Cadaster = () => {
 
     const [popUp, setPopUp] = useState(false)
     const [popUpBox, setPopUpBox] = useState(false)
+    const [visibleInfos, setVisibleInfos] = useState(false)
+
+    const handleQueryVisibleInfos = () => {
+        if(!visibleInfos){
+            setVisibleInfos(true)
+        }
+        else{
+            setVisibleInfos(false)
+        }
+    }
 
     const handleOnClickSendCadaster = () => {
         handleSendInfosToDatabase()
@@ -339,7 +350,7 @@ const Cadaster = () => {
                             </div>
 
                             <div className="button-label-container">
-                                <label className={focusNomeResp ? "labelFocusedNomeResp" : "labelNotFocusedNomeResp"} htmlFor='nomeResp'>Nome completo do responsável (não obrigatório)</label>
+                                <label className={focusNomeResp ? "labelFocusedNomeResp" : "labelNotFocusedNomeResp"} htmlFor='nomeResp'>Nome do responsável (não obrigatório)</label>
                                 <MyInput
                                     id="nomeResp"
                                     value={valueNomeResp}
@@ -454,7 +465,7 @@ const Cadaster = () => {
                                         type='text'
                                         width= "90%"
                                         height= "100%"
-                                        padding="0vh 8vh 0vh 2.5vh"
+                                        padding="0vh 5vh 0vh 2.5vh"
                                         fontSize= "2.4vh"
                                         border= "solid .3vh black"
                                         borderBottom="solid .3vh black"
@@ -542,8 +553,10 @@ const Cadaster = () => {
             <div style={{display: popUp ? "flex" : "none"}} className="pop-up-container">
                 <div className={popUpBox ? "pop-up-box" : "pop-up-box-close"}>
                     <img onClick={handleOnClickClosePop} className='closePage' src={closePage}></img>
+                    <img onClick={handleQueryVisibleInfos} className='turnVisibleInfo' src={infoIcon}></img>
                     <div className="pop-up-content">
-                        <div className="left">
+
+                        <div style={{transform: visibleInfos ? "rotateY(90deg)" : "rotateY(0deg)", transition: "0.3s"}} className="left">
                             <div className="pop-up-title">
                                 <span>Cadastro Concluído</span>
                             </div>
@@ -558,7 +571,7 @@ const Cadaster = () => {
                             </div>
                         </div>
 
-                        <div className="right">
+                        <div style={{transform: visibleInfos ? "rotateY(0deg)" : "rotateY(90deg)", transition: "0.3s"}} className="right">
                             <span className='title-right-pop-up'>Dados inseridos</span>
                             <ul>
                                 <br />

@@ -13,7 +13,7 @@ import CentrosDeTreinamento from '../components/CentrosDeTreinamento'
 import Historico from '../components/Historico'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import Footer from '../components/Footer'
-import NL from '../assets/NL.jpg'
+import newspapper from '../assets/newsPapper.svg'
   
 const Home = () => {
     const [content, setContent] = useState('cts')
@@ -72,7 +72,7 @@ const Home = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/newsLatter'
+            window.location.href = '/notícias'
         }, 1500)
 
         setTimeout(() => {
@@ -190,10 +190,10 @@ const Home = () => {
                         zIndex='1'
                         gap='1vh'
                         >
-                            Boletim informativo <img src={NL} alt='jornal de notícias' />
+                            Notícias <img src={newspapper} alt='jornal de notícias' />
                     </MyButton>
                 </div>
-
+                
             </nav>
 
             <div className="container-home">

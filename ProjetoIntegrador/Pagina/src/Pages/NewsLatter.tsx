@@ -67,8 +67,6 @@ const NewsLatter = ({id}: Props) => {
         <Footer />
           
     </div>
-    
-    
   )
 }
 export default NewsLatter

@@ -594,6 +594,7 @@
     z-index: 3;
     animation: popUpAppear 1s normal forwards;
     box-shadow: .2vh .3vh 1vh black;
+    border-radius: 4vh;
 }
 
 .pop-up-box-close{
@@ -609,6 +610,7 @@
     z-index: 3;
     animation: popUpDisappear 1s normal forwards;
     box-shadow: .2vh .3vh 1vh black;
+    border-radius: 4vh;
 }
 
 .closePage{
@@ -621,6 +623,10 @@
 
     cursor: pointer;
     transition: .2s;
+}
+
+.turnVisibleInfo{
+    display: none;
 }
 
 .closePage:hover{
@@ -805,5 +811,493 @@
     }
     100%{
         transform: scale(0.95);
+    }
+}
+
+@keyframes queryInfosAnime {
+    0%{
+        transform: scale(1.0);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1350px) {
+    .page-cadaster header .title{
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.8vh;
+        color: white;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (max-height: 1280px) {
+    .page-cadaster header .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 13vh;
+        height: 13vh;
+    }
+
+    .page-cadaster header .logo img{
+       margin-left: 5vh;
+    }
+
+    .page-cadaster header .title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8vh;
+        color: white;
+        margin-left: 5vh;
+    }
+
+    .container-banner-form{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .page-cadaster .container-banner{
+        width: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster{
+        width: 160vh;
+    }
+
+    .page-cadaster .container-banner .content-banner .box-name{
+        display: none;
+    }
+
+    .page-cadaster .container-cadaster{
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .title-info-endereco{
+        text-align: center;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .title-info-ct{
+        text-align: center;
+    }
+
+    .msg-button-enviar-appear{
+        width: 30vh;
+        font-size: 1.7vh;
+        right: 1vh;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container label{
+        top: 36%;
+    }
+
+    .labelNotFocusedNome, .labelNotFocusedNomeResp, .labelNotFocusedTelefone, .labelNotFocusedBairro, .labelNotFocusedRua, .labelNotFocusedComplemento, .labelNotFocusedNumRes, .labelNotFocusedCity{
+        font-size: 1.7vh;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container-num img{
+        display: none;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container .ct-box-pick{
+        font-size: 1.7vh;
+
+    }
+    
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container .ct-box-pick option{
+        font-size: 1.2vh;
+    }
+
+    .pop-up-box{
+        width: 80%;
+        margin-top: 5vh;
+        border-radius: 4vh;
+    }
+
+    .pop-up-title{
+        text-align: center;
+        margin-left: 0vh;
+    }
+
+    .pop-up-content .left{
+        width: 100%;
+        border-radius: 4vh;
+    }
+
+    .pop-up-content .right{
+        width: 100%;
+        border-radius: 4vh;
+        display: flex;
+        position: absolute;
+    }
+
+    .pop-up-content .left .pop-up-redes-sociais::before,
+    .pop-up-content .left .pop-up-redes-sociais::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 8vh;
+    border-top: .1vh solid #000;
+    }
+
+    .pop-up-content .right .title-right-pop-up{
+        font-size: 2.5vh;
+        font-weight: 800;
+    }
+
+    
+    .pop-up-content .right ul span{
+        font-size: 2vh;
+        font-weight: 700;
+    }
+    
+    .pop-up-content .right ul li{
+        font-size: 1.4vh;
+        margin-top: .5vh;
+    }
+
+    .closePage{
+        z-index: 1;
+    }
+
+    .turnVisibleInfo{
+        width: 4vh;
+        height: 4vh;
+        display: flex;
+        z-index: 1;
+    
+        position: absolute;
+        left: 2vh;
+        top: 2vh;
+    
+        cursor: pointer;
+        transition: .2s;
+
+        animation: queryInfosAnime 500ms alternate infinite;
+    }
+}
+
+@media (min-width: 370px) and (max-width: 481px) {
+    .page-cadaster header .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 13vh;
+        height: 13vh;
+    }
+
+    .page-cadaster header .logo img{
+       margin-left: 5vh;
+    }
+
+    .page-cadaster header .title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8vh;
+        color: white;
+        margin-left: 5vh;
+    }
+
+    .container-banner-form{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .page-cadaster .container-banner{
+        width: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster{
+        width: 160vh;
+    }
+
+    .page-cadaster .container-banner .content-banner .box-name{
+        display: none;
+    }
+
+    .page-cadaster .container-cadaster{
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .title-info-endereco{
+        text-align: center;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .title-info-ct{
+        text-align: center;
+    }
+
+    .msg-button-enviar-appear{
+        width: 30vh;
+        font-size: 1.7vh;
+        right: 1vh;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container label{
+        top: 36%;
+    }
+
+    .labelNotFocusedNome, .labelNotFocusedNomeResp, .labelNotFocusedTelefone, .labelNotFocusedBairro, .labelNotFocusedRua, .labelNotFocusedComplemento, .labelNotFocusedNumRes, .labelNotFocusedCity{
+        font-size: 1.7vh;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container-num img{
+        display: none;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container .ct-box-pick{
+        font-size: 1.9vh;
+
+    }
+    
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container .ct-box-pick option{
+        font-size: 1.5vh;
+    }
+
+    .pop-up-box{
+        width: 80%;
+        margin-top: 5vh;
+        border-radius: 4vh;
+    }
+
+    .pop-up-title{
+        text-align: center;
+        margin-left: 0vh;
+    }
+
+    .pop-up-content .left{
+        width: 100%;
+        border-radius: 4vh;
+    }
+
+    .pop-up-content .right{
+        width: 100%;
+        border-radius: 4vh;
+        display: flex;
+        position: absolute;
+    }
+
+    .pop-up-content .left .pop-up-redes-sociais::before,
+    .pop-up-content .left .pop-up-redes-sociais::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 8vh;
+    border-top: .1vh solid #000;
+    }
+
+    .pop-up-content .right .title-right-pop-up{
+        font-size: 2.5vh;
+        font-weight: 800;
+    }
+
+    
+    .pop-up-content .right ul span{
+        font-size: 2vh;
+        font-weight: 700;
+    }
+    
+    .pop-up-content .right ul li{
+        font-size: 1.4vh;
+        margin-top: .5vh;
+    }
+
+    .closePage{
+        z-index: 1;
+    }
+
+    .turnVisibleInfo{
+        width: 4vh;
+        height: 4vh;
+        display: flex;
+        z-index: 1;
+    
+        position: absolute;
+        left: 2vh;
+        top: 2vh;
+    
+        cursor: pointer;
+        transition: .2s;
+
+        animation: queryInfosAnime 500ms alternate infinite;
+    }
+}
+
+@media (max-width: 369px) {
+    .page-cadaster header .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 13vh;
+        height: 13vh;
+    }
+
+    .page-cadaster header .logo img{
+       margin-left: 5vh;
+    }
+
+    .page-cadaster header .title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8vh;
+        color: white;
+        margin-left: 5vh;
+    }
+
+    .container-banner-form{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .page-cadaster .container-banner{
+        width: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster{
+        width: 160vh;
+    }
+
+    .page-cadaster .container-banner .content-banner .box-name{
+        display: none;
+    }
+
+    .page-cadaster .container-cadaster{
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .title-info-endereco{
+        text-align: center;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .title-info-ct{
+        text-align: center;
+    }
+
+    .msg-button-enviar-appear{
+        width: 30vh;
+        font-size: 1.7vh;
+        right: 1vh;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container label{
+        top: 36%;
+    }
+
+    .labelNotFocusedNome, .labelNotFocusedNomeResp, .labelNotFocusedTelefone, .labelNotFocusedBairro, .labelNotFocusedRua, .labelNotFocusedComplemento, .labelNotFocusedNumRes, .labelNotFocusedCity{
+        font-size: 1.7vh;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container-num img{
+        display: none;
+    }
+
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container .ct-box-pick{
+        font-size: 2vh;
+
+    }
+    
+    .page-cadaster .container-cadaster .content-cadaster .button-label-container .ct-box-pick option{
+        font-size: 1.8vh;
+    }
+
+    .pop-up-box{
+        width: 80%;
+        margin-top: 5vh;
+        border-radius: 4vh;
+    }
+
+    .pop-up-title{
+        text-align: center;
+        margin-left: 0vh;
+    }
+
+    .pop-up-content .left{
+        width: 100%;
+        border-radius: 4vh;
+    }
+
+    .pop-up-content .right{
+        width: 100%;
+        border-radius: 4vh;
+        display: flex;
+        position: absolute;
+    }
+
+    .pop-up-content .left .pop-up-redes-sociais::before,
+    .pop-up-content .left .pop-up-redes-sociais::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 8vh;
+    border-top: .1vh solid #000;
+    }
+
+    .pop-up-content .right .title-right-pop-up{
+        font-size: 2.5vh;
+        font-weight: 800;
+    }
+
+    
+    .pop-up-content .right ul span{
+        font-size: 2vh;
+        font-weight: 700;
+    }
+    
+    .pop-up-content .right ul li{
+        font-size: 1.4vh;
+        margin-top: .5vh;
+    }
+
+    .closePage{
+        z-index: 1;
+    }
+
+    .turnVisibleInfo{
+        width: 4vh;
+        height: 4vh;
+        display: flex;
+        z-index: 1;
+    
+        position: absolute;
+        left: 2vh;
+        top: 2vh;
+    
+        cursor: pointer;
+        transition: .2s;
+
+        animation: queryInfosAnime 500ms alternate infinite;
     }
 }

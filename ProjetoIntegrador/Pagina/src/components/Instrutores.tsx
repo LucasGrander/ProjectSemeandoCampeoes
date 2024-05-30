@@ -6,6 +6,7 @@ import DiegoIMG from '../assets/DiegoGBI.jpeg'
 import instaLOGO from '../assets/instagram.svg'
 import faceLOGO from '../assets/facebook.svg'
 import youtubeLOGO from '../assets/youtube.svg'
+import fingerIcon from '../assets/finger.svg'
 
 interface Props{
     id?: string;
@@ -16,6 +17,8 @@ const Instrutores = ({id}: Props) => {
 
   return (
     <div id={id} className="content">
+
+            <img className='finger' src={fingerIcon} alt="" />
 
         <div className="box">
             <div className="box-img">

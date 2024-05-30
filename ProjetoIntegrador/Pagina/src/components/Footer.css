@@ -158,39 +158,53 @@ footer .box-patrocinios .logo-patrocinios .cairo{
         height: 16vh;
     }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (max-height: 1280px) {
     footer .content-footer {
+        flex-direction: column;
         height: auto;
         gap: 1vh;
-        font-size: 1vh; /* Ajuste do tamanho da fonte */
+        font-size: 2vh; /* Ajuste do tamanho da fonte */
+    }
+
+    footer .content-footer .sa-box {
+        gap: 30%;
     }
 
     footer .content-footer .sa-box,
-    footer .content-footer .sb-box,
     footer .content-footer .sc-box {
+        width: 95%;
+        margin: 0;
         justify-content: center;
     }
 
     footer .content-footer .sb-box {
-        justify-content: flex-end;
+        display: none;
+    }
+
+    footer .content-footer .sc-box {
+        margin-bottom: 3vh;
     }
 
     footer .content-footer .sa-box .prefeitura-img,
     footer .content-footer .sb-box .fecam-img,
     footer .content-footer img {
-        width: 12vh; /* Ajuste do tamanho das imagens */
-        height: 12vh;
+        width: 15vh; /* Ajuste do tamanho das imagens */
+        height: 15vh;
+    }
+
+    footer .content-footer .sa-box .fecam-img{
+        display: flex;
     }
 
     footer .content-footer .sa-box .texto {
-        font-size: 2vh; /* Ajuste do tamanho do texto */
+        font-size: 2.5vh; /* Ajuste do tamanho do texto */
     }
     footer .content-footer .text{
         font-size: 2vh; /* Ajuste do tamanho do texto */
     }
     footer .box-patrocinios .logo-patrocinios {
         display:grid;
-        grid-template-columns: repeat(5, 2fr); /* 3 colunas */
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas */
         align-items: center;
         justify-items: center;
         gap: 1vh;
