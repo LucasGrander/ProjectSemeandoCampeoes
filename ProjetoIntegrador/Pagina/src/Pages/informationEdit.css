@@ -875,12 +875,14 @@
     font-weight: 600;
     color: rgb(31, 98, 0);
     text-shadow: .1vh .1vh .4vh rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 .subtitle-container-edit-adding{
     font-size: 3.5vh;
     font-weight: 600;
     color: rgb(31, 98, 0);
     text-shadow: .1vh .1vh .4vh rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .editBC{
@@ -1493,7 +1495,7 @@
     }
 
     .dropdown-search{
-        grid-template-columns: 20vh;
+        grid-template-columns: 15vh;
         font-size: 1vh;
     }
 
@@ -1562,5 +1564,24 @@
         font-weight: 600;
         border-top-right-radius: 1vh;
         border-top-left-radius: 1vh;
+    }
+
+    .title-container-edit-adding{
+        font-size: 4vh;
+        text-align: center;
+    }
+    .title-container-edit-updating{
+        font-size: 4vh;
+        text-align: center;
+    }
+
+    .editBC{
+        width: 60vh;
+        height: 60vh;
+    
+        position: absolute;
+        top: 50%;
+        z-index: -4;
+        opacity: 0.1;
     }
 }
