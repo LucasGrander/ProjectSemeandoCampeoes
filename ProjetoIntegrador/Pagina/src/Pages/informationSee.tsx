@@ -9,6 +9,7 @@ import lockICON from '../assets/lockIcon.svg'
 import dropdownCloseOpenICON from '../assets/openCloseDropdown.svg'
 import searchUser from '../assets/searchUserIcon.svg'
 import { useEffect, useState } from 'react'
+import MyInput from '../components/MyInput'
 
 const informationSee = () => {
 
@@ -265,6 +266,15 @@ const handleGetInfos = async () => {
    handleGetInfos()
  }, [filterFaixa.length, filterCentroDeTreino.length, filterNome.length])
 
+ const [infosQuery, setInfosQuery] = useState([{}])
+
+ const handleChangeInfoQuery = (id: any) => {
+   setInfosQuery(prevState => ({
+       ...prevState,
+       [id]: !prevState[id]
+   }))
+ }
+
     return(
     <div  onMouseMove={handleFilterTodos} className="page-infos-see">
         <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
@@ -314,7 +324,7 @@ const handleGetInfos = async () => {
                             </div>
 
                             <div className="dropdown-itens-cts">
-                                <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} className='title-drop'>Centros de treinamento</span>
+                                <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} className='title-drop'>CT</span>
 
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT Lar Paraná")} className={estadoCtLarParana ? "item-drop-selected" : "item-drop"} >CT - Lar Paraná</span>
 
@@ -323,6 +333,28 @@ const handleGetInfos = async () => {
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT ???")} className={estadoCt ? "item-drop-selected" : "item-drop"} >CT - ???</span>
 
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT Iretama")} className={estadoCtIretama ? "item-drop-selected" : "item-drop"} >CT - Iretama</span>
+                            </div>
+
+                            <div style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} className="dropdown-search">
+                            <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" ,pointerEvents: dropdown ? "all" : "none", transition: ".1s"}}  className='title-drop' >Pesquisar</span>
+                                <MyInput
+                                    id="filterNome"
+                                    value={filterNome}
+                                    onChange={(e) => setFilterNome(e.target.value)}
+                                    type='text'
+                                    width= "100%"
+                                    height= "6vh"
+                                    padding="0vh 3vh 0vh 2.5vh"
+                                    fontSize= "2.4vh"
+                                    border= "solid .4vh black"
+                                    borderBottom="solid .4vh black"
+                                    borderRadius='.6vh'
+                                    backgroundColor="white"
+                                    transition= ".4s"
+                                    enter= "white"
+                                    leave= "white"
+                                    ph='Nome'
+                                />
                             </div>
 
                         </div>
@@ -344,13 +376,26 @@ const handleGetInfos = async () => {
                             <img src={closeX}></img>
                         </div>
                         ))}
-
                     </div>
                     
-                    <div className="box-search-icon">
+                    <div className="box-search-icon-see">
                         <img onClick={handleGetInfos} className='search-icon' src={searchUser}></img>
                     </div>
                 </div>
+
+                {/* ----------------------- para mobile --------------------- */}
+
+                <div className="query-FilterAndAdd">
+                        <div onClick={handleOnClickBtnFiltro} className={dropdown ? "btn-filtro-selected" : "btn-filtro"}>
+                            <span>Filtros</span>
+                            <img className='filter-icon' src={filterICON}></img>
+                            <img style={{transform: dropdown ? "rotate(180deg)" : "rotate(0deg)", transition: ".3s"}} className='dropdown-icon' src={dropdownCloseOpenICON}></img>
+                        </div>
+                    </div>
+                    
+{/* -------------------------------------------------------------------- */}
+
+                
                 
                 <div style={{overflow: loadingInfo ? "hidden" : "auto"}} className="table-result-pesquisa">
                         
@@ -366,23 +411,54 @@ const handleGetInfos = async () => {
 
                             <div className={showInfosIntegrante[participante.id] ? "container-integrante-infos-opened" : "container-integrante-infos-closed"} style={{visibility: dropdown || loadingInfo ? "hidden": "visible"}}>
 
-                                <div className="infos-integ">
+{/* ===================== para mobile ============= */}
+                                <div style={{display: infosQuery[participante.id] ? "none" : "flex", opacity: dropdown || loadingInfo ? "0": "1"}} className="infos-integ-leftQuery">
                                     <span className="title-infos-integ">Dados</span>
                                     <span><strong>Nome Completo: </strong> {participante.nome} </span>
                                     <span><strong>Data de nascimento (aaaa/mm/dd): </strong> {participante.data_de_nascimento.slice(0, 10)} </span>
-                                    <span><strong>Número de telefone: </strong> {participante.telefone} </span>
+                                    <span><strong>Telefone: </strong> {participante.telefone} </span>
                                     <span><strong>Responsável: </strong> {participante.responsavel} </span>
                                     <span><strong>Local de treino: </strong> CT - {participante.centro_de_treinamento} </span>
-                                </div> 
+                                </div>
 
-                                <div className="infos-integ">
-                                <span className="title-infos-integ">Endereço</span>
+                                <div style={{display: infosQuery[participante.id] ? "flex" : "none", opacity: dropdown || loadingInfo ? "0": "1"}} className="infos-integ-rightQuery">
+                                    <span className="title-infos-integ">Endereço</span>
                                     <span><strong>Cidade: </strong> {participante.nome_cidade} </span>
                                     <span><strong>Bairro: </strong> {participante.bairro} </span>
                                     <span><strong>Rua: </strong> {participante.rua} </span>
                                     <span><strong>Número da residência: </strong> {participante.numero} </span>
+                                </div>
+{/* ===================== ================= ============= */}
 
-                                </div>    
+{/* ===================== para pc ============= */}
+                                <div className="infos-integ-left">
+                                    <span className="title-infos-integ">Dados</span>
+                                    <span><strong>Nome Completo: </strong> {participante.nome} </span>
+                                    <span><strong>Data de nascimento (aaaa/mm/dd): </strong> {participante.data_de_nascimento.slice(0, 10)} </span>
+                                    <span><strong>Telefone: </strong> {participante.telefone} </span>
+                                    <span><strong>Responsável: </strong> {participante.responsavel} </span>
+                                    <span><strong>Local de treino: </strong> CT - {participante.centro_de_treinamento} </span>
+                                </div>
+
+                                <div className="infos-integ-right">
+                                    <span className="title-infos-integ">Endereço</span>
+                                    <span><strong>Cidade: </strong> {participante.nome_cidade} </span>
+                                    <span><strong>Bairro: </strong> {participante.bairro} </span>
+                                    <span><strong>Rua: </strong> {participante.rua} </span>
+                                    <span><strong>Número da residência: </strong> {participante.numero} </span>
+                                </div>
+{/* ===================== ================= ============= */}
+
+                                    <div className="choosedInfoShow">
+                                        <div style={{backgroundColor: infosQuery [participante.id] ? "transparent" : "black", color: infosQuery[participante.id] ? "black" : "white"}} onClick={() =>handleChangeInfoQuery(participante.id)} className="pessoal-box">
+                                            <span>Pessoal</span>
+                                        </div>
+
+                                        <div style={{backgroundColor: infosQuery [participante.id] ? "black" : "transparent", color: infosQuery[participante.id] ? "white" : "black"}} onClick={() =>handleChangeInfoQuery(participante.id)} className="endereco-box">
+                                            <span>Endereço</span>
+                                        </div>
+                                    </div>
+
                             </div>    
                         </div>
                         ))}                     
