@@ -23,6 +23,7 @@
 
 .page-infos-edit header .logo{
     width: 15%;
+    height: 100%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -30,7 +31,7 @@
 
 .page-infos-edit header .logo img{
     width: 16vh;
-    height: 90%;
+    height: 95%;
     margin-left: 9vh;
     border-radius: 50%;
     border: solid .2vh white;
@@ -1343,6 +1344,8 @@
 @media (min-width: 1025px) and (max-width: 1350px) {
     .page-infos-edit header .logo img{
         margin-left: 6vh;
+        width: 14vh;
+        height: 14vh;
     }
 
     .page-infos-edit header .title{
@@ -1352,31 +1355,456 @@
 
 @media (min-width: 769px) and (max-width: 1024px) and (max-height: 1400px) {
     .page-infos-edit header .logo img{
-        margin-left: 2vh;
+        margin-left: 6vh;
+        width: 13vh;
+        height: 13vh;
     }
+
 
     .page-infos-edit header .title{
-        width: 70%;
-        font-size: 2.8vh;
+        width: 65%;
+        font-size: 2vh;
     }
 
+    .page-infos-edit .container-edit-infos .box-edit-infos{
+        width: 100%;
+        padding: 1vh;
+    }
 
+    .box-nav .input-pesquisa{
+        width: 94%;
+        height: 8vh;
+        padding: 1vh 1vh 1vh 1vh ;
+    }
+
+    .box-search-icon{
+        width: 6vh;
+        height: 7.95vh;
+        left: 0vh;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .box-search-icon img{
+        width: 4vh;
+        height: 4vh;
+        padding: 0vh;
+        background-color: white;
+    }
+
+    .page-infos-edit .container-edit-infos .box-edit-infos .box-nav{
+     flex-direction: column;
+     align-items: end;
+     height: 21.8%;
+    }
+
+    .box-nav .input-pesquisa .filter-fixed{
+        width: 13vh;
+        height: 5vh;
+        font-size: 1.7vh;
+    }
+
+    .box-nav .input-pesquisa .filter-picked{
+        width: 15vh;
+        height: 5vh;
+        font-size: 1.7vh;
+    }
+
+    .box-nav .input-pesquisa .filter-picked-long{
+        min-width: calc(13% + 10vh);
+        height: 5vh;
+        font-size: 1.7vh;
+    }
+
+    .box-nav .adding-integrante{
+        display: none;
+    }
+
+    .box-nav .btn-filtro,
+    .box-nav .btn-filtro-selected{
+        display: none;
+    }
+
+    .query-FilterAndAdd{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+        width: 100%;
+    }
+
+    .query-FilterAndAdd .adding-integrante{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10%;
+    }
+
+    .query-FilterAndAdd .btn-filtro{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1vh;
+        width: 30%;
+    }
+    .query-FilterAndAdd .btn-filtro-selected{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1vh;
+        width: 30%;
+        background: linear-gradient(180deg, rgb(255, 255, 255), rgba(0, 0, 0, 0.3));
+    }
+
+    .dropdown-container-edit{
+        left: 4vh;
+    }
+
+    .dropdown-container-edit  .dropdown-itens-faixa{
+        grid-template-columns: 15vh;
+        font-size: 1vh;
+    }
+
+    .dropdown-container-edit .dropdown-itens-cts{
+        grid-template-columns: 22vh;
+        font-size: 1vh;
+    }
+
+    .dropdown-search{
+        grid-template-columns: 20vh;
+        font-size: 1vh;
+    }
+
+    .table-result-pesquisa .box-integrante span{
+        font-size: 2vh;
+    }
+
+    .title-infos-integ{
+        display: none;
+    }
+
+    .infos-integ-leftQuery{
+        width: 90%;
+        height: 60%;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: end;
+
+        font-size: 2.3vh;
+        gap: 1.5vh;
+    }
+
+    .infos-integ-rightQuery{
+        width: 90%;
+        height: 60%;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: start;
+
+        font-size: 2.3vh;
+        gap: 1.5vh;
+    }
+
+    .infos-integ-left,
+    .infos-integ-right{
+        display: none;
+    }
+
+    .choosedInfoShow{
+        width: 28vh;
+        height: 5vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+
+        bottom: 0;
+        left: 3vh;
+
+        border-top-left-radius: 1vh;
+        border-top-right-radius: 1vh;
+    }
+
+    .choosedInfoShow .pessoal-box{
+        width: 50%;
+        height: 5vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 600;
+        border-top-left-radius: 1vh;
+        border-top-right-radius: 1vh;
+        font-size: 2vh;
+    }
+
+    .choosedInfoShow .endereco-box{
+        width: 50%;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 600;
+        border-top-right-radius: 1vh;
+        border-top-left-radius: 1vh;
+        font-size: 2vh;
+    }
+
+    .title-container-edit-adding{
+        font-size: 4vh;
+        text-align: center;
+    }
+    .title-container-edit-updating{
+        font-size: 4vh;
+        text-align: center;
+    }
+
+    .editBC{
+        width: 60vh;
+        height: 60vh;
+    
+        position: absolute;
+        top: 50%;
+        z-index: -4;
+        opacity: 0.1;
+    }
 }
 
 
 @media (min-width: 481px) and (max-width: 768px) {
     .page-infos-edit header .logo img{
-        margin-left: 2vh;
+        margin-left: 6vh;
+        width: 13vh;
+        height: 13vh;
     }
+
 
     .page-infos-edit header .title{
-        width: 70%;
-        font-size: 3vh;
+        width: 65%;
+        font-size: 2vh;
     }
 
+    .page-infos-edit .container-edit-infos .box-edit-infos{
+        width: 100%;
+        padding: 1vh;
+    }
 
+    .box-nav .input-pesquisa{
+        width: 94%;
+        height: 10vh;
+        padding: 1vh 1vh 1vh 1vh ;
+    }
+
+    .box-search-icon{
+        width: 6vh;
+        height: 8vh;
+        left: 0vh;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .box-search-icon img{
+        width: 4vh;
+        height: 4vh;
+        padding: 0vh;
+        background-color: white;
+    }
+
+    .page-infos-edit .container-edit-infos .box-edit-infos .box-nav{
+     flex-direction: column;
+     align-items: end;
+     height: 21.8%;
+    }
+
+    .box-nav .input-pesquisa .filter-fixed{
+        width: 13vh;
+        height: 5vh;
+        font-size: 1.7vh;
+    }
+
+    .box-nav .input-pesquisa .filter-picked{
+        width: 15vh;
+        height: 5vh;
+        font-size: 1.7vh;
+    }
+
+    .box-nav .input-pesquisa .filter-picked-long{
+        min-width: calc(13% + 10vh);
+        height: 5vh;
+        font-size: 1.7vh;
+    }
+
+    .box-nav .adding-integrante{
+        display: none;
+    }
+
+    .box-nav .btn-filtro,
+    .box-nav .btn-filtro-selected{
+        display: none;
+    }
+
+    .query-FilterAndAdd{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+        width: 100%;
+    }
+
+    .query-FilterAndAdd .adding-integrante{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10%;
+    }
+
+    .query-FilterAndAdd .btn-filtro{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1vh;
+        width: 30%;
+    }
+    .query-FilterAndAdd .btn-filtro-selected{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1vh;
+        width: 30%;
+        background: linear-gradient(180deg, rgb(255, 255, 255), rgba(0, 0, 0, 0.3));
+    }
+
+    .dropdown-container-edit{
+        left: 11vh;
+    }
+
+    .dropdown-container-edit  .dropdown-itens-faixa{
+        grid-template-columns: 15vh;
+        font-size: 1vh;
+    }
+
+    .dropdown-container-edit .dropdown-itens-cts{
+        grid-template-columns: 22vh;
+        font-size: 1vh;
+    }
+
+    .dropdown-search{
+        grid-template-columns: 20vh;
+        font-size: 1vh;
+    }
+
+    .table-result-pesquisa .box-integrante span{
+        font-size: 2vh;
+    }
+
+    .title-infos-integ{
+        display: none;
+    }
+
+    .infos-integ-leftQuery{
+        width: 90%;
+        height: 60%;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: end;
+
+        font-size: 2.3vh;
+        gap: 1.5vh;
+    }
+
+    .infos-integ-rightQuery{
+        width: 90%;
+        height: 60%;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: start;
+
+        font-size: 2.3vh;
+        gap: 1.5vh;
+    }
+
+    .infos-integ-left,
+    .infos-integ-right{
+        display: none;
+    }
+
+    .choosedInfoShow{
+        width: 28vh;
+        height: 5vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+
+        bottom: 0;
+        left: 3vh;
+
+        border-top-left-radius: 1vh;
+        border-top-right-radius: 1vh;
+    }
+
+    .choosedInfoShow .pessoal-box{
+        width: 50%;
+        height: 5vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 600;
+        border-top-left-radius: 1vh;
+        border-top-right-radius: 1vh;
+        font-size: 2vh;
+    }
+
+    .choosedInfoShow .endereco-box{
+        width: 50%;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 600;
+        border-top-right-radius: 1vh;
+        border-top-left-radius: 1vh;
+        font-size: 2vh;
+    }
+
+    .title-container-edit-adding{
+        font-size: 4vh;
+        text-align: center;
+    }
+    .title-container-edit-updating{
+        font-size: 4vh;
+        text-align: center;
+    }
+
+    .editBC{
+        width: 60vh;
+        height: 60vh;
+    
+        position: absolute;
+        top: 50%;
+        z-index: -4;
+        opacity: 0.1;
+    }
 }
-
 
 @media (max-width: 480px) {
     .page-infos-edit header .logo img{
@@ -1394,14 +1822,14 @@
     }
 
     .box-nav .input-pesquisa{
-        width: 90%;
-        height: 10vh;
+        width: 91%;
+        height: 7.9vh;
         padding: 1vh 1vh 1vh 1vh ;
     }
 
     .box-search-icon{
-        width: 6vh;
-        height: 8vh;
+        width: 11%;
+        height: 7.9vh;
         left: 0vh;
         background-color: white;
         display: flex;

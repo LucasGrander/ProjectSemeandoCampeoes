@@ -245,6 +245,7 @@
     letter-spacing: .3vh;
     font-weight: 600;
     margin-top: 5vh;
+    text-align: center;
 }
 
 .page-cadaster .container-cadaster .content-cadaster .title-info-endereco{
@@ -834,7 +835,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) and (max-height: 1280px) {
+@media (min-width: 768px) and (max-width: 1024px) and (max-height: 1400px) {
     .page-cadaster header .logo{
         display: flex;
         align-items: center;
@@ -852,7 +853,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.8vh;
+        font-size: 2vh;
         color: white;
         margin-left: 5vh;
     }
@@ -996,19 +997,19 @@
         align-items: center;
         justify-content: center;
 
-        width: 13vh;
-        height: 13vh;
+        width: 12vh;
+        height: 12vh;
     }
 
     .page-cadaster header .logo img{
-       margin-left: 5vh;
+       margin-left: 2vh;
     }
 
     .page-cadaster header .title{
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.8vh;
+        font-size: 1.7vh;
         color: white;
         margin-left: 5vh;
     }

@@ -633,7 +633,7 @@ const handleGetInfos = async () => {
                                 </div>
 
 {/* ===================== para mobile ============= */}
-                                <div style={{display: infosQuery[participante.id] ? "none" : "flex"}} className="infos-integ-leftQuery">
+                                <div style={{display: infosQuery[participante.id] ? "none" : "flex", opacity: dropdown || loadingInfo ? "0": "1"}} className="infos-integ-leftQuery">
                                     <span className="title-infos-integ">Dados</span>
                                     <span><strong>Nome Completo: </strong> {participante.nome} </span>
                                     <span><strong>Data de nascimento (aaaa/mm/dd): </strong> {participante.data_de_nascimento.slice(0, 10)} </span>
@@ -642,7 +642,7 @@ const handleGetInfos = async () => {
                                     <span><strong>Local de treino: </strong> CT - {participante.centro_de_treinamento} </span>
                                 </div>
 
-                                <div style={{display: infosQuery[participante.id] ? "flex" : "none"}} className="infos-integ-rightQuery">
+                                <div style={{display: infosQuery[participante.id] ? "flex" : "none", opacity: dropdown || loadingInfo ? "0": "1"}} className="infos-integ-rightQuery">
                                     <span className="title-infos-integ">Endereço</span>
                                     <span><strong>Cidade: </strong> {participante.nome_cidade} </span>
                                     <span><strong>Bairro: </strong> {participante.bairro} </span>
