@@ -92,7 +92,7 @@ const CentrosDeTreinamento = ({id}: Props) => {
                 <div className="adress">
                     <h2>CT Asa Leste</h2>
                     <h3>Escola Ivone S Castanharo</h3>
-                    <span>VRua Sanhaco, 720</span>
+                    <span>Rua Sanhaco, 720</span>
                     <span>Jd Tropical I, Campo Mourão - PR, </span>
                     <span>87.310-190</span>
                     <span><strong>Treinos:</strong></span>
@@ -164,8 +164,8 @@ const CentrosDeTreinamento = ({id}: Props) => {
                 <div className="adress">
                     <h2>CT Asa Leste</h2>
                     <h3>Escola Ivone S Castanharo</h3>
-                    <span> Rua Sanhaco, 720, Jd Tropical I,</span>
-                    <span> Campo Mourão - PR, 87310-190</span>
+                    <span>Rua Sanhaco, 720, Jd Tropical I,</span>
+                    <span>Campo Mourão - PR, 87310-190</span>
                     <span><strong>Treinos:</strong></span>
                     <span>Terças e quintas: 19h</span>
                 </div>
