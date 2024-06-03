@@ -166,6 +166,7 @@ const Historico = ({id}: Props) => {
               para 16 dos 25 competidores, resultando em 23 medalhas, contando ainda com o apoio da FECAM atraves da Lei de Incentivo ao Esporte.<br></br>  
               Em 25 de maio a equipe participou do Campeonato Paranaense de Judô - Circuito Paranaense nas categorias sub-15 e veterano com 03 atletas, realizado em Campo Mourão resultando em 03 medalhas:<br></br>
               Em 26 de maio a equipe participou do Torneio Regional de Judô com 22 atletas, realizado em Campo Mourão resultando em 22 medalhas:<br></br>
+              Em 28 de maio o PSC iniciou as aulas no CT Asa Leste, situado na Escola Estadual Ivone Castanharo, aula ministrada pela instrutora faixa marrom Neia.
               
               <h2>Competições e Resultados em 2024:</h2>
               Em 10 de março VI Copa Champions de Jiu Jitsu:<br></br>

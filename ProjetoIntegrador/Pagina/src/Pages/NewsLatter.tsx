@@ -41,12 +41,20 @@ const NewsLatter = ({id}: Props) => {
       
         <div className="box-history">
             <div className="text-history">
+                <h2>Novo CT do PSC "Asa Leste"</h2>
+                Em 28 de maio a instrutora faixa marrom Néia iniciou as aulas nas dependências da Escola Estadual Ivone Castanharo das 19h as 20h. Os treinos serão ministrados todas as 
+                terças e quintas das 19h as 20h para 20 adolescentes selecionados entre os alunos da escola.
+
+              <h5>Imagens: <a target='_blank'  href="https://youtu.be/ydjqrB2vcwg?si=upTl7bcXO9DrBS6D">1º Treino CT Asa Leste</a></h5>
+              <h5>Postagem 03/06/2024</h5>
+              <br></br>
+
               
               <h2>Copa Noroeste de Judô</h2>
-              Campo Mourão recebe neste final de semana, 25 e 26 de maio, a maior competição de judô da história do Paraná, o Campeonato Paranaense de Judô. O evento será realizado pela 
+              Campo Mourão recebeu no fim de semana dos dias 25 e 26 de maio, a maior competição de judô da história do Paraná, o Campeonato Paranaense de Judô. O evento foi realizado pela 
               Associação Mourãoense de Judô (AMJ), em parceria com a Prefeitura de Campo Mourão, por meio da Fundação de Esportes (FECAM) e a Federação Paranaense de Judô (FPRJ) e os 
               apoiadores do evento e do judô mourãoense de 2024.<br></br>
-              As categorias sub-13, sub-15, sub-21 e veterano competem no sábado (25), das 8h às 18h, enquanto o Torneio Regional de Judô – 04 anos acima, será realizado no domingo (26), das 8h às 14h, 
+              As categorias sub-13, sub-15, sub-21 e veterano competiram no sábado (25), das 8h às 18h, enquanto o Torneio Regional de Judô – 04 anos acima, foi realizado no domingo (26), das 8h às 14h, 
               ambos no Ginásio de Esportes Belin Carolo, em anexo a Universidade Tecnológica Federal do Paraná (UFPR) – Campus de Campo Mourão.
               <h5>Mais informações: <a target='_blank'  href="https://resenhacm.com.br/campo-mourao-recebe-campeonato-paranaense-de-judo-neste-final-de-semana-no-ginasio-da-utfpr/">site resenha CM</a></h5> 
               
@@ -60,8 +68,7 @@ const NewsLatter = ({id}: Props) => {
               <h5>Vídeo: <a target='_blank'  href="https://youtu.be/ydjqrB2vcwg?si=upTl7bcXO9DrBS6D">Treinão Solidário 2024</a></h5>
               <h5>Postagem 27/05/2024</h5>
               <br></br>
-
-
+              
             </div>
         </div>
         <Footer />
