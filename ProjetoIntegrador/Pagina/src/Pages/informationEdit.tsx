@@ -109,7 +109,7 @@ const informationEdit = () => {
             setEstadoCtCentro(true)
             setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
-        else if(selectedFilter.toLocaleLowerCase() == "ct ???"){
+        else if(selectedFilter.toLocaleLowerCase() == "ct asa leste"){
             setEstadoCt(true)
             setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
@@ -170,7 +170,7 @@ const informationEdit = () => {
         else if(filtro.toLocaleLowerCase() == "ct centro"){
             setEstadoCtCentro(false)
         }
-        else if(filtro.toLocaleLowerCase() == "ct ???"){
+        else if(filtro.toLocaleLowerCase() == "ct asa leste"){
             setEstadoCt(false)
         }
         else if(filtro.toLocaleLowerCase() == "ct iretama"){
@@ -307,7 +307,8 @@ const [colorButton, setColorButton] = useState(false)
 const [loadingInfo, setLoadingInfo] = useState(false)
 
 
-
+//trazer a quantia da pesquisa
+ const [qttResult, setQttResult] = useState(0)
 
  // armazenar filtros de busca para os participantes
  const [filterNome, setFilterNome] = useState("")
@@ -321,12 +322,11 @@ const [loadingInfo, setLoadingInfo] = useState(false)
     centro_de_treino: filterCentroDeTreino
   } 
 
-//   filterToApply.cor_da_faixa.push([filterFaixa])
-
 const handleGetInfos = async () => {
     if(filterToApply.nome.length == 0 && filterToApply.cor_da_faixa.length == 0 && filterToApply.centro_de_treino.length == 0){
       const res = await axios.get("http://localhost:8080/users")
       setParticipants(res.data)
+      setQttResult(res.data.length)
 
       setLoadingInfo(true)
 
@@ -337,6 +337,7 @@ const handleGetInfos = async () => {
     else{
         const res = await axios.get("http://localhost:8080/users/filter", {params: filterToApply})
         setParticipants(res.data)
+        setQttResult(res.data.length)
 
         setLoadingInfo(true)
 
@@ -582,7 +583,7 @@ const handleGetInfos = async () => {
 
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT Centro")} className={estadoCtCentro ? "item-drop-selected" : "item-drop"} >CT - Centro</span>
 
-                                <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT ???")} className={estadoCt ? "item-drop-selected" : "item-drop"} >CT - ???</span>
+                                <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT Asa Leste")} className={estadoCt ? "item-drop-selected" : "item-drop"} >CT - Asa Leste</span>
 
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT Iretama")} className={estadoCtIretama ? "item-drop-selected" : "item-drop"} >CT - Iretama</span>
                             </div>
@@ -608,10 +609,11 @@ const handleGetInfos = async () => {
                                     ph='Nome'
                                 />
                             </div>
-                        </div>
-                    
-
-                    
+                        </div> 
+                </div>
+                
+                <div style={{opacity: dropdown || loadingInfo ? ".1" : "1", transition: ".3s"}} className="count-result-qtt">
+                    <span>Participantes encontrados: <strong>{qttResult}</strong></span>
                 </div>
                 
                 <div style={{overflow: loadingInfo ? "hidden" : "auto"}} className="table-result-pesquisa">
@@ -835,7 +837,7 @@ const handleGetInfos = async () => {
                         <option value="1">Centro de treinamento  -  Centro </option>
                         <option value="2">Centro de treinamento  -  Lar Paraná</option>
                         <option value="3">Centro de treinamento  -  Iretama </option>
-                        <option value="4">Centro de treinamento  -  ??? </option>
+                        <option value="4">Centro de treinamento  -  Asa Leste </option>
                     </select>
                 </div>
 

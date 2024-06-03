@@ -517,6 +517,13 @@
     pointer-events: none;
 }
 
+.count-result-qtt{
+    width: 100%;
+    height: 4vh;
+    text-align: center;
+    font-size: 3vh;
+}
+
 .table-result-pesquisa{
     width: 100%;
     height: 100%;
@@ -1577,6 +1584,10 @@
         z-index: -4;
         opacity: 0.1;
     }
+
+    .count-result-qtt span{
+        font-size: 2.9vh;
+    }
 }
 
 
@@ -1804,16 +1815,22 @@
         z-index: -4;
         opacity: 0.1;
     }
+
+    .count-result-qtt span{
+        font-size: 2.7vh;
+    }
 }
 
 @media (max-width: 480px) {
     .page-infos-edit header .logo img{
         margin-left: 3vh;
+        width: 12vh;
+        height: 12vh;
     }
 
     .page-infos-edit header .title{
         width: 65%;
-        font-size: 2vh;
+        font-size: 1.8vh;
     }
 
     .page-infos-edit .container-edit-infos .box-edit-infos{
@@ -2011,5 +2028,9 @@
         top: 50%;
         z-index: -4;
         opacity: 0.1;
+    }
+
+    .count-result-qtt span{
+        font-size: 2.5vh;
     }
 }

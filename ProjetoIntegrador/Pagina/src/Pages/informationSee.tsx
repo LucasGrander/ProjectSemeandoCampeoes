@@ -107,7 +107,7 @@ const informationSee = () => {
             setEstadoCtCentro(true)
             setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
-        else if(selectedFilter.toLocaleLowerCase() == "ct ???"){
+        else if(selectedFilter.toLocaleLowerCase() == "ct asa leste"){
             setEstadoCt(true)
             setFilterCentroDeTreino([...filterCentroDeTreino, selectedFilter.slice(3, )])
         }
@@ -168,7 +168,7 @@ const [inputFilter, setInputFilter] = useState(false)
         else if(filtro.toLocaleLowerCase() == "ct centro"){
             setEstadoCtCentro(false)
         }
-        else if(filtro.toLocaleLowerCase() == "ct ???"){
+        else if(filtro.toLocaleLowerCase() == "ct asa leste"){
             setEstadoCt(false)
         }
         else if(filtro.toLocaleLowerCase() == "ct iretama"){
@@ -223,6 +223,7 @@ const [inputFilter, setInputFilter] = useState(false)
         }))
     }
 
+const [qttResult, setQttResult] = useState(0)
 const [participants, setParticipants] = useState<Participante[]>([])
 const [filterNome, setFilterNome] = useState("")
 const [filterFaixa, setFilterFaixa] = useState<string[]>([])
@@ -239,6 +240,7 @@ const handleGetInfos = async () => {
    if(filterToApply.nome.length == 0 && filterToApply.cor_da_faixa.length == 0 && filterToApply.centro_de_treino.length == 0){
      const res = await axios.get("http://localhost:8080/users")
      setParticipants(res.data)
+     setQttResult(res.data.length)
 
      setLoadingInfo(true)
 
@@ -249,6 +251,7 @@ const handleGetInfos = async () => {
    else{
        const res = await axios.get("http://localhost:8080/users/filter", {params: filterToApply})
        setParticipants(res.data)
+       setQttResult(res.data.length)
 
        setLoadingInfo(true)
 
@@ -330,7 +333,7 @@ const handleGetInfos = async () => {
 
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT Centro")} className={estadoCtCentro ? "item-drop-selected" : "item-drop"} >CT - Centro</span>
 
-                                <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT ???")} className={estadoCt ? "item-drop-selected" : "item-drop"} >CT - ???</span>
+                                <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT Asa Leste")} className={estadoCt ? "item-drop-selected" : "item-drop"} >CT - Asa Leste</span>
 
                                 <span style={{height: dropdown ? "100%" : "0%",opacity: dropdown ? "1" : "0" , transition: ".15s"}} onClick={() => handleSetFilter("CT Iretama")} className={estadoCtIretama ? "item-drop-selected" : "item-drop"} >CT - Iretama</span>
                             </div>
@@ -395,6 +398,9 @@ const handleGetInfos = async () => {
                     
 {/* -------------------------------------------------------------------- */}
 
+                <div style={{opacity: dropdown || loadingInfo ? ".1" : "1", transition: ".3s"}} className="count-result-qtt">
+                    <span>Participantes encontrados: <strong>{qttResult}</strong></span>
+                </div>
                 
                 
                 <div style={{overflow: loadingInfo ? "hidden" : "auto"}} className="table-result-pesquisa">
