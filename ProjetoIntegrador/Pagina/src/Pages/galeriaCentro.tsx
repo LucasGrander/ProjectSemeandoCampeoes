@@ -94,7 +94,6 @@ const GaleriaCentro = () => {
             <div className="box">
               <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT8}></img></a>
             </div>
-
         </div>
         <Footer />
     </div>

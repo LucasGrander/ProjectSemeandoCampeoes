@@ -1,4 +1,4 @@
-import './galeriaLP.css'
+import './galeriaAsaLeste.css'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
 import { useState } from 'react'
@@ -13,7 +13,7 @@ import CTLP7 from '../assets/CTLP7.jpg'
 import CTLP8 from '../assets/CTCT8.jpg'
 import Footer from '../components/Footer'
 
-const GaleriaLP = () => {
+const GaleriaAsaLeste = () => {
   const [overlay, setOverlay] = useState (false)
 
   const handleOnClickHome = () => {
@@ -41,7 +41,7 @@ const GaleriaLP = () => {
 }
 
   return (
-    <div className="page-galeria-lp">
+    <div className="page-galeria-asaLeste">
       <div style={{display: overlay? 'flex' : 'none' }} className="overlay">
         <img className='loading-top' src={overlayLoadingCircle}></img>
         <img className='loading-logo' src={LogoSemeandoCampeoes}></img>
@@ -52,11 +52,11 @@ const GaleriaLP = () => {
           </div>
           <div className="title">
                 <h1>Semeando Campeões</h1>
-                <span className="subtitle">Galeria: Lar Parana</span>
+                <span className="subtitle">Galeria: Asa Leste</span>
             </div>
         </header>
 
-        <div className="container-photos-lp">
+        <div className="container-photos-asaLeste">
 
 
           <div className="box-return">
@@ -103,4 +103,4 @@ const GaleriaLP = () => {
   )
 }
 
-export default GaleriaLP
+export default GaleriaAsaLeste

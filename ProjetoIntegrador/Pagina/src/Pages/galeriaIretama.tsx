@@ -11,6 +11,7 @@ import CTI4 from '../assets/CTIretama10.jpg'
 import CTI5 from '../assets/CTIretama5.jpg'
 import CTI6 from '../assets/CTIretama6.jpg'
 import CTI7 from '../assets/CTIretama7.jpg'
+import Footer from '../components/Footer'
 
 const GaleriaIretama = () => {
   const [overlay, setOverlay] = useState (false)
@@ -57,7 +58,6 @@ const GaleriaIretama = () => {
 
         <div className="container-photos-iretama">
 
-          <div className="content-tripple">
             <div className="box-return">
                 <div className="title-return">
                   <span>Escolher outra galeria:</span>
@@ -72,9 +72,7 @@ const GaleriaIretama = () => {
               <div className="box">
                 <img src={CTI1}></img>
               </div>
-          </div>
 
-          <div className="content-tripple">
             <div className="box">
             <img src={CTI2}></img>
             </div>
@@ -84,9 +82,7 @@ const GaleriaIretama = () => {
             <div className="box">
             <img src={CTI4}></img>
             </div>
-          </div>
 
-          <div className="content-tripple">
             <div className="box">
             <img src={CTI5}></img>
             </div>
@@ -96,9 +92,9 @@ const GaleriaIretama = () => {
             <div className="box">
             <img src={CTI7}></img>
             </div>
-          </div>
 
         </div>
+        <Footer />
     </div>
   )
 }

@@ -16,6 +16,7 @@ import iconCamPhotos from '../assets/icon-camera-photo.svg'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import Footer from '../components/Footer'
 import CTIretama from '../assets/CTIretama11.jpg'
+import faceLogo from '../assets/facebook.svg'
 
 
 const Photos = () => {
@@ -64,6 +65,18 @@ const Photos = () => {
     
         setTimeout(() => {
             window.location.href = '/galeria-de-fotos/Galeria-Centro'
+        }, 1500)
+
+        setTimeout(() => {
+            setOverlay(false)
+        }, 2000)
+    }
+
+    const handleOnClickGaleriaAsaLeste = () => {
+        setOverlay(true)
+    
+        setTimeout(() => {
+            window.location.href = '/galeria-de-fotos/Galeria-AsaLeste'
         }, 1500)
 
         setTimeout(() => {
@@ -129,7 +142,7 @@ const Photos = () => {
                                 <p>03/06/2024</p>
                             </div>
                             <div className="img-icon-media">
-                                <img onClick={handleOnClickGaleriaCentro} src={galeryICON}></img>
+                                <img onClick={handleOnClickGaleriaAsaLeste} src={galeryICON}></img>
                             </div>
                         </div>
                     </div>
@@ -191,7 +204,7 @@ const Photos = () => {
                                 <p>2019</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a href='http://www.facebook.com/share/nVK8sAoGN9JVHH4i/?' target='_blank'><img src={galeryICON}></img></a> 
+                                <a href='http://www.facebook.com/share/nVK8sAoGN9JVHH4i/?' target='_blank'><img src={faceLogo}></img></a> 
                             </div>
                         </div>
                     </div>
@@ -209,7 +222,7 @@ const Photos = () => {
                                 <p>2021</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a href='https://resenhacm.com.br/criancas-e-adolescentes-participam-de-graduacao-anual-e-da-segunda-copa-semeando-campeoes/' target='_blank' ><img src={galeryICON}></img></a> 
+                                <a href='https://resenhacm.com.br/criancas-e-adolescentes-participam-de-graduacao-anual-e-da-segunda-copa-semeando-campeoes/' target='_blank' ><img src={faceLogo}></img></a> 
                             </div>
                         </div>
                     </div>
@@ -227,7 +240,7 @@ const Photos = () => {
                                 <p>2023</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a href='http://www.facebook.com/share/pjo4A11NkWZsMAaB/' target='_blank' ><img src={galeryICON}></img></a> 
+                                <a href='http://www.facebook.com/share/pjo4A11NkWZsMAaB/' target='_blank' ><img src={faceLogo}></img></a> 
                             </div>
                         </div>
                     </div>
@@ -245,7 +258,7 @@ const Photos = () => {
                                 <p>2024</p>
                             </div>
                             <div className="img-icon-media2">
-                                <a href='https://www.facebook.com/media/set/?set=a.884445603684264&type=3' target='_blank' ><img src={galeryICON}></img></a> 
+                                <a href='https://www.facebook.com/media/set/?set=a.884445603684264&type=3' target='_blank' ><img src={faceLogo}></img></a> 
                             </div>
                         </div>
                     </div>
