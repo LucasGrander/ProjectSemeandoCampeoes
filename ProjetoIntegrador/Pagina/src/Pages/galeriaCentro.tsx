@@ -11,6 +11,7 @@ import CTCT5 from '../assets/CTCT5.jpg'
 import CTCT6 from '../assets/CTCT6.jpg'
 import CTCT7 from '../assets/CTCT7.jpg'
 import CTCT8 from '../assets/CTCT8.jpg'
+import Footer from '../components/Footer'
 
 const GaleriaCentro = () => {
 
@@ -58,7 +59,6 @@ const GaleriaCentro = () => {
 
         <div className="container-photos-centro">
 
-          <div className="content-tripple">
             <div className="box-return">
               <div className="title-return">
                 <span>Escolher outra galeria:</span>
@@ -67,15 +67,14 @@ const GaleriaCentro = () => {
                 <img onClick={handleOnClickReturn} src={returnIcon} alt="icone de retornar" />
               </div>
             </div>
+
             <div className="box">
               <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT1}></img></a>
             </div>
             <div className="box">
               <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT2}></img></a>
             </div>
-          </div>
 
-          <div className="content-tripple">
             <div className="box">
               <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT3}></img></a>
             </div>
@@ -85,9 +84,7 @@ const GaleriaCentro = () => {
             <div className="box">
               <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT5}></img></a>
             </div>
-          </div>
 
-          <div className="content-tripple">
             <div className="box">
               <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT6}></img></a>
             </div>
@@ -97,9 +94,9 @@ const GaleriaCentro = () => {
             <div className="box">
               <a href="https://www.facebook.com/semeandocampeoes/photos_by" target="_blank" ><img src={CTCT8}></img></a>
             </div>
-          </div>
 
         </div>
+        <Footer />
     </div>
   )
 }

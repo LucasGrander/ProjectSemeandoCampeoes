@@ -118,6 +118,24 @@ const Photos = () => {
                 </div>
 
                 <div className="box-ct">
+                        <img className='bg-box-cards' src={PSCC} alt='imagem do ct'></img>
+                        <div className="name-ct">
+                        <div className="infos-card-galeria">
+                            <span>CT Asa Leste</span>
+                        </div>
+                        <div className="icon-card-galeria">
+                            <div className="att-photos-time">
+                                <p>Atualizado:</p>
+                                <p>03/06/2024</p>
+                            </div>
+                            <div className="img-icon-media">
+                                <img onClick={handleOnClickGaleriaCentro} src={galeryICON}></img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="box-ct">
                         <img className='bg-box-cards' src={PSCLP} alt='imagem do ct'></img>
                         <div className="name-ct">
                         <div className="infos-card-galeria">
@@ -154,7 +172,6 @@ const Photos = () => {
                     </div>
                 </div>
             </div>
-
 
             {/* //container inferior -- FOTOS COPA PSC*/}
             <div className="title-photos2">
