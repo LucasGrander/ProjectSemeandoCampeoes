@@ -1007,7 +1007,7 @@
         bottom: 0;
         left: 5vh;
         width: 40vh;
-        height: 5vh;
+        height: 3vh;
         gap: 1vh;
 
         border-top-left-radius: 1vh;
@@ -1015,19 +1015,19 @@
     }
 
     .choosedInfoShow .pessoal-box{
-        width: 65%;
+        width: 55%;
         text-align: center;
         font-weight: 600;
-        font-size: 3vh;
+        font-size: 2.4vh;
         border-top-left-radius: 1vh;
         border-top-right-radius: 1vh;
     }
 
     .choosedInfoShow .endereco-box{
-        width: 65%;
+        width: 55%;
         text-align: center;
         font-weight: 600;
-        font-size: 3vh;
+        font-size: 2.4vh;
         border-top-right-radius: 1vh;
         border-top-left-radius: 1vh;
     }
@@ -1197,7 +1197,7 @@
         bottom: 0;
         left: 5vh;
         width: 40vh;
-        height: 5vh;
+        height: 3vh;
         gap: 1vh;
 
         border-top-left-radius: 1vh;
@@ -1205,19 +1205,19 @@
     }
 
     .choosedInfoShow .pessoal-box{
-        width: 65%;
+        width: 60%;
         text-align: center;
         font-weight: 600;
-        font-size: 3vh;
+        font-size: 2.5vh;
         border-top-left-radius: 1vh;
         border-top-right-radius: 1vh;
     }
 
     .choosedInfoShow .endereco-box{
-        width: 65%;
+        width: 60%;
         text-align: center;
         font-weight: 600;
-        font-size: 3vh;
+        font-size: 2.5vh;
         border-top-right-radius: 1vh;
         border-top-left-radius: 1vh;
     }
@@ -1361,6 +1361,7 @@
 
         font-size: 2.3vh;
         gap: 1.5vh;
+        margin-top: 2vh;
     }
 
     .infos-integ-rightQuery{
@@ -1374,6 +1375,7 @@
 
         font-size: 2.3vh;
         gap: 1.5vh;
+        margin-top: 2vh;
     }
 
     .infos-integ-left,
@@ -1385,16 +1387,17 @@
         display: flex;
         position: absolute;
         bottom: 0;
-        left: 3vh;
+        left: 0vh;
         width: 28vh;
         height: 3vh;
 
         border-top-left-radius: 1vh;
         border-top-right-radius: 1vh;
+        font-size: 1.8vh;
     }
 
     .choosedInfoShow .pessoal-box{
-        width: 50%;
+        width: 40%;
         text-align: center;
         font-weight: 600;
         border-top-left-radius: 1vh;
@@ -1402,11 +1405,12 @@
     }
 
     .choosedInfoShow .endereco-box{
-        width: 50%;
+        width: 40%;
         text-align: center;
         font-weight: 600;
         border-top-right-radius: 1vh;
         border-top-left-radius: 1vh;
+        font-size: 1.8vh;
     }
 
     .count-result-qtt span{

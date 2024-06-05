@@ -1963,6 +1963,7 @@
 
         font-size: 2.3vh;
         gap: 1.5vh;
+        margin-top: 2vh;
     }
 
     .infos-integ-rightQuery{
@@ -1976,6 +1977,7 @@
 
         font-size: 2.3vh;
         gap: 1.5vh;
+        margin-top: 2vh;
     }
 
     .infos-integ-left,
@@ -1985,10 +1987,12 @@
 
     .choosedInfoShow{
         display: flex;
+        justify-content: center;
+        text-align: center;
         position: absolute;
         bottom: 0;
-        left: 3vh;
-        width: 28vh;
+        left: 0vh;
+        width: 25vh;
         height: 3vh;
 
         border-top-left-radius: 1vh;
@@ -1996,19 +2000,23 @@
     }
 
     .choosedInfoShow .pessoal-box{
-        width: 50%;
+        width: 40%;
+        display: flex;
+        justify-content: center;
         text-align: center;
         font-weight: 600;
         border-top-left-radius: 1vh;
         border-top-right-radius: 1vh;
+        font-size: 1.8vh;
     }
 
     .choosedInfoShow .endereco-box{
-        width: 50%;
+        width: 40%;
         text-align: center;
         font-weight: 600;
         border-top-right-radius: 1vh;
         border-top-left-radius: 1vh;
+        font-size: 1.8vh;
     }
 
     .title-container-edit-adding{
