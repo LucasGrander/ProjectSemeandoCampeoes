@@ -18,7 +18,7 @@ function App() {
       <HashRouter>
         <Routes>
             <Route path= "/" element = {<Home />}/>
-            <Route path= "/login" element = {<Login />}/>
+            <Route path= "#/login" element = {<Login />}/>
             <Route path= "/galeria-de-fotos" element = {<Photos />}/>
             <Route path= "/participe" element = {<Cadaster />}/>
             <Route path= "/galeria-de-fotos/Galeria-Iretama" element = {<GaleriaIretama />}/>
