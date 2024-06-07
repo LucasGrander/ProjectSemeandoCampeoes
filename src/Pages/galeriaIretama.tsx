@@ -12,15 +12,18 @@ import CTI5 from '../assets/CTIretama5.jpg'
 import CTI6 from '../assets/CTIretama6.jpg'
 import CTI7 from '../assets/CTIretama7.jpg'
 import Footer from '../components/Footer'
+import { useNavigate } from 'react-router-dom'
 
 const GaleriaIretama = () => {
   const [overlay, setOverlay] = useState (false)
+
+  const navigate = useNavigate()
 
   const handleOnClickHome = () => {
       setOverlay(true)
   
       setTimeout(() => {
-          window.location.href = '/'
+        navigate('/');
       }, 1500)
 
       setTimeout(() => {
@@ -32,7 +35,7 @@ const GaleriaIretama = () => {
     setOverlay(true)
 
     setTimeout(() => {
-        window.location.href = '/galeria-de-fotos'
+      navigate('/galeria-de-fotos');
     }, 1500)
 
     setTimeout(() => {

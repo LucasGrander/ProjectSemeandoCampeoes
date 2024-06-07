@@ -27,7 +27,7 @@ const Home = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/'
+            navigate('/');
         }, 1500)
 
         setTimeout(() => {
@@ -52,7 +52,7 @@ const Home = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/galeria-de-fotos'
+            navigate('/galeria-de-fotos');
         }, 1500)
 
         setTimeout(() => {
@@ -65,7 +65,7 @@ const Home = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/participe'
+            navigate('/participe');
         }, 1500)
 
         setTimeout(() => {
@@ -76,7 +76,7 @@ const Home = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/notícias'
+            navigate('/notícias');
         }, 1500)
 
         setTimeout(() => {

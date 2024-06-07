@@ -15,16 +15,19 @@ import editUSER from '../assets/editUserIcon.svg'
 import addUSerIcon from '../assets/addUserIcon.svg'
 import MyInput from '../components/MyInput'
 import MyButton from '../components/MyButton'
+import { useNavigate } from 'react-router-dom'
 
 const informationEdit = () => {
 
     const [overlay, setOverlay] = useState (false)
 
+    const navigate = useNavigate()
+
     const handleOnClickHome = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/'
+            navigate('/')
         }, 1500)
   
         setTimeout(() => {

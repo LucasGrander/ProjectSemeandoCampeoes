@@ -12,15 +12,18 @@ import CTLP6 from '../assets/CTLP6.jpg'
 import CTLP7 from '../assets/CTLP7.jpg'
 import CTLP8 from '../assets/CTCT8.jpg'
 import Footer from '../components/Footer'
+import { useNavigate } from 'react-router-dom'
 
 const GaleriaLP = () => {
   const [overlay, setOverlay] = useState (false)
+
+  const navigate = useNavigate()
 
   const handleOnClickHome = () => {
       setOverlay(true)
   
       setTimeout(() => {
-          window.location.href = '/'
+        navigate('/');
       }, 1500)
 
       setTimeout(() => {
@@ -32,7 +35,7 @@ const GaleriaLP = () => {
     setOverlay(true)
 
     setTimeout(() => {
-        window.location.href = '/galeria-de-fotos'
+        navigate('/galeria-de-fotos')
     }, 1500)
 
     setTimeout(() => {

@@ -10,16 +10,19 @@ import dropdownCloseOpenICON from '../assets/openCloseDropdown.svg'
 import searchUser from '../assets/searchUserIcon.svg'
 import { useEffect, useState } from 'react'
 import MyInput from '../components/MyInput'
+import { useNavigate } from 'react-router-dom'
 
 const informationSee = () => {
 
     const [overlay, setOverlay] = useState (false)
 
+    const navigate = useNavigate()
+
     const handleOnClickHome = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/'
+            navigate('/');
         }, 1500)
   
         setTimeout(() => {

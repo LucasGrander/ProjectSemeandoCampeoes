@@ -20,17 +20,20 @@ import LogoWhatszap from '../assets/whatsapp.svg'
 import closePage from "../assets/closePage.svg"
 import infoIcon from "../assets/informationIcon.svg"
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 const Cadaster = () => {
 
     const [overlay, setOverlay] = useState (false)
 
+    const navigate = useNavigate()
+
     const handleOnClickHome = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/'
+            navigate('/');
         }, 1500)
 
         setTimeout(() => {
@@ -42,7 +45,7 @@ const Cadaster = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/login'
+            navigate('/login');
         }, 1500)
 
         setTimeout(() => {

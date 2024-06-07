@@ -12,16 +12,19 @@ import CTCT6 from '../assets/CTCT6.jpg'
 import CTCT7 from '../assets/CTCT7.jpg'
 import CTCT8 from '../assets/CTCT8.jpg'
 import Footer from '../components/Footer'
+import { useNavigate } from 'react-router-dom'
 
 const GaleriaCentro = () => {
 
   const [overlay, setOverlay] = useState (false)
 
+  const navigate = useNavigate()
+
   const handleOnClickHome = () => {
       setOverlay(true)
   
       setTimeout(() => {
-          window.location.href = '/'
+        navigate('/');
       }, 1500)
 
       setTimeout(() => {
@@ -33,7 +36,7 @@ const GaleriaCentro = () => {
     setOverlay(true)
 
     setTimeout(() => {
-        window.location.href = '/galeria-de-fotos'
+      navigate('/galeria-de-fotos');
     }, 1500)
 
     setTimeout(() => {
