@@ -327,7 +327,7 @@ const [loadingInfo, setLoadingInfo] = useState(false)
 
 const handleGetInfos = async () => {
     if(filterToApply.nome.length == 0 && filterToApply.cor_da_faixa.length == 0 && filterToApply.centro_de_treino.length == 0){
-      const res = await axios.get("http://localhost:8080/users")
+      const res = await axios.get("https://backendprojectsemeandocampeoes-production.up.railway.app/users")
       setParticipants(res.data)
       setQttResult(res.data.length)
 
@@ -338,7 +338,7 @@ const handleGetInfos = async () => {
         }, 2000);
     }
     else{
-        const res = await axios.get("http://localhost:8080/users/filter", {params: filterToApply})
+        const res = await axios.get("https://backendprojectsemeandocampeoes-production.up.railway.app/users/filter", {params: filterToApply})
         setParticipants(res.data)
         setQttResult(res.data.length)
 
@@ -360,7 +360,7 @@ const handleGetInfos = async () => {
 
   const handleUpdateInfos = async () => {
     if(activeId < 0){
-    await axios.post("http://localhost:8080/users",{nome: nomePessoa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, id_faixa: faixa, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
+    await axios.post("https://backendprojectsemeandocampeoes-production.up.railway.app/users",{nome: nomePessoa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, id_faixa: faixa, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
     setBoxEditMode(false)
     setBoxForCrud(false)
 
@@ -387,7 +387,7 @@ const handleGetInfos = async () => {
     handleGetInfos()
     }
     else{
-    await axios.put("http://localhost:8080/users", {id: activeId, nome: nomePessoa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, id_faixa: faixa, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
+    await axios.put("https://backendprojectsemeandocampeoes-production.up.railway.app/users", {id: activeId, nome: nomePessoa, data_de_nascimento: dataNasc, telefone: telefone, responsavel: responsavel, id_centro_de_treinamento: centroDeTreino, id_faixa: faixa, rua: rua, numero: numCasa, bairro: bairro, nome_cidade: nomeCidade})
 
     setBoxForCrud(false)
     setBoxEditMode(false)
@@ -470,7 +470,7 @@ const handleGetInfos = async () => {
     }
 
   const handleDeleteInfos = async (id : number) => {
-    await axios.delete(`http://localhost:8080/users?id=${id}`)
+    await axios.delete(`https://backendprojectsemeandocampeoes-production.up.railway.app/users?id=${id}`)
     handleGetInfos()
     setBoxForCrud(false)
     
