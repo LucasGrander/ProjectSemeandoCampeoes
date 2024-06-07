@@ -10,6 +10,7 @@ import stickmanLogin from '../assets/vetor-JiuJitsu-fight.png'
 import stickmanLogin2 from '../assets/vetor-JiuJitsu-fight-2.png'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 function Login (){
 
@@ -22,6 +23,8 @@ function Login (){
     const [focusUserAluno, setFocusUserAluno] = useState(false)
     const [focusPassWAluno, setFocusPassWAluno] = useState(false)
     const [clasnameAluno, setClassnameAluno] = useState(true)
+    const navigate = useNavigate()
+  
 
 
 
@@ -38,7 +41,7 @@ function Login (){
                     setUserAluno("")
                     setPasswordAluno("")
                     setTimeout(()=>{
-                        window.location.href = '/login/informações-acessoAluno'
+                        navigate('/login/informações-acessoAluno')
                     },1500)
                 }, 2000)
             }
@@ -115,7 +118,7 @@ function Login (){
                         setUserProfessor("")
                         setPasswordProfessor("")
                         setTimeout(() => {
-                            window.location.href = '/login/informações-acessoProfessor';
+                            navigate('/login/informações-acessoProfessor');
                         }, 1500);
                     }, 2000);
                 } else if(validationProfessor.data.length == 0) {
@@ -247,7 +250,7 @@ function Login (){
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/'
+            navigate('/')
         }, 1500)
 
         setTimeout(() => {
@@ -259,7 +262,7 @@ function Login (){
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/participe'
+            navigate('/participe')
         }, 1500)
 
         setTimeout(() => {

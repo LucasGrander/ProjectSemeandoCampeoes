@@ -17,17 +17,20 @@ import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import Footer from '../components/Footer'
 import CTIretama from '../assets/CTIretama11.jpg'
 import faceLogo from '../assets/facebook.svg'
+import { useNavigate } from 'react-router-dom'
 
 
 const Photos = () => {
 
     const [overlay, setOverlay] = useState (false)
 
+    const navigate = useNavigate()
+
     const handleOnClickHome = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/'
+            navigate('/')
         }, 1500)
 
         setTimeout(() => {
@@ -39,7 +42,7 @@ const Photos = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/galeria-de-fotos/Galeria-Iretama'
+            navigate('/galeria-de-fotos/Galeria-Iretama')
         }, 1500)
 
         setTimeout(() => {
@@ -51,7 +54,7 @@ const Photos = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/galeria-de-fotos/Galeria-LarParana'
+            navigate('/galeria-de-fotos/Galeria-LarParana')
         }, 1500)
         
 
@@ -64,7 +67,7 @@ const Photos = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/galeria-de-fotos/Galeria-Centro'
+            navigate('/galeria-de-fotos/Galeria-Centro')
         }, 1500)
 
         setTimeout(() => {
@@ -76,7 +79,7 @@ const Photos = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/galeria-de-fotos/Galeria-AsaLeste'
+            navigate('/galeria-de-fotos/Galeria-AsaLeste')
         }, 1500)
 
         setTimeout(() => {

@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import { useState } from 'react';
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import LogoSemeandoCampeoes from '../assets/LogoSemeandoCampeoes.png'
+import { useNavigate } from 'react-router-dom';
 
 
 interface Props{
@@ -12,11 +13,13 @@ const NewsLatter = ({id}: Props) => {
 
   const [overlay, setOverlay] = useState (false)
 
+  const navigate = useNavigate()
+
   const handleOnClickHome = () => {
       setOverlay(true)
   
       setTimeout(() => {
-          window.location.href = '/'
+          navigate('/')
       }, 1500)
 
       setTimeout(() => {
