@@ -16,7 +16,7 @@
 
 .page-login header{
     width: 100%;
-    height: 20vh;
+    height: 22vh;
 
     display: flex;
     justify-content: space-between;
@@ -35,7 +35,7 @@
 
 .page-login header .logo img{
     width: 16vh;
-    height: 95%;
+    height: 90%;
     margin-left: 9vh;
     border-radius: 50%;
     border: solid .2vh white;
@@ -622,7 +622,7 @@
 
     .page-login .container-login{
         flex-direction: column;
-        padding: 5vh 0vh;
+        padding: 5vh 0vh 5vh 0vh;
     }
 
     .center-login-page .bottom .container-stickman,
@@ -668,17 +668,26 @@
         display: none;
     }
     
+    .page-login header .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 14vh;
+        height: 14vh;
+    }
+    
     .page-login header .logo img{
-        margin-left: 2vh;
+        margin-left: 8vh;
     }
 
     .page-login header .title{
-        width: 70%;
-        font-size: 3vh;
+        width: 65%;
+        font-size: 2vh;
     }
 
     .page-login{
-        height: 180vh;
+        height: 170vh;
         overflow-y: auto;
     }
 
@@ -696,7 +705,7 @@
 
     .page-login .container-login{
         flex-direction: column;
-        padding: 5vh 0vh;
+        padding: 10vh 0vh 10vh 0vh;
     }
 
     .center-login-page .bottom .container-stickman,
@@ -748,17 +757,27 @@
     .center-login-page .top{
         display: none;
     }
+
+    .page-login header .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 12vh;
+        height: 12vh;
+    }
+
     .page-login header .logo img{
         margin-left: 2vh;
     }
 
     .page-login header .title{
         width: 65%;
-        font-size: 2vh;
+        font-size: 1.7vh;
     }
 
     .page-login{
-        height: 180vh;
+        height: 160vh;
         overflow-y: auto;
     }
 
