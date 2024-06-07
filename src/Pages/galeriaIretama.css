@@ -280,20 +280,21 @@
 
 @media (max-width: 480px) {
     .page-galeria-iretama header .logo img{
-        width: 13vh;
-        height: 13vh;
+        width: 11vh;
+        height: 11vh;
         margin-left: 3vh;
     }
     
     .page-galeria-iretama header .title{
         width: 65%;
-        font-size: 1.8vh;
+        font-size: 1.7vh;
     }
     
     .page-galeria-iretama header .title .subtitle{
-        Font-size: 2vh;
+        width: 100%;
+        Font-size: 1.8vh;
         text-align: left;
-        margin-left: 10%;
+        margin-left: 8%;
         
     }
 

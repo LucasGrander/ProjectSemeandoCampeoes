@@ -765,8 +765,8 @@
 
     .page-photos header .logo img{
         margin-left: 3vh;
-        width: 13vh;
-        height: 13vh;
+        width: 12vh;
+        height: 12vh;
     }
     .page-photos header .title{
         display: flex;
@@ -776,6 +776,7 @@
         font-size: 1.7vh;
     }
     .page-photos header .title .subtitle{
+        width: 100%;
         font-size: 1.8vh;
     }
     

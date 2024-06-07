@@ -219,7 +219,7 @@
     .page-galeria-asaLeste header .title .subtitle{
         Font-size: 2vh;
         text-align: left;
-        margin-left: 10%;
+        margin-left: 8%;
         
     }
 
@@ -254,7 +254,7 @@
     .page-galeria-asaLeste header .title .subtitle{
         Font-size: 2vh;
         text-align: left;
-        margin-left: 10%;
+        margin-left: 8%;
         
     }
 
@@ -280,21 +280,21 @@
 
 @media (max-width: 480px) {
     .page-galeria-asaLeste header .logo img{
-        width: 13vh;
-        height: 13vh;
+        width: 11vh;
+        height: 11vh;
         margin-left: 3vh;
     }
     
     .page-galeria-asaLeste header .title{
         width: 65%;
-        font-size: 1.8vh;
+        font-size: 1.7vh;
     }
     
     .page-galeria-asaLeste header .title .subtitle{
-        Font-size: 2vh;
+        width: 100%;
+        Font-size: 1.6vh;
         text-align: left;
-        margin-left: 10%;
-        
+        margin-left: 8%;
     }
 
     .page-galeria-asaLeste .container-photos-asaLeste .box-return .title-return{

@@ -219,7 +219,7 @@
     .page-galeria-centro header .title .subtitle{
         Font-size: 2vh;
         text-align: left;
-        margin-left: 10%;
+        margin-left: 11%;
         
     }
 
@@ -280,20 +280,20 @@
 
 @media (max-width: 480px) {
     .page-galeria-centro header .logo img{
-        width: 13vh;
-        height: 13vh;
+        width: 11vh;
+        height: 11vh;
         margin-left: 3vh;
     }
     
     .page-galeria-centro header .title{
         width: 65%;
-        font-size: 1.8vh;
+        font-size: 1.7vh;
     }
     
     .page-galeria-centro header .title .subtitle{
-        Font-size: 2vh;
+        Font-size: 1.8vh;
         text-align: left;
-        margin-left: 10%;
+        margin-left: 8%;
         
     }
 
