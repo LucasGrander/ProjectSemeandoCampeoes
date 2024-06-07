@@ -24,7 +24,7 @@ const Home = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/'
+            window.location.href = '#/'
         }, 1500)
 
         setTimeout(() => {
@@ -36,7 +36,7 @@ const Home = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '/login'
+            window.location.href = '#/login'
         }, 1500)
 
         setTimeout(() => {

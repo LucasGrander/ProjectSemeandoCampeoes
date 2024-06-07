@@ -8,14 +8,14 @@ import Login from './Pages/login'
 import Photos from './Pages/photos'
 import InformationEdit from './Pages/informationEdit'
 import InformationSee from './Pages/informationSee'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import NewsLatter from './Pages/NewsLatter'
 import GaleriaAsaLeste from './Pages/galeriaAsaLeste'
 
 function App() {
 
   return (
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
             <Route path= "/" element = {<Home />}/>
             <Route path= "/login" element = {<Login />}/>
@@ -29,7 +29,7 @@ function App() {
             <Route path= "/login/informações-acessoAluno" element = {<InformationSee />}/>
             <Route path= "/notícias" element = {<NewsLatter />}/>
         </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
