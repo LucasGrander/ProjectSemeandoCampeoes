@@ -14,17 +14,20 @@ import Historico from '../components/Historico'
 import overlayLoadingCircle from '../assets/overlayLoadingTextLoading.gif'
 import Footer from '../components/Footer'
 import newspapper from '../assets/newsPapper.svg'
+import { useNavigate } from 'react-router-dom'
   
 const Home = () => {
     const [content, setContent] = useState('cts')
     
     const [overlay, setOverlay] = useState (false)
 
+    const navigate = useNavigate();
+
     const handleOnClickHome = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '#/'
+            window.location.href = '/'
         }, 1500)
 
         setTimeout(() => {
@@ -36,7 +39,8 @@ const Home = () => {
         setOverlay(true)
     
         setTimeout(() => {
-            window.location.href = '#/login'
+            // window.location.href = '/login'
+            navigate('/login');
         }, 1500)
 
         setTimeout(() => {
