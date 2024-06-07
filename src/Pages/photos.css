@@ -687,8 +687,8 @@
 
     .page-photos header .logo img{
         margin-left: 3vh;
-        width: 14vh;
-        height: 14vh;
+        width: 13vh;
+        height: 13vh;
     }
     .page-photos header .title{
         display: flex;
@@ -765,18 +765,18 @@
 
     .page-photos header .logo img{
         margin-left: 3vh;
-        width: 14vh;
-        height: 14vh;
+        width: 13vh;
+        height: 13vh;
     }
     .page-photos header .title{
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-        font-size: 1.9vh;
+        font-size: 1.7vh;
     }
     .page-photos header .title .subtitle{
-        font-size: 1.9vh;
+        font-size: 1.8vh;
     }
     
     .page-photos .box-ct{
