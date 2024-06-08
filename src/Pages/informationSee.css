@@ -602,7 +602,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3vh;
+    gap: 2vh;
 }
 
 .table-result-pesquisa .container-integrante-active-see{
@@ -702,7 +702,6 @@
 
 .container-integrante-infos-opened{
     width: 93%;
-    height: 60vh;
     position: relative;
 
     display: flex;
@@ -785,14 +784,14 @@
         opacity: 0;
     }
     100%{
-        height: 35vh;
+        height: 37vh;
         opacity: 1;
     }
 }
 
 @keyframes integranteCloseInfo {
     0%{
-        height: 40vh;
+        height: 37vh;
         color: black;
     }
     100%{

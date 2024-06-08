@@ -448,7 +448,7 @@
 
 .mensage-submit-incorrect-aluno,
 .mensage-submit-incorrect-professor{
-    width: auto;
+    width: 80%;
     height: 10%;
     padding: 0vh 3vh 0vh 3vh;
 
@@ -470,20 +470,20 @@
 .page-login .container-login .login-professores .mensage-submit-correct-professor .submit-msg-professor{
     font-size: 2.5vh;
     color: rgb(0, 0, 0);
-    font-weight: 600;
+    font-weight: 800;
     -webkit-text-stroke: transparent;
     text-shadow: none;
-    letter-spacing: .3vh;
+    letter-spacing: .1vh;
 }
 
 .page-login .container-login .login-alunos .mensage-submit-incorrect-aluno .submit-msg-aluno,
 .page-login .container-login .login-professores .mensage-submit-incorrect-professor .submit-msg-professor{
     font-size: 2.5vh;
     color: rgb(0, 0, 0);
-    font-weight: 600;
+    font-weight: 800;
     -webkit-text-stroke: transparent;
     text-shadow: none;
-    letter-spacing: .3vh;
+    letter-spacing: .1vh;
 }
 
 /* edição para query */
@@ -737,7 +737,9 @@
 @media (max-width: 480px) {
     .page-login .container-login .login-alunos .mensage-submit-incorrect-aluno .submit-msg-aluno, .page-login .container-login .login-professores .mensage-submit-incorrect-professor .submit-msg-professor{
         text-align: center;
+        letter-spacing: .1vh;
         font-size: 2vh;
+        font-weight: 800;
     }
 
     .center-login-page{
