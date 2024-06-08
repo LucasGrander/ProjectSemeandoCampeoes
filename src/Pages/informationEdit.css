@@ -1070,9 +1070,9 @@
 }
 
 .box-postput-updated{
-    position: absolute;
-    right: 1vh;
-    bottom: 1vh;
+    position: fixed;
+    right: 2vh;
+    bottom: 2vh;
     z-index: 99;
 
     width: auto;
@@ -1088,16 +1088,16 @@
     animation: boxPostPutAnime 3s normal forwards; 
     
     span{
-        font-size: 2.5vh;
+        font-size: 2.2vh;
         font-weight: 600;
         color: rgb(0, 0, 0);
     }
 }
 
 .box-postput-removed{
-    position: absolute;
-    right: 1vh;
-    bottom: 1vh;
+    position: fixed;
+    right: 2vh;
+    bottom: 2vh;
     z-index: 99;
 
     width: auto;
@@ -1113,16 +1113,16 @@
     animation: boxPostPutAnime 3s normal forwards; 
     
     span{
-        font-size: 2.5vh;
+        font-size: 2.2vh;
         font-weight: 600;
         color: rgb(0, 0, 0);
     }
 }
 
 .box-postput-added{
-    position: absolute;
-    right: 1vh;
-    bottom: 1vh;
+    position: fixed;
+    right: 2vh;
+    bottom: 2vh;
     z-index: 99;
 
     width: auto;
@@ -1138,7 +1138,7 @@
     animation: boxPostPutAnime 3s normal forwards; 
     
     span{
-        font-size: 2.5vh;
+        font-size: 2.2vh;
         font-weight: 600;
         color: rgb(0, 0, 0);
     }
@@ -1147,11 +1147,11 @@
 
 
 .box-postput-hidden{
-    position: absolute;
-    right: 1vh;
-    bottom: 1vh;
+    position: fixed;
+    right: 2vh;
+    bottom: 2vh;
 
-    width: 50vh;
+    width: auto;
     height: 15vh;
 
     display: flex;
@@ -1161,6 +1161,11 @@
     background-color: red;
     border-radius: 2vh;
     transform: translateX(120vh);
+    span{
+        font-size: 2.2vh;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+    }
 }
 
 .confirm-dialog-box{
@@ -1286,19 +1291,19 @@
     transform: translateX(120vh)   
     }
     20%{
-     transform: translateX(-5vh)   
+     transform: translateX(0vh)   
     }
     40%{
-     transform: translateX(0vh)   
+     transform: translateX(1vh)   
     }
     60%{
-     transform: translateX(0vh)   
+     transform: translateX(1vh)   
     }
     75%{
-     transform: translateX(0vh)   
+     transform: translateX(1vh)   
     }
     90%{
-     transform: translateX(-5vh)   
+     transform: translateX(0vh)   
     }
     100%{
      transform: translateX(120vh)   
