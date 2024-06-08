@@ -943,7 +943,7 @@ const handleGetInfos = async () => {
                         type='text'
                         width= "80%"
                         height= "7vh"
-                        padding="0vh 3vh 0vh 2.5vh"
+                        padding="0vh 1vh 0vh 1.5vh"
                         fontSize= "2.4vh"
                         border= "solid .3vh black"
                         borderBottom="solid .3vh black"
@@ -959,7 +959,7 @@ const handleGetInfos = async () => {
                 <div className="save-cancel">
                     <MyButton
                     onClick={handleUpdateInfos}
-                    width= "auto"
+                    width= "45%"
                     height= "8vh"
                     padding="1vh 3vh"
                     cursor="pointer"
@@ -977,7 +977,7 @@ const handleGetInfos = async () => {
 
                     <MyButton
                     onClick={handleOnClickCloseEdit}
-                    width= "auto"
+                    width= "35%"
                     height= "8vh"
                     padding="1vh 3vh"
                     cursor="pointer"

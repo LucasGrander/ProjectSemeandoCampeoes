@@ -390,7 +390,7 @@ return (
                         enter="rgba(0, 0, 0, 0.2)"
                         leave="rgba(0, 0, 0, 0.3)"
                     />
-                <div  style={{transform: boxModeAluno ? "translateY(-2vh)" : "translateY(10vh)", transition: ".8s"}} className={loginModeAluno ? "mensage-submit-correct-aluno" : "mensage-submit-incorrect-aluno"}>
+                <div  style={{transform: boxModeAluno ? "translateY(-2vh)" : "translateY(25vh)", transition: "1.4s"}} className={loginModeAluno ? "mensage-submit-correct-aluno" : "mensage-submit-incorrect-aluno"}>
                     <span className="submit-msg-aluno">
                         {mensageAluno}
                     </span>
@@ -514,7 +514,7 @@ return (
                         enter="rgba(0, 0, 0, 0.2)"
                         leave="rgba(0, 0, 0, 0.3)"  
                     />
-                    <div  style={{transform: boxModeProfessor ? "translateY(-2vh)" : "translateY(10vh)", transition: ".8s"}} className={loginModeProfessor ? "mensage-submit-correct-professor" : "mensage-submit-incorrect-professor"}>
+                    <div  style={{transform: boxModeProfessor ? "translateY(-2vh)" : "translateY(25vh)", transition: "1.4s"}} className={loginModeProfessor ? "mensage-submit-correct-professor" : "mensage-submit-incorrect-professor"}>
                     <span className="submit-msg-professor">
                         {mensageProfessor}
                     </span>

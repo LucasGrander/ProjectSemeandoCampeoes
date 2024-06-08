@@ -6,12 +6,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 
 .page-infos-edit header{
     width: 100%;
-    height: 18vh;
+    height: 20vh;
     z-index: 1;
 
     display: flex;
@@ -99,6 +100,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .page-infos-edit .container-edit-infos .box-edit-infos{
@@ -208,8 +210,8 @@
     align-items: center;
     justify-content: center;
 
-    font-size: 2.5vh;
-    font-weight: 600;
+    font-size: 2vh;
+    font-weight: 500;
     border: solid .2vh black;
     border-radius: 1vh;
     box-shadow: .1vh .2vh .6vh black;
@@ -526,7 +528,7 @@
 
 .table-result-pesquisa{
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     display: flex;
     align-items: center;
@@ -1501,7 +1503,7 @@
         align-content: center;
         justify-content: end;
 
-        font-size: 2.3vh;
+        font-size: 2vh;
         gap: 1.5vh;
     }
 
@@ -1514,7 +1516,7 @@
         align-content: center;
         justify-content: start;
 
-        font-size: 2.3vh;
+        font-size: 2vh;
         gap: 1.5vh;
     }
 
@@ -1732,7 +1734,7 @@
         align-content: center;
         justify-content: end;
 
-        font-size: 2.3vh;
+        font-size: 2vh;
         gap: 1.5vh;
     }
 
@@ -1745,7 +1747,7 @@
         align-content: center;
         justify-content: start;
 
-        font-size: 2.3vh;
+        font-size: 2vh;
         gap: 1.5vh;
     }
 
@@ -1930,12 +1932,12 @@
     }
 
     .dropdown-container-edit  .dropdown-itens-faixa{
-        grid-template-columns: 12vh;
+        grid-template-columns: 10vh;
         font-size: 1vh;
     }
 
     .dropdown-container-edit .dropdown-itens-cts{
-        grid-template-columns: 20vh;
+        grid-template-columns: 16vh;
         font-size: 1vh;
     }
 
@@ -1961,7 +1963,7 @@
         align-content: center;
         justify-content: end;
 
-        font-size: 2.3vh;
+        font-size: 2vh;
         gap: 1.5vh;
         margin-top: 2vh;
     }
@@ -1975,7 +1977,7 @@
         align-content: center;
         justify-content: start;
 
-        font-size: 2.3vh;
+        font-size: 2vh;
         gap: 1.5vh;
         margin-top: 2vh;
     }
