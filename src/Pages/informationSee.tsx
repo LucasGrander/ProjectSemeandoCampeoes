@@ -241,7 +241,7 @@ const filterToApply: {nome: String, cor_da_faixa: String[], centro_de_treino: St
 
 const handleGetInfos = async () => {
    if(filterToApply.nome.length == 0 && filterToApply.cor_da_faixa.length == 0 && filterToApply.centro_de_treino.length == 0){
-     const res = await axios.get("https://backendprojectsemeandocampeoes-production.up.railway.app/users")
+     const res = await axios.get("https://backendprojectsemeandocampeoes.up.railway.app/users")
      setParticipants(res.data)
      setQttResult(res.data.length)
 
@@ -252,7 +252,7 @@ const handleGetInfos = async () => {
        }, 2000);
    }
    else{
-       const res = await axios.get("https://backendprojectsemeandocampeoes-production.up.railway.app/users/filter", {params: filterToApply})
+       const res = await axios.get("https://backendprojectsemeandocampeoes.up.railway.app/users/filter", {params: filterToApply})
        setParticipants(res.data)
        setQttResult(res.data.length)
 

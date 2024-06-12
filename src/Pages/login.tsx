@@ -30,7 +30,7 @@ function Login (){
 
     const handleMensageShowedAluno = async () => {
         setBoxModeAluno(true)
-        const validationAluno = await axios.post("https://backendprojectsemeandocampeoes-production.up.railway.app/users/authAluno", { usuario: userAluno, senha: passwordAluno })
+        const validationAluno = await axios.post("https://backendprojectsemeandocampeoes.up.railway.app/users/authAluno", { usuario: userAluno, senha: passwordAluno })
         if(validationAluno.status == 200){""
             if(validationAluno.data.length == 1){
                 setLoginModeAluno(true)
@@ -106,7 +106,7 @@ function Login (){
     const [clasnameProfessor, setClassnameProfessor] = useState(true)
 
     const handleMensageShowedProfessor = async () => {
-            const validationProfessor = await axios.post("https://backendprojectsemeandocampeoes-production.up.railway.app/users/authProfessor", { usuario: userProfessor, senha: passwordProfessor })
+            const validationProfessor = await axios.post("https://backendprojectsemeandocampeoes.up.railway.app/users/authProfessor", { usuario: userProfessor, senha: passwordProfessor })
             if (validationProfessor.status === 200) {
                 if (validationProfessor.data.length == 1) { 
                     setBoxModeProfessor(true)
