@@ -49,6 +49,17 @@ const NewsLatter = ({id}: Props) => {
                     <span >Últimas Notícas</span>
                 </div>
 
+                <div className="box-news">
+                    <span className='title-news' >Arraiá Semeando Campeões 2024</span>
+
+                    <span className='text-news' ><span className='parag-visible0' >..........</span>No dia 22 de junho, o PSC realizou mais uma edição do Arraiá Semeando Campeões, reunindo mais de 100 pessoas nas dependências da I Igreja Batista de Campo Mourão. Foram realizadas brincadeiras, apresentação de lutas (encenadas), quadrilha jiujiteira, casamento caipira, bingo e lanches para todos os presentes. Presentes Instrutores e alunos dos Centros de treinamento do Centro, Lar Paraná e Iretama.
+                    O evento teve patrocínio do Dojô Uchoa, pais dos alunos do PSC e alunos da Gracie Barra Campo Mourão.</span>
+
+                    <span className='midia-news' >Imagens: <a target='_blank'  href="https://www.facebook.com/share/p/xrDsVDMhUR8r4Ekj/?mibextid=WC7FNe">Arraiá Semeando Campeões</a></span>
+
+                    <span className='data-news' >24/06/2024</span>
+                </div>
+
 
                 <div className="box-news">
                     <span className='title-news' >Novo CT do PSC "Asa Leste"</span>
