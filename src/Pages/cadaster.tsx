@@ -257,7 +257,7 @@ const Cadaster = () => {
     }
 
     const handleSendInfosToDatabase = async () => {
-        await axios.post("http://localhost:8080/users/queue", {nome: valueNome, data_de_nascimento: valueDate, telefone: valueTelefone, responsavel: valueNomeResp, id_centro_de_treinamento: valueSelectBoxCT, id_faixa: valueSelectBoxFaixa, rua: valueRua, numero: valueNumRes, bairro: valueBairro, nome_cidade: valueCity})
+        await axios.post("https://backendprojectsemeandocampeoes.up.railway.app/users/queue", {nome: valueNome, data_de_nascimento: valueDate, telefone: valueTelefone, responsavel: valueNomeResp, id_centro_de_treinamento: valueSelectBoxCT, id_faixa: valueSelectBoxFaixa, rua: valueRua, numero: valueNumRes, bairro: valueBairro, nome_cidade: valueCity})
     }
     
     return(
